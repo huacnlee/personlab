@@ -1,0 +1,28 @@
+<p>
+  <b>Title:</b>
+  <%=h @share.title %>
+</p>
+
+<p>
+  <b>Summary:</b>
+  <%=h @share.summary %>
+</p>
+
+<p>
+  <b>From:</b>
+  <%=h @share.from %>
+</p>
+
+<p>
+  <b>Cover:</b>
+  <%=h @share.cover %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @share.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_share_path(@share) %> |
+<%= link_to 'Back', shares_path %>

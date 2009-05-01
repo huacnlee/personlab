@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Post</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Post</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/app/models/post_rb.html">
+                app/models/post.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                ActiveRecord::Base
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000011">created_at_s</a>&nbsp;&nbsp;
+      <a href="#M000013">find_list</a>&nbsp;&nbsp;
+      <a href="#M000014">find_list_with_front</a>&nbsp;&nbsp;
+      <a href="#M000015">find_slug</a>&nbsp;&nbsp;
+      <a href="#M000012">summary</a>&nbsp;&nbsp;
+      <a href="#M000016">update_view_count</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">STATUS</td>
+          <td>=</td>
+          <td class="context-item-value">[     [&quot;请选择状态&quot;,-1],     [&quot;发布&quot;,1],     [&quot;草稿&quot;,2],     ].freeze</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+status
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000013" class="method-detail">
+        <a name="M000013"></a>
+
+        <div class="method-heading">
+          <a href="#M000013" class="method-signature">
+          <span class="method-name">find_list</span><span class="method-args">(page = 1, per_page = 20,options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+list
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000013-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000013-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/post.rb, line 56</span>
+56:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">find_list</span>(<span class="ruby-identifier">page</span> = <span class="ruby-value">1</span>, <span class="ruby-identifier">per_page</span> = <span class="ruby-value">20</span>,<span class="ruby-identifier">options</span> = {})
+57:     <span class="ruby-identifier">with_scope</span> <span class="ruby-identifier">:find</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span> <span class="ruby-keyword kw">do</span>
+58:       <span class="ruby-identifier">paginate</span> <span class="ruby-identifier">:page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">page</span>,<span class="ruby-identifier">:per_page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">per_page</span>, <span class="ruby-identifier">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'created_at desc'</span>
+59:     <span class="ruby-keyword kw">end</span>
+60:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000014" class="method-detail">
+        <a name="M000014"></a>
+
+        <div class="method-heading">
+          <a href="#M000014" class="method-signature">
+          <span class="method-name">find_list_with_front</span><span class="method-args">(page = 1, per_page = 20, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000014-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000014-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/post.rb, line 62</span>
+62:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">find_list_with_front</span>(<span class="ruby-identifier">page</span> = <span class="ruby-value">1</span>, <span class="ruby-identifier">per_page</span> = <span class="ruby-value">20</span>, <span class="ruby-identifier">options</span> = {})
+63:     <span class="ruby-identifier">with_scope</span> <span class="ruby-identifier">:find</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span> <span class="ruby-keyword kw">do</span>
+64:       <span class="ruby-identifier">find_list</span>(<span class="ruby-identifier">page</span>, <span class="ruby-identifier">per_page</span>,<span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;status = 1&quot;</span>])
+65:     <span class="ruby-keyword kw">end</span>
+66:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000015" class="method-detail">
+        <a name="M000015"></a>
+
+        <div class="method-heading">
+          <a href="#M000015" class="method-signature">
+          <span class="method-name">find_slug</span><span class="method-args">(slug)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+show
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000015-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000015-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/post.rb, line 69</span>
+69:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">find_slug</span>(<span class="ruby-identifier">slug</span>)
+70:     <span class="ruby-identifier">find_by_slug_and_status</span>(<span class="ruby-identifier">slug</span>,<span class="ruby-value">1</span>)
+71:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000016" class="method-detail">
+        <a name="M000016"></a>
+
+        <div class="method-heading">
+          <a href="#M000016" class="method-signature">
+          <span class="method-name">update_view_count</span><span class="method-args">(slug,count)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+static method
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000016-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000016-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/post.rb, line 75</span>
+75:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">update_view_count</span>(<span class="ruby-identifier">slug</span>,<span class="ruby-identifier">count</span>)
+76:     <span class="ruby-ivar">@post</span> = <span class="ruby-identifier">find_by_slug</span>(<span class="ruby-identifier">slug</span>)
+77:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@post</span>
+78:       <span class="ruby-ivar">@post</span>.<span class="ruby-identifier">view_count</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">count</span>
+79:       <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> { <span class="ruby-node">&quot;#{@post.view_count}&quot;</span> }
+80:       <span class="ruby-ivar">@post</span>.<span class="ruby-identifier">save</span>
+81:     <span class="ruby-keyword kw">end</span>
+82:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000011" class="method-detail">
+        <a name="M000011"></a>
+
+        <div class="method-heading">
+          <a href="#M000011" class="method-signature">
+          <span class="method-name">created_at_s</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+string formated created_at
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000011-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000011-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/post.rb, line 25</span>
+25:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">created_at_s</span>
+26:     <span class="ruby-identifier">created_at</span>.<span class="ruby-identifier">to_s</span>(<span class="ruby-identifier">:short_date_string</span>)
+27:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000012" class="method-detail">
+        <a name="M000012"></a>
+
+        <div class="method-heading">
+          <a href="#M000012" class="method-signature">
+          <span class="method-name">summary</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000012-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000012-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/post.rb, line 29</span>
+29:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">summary</span>
+30:     <span class="ruby-ivar">@sumarry_mark</span> = <span class="ruby-value str">&quot;&lt;!--{/summary}--&gt;&quot;</span>
+31:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">body</span>.<span class="ruby-identifier">index</span>(<span class="ruby-ivar">@sumarry_mark</span>)
+32:       <span class="ruby-identifier">body</span>.<span class="ruby-identifier">split</span>(<span class="ruby-ivar">@sumarry_mark</span>)[<span class="ruby-value">0</span>]
+33:     <span class="ruby-keyword kw">else</span>
+34:       <span class="ruby-identifier">body</span>.<span class="ruby-identifier">truncate_html</span>(<span class="ruby-value">1000</span>)
+35:     <span class="ruby-keyword kw">end</span>
+36:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

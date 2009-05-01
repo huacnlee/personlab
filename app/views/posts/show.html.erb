@@ -1,0 +1,56 @@
+<% content_for :styles do %> 
+<%= stylesheet_link_tag "src/posts/base","src/posts/show", :cache => "post_show" %>
+<% end -%>
+<div id="post" class="post_item">
+	<h1>
+		<%= h(@post.title) %>
+	</h1>
+	<div class="post_info">
+		发表于 <span class="date"><%= @post.created_at_s %></span> 
+		<span class="view_count"><%= @post.view_count + @view_count %>
+次阅读</span>
+		<span class="comment_count"><a href="#comments"><%= @post.comment_count %>条评论</a></span>
+	</div>
+	<div class="post_body">
+		<%= @post.body %>
+	</div>
+</div>
+<%= render :partial => 'comments' %>
+<div id="comment">
+	<h2>Post Comment</h2>
+	<div class="form">
+		<% form_for @comment, :url => (url_for(:controller => "posts", :action => "comment", :slug => params[:slug])) do |f| -%>
+		<% if f.error_messages %>
+		<%= f.error_messages %>
+		<% else %>
+		<%= flash[:notice] %>
+		<% end %>
+		<table border="0" cellspacing="0" cellpadding="0">
+			<tr class="row">
+				<td class="field">Name:</td>
+				<td><%= f.text_field :author, :class => "text short" %></td>
+			</tr>
+			<tr class="row">
+				<td class="field">Url:</td>
+				<td><%= f.text_field :url, :class => "text" %></td>
+			</tr>
+			<tr class="row">
+				<td class="field">Email:</td>
+				<td><%= f.text_field :email, :class => "text" %></td>
+			</tr>
+			<tr class="row">
+				<td class="field" valign="top">Say:</td>
+				<td>
+					<%= f.text_area :body, :class => "text middle" %>
+				</td>
+			</tr>
+			<tr class="buttons row">
+				<td class="field"></td>
+				<td>
+					<%= f.submit "Submit", :disable_with => 'Submiting...', :class => "button submit" %>
+				</td>
+			</tr>
+		</table>
+		<% end -%>
+	</div>
+</div>

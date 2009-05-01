@@ -1,0 +1,11 @@
+/**
+ * name: show.css
+ * authors: Jason Lee<huacnlee@gmail.com>
+ * create at: 2009-04-17
+ * summary: 
+ *   Page show Stylesheet file      
+ */
+#content p { padding:10px 0; }
+#content h2 { font-size: 18px; margin-top: 10px;}
+#content h2 span,
+#content h2 a { font-size: 12px; font-weight: normal;}

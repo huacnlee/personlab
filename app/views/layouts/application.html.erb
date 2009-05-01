@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title><%= @page_title ? @page_title : @setting.site_name %></title>
+	<meta name="description" content="<%= @meta_description %>">
+	<meta name="keywords" content="<%= @meta_keywords %>">
+	<%= stylesheet_link_tag "src/html","src/layout",:cache => "base" %>
+	<%= yield :styles -%>
+</head>
+<body>
+	<div id="header">
+		<div class="inner_panel">
+			<div class="left_box">
+				<div id="site_name">
+					<%= link_to @setting.site_name, :controller => "home", :action => "index" %>
+				</div>
+				<div class="sub_title">
+					<%= @setting.sub_title %>
+				</div>
+			</div>
+			<div class="right_box">
+				<a id="contact_me" href="mailto:<%= @setting.email %>" title="点击这里通过Email联系我"><%= image_tag("contact.jpg", :alt => "现在就联系我") %></a>
+			</div>
+		</div>
+	</div>
+	<div id="nav">
+		<div class="inner_panel">
+			<ul>
+				<li<%= ' class="actived"' if @nav_actived == "home" %>><%= link_to "首页", :controller => "home", :action => "index" %></li>
+				<% if !@menus.blank? %>
+				  <% for item in @menus %>
+				  <li<%= ' class="actived"' if @nav_actived == item.url.gsub('/','') %>><a href="<%= item.url %>" title="<%= item.name %>"<%= ' target="_blank"' if item.new_window %>><%= item.name %></a></li>
+				  <% end -%>
+				<% end -%>
+			</ul>
+			<div id="nav_search">
+				<input type="text" name="search" value="" id="search" /> 
+				<button type="submit">&nbsp;</button>
+			</div>
+		</div>
+	</div>
+	<div id="main">
+		<div class="inner_panel">
+			<%= yield %>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="inner_panel">
+			<p class="copyright">
+				Powered by <strong>PersonLab</strong> base on <a href="http://www.rubyonrails.org" target="_blank">Ruby on Rails</a>, Design by Jason Lee Version: <%= APP_VERSION %>. <%= link_to "CPanel", :controller => "cpanel" %>
+			</p>
+		</div>
+	</div>
+	<%= javascript_include_tag "src/lib/jquery","src/common", :cache => "lib/common" %>
+	<%= yield :scripts %>
+</body>
+</html>

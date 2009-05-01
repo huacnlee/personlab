@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>PersonLab CPanel</title>
+	<%= stylesheet_link_tag "src/html","src/cpanel/layout",:cache => "cpanel/base" %>
+	<%= yield :styles %>
+</head>
+<div id="top">
+	<div class="inner_panel">
+		<div id="site_name"><%= link_to "PersonLab CPanel", :controller => "cpanel/home", :action => "index" %></div>
+		<div class="userbar">
+			<% if @current_user %>
+			Hello, <span class="name"><%= @current_user.name %></span> 
+			<% end %>
+			<%= link_to "设置", :controller => "cpanel/settings", :action => "index" %> | 
+			<%= link_to "查看网站", {:controller => "/home", :action => "index"},:target => '_blank' %> |
+			<% if @current_user %>
+			<%= link_to "Logout", :controller => "cpanel/home", :action => "logout" %>
+			<% end %>
+		</div>
+	</div>	
+</div>
+<div id="nav">
+	<div class="inner_panel">
+	<ul>
+		<% if params[:controller] == "cpanel/home" %>
+		<li class="current"><span>首页</span></li>
+		<% else %>
+		<li><%= link_to "首页", :controller => "cpanel/home", :action => "index" %></li>
+		<% end %>
+		<% if params[:controller] == "cpanel/pages" %>
+		<li class="current"><span>页面</span></li>
+		<% else %>
+		<li><%= link_to "页面", :controller => "cpanel/pages", :action => "index" %></li>
+		<% end %>
+		<% if params[:controller] == "cpanel/posts" %>
+		<li class="current"><span>文章</span></li>
+		<% else %>
+		<li><%= link_to "文章", :controller => "cpanel/posts", :action => "index" %></li>
+		<% end %>
+		<% if params[:controller] == "cpanel/comments" %>
+		<li class="current"><span>评论</span></li>
+		<% else %>
+		<li><%= link_to "评论", :controller => "cpanel/comments", :action => "index" %></li>
+		<% end %>
+		<% if params[:controller] == "cpanel/menus" %>
+		<li class="current"><span>菜单</span></li>
+		<% else %>
+		<li><%= link_to "菜单", :controller => "cpanel/menus", :action => "index" %></li>
+		<% end %>
+	</ul>
+	</div>
+</div>
+<div id="main">
+	<div class="inner_panel">
+		<div id="submenu">
+			<label></label>
+			<%= yield :submenu %>
+		</div>
+		<%= yield %>
+	</div>
+</div>
+<div id="footer">
+	<div class="inner_panel">
+		<p class="copyright">
+			Powered by <strong>PersonLab</strong>, Version: <%= APP_VERSION %>
+		</p>
+	</div>
+</div>
+<%= javascript_include_tag "src/lib/tiny_mce/tiny_mce" %>
+<%= javascript_include_tag "src/lib/jquery","src/common", :cache => "cpanel/lib/common" %>
+<%= yield :scripts %>
+</html>

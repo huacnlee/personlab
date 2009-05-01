@@ -1,0 +1,34 @@
+# admin home controller
+class Cpanel::HomeController < Cpanel::ApplicationController
+  before_filter :require_login,:only => [:index,:logout]
+  
+  # cpanel
+  def index
+    
+  end
+  
+  # cpanel/logout
+  def logout
+    clear_login
+    redirect_to :controller => "/home", :action => "index"
+  end
+  
+  # cpanel/login
+  def login
+    @user = User.new
+    
+    if params[:user]
+      @user = User.check_login(params[:user][:uname], User.encode(params[:user][:pwd]))
+      if @user
+        save_login(@user)
+        redirect_to :controller => "/cpanel"
+        return
+      else
+        @user = User.new
+        flash[:notice] = "User name or Password incorrect."
+      end
+    end
+    
+    render :action => "login", :layout => false
+  end
+end

@@ -1,0 +1,10 @@
+/**
+ * name: login.css
+ * authors: Jason Lee<huacnlee@gmail.com>
+ * create at: 2009-04-14
+ * summary: 
+ *   for CPanel Login page       
+ */
+#main {background: #FFF; text-align: left; width:400px; border:4px solid #FFF; margin:40px auto; }
+#login { margin:30px; }
+h1 { height: 30px; line-height: 30px; font-size: 14px; text-align: center; color:#FFF; background: #039;}

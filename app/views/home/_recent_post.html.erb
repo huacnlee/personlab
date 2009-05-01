@@ -1,0 +1,22 @@
+<div id="recent_post">
+		<div class="top"></div>
+		<div class="box">
+		<% cache("home/index/recent_posts") do %>
+		<div class="content">
+			<h2><%= link_to h(@recent_post.title), :controller => "posts", :action => "show", :slug => @recent_post.slug %></h2>
+			<div class="info">
+				发表于<span class="time"><%= @recent_post.created_at_s %></span>
+			</div>
+			<div class="summary">
+				<%= @recent_post.summary %>
+				<p class="more_link">
+					<%= link_to "继续阅读此文...", :controller => "posts", :action => "show", :slug => @recent_post.slug %>
+				</p>
+			</div>
+		</div>
+		<% end %>
+		</div>
+		<div class="bottom">
+			
+		</div>
+	</div>

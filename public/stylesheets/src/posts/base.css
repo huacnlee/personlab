@@ -1,0 +1,9 @@
+.post_body { font-size: 14px; padding:10px 0; line-height: 160%; text-align: justify;}
+	.post_body h2 { margin: 10px 0; font-size: 16px;}
+	.post_body h3 { margin: 9px 0; font-size: 15px;}
+	.post_body h4 { margin: 8px 0; font-size: 14px;}
+	.post_body h5 { margin: 7px 0; font-size: 13px;}
+	.post_body h6 { margin: 6px 0; font-size: 12px;}
+	.post_body p { margin-bottom: 8px;}
+	.post_tags { height:24px; line-height: 24px;}
+	.post_stats { float:right; margin-top: -24px; margin-right: 10px;}

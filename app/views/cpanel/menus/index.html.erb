@@ -1,0 +1,35 @@
+<% content_for :styles do %> 
+<%= stylesheet_link_tag "src/cpanel/menus" %>
+<% end %>
+<%= render :partial => 'submenu' %>
+<h2>菜单列表</h2>
+<div id="menus" class="form">
+<% if !@menus.blank? %>
+	<table class="grid" border="0" cellspacing="0" cellpadding="0">
+		<tr class="head">
+			<td class="name">名称</td>
+			<td class="url">Url</td>
+			<td class="sort">排序</td>
+			<td class="new_window">打开方式</td>
+			<td class="opt"></td>
+		</tr>
+		<% for item in @menus %>
+		<tr class="row">
+			<td class="name"><%= item.name %></td>
+			<td class="url"><a href="<%= item.url %>" target="_blank"><%= item.url %></a></td>
+			<td class="sort"><%= item.sort %></td>
+			<td class="new_windows"><%= item.new_window ? '新窗口' : "当页" %></td>
+			<td class="opt">
+				<%= link_to "修改", edit_cpanel_menu_url(item) %> 
+				<%= link_to '删除', cpanel_menu_url(item), :confirm => 'Are you sure?', :method => :delete %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+<% else %>
+	<div class="none_result">
+		There have no menus,please create.
+	</div>
+<% end %>
+</div>
+

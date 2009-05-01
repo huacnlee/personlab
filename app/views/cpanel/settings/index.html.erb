@@ -1,0 +1,48 @@
+<% content_for :styles do %> 
+<%= stylesheet_link_tag "src/cpanel/settings", :cache => "cpanel/settings" %>
+<% end %>
+<h2>参数设置</h2>
+<div class="form">
+	<% form_for(@setting,:url => cpanel_setting_url(@setting.id)) do |f| %>
+	<%= success_messages %>
+	<%= f.error_messages %>
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr class="row">
+			<td class="field">站点名称</td>
+			<td><%= f.text_field :site_name, :class => "text middle"  %></td>
+		</tr>
+		<tr class="row">
+			<td class="field">子标题</td>
+			<td><%= f.text_field :sub_title, :class => "text long"  %></td>
+		</tr>
+		<tr class="row">
+			<td class="field">Email</td>
+			<td><%= f.text_field :email, :class => "text middle"  %></td>
+		</tr>
+		<tr class="row">
+			<td class="field">饭否ID</td>
+			<td><%= f.text_field :fanfou_id, :class => "text middle"  %></td>
+		</tr>
+		<tr class="row">
+			<td class="field">Meta Keywords</td>
+			<td><%= f.text_field :meta_keywords, :class => "text long"  %></td>
+		</tr>
+		<tr class="row">
+			<td class="field">Meta Description</td>
+			<td>
+				<%= f.text_area :meta_description, :class => "text middle"  %>
+			</td>
+		</tr>
+		<tr class="row">
+			<td class="field">首页个人信息</td>
+			<td>
+				<%= f.text_area :home_show, :class => "text long"  %>
+			</td>
+		</tr>
+		<tr class="row buttons">
+			<td class="field"></td>
+			<td><%= f.submit '保存', :class => "submit" %></td>
+		</tr>
+	</table>
+<% end %>
+</div>

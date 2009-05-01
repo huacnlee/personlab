@@ -1,0 +1,26 @@
+<h2>Listing comments</h2>
+<% if !flash[:notice].blank? %>
+<div class="message_notice">
+	<%= flash[:notice] %>
+</div>
+<% end %>
+<table class="grid" border="0" cellspacing="0" cellpadding="0">
+	<tr class="head">
+    <td class="author">评论人</td>
+    <td class="email">Email</td>
+    <td class="url">博客</td>
+    <td class="body">内容</td>
+		<td class="opt">操作</td>
+  </tr>
+	<% @comments.each do |comment| %>
+	  <tr class="row">
+	    <td class="author"><%=h comment.author %></td>
+	    <td class="email"><%=h comment.email %></td>
+	    <td class="url"><%=h comment.url %></td>
+	    <td class="body"><%=h comment.body %></td>
+	    <td class="opt"><%= link_to 'Destroy', cpanel_comment_url(comment), :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+</table>
+
+

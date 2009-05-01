@@ -1,0 +1,20 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+project:
+  name: Project
+  url: "/project"
+  sort: 999
+  new_window: false
+  
+resume:
+  name: Resume
+  url: "http://huacn.wealink.com/"
+  sort: 1
+  new_window: true
+  
+about:
+  name: About
+  url: "/about"
+  sort: 0
+  new_window: false
+  

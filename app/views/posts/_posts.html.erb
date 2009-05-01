@@ -1,0 +1,28 @@
+<% cache("posts/index/#{params[:page]}") do %>
+<% if !@posts.blank? %>
+  <% for item in @posts %>
+    <div id="item<%= item.id %>" class="post_item">
+			<div class="post_title">
+				<%= link_to h(item.title), :controller => "posts", :action => "show", :slug => item.slug %>
+			</div>
+			<div class="post_info">
+				发表于 <span class="date"><%= item.created_at_s %></span>
+			</div>
+			<div class="post_body">
+				<%= item.summary %>
+			</div>
+			<div class="post_tags">
+				<label>Tags:</label> <%= link_to "Python", :controller => "tags", :action => "show" %> <%= link_to "Django", :controller => "tags", :action => "show" %> <%= link_to "Opensource", :controller => "tags", :action => "show" %>
+			</div>
+			<div class="post_stats">
+				<%= link_to "评论#{item.comment_count}条", :controller => "posts", :action => "show", :slug => item.slug  %> | 
+				<%= link_to "#{item.view_count}次阅读", :controller => "posts", :action => "show", :slug => item.slug %>
+			</div>
+		</div>
+  <% end %>
+<% else %>
+  <div class="none_result">
+  	作者还未发表过文章.
+  </div>
+<% end %>
+<% end %>

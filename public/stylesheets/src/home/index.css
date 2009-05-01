@@ -1,0 +1,41 @@
+/**
+ * name: home/index.css
+ * authors: Jason Lee<huacnlee@gmail.com>
+ * create at: 
+ * summary: 
+ *   home/index.css
+ */
+#slide_show { margin-bottom: 16px;}
+	
+#recent_post { margin-bottom: 16px;background:#FFF url(../../../images/home_blog_bg.jpg) -1400px 3px repeat-y;}
+	#recent_post .top { height:52px;  background:#FFF url(../../../images/home_blog_bg.jpg) left top no-repeat;}
+	#recent_post .top a {color:#009;}
+	#recent_post .bottom { height:17px;  background:#FFF url(../../../images/home_blog_bg.jpg) -700px top no-repeat;}
+	#recent_post .box { margin:0 18px;}
+	#recent_post .info { font-size: 12px; color:#999;}
+	#recent_post .summary { font-size: 14px; line-height: 160%;}
+	#recent_post .summary ul,#recent_post .summary ol {}
+	#recent_post .more_link { text-align: right; }
+	
+#webicons { margin-bottom:16px; width:285px; height:200px; overflow: hidden; background:#FFF url(../../../images/home_sidebar_icon_bg.jpg) -285px top repeat-y;}
+	#webicons img { border: 0px;}
+	#webicons .top { height:13px;  background:#FFF url(../../../images/home_sidebar_icon_bg.jpg) left top no-repeat;}
+	#webicons .bottom { height:13px;  background:#FFF url(../../../images/home_sidebar_icon_bg.jpg) -570px bottom no-repeat;}
+	#webicons .box { margin:0 12px;}
+		#webicons .box .info { border-bottom: 1px solid #e9f3d1; padding-bottom: 8px;}
+			#webicons .box .face { }
+			#webicons .box .feed { float:right; margin-top:-143px; width:146px; text-align: center;}
+		#webicons .icons { padding-top: 4px; }
+		#webicons .icons a { text-decoration: none;}
+		#webicons .icons img { width:16px; height:16px;}
+		
+#tweet { margin-bottom:16px; width:285px; background:#FFF url(../../../images/home_sidebar_icon_bg.jpg) -285px top repeat-y;}
+	#tweet .top { height:78px;  background:#FFF url(../../../images/home_tweet_top.jpg) left top no-repeat;}
+	#tweet .top a { float:right; margin-top:44px; margin-right: 12px;}
+	#tweet .top img { border: 0;}
+	#tweet .bottom { height:13px;  background:#FFF url(../../../images/home_sidebar_icon_bg.jpg) -570px bottom no-repeat;}
+	#tweet ul { list-style: none; padding:0; margin:0 12px; font-size: 12px;}
+	#tweet ul li { padding:4px 0; margin:4px 0; border-bottom: 1px solid #e9f3d1;}
+	#tweet ul li p.info { color:#999; margin-top: 3px;}
+	#tweet ul li p.info a:link,#tweet ul li p.info a:visited { color:#999;}
+	#tweet ul li p.info a:hover { color:#d38101;}

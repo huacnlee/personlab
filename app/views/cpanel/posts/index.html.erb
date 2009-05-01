@@ -1,0 +1,35 @@
+<% content_for :styles do %> 
+<%= stylesheet_link_tag "src/cpanel/posts", :cache => "cpanel/posts" %>
+<% end %>
+<%= render :partial => 'submenu' %>
+<%= success_messages %>
+<div id="pages">
+	<% if !@posts.blank? %>
+	<table class="grid" border="0" cellspacing="0" cellpadding="0">
+		<tr class="head">
+			<td	class="first id">ID</td>
+			<td class="status">状态</td>
+			<td class="title">标题</td>
+			<td class="date">更新时间</td>
+			<td class="opt">操作</td>
+		</tr>
+	  <% for item in @posts %>
+	    <tr class="row">
+	    	<td class="first id"><%= item.id %></td>
+				<td class="status"><%=item.status == 1 ? "已发布" : "草稿" %></td>
+				<td class="title"><%= link_to (h item.title), :controller => "/posts", :action => "show", :slug => item.slug %></td>
+				<td class="date"><%= item.updated_at.to_s(:short_date) %></td>
+				<td class="opt">
+					<%= link_to "编辑", edit_cpanel_post_url(item) %>
+					<%= link_to '删除', cpanel_post_url(item), :confirm => "Are you sure?", :method => :delete %>
+				</td>
+	    </tr>
+	  <% end %>
+	</table>
+	<% else %>
+	<div class="none_result">
+		还未发表过文章.你可以 <%= link_to "创建", :controller => "posts", :action => "new" %> 一篇新文章.
+	</div>
+	<% end %>
+	
+</div>
