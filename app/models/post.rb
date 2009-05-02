@@ -59,9 +59,23 @@ class Post < ActiveRecord::Base
     end
   end
   
-  def self.find_list_with_front(page = 1, per_page = 20, options = {})
+  def self.find_list_with_front(page = 1, per_page = 2, options = {})
     with_scope :find => options do
       find_list(page, per_page,:conditions => ["status = 1"])
+    end
+  end
+  
+  # find posts order by comment_count
+  def self.find_hot(size = 10, options = {})
+    with_scope :find => options do
+      paginate :page => 1,:per_page => size, :conditions => ["status = 1"] , :order => 'comment_count desc'
+    end
+  end
+  
+  # find recent posts
+  def self.find_recent(size = 10, options = {})
+    with_scope :find => options do
+      paginate :page => 1,:per_page => size, :conditions => ["status = 1"] , :order => 'created_at desc'
     end
   end
   

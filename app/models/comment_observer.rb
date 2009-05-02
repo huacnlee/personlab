@@ -5,8 +5,9 @@
 # summary:
 #   this comment_observer.rb summary
 # ----------------------------------------------------
+require "sweepers/comment_sweeper"
 class CommentObserver < ActiveRecord::Observer
-  
+
   def after_create(m)
     total_comment_count(m)
   end

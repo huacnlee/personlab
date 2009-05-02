@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>test/unit/menu_test.rb</string>
+	<string>app/views/home/index.html.erb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -21,14 +21,14 @@
 	<integer>258</integer>
 	<key>metaData</key>
 	<dict>
-		<key>test/unit/menu_test.rb</key>
+		<key>app/views/home/index.html.erb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>5</integer>
+				<integer>57</integer>
 				<key>line</key>
-				<integer>6</integer>
+				<integer>1</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -38,11 +38,11 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>test/unit/menu_test.rb</string>
+		<string>app/views/home/index.html.erb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{295, 112}, {871, 595}}</string>
+	<string>{{312, 123}, {871, 595}}</string>
 </dict>
 </plist>

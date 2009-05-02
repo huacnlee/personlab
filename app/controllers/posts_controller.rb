@@ -6,6 +6,20 @@ class PostsController < ApplicationController
   def init_posts
     set_nav_actived("blog")
   end
+
+  def init_sidebar
+    if !fragment_exist? "posts/sidebar/hot_posts"
+      @hot_posts = Post.find_hot
+    end
+
+    if !fragment_exist? "posts/sidebar/recent_posts"
+      @recent_posts = Post.find_recent
+    end
+
+    if !fragment_exist? "posts/sidebar/recent_comments"
+      @recent_comments = Comment.find_recent
+    end
+  end
   
   public
   def index
@@ -13,6 +27,8 @@ class PostsController < ApplicationController
     if !fragment_exist? "posts/index/#{params[:page]}"
       @posts = Post.find_list_with_front(params[:page])
     end
+    
+    init_sidebar
   end
   
   def comment

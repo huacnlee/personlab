@@ -10,13 +10,13 @@ class ApplicationController < ActionController::Base
   # 初始化
   def init
     @menus = Rails.cache.read("data/menus")
-    if @menus.blank?
+    if not @menus
       @menus = Menu.find_all
       Rails.cache.write("data/menus",@menus)
     end
     
     @setting = Rails.cache.read("data/setting")
-    if @setting.blank?
+    if not @setting
       @setting = Setting.find_create
       Rails.cache.write("data/setting",@setting)
     end

@@ -7,6 +7,14 @@
 	.post_body p { margin-bottom: 8px;}
 	.post_tags { height:24px; line-height: 24px;}
 	.post_stats { float:right; margin-top: -24px; margin-right: 10px;}
+	
+#sidebar .box { margin-bottom: 30px;}
+	#sidebar .box .title { color:#dbdbdb; font-size: 18px; font-weight: bold;}
+	#sidebar .box .content { margin:10px 10px;}
+	#sidebar .box .content ul { margin: 0px; padding:0; list-style: none inside;}
+	#sidebar .box .content ul li { margin-bottom: 5px;}
+	#sidebar #feed #big_feed { float:left; margin-right:10px; margin-left: 10px;}
+	#sidebar #feed img {border:0;}
 
 /**
  * name: index.css
@@ -17,5 +25,8 @@
  */
 #posts { }
 	#posts .post_item { margin-bottom: 30px; }
-	#posts .post_item .post_title { font-size:200%; line-height: 28px; font-weight: bold;} 
+	#posts .post_item .post_title { font-size:200%; font-size: 16px; line-height: 28px; font-weight: bold;} 
 	#posts .post_item .post_info { font-size: 12px; color:#666;}
+
+	
+

@@ -16,9 +16,9 @@
 	#header .right_box img { border:0px;}
 
 #nav { height:44px; background:#77c615;  font-size: 16px;}
-	#nav ul { margin:0; list-style: none; padding-top: 10px;}
+	#nav ul { margin:0; list-style: none; padding-top: 10px; }
 		#nav ul li { display:inline; font-weight: bold;}
-		#nav ul li a:link,#nav ul li a:visited	{ margin-top: 4px; display: block; text-align: center; height:30px; overflow: hidden; line-height: 35px; width:93px; background: #66ae0c url('../../images/nav_item.jpg') left -34px no-repeat; color:#FFF; text-decoration: none; float: left; margin-right: 4px;}
+		#nav ul li a:link,#nav ul li a:visited	{ margin-top: 4px; display: block; text-align: center; height:30px; overflow: hidden; line-height: 35px; overflow:hidden; width:93px; background: #66ae0c url('../../images/nav_item.jpg') left -34px no-repeat; color:#FFF; text-decoration: none; float: left; margin-right: 4px;}
 		#nav ul li a:hover { background:#66ae0c url('../../images/nav_item.jpg') left -65px;}
 		#nav ul li.actived a { background:#FFF url('../../images/nav_item.jpg') left 0px; height:34px; line-height: 39px; margin-top: 0px; color:#d38101; }
 		#nav_search { float:right; width:214px; height:30px; text-align: left; background:url('../../images/nav_search_box.jpg') left top no-repeat; }

@@ -22,6 +22,7 @@ class PostSweeper < ActionController::Caching::Sweeper
   
   def clear_index_recent_posts_cache
     expire_fragment "home/index/recent_posts"
+    expire_fragment 'posts/sidebar/recent_posts'
   end
   
 end

@@ -9,7 +9,7 @@
 	
 #recent_post { margin-bottom: 16px;background:#FFF url(../../../images/home_blog_bg.jpg) -1400px 3px repeat-y;}
 	#recent_post .top { height:52px;  background:#FFF url(../../../images/home_blog_bg.jpg) left top no-repeat;}
-	#recent_post .top a {color:#009;}
+	#recent_post .top a.more { float:right; margin:25px 12px 0 0; font-size: 12px; }
 	#recent_post .bottom { height:17px;  background:#FFF url(../../../images/home_blog_bg.jpg) -700px top no-repeat;}
 	#recent_post .box { margin:0 18px;}
 	#recent_post .info { font-size: 12px; color:#999;}
