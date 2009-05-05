@@ -31,6 +31,22 @@ class PostsController < ApplicationController
     init_sidebar
   end
   
+  def rss
+    # Get the 10 most recent photos
+    @posts = Post.find_list_with_front(1,20)
+    # Title for the RSS feed
+    @feed_title = "10 most recent photos"
+    # Get the absolute URL which produces the feed
+    @feed_url = "http://" + request.host_with_port + request.request_uri
+    # Description of the feed as a whole
+    @feed_description = "20 most recent posts"
+    # Set the content type to the standard one for RSS
+    response.headers['Content-Type'] = 'application/rss+xml'
+    # Render the feed using an RXML template
+    render :action => 'rss', :layout => false
+  
+  end
+  
   def comment
     @post = Post.find_by_slug(params[:slug])
     

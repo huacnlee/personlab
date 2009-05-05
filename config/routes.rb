@@ -17,6 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   # Blog
   map.purchase "blog", :controller => "posts"
   map.purchase "blog", :controller => "posts", :action => "index"
+  map.purchase "blog/rss", :controller => "posts", :action => "rss"
   map.purchase "blog/page/:page", :controller => "posts", :action => "index", :requirements => { :page => /[\d]+/ }
   map.purchase "blog/:slug", :controller => "posts", :action => "show", :requirements => { :slug => /[a-z0-9A-Z\-\_\.]+/ }
   

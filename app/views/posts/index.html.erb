@@ -1,5 +1,6 @@
 <% content_for :styles do %> 
 <%= stylesheet_link_tag "src/posts/base","src/posts/index", :cache => "blog_index" %>
+<%= auto_discovery_link_tag(:rss, :action => 'rss') %>
 <% end %>
 <div id="mainbox">
 	<div id="posts">

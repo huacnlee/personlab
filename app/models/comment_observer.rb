@@ -23,5 +23,7 @@ class CommentObserver < ActiveRecord::Observer
     @count = @post.comments.length
     @post.comment_count = @count
     @post.save
+    
+    CommentSweeper.instance.clear_posts_sidebar(m)
   end
 end

@@ -50,7 +50,6 @@ Time::DATE_FORMATS[:short_date] = "%y-%m-%d"
 Time::DATE_FORMATS[:short_time_string] = "%y年%m月%d日 %H:%M"
 Time::DATE_FORMATS[:short_time] = "%y-%m-%d %H:%M"
 
-
 # custom configs
 APP_VERSION = '0.1.0'
 
