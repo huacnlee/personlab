@@ -9,17 +9,9 @@ class ApplicationController < ActionController::Base
   
   # 初始化
   def init
-    @menus = Rails.cache.read("data/menus")
-    if not @menus
-      @menus = Menu.find_all
-      Rails.cache.write("data/menus",@menus)
-    end
+    @menus = Menu.find_all
     
-    @setting = Rails.cache.read("data/setting")
-    if not @setting
-      @setting = Setting.find_create
-      Rails.cache.write("data/setting",@setting)
-    end
+    @setting = Setting.find_create
     
     @guest = session[:guest]
     if @guest.blank?
