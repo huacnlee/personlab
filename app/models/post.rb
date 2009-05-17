@@ -59,7 +59,7 @@ class Post < ActiveRecord::Base
     end
   end
   
-  def self.find_list_with_front(page = 1, per_page = 2, options = {})
+  def self.find_list_with_front(page = 1, per_page = 5, options = {})
     with_scope :find => options do
       find_list(page, per_page,:conditions => ["status = 1"])
     end

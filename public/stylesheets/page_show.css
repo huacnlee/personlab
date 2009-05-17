@@ -1,0 +1,29 @@
+/**
+ * name: base.css
+ * authors: Jason Lee<huacnlee@gmail.com>
+ * create at: 2009-04-17
+ * summary: 
+ *   Pages base Stylesheet file      
+ */
+#content { font-size: 14px; padding:10px 0; line-height: 160%; text-align: justify;}
+	#content h2 { margin: 10px 0; font-size: 16px;}
+	#content h3 { margin: 9px 0; font-size: 15px;}
+	#content h4 { margin: 8px 0; font-size: 14px;}
+	#content h5 { margin: 7px 0; font-size: 13px;}
+	#content h6 { margin: 6px 0; font-size: 12px;}
+	#content p { margin-bottom: 8px;}
+	#content code { padding:10px; margin:10px 0; background:#EEE;}
+
+/**
+ * name: show.css
+ * authors: Jason Lee<huacnlee@gmail.com>
+ * create at: 2009-04-17
+ * summary: 
+ *   Page show Stylesheet file      
+ */
+#content p { padding:10px 0; }
+#content h2 { font-size: 18px; margin-top: 10px;}
+#content h2 span,
+#content h2 a,
+#content h3 a { font-size: 12px; font-weight: normal;}
+#content h3 { font-size: 16px; margin-top: 9px; margin-left:24px;}
