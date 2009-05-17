@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  cache_sweeper :post_sweeper,:only => [:comment]
+  cache_sweeper :comment_sweeper,:only => [:show]
   before_filter :init_posts
   
   private
@@ -47,25 +47,6 @@ class PostsController < ApplicationController
   
   end
   
-  def comment
-    @post = Post.find_by_slug(params[:slug])
-    
-    if not @post
-      render_404
-    end
-    
-    # post comment
-    @pcomment = params[:comment]
-    @comment = Comment.new(params[:comment])
-    @comment.post_id = @post.id
-    @comment.status = 1
-    
-    if @comment.save
-      flash[:notice] = "Comment successed."
-      redirect_to :action => "show", :slug => @post.slug
-    end
-  end
-  
   def show
     @view_count_delay = 10
     @post_key = "data/posts/#{params[:slug]}"
@@ -92,12 +73,33 @@ class PostsController < ApplicationController
       Rails.cache.write(@post_key,@post)
     end
     
+    if request.post?
+      # post comment
+      @pcomment = params[:comment]
+      @comment = Comment.new(params[:comment])
+      @comment.post_id = @post.id
+      @comment.status = 1
+
+      set_guest(@comment.author,@comment.url,@comment.email)
+
+      if @comment.save
+        flash[:notice] = "评论发表成功."
+        redirect_to :action => "show", :slug => @post.slug, :anchor => "comment"
+      end
+    else
+      @comment = Comment.new
+      @comment.author = @guest[:author]
+      @comment.url = @guest[:url]
+      @comment.email = @guest[:email]
+    end
+    
+    set_seo_meta(@post.title,@post.meta_keywords,@post.meta_description)
+    
     # get comments list
     if !fragment_exist? "posts/show/#{params[:slug]}/comments"
       @comments = @post.comments.find_list
     end
-    
-    @comment = Comment.new
+   
   end
   
 end

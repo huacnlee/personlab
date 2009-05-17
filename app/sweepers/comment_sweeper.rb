@@ -9,17 +9,22 @@ class CommentSweeper < ActionController::Caching::Sweeper
   observe Comment
   
   def after_create(comment)
-    clear_comment_cache(comment)
+    sweeper(comment)
   end
   
   def after_destroy(comment)
-    clear_comment_cache(comment)
+    sweeper(comment)
   end
   
-  def clear_comment_cache(comment)
+  def sweeper(comment)
     expire_fragment %r"posts/index/*"
-    expire_fragment "posts/show/#{comment.post.slug}/comments"
     clear_posts_sidebar(comment)
+    clear_post_comments(comment)
+  end
+  
+  # 清除评论列表
+  def clear_post_comments(comment)
+    expire_fragment "posts/show/#{comment.post.slug}/comments"
   end
   
   # 清除 posts controller 的 sidebar 缓存

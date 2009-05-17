@@ -20,6 +20,11 @@ class ApplicationController < ActionController::Base
       @setting = Setting.find_create
       Rails.cache.write("data/setting",@setting)
     end
+    
+    @guest = session[:guest]
+    if @guest.blank?
+      @guest = set_guest
+    end
   end
 
   # 输出404错误
@@ -41,6 +46,11 @@ class ApplicationController < ActionController::Base
     end
     @meta_keywords = keywords
     @meta_description = desc
+  end
+  
+  # 保存评论者信息
+  def set_guest(author = "",url = "",email = "")
+    session[:guest] = {:author => author,:url => url,:email => email}
   end
   
 end

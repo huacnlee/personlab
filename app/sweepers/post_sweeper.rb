@@ -2,25 +2,31 @@ class PostSweeper < ActionController::Caching::Sweeper
   observe Post
   
   def after_update(post)
-    clear_post_cache(post)
+    sweeper(post)
   end
   
   def after_create(post)
-    clear_index_recent_posts_cache
+    clear_index_recent_posts
   end
   
   def after_destroy(post)
-    clear_post_cache(post)
+    sweeper(post)
   end
   
-  def clear_post_cache(post)
-    clear_index_recent_posts_cache
+  def sweeper(post)
+    clear_index_recent_posts
     expire_fragment %r"posts/index/*"
     Rails.cache.write("data/posts/#{post.slug}",nil)
+    clear_post_comments(post)
+  end
+  
+  # 清除评论列表
+  def clear_post_comments(post)
     expire_fragment "posts/show/#{post.slug}/comments"
   end
   
-  def clear_index_recent_posts_cache
+  # 清除首页缓存
+  def clear_index_recent_posts
     expire_fragment "home/index/recent_posts"
     expire_fragment 'posts/sidebar/recent_posts'
   end

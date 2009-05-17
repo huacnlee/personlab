@@ -20,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
   map.purchase "blog/rss", :controller => "posts", :action => "rss"
   map.purchase "blog/page/:page", :controller => "posts", :action => "index", :requirements => { :page => /[\d]+/ }
   map.purchase "blog/:slug", :controller => "posts", :action => "show", :requirements => { :slug => /[a-z0-9A-Z\-\_\.]+/ }
-  
+ 
   # Pages (This well be stay last line)
   map.purchase ":slug", :controller => "home", :action => "show", :requirements => { :slug => /[a-z0-9A-Z\-\_\.]+/ }
   

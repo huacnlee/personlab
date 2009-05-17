@@ -19,11 +19,12 @@ class CommentObserver < ActiveRecord::Observer
   private
   # tatal the comments count of this post and save it.
   def total_comment_count(m)
-    @post = m.post
-    @count = @post.comments.length
-    @post.comment_count = @count
-    @post.save
-    
-    CommentSweeper.instance.clear_posts_sidebar(m)
+    post = m.post
+    if post
+      count = post.comments.length
+      post.comment_count = count      
+      post.save
+    end
+    CommentSweeper.instance.after_create(m)
   end
 end

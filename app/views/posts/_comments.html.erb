@@ -14,7 +14,7 @@
 			    		 在 <%= item.created_at_s %> 说:
 			    	</div>
 						<div class="content">
-							<%= h(item.body) %>
+							<%= simple_format(item.body) %>
 						</div>
 			    </div>
 			  <% end %>

@@ -1,5 +1,6 @@
 class Comment < ActiveRecord::Base
   belongs_to :post
+  validates_presence_of :author,:email,:body, :message => "还未填写."
 
   def summary
     body.truncate_html(100)

@@ -1,0 +1,138 @@
+/**
+ * name: html.css
+ * authors: Jason Lee<huacnlee@gmail.com>
+ * create at: 2009-04-10
+ * summary: 
+ *   base stylesheet       
+ */
+* { margin: 0;padding: 0; }
+body { 
+	font-family: helvetica,verdana, arial, sans-serif;
+	font-size:   12px;
+	background-color: #FFF;
+	color: #333; 	
+	text-align: center;
+}
+ul,ol { list-style-position: inside; margin:10px 24px;}
+
+a:link,a:visited { color:#de6d1d;}
+a:hover { color:#333;}
+
+input.text,textarea.text { padding:2px; font-size: 12px;}
+input.button { padding:6px 10px;}
+input.submit { padding:5px 30px; font-weight: bold;}
+input.long,textarea.long { width:700px;}
+input.short { width:80px;}
+textarea.middle { width:450px; height: 80px;}
+
+table.grid {width:100%;}
+
+.errorExplanation { margin:10px 0; background:#FFF8E7; padding:10px; border: 2px solid #F96;}
+.errorExplanation h2 { font-size: 14px; line-height: 180%;}
+.errorExplanation p { color:#999;}
+.errorExplanation ul { font-size: 12px; margin-top: 8px; list-style: square inside; margin-left: 20px;}
+.filter { text-align: right; line-height: 22px; }
+	.filter label	{color: #999;}
+	
+.successMessage {margin:10px 0; background:#CF9; padding:10px; border: 2px solid #6C0; }
+
+
+
+/* form style */
+.form {  }
+	.form table { border:0; }
+	.form table tr td { padding:5px; font-size: 12px;}
+	.form table tr td.field { color:#666; text-align: right;}
+	.form table tr td .tip { color:#999;}
+	.form table tr td .tip_p { margin:8px 0; color:#999;}
+	
+.pagination { background: white;margin-bottom: 15px;  /* self-clearing method: */ }
+  .pagination a, .pagination span { padding: .4em .7em; display: block; float: left;font-size: 12px;			font-weight: bold; margin-right: 4px; }
+  .pagination span.disabled { color: #999; border: 1px solid #e9f3d1; }
+  .pagination span.current {
+    font-weight: bold;
+    background: #FFF;
+    color: #d18201;
+    border: 1px solid #66ae0c; }
+  .pagination a:link,.pagination a:visited {
+    text-decoration: none;
+    color: #FFF;
+		background:#77c615;
+    border: 1px solid #77c615; }
+    .pagination a:hover, .pagination a:focus {
+      color: #FFF;
+			background: #398700;
+      border-color: #398700; }
+  .pagination .page_info {
+    background: #2E6AB1;
+    color: white;
+    padding: .4em .6em;
+    width: 22em;
+    margin-bottom: .3em;
+    text-align: center; }
+    .pagination .page_info b {
+      color: #003;
+      background: #6aa6ed;
+      padding: .1em .25em; }
+  .pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .pagination {
+    height: 1%; }
+  *:first-child+html .pagination {
+    overflow: hidden; }
+	
+.tinymce_box { background:#DDD;}
+	.tinymce_box .buttons { height:24px; line-height: 24px;}
+	.tinymce_box .buttons .insert { text-indent: 8px;}
+	.tinymce_box .buttons .view { float:right; margin-top: -24px; }
+	.tinymce_box .buttons .view button { padding:0 8px; height: 20px; line-height: 20px; margin-top:3px;  border: 1px solid #AAA; background: #DDD; margin-right:8px; border-bottom: 0px;}
+	.tinymce_box .buttons .view button.selected { background:#EEE;}
+	.tinymce_box table.mceLayout tr td { padding:0;}
+
+/**
+ * name: cpanel/layout.css
+ * authors: Jason Lee<huacnlee@gmail.com>
+ * create at: 2009-04-15
+ * summary: 
+ *   Cpanel Layout Stylesheet       
+ */
+
+.inner_panel { width:950px; margin: 0px auto; text-align: left;}
+
+#nav { height:40px; line-height: 40px; background:#333; font-size: 14px;}
+	#nav ul { margin: 0px; list-style: none; padding-top: 7px;}
+		#nav ul li { display:inline; margin-right: 5px;}
+		#nav ul a	{ text-decoration: none; color:#FFF; padding:7px 15px 5px 15px; background:#444; border: 1px solid #555; border-bottom: 0px;}
+		#nav ul li.current span { color:#F30; padding:7px 15px 5px 15px; background:#FFF; border: 1px solid #FFF;border-bottom: 0px;}
+		
+#top { height: 30px; background:#039;}
+	#top #site_name { font-size:20px; height:30px; line-height: 30px;}
+		#top #site_name a { color:#FFF; text-decoration: none;}
+		#top .userbar { height:30px; line-height: 30px; color:#AAA; float:right; margin-right:10px; margin-top: -30px;}
+		#top .userbar span.name { font-weight: bold; margin: 0px 2px; }
+		#top .userbar a {color:#DDD;}
+
+#footer { background:#F0F0F0; font-size: 11px; height:40px; padding-top:10px; font-size: 12px;}
+
+#main { padding: 10px 0; background:#FFF;}
+
+#main h2 { font-size:16px; margin: 10px 0;}
+
+#submenu { height:22px; line-height: 22px; margin-bottom: 10px; list-style: none; }
+	#submenu li { display:inline; margin-right:10px;}
+		#submenu li a:link,
+		#submenu li a:visited { color:#063; font-size: 14px; }
+		#submenu li.current { font-weight: bold;}
+
+table.grid { border:2px solid #CCC;}
+	table.grid tr td { font-size: 12px; padding:4px; border-top: 1px solid #DDD; border-left: 1px solid #DDD;}
+	table.grid tr td.first { border-left: 0px;}
+	table.grid tr.head td { font-weight: bold; background:#EEE; border-top: 0px;}
+	table.grid tr td.choice { width:16px;}
+	table.grid tr td.slug { width:200px;}
+	table.grid tr td.date { width:50px;}
+	table.grid tr td.status { width:38px;}

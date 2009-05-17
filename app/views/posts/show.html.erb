@@ -17,14 +17,11 @@
 </div>
 <%= render :partial => 'comments' %>
 <div id="comment">
-	<h2>Post Comment</h2>
+	<h2>发表评论</h2>
 	<div class="form">
-		<% form_for @comment, :url => (url_for(:controller => "posts", :action => "comment", :slug => params[:slug])) do |f| -%>
-		<% if f.error_messages %>
+		<% form_for @comment, :url => (url_for(:controller => "posts", :action => "show", :slug => params[:slug])) do |f| -%>
 		<%= f.error_messages %>
-		<% else %>
-		<%= flash[:notice] %>
-		<% end %>
+		<%= success_messages %>
 		<table border="0" cellspacing="0" cellpadding="0">
 			<tr class="row">
 				<td class="field">Name:</td>

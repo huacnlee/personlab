@@ -8,6 +8,7 @@
 class PostObserver < ActiveRecord::Observer
   
   def after_update(post)
+    
   end
 
 end

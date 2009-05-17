@@ -31,6 +31,14 @@
 			</td>
 		</tr>
 		<tr class="row">
+			<td class="field"><%= f.label :meta_keywords, "Meta Keywords" %></td>
+			<td><%= f.text_field :meta_keywords, :class => "text long" %></td>
+		</tr>
+		<tr class="row">
+			<td class="field" valign="top"><%= f.label :meta_description, "Meta Description" %></td>
+			<td><%= f.text_area :meta_description, :class => "text middle", :rows => "3" %></td>
+		</tr>
+		<tr class="row">
 			<td class="field"><%= f.label :status %></td>
 			<td>
 				<%= select("post","status",Post::STATUS,{:selected => @post.status}) %>

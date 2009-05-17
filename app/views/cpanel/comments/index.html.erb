@@ -1,9 +1,5 @@
-<h2>Listing comments</h2>
-<% if !flash[:notice].blank? %>
-<div class="message_notice">
-	<%= flash[:notice] %>
-</div>
-<% end %>
+<h2>评论管理</h2>
+<%= success_messages %>
 <table class="grid" border="0" cellspacing="0" cellpadding="0">
 	<tr class="head">
     <td class="author">评论人</td>
