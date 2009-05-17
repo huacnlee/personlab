@@ -28,6 +28,15 @@ class String
     (results + ellipsis)
   end
   
+  def remove_html_tag()
+    self.gsub(/<.+?>/, "")
+  end
+  
+  def html_decode
+    es = {'&amp;' => '&', '&gt;' => '>', '&lt;' => '<', '&quot;' => '"'}
+    self.gsub(/&amp;|&gt;|&lt;|&quot;/) { |s| es[s] }
+  end
+  
   # clear unsafe char with url slug
   def safe_slug(spliter = '-')
     @slug = self

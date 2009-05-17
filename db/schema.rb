@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090517034648) do
+ActiveRecord::Schema.define(:version => 20090517064606) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id",    :null => false
@@ -71,16 +71,7 @@ ActiveRecord::Schema.define(:version => 20090517034648) do
     t.datetime "updated_at"
     t.string   "fanfou_id"
     t.string   "blog_feed_html"
-  end
-
-  create_table "shares", :force => true do |t|
-    t.string   "title",      :null => false
-    t.string   "summary",    :null => false
-    t.string   "from"
-    t.string   "cover"
-    t.string   "url",        :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "google_reader_id"
   end
 
   create_table "tags", :force => true do |t|

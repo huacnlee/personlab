@@ -9,6 +9,7 @@ class Setting < ActiveRecord::Base
           :email => "huacnlee@gmail.com",
           :meta_description => "我是一个Web开发人员,.NET,Python,Ruby,PHP,Javascrip等都有在用,我是做互联网开发的,这是一个用于介绍我自已的网站.",
           :fanfou_id => "huacn",
+          :google_reader_id => "08982619185204047523",
           :home_show => '
   <div class="info">
     <div class="face">

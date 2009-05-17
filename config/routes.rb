@@ -12,14 +12,15 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   # Share
-  map.resources :controller => "shares", :as => "share"
-
+  
   # Blog
   map.purchase "blog", :controller => "posts"
   map.purchase "blog", :controller => "posts", :action => "index"
   map.purchase "blog/rss", :controller => "posts", :action => "rss"
   map.purchase "blog/page/:page", :controller => "posts", :action => "index", :requirements => { :page => /[\d]+/ }
   map.purchase "blog/:slug", :controller => "posts", :action => "show", :requirements => { :slug => /[a-z0-9A-Z\-\_\.]+/ }
+ 
+  map.purchase "share", :controller => "home", :action => "share"
  
   # Pages (This well be stay last line)
   map.purchase ":slug", :controller => "home", :action => "show", :requirements => { :slug => /[a-z0-9A-Z\-\_\.]+/ }
