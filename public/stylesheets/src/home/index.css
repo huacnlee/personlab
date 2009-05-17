@@ -17,7 +17,7 @@
 	#recent_post .summary { margin-top:8px; font-size: 14px; line-height: 160%;}
 	#recent_post .summary ul,#recent_post .summary ol {}
 	#recent_post .more_link { text-align: right; }
-
+ 
 #webicons {  margin-bottom:16px; width:285px; height:200px; overflow: hidden; background:#FFF url(../../../images/home_sidebar_icon_bg.jpg) -285px top repeat-y;}
 	#webicons img { border: 0px;}
 	#webicons .top { height:13px;  background:#FFF url(../../../images/home_sidebar_icon_bg.jpg) left top no-repeat;}
