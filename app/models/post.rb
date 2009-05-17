@@ -86,12 +86,21 @@ class Post < ActiveRecord::Base
   
   
   # static method
-  def self.update_view_count(slug,count)
-    @post = find_by_slug(slug)
-    if @post
-      @post.view_count += count
-      logger.debug { "#{@post.view_count}" }
-      @post.save
+  def self.update_view_count(slug)
+    delay = 10
+    cache_key = "data/posts/view_count/#{slug}"
+    count = Rails.cache.read(cache_key).to_i || 0
+    if count % delay == 0 && count != 0
+      post = find_by_slug(slug)
+      if post
+        post.view_count += count + 1
+        post.save
+      end
+      count = 0
+    else
+      count += 1
     end
+    Rails.cache.write(cache_key,count)  
+    count
   end
 end
