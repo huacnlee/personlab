@@ -1,0 +1,23 @@
+<% content_for :styles do %> 
+<link rel="alternate" title="ATOM" type="application/atom+xml" href="<%= @api_url %>">
+<%= stylesheet_link_tag "src/home/share",:cache => "share" %>
+<% end %>
+<div id="shares">
+	<% if !@shares.blank? %>
+	  <% for item in @shares %>
+		<div class="item">
+			<div class="title">
+				<a href="<%= item["link"] %>" target="_blank"><%= h item["title"] %></a>
+				<% if not item["source_title"].blank? %>
+				<span class="author"><%= item["author"] %></span>
+				<% end %>
+			</div>
+			<div class="summary">
+				<%= h(item["content"]) -%>
+			</div>			
+		</div>	    
+	  <% end %>
+	<% else %>
+	  
+	<% end %>	
+</div>
