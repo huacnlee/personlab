@@ -15,7 +15,7 @@ body {
 }
 ul,ol { list-style-position: inside; margin:10px 24px;}
 
-a:link { color:#33C;}
+a:link,a:visited { color:#de6d1d;}
 a:hover { color:#333;}
 
 input.text,textarea.text { padding:2px; font-size: 12px;}
@@ -94,35 +94,12 @@ table.grid {width:100%;}
 	.tinymce_box table.mceLayout tr td { padding:0;}
 
 /**
- * name: layout.css
+ * name: login.css
  * authors: Jason Lee<huacnlee@gmail.com>
- * create at: 2009-04-11
+ * create at: 2009-04-14
  * summary: 
- *   layout.css
+ *   for CPanel Login page       
  */
-.inner_panel { width:1000px; margin: 0px auto; text-align: left;}
-		
-#header { height: 94px; background:#8fd300 url('../../images/header_bg.jpg');}
-	#header .left_box { float:left; width:710px; background: url('../../images/header_domain.jpg') right top no-repeat;}
-		#header #site_name { font-size:40px;  padding-top: 15px;}
-			#header #site_name a { color:#dbf0ab; font-weight: bold; text-decoration: none;}
-			#header .sub_title { color:#70af22; font-size: 14px; font-weight: bold;}
-	#header .right_box { float:right;padding-top:22px; text-align: left; width:;}
-	#header .right_box img { border:0px;}
-
-#nav { height:44px; background:#77c615;  font-size: 16px;}
-	#nav ul { margin:0; list-style: none; padding-top: 10px; }
-		#nav ul li { display:inline; font-weight: bold;}
-		#nav ul li a:link,#nav ul li a:visited	{ margin-top: 4px; display: block; text-align: center; height:30px; overflow: hidden; line-height: 35px; overflow:hidden; width:93px; background: #66ae0c url('../../images/nav_item.jpg') left -34px no-repeat; color:#FFF; text-decoration: none; float: left; margin-right: 4px;}
-		#nav ul li a:hover { background:#66ae0c url('../../images/nav_item.jpg') left -65px;}
-		#nav ul li.actived a { background:#FFF url('../../images/nav_item.jpg') left 0px; height:34px; line-height: 39px; margin-top: 0px; color:#d38101; }
-		#nav_search { float:right; width:214px; height:30px; text-align: left; background:url('../../images/nav_search_box.jpg') left top no-repeat; }
-		#nav_search input { display: block; border:0; font-size: 12px; margin:6px 3px 5px 50px; width:111px; padding:1px;}
-		#nav_search button { float:right; margin-top:-28px; width:42px; height:30px; margin-left:2px;  background:url(../../images/nav_search_button.jpg) left top no-repeat; border:0;}
-		
-#footer { background:#e9f3d1; clear: both; height:40px; padding-top:10px; font-size: 12px;}
-
-#main { padding: 20px 0; }
-	#mainbox { width:700px; float:left;}
-	#sidebar { width:285px;  float:right; }
-	
+#main {background: #FFF; text-align: left; width:400px; border:4px solid #FFF; margin:40px auto; }
+#login { margin:30px; }
+h1 { height: 30px; line-height: 30px; font-size: 14px; text-align: center; color:#FFF; background: #039;}

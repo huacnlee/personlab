@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/controllers/home_controller.rb</string>
+	<string>public/stylesheets/src/home/index.css</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -26,14 +26,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>25</integer>
+				<integer>16</integer>
 				<key>line</key>
-				<integer>32</integer>
+				<integer>22</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>7</integer>
+			<integer>0</integer>
 		</dict>
 		<key>app/controllers/posts_controller.rb</key>
 		<dict>
@@ -126,9 +126,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>41</integer>
+				<integer>6</integer>
 				<key>line</key>
-				<integer>11</integer>
+				<integer>22</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -148,6 +148,20 @@
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>6</integer>
+		</dict>
+		<key>public/stylesheets/src/home/index.css</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>40</integer>
+				<key>line</key>
+				<integer>27</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>15</integer>
 		</dict>
 		<key>public/stylesheets/src/home/share.css</key>
 		<dict>
@@ -172,6 +186,7 @@
 		<string>public/stylesheets/src/home/share.css</string>
 		<string>app/models/post.rb</string>
 		<string>app/views/home/share.html.erb</string>
+		<string>public/stylesheets/src/home/index.css</string>
 		<string>app/views/home/index.html.erb</string>
 		<string>app/helpers/application_helper.rb</string>
 		<string>config/routes.rb</string>
@@ -179,6 +194,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{399, 124}, {844, 584}}</string>
+	<string>{{498, 24}, {844, 584}}</string>
 </dict>
 </plist>

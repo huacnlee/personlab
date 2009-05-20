@@ -15,7 +15,7 @@ body {
 }
 ul,ol { list-style-position: inside; margin:10px 24px;}
 
-a:link,a:visited { color:#de6d1d;}
+a:link { color:#33C;}
 a:hover { color:#333;}
 
 input.text,textarea.text { padding:2px; font-size: 12px;}
