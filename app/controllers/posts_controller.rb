@@ -51,6 +51,8 @@ class PostsController < ApplicationController
     @post_key = "data/posts/#{params[:slug]}"
     # update pv
     
+    init_sidebar
+    
     @view_count = Post.update_view_count(params[:slug])
     
     @post = Rails.cache.read(@post_key)

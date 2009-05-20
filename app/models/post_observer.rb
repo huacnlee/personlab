@@ -11,4 +11,8 @@ class PostObserver < ActiveRecord::Observer
     
   end
 
+  def after_destroy(post)
+    # destroy post.comments
+    post.comments.each { |c| c.destroy() }
+  end
 end

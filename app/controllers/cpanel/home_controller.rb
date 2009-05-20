@@ -25,7 +25,7 @@ class Cpanel::HomeController < Cpanel::ApplicationController
         return
       else
         @user = User.new
-        flash[:notice] = "User name or Password incorrect."
+        flash[:errors] = "用户名或密码不正确。"
       end
     end
     

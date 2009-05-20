@@ -3,32 +3,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<title>PersonLab CPanel Login</title>
-	<%= stylesheet_link_tag "src/html","src/cpanel/login", :cache => "cpanel_login" %>
+	<title>PersonLab 管理后台 - 登录</title>
+	<%= stylesheet_link_tag "src/html","src/cpanel/login", :cache => "cpanel/login" %>
 </head>
 <div id="main">
-	<h1>CPanel Login</h1>
+	<h1>登录管理后台</h1>
 	<div id="login" class="form">
 		<% form_for @user,:url => "login" do |f| -%>
-		<% if flash[:notice] %>
-		<div class="errors">
-			<%=h flash[:notice] %>
+		<% if flash[:errors] %>
+		<div class="errorExplanation">
+			<%=h flash[:errors] %>
 		</div>
 		<% end %>
 		<table border="0" cellspacing="0" cellpadding="0">		
 			<tr>
-				<td class="field">User name:</td>
+				<td class="field">用户名:</td>
 				<td><%= f.text_field :uname,:class => 'text' %></td>
 			</tr>
 			<tr>
-				<td class="field">Password:</td>
+				<td class="field">密码:</td>
 				<td><%= f.password_field :pwd,:class => 'text' %></td>
 			</tr>
 			<tr>
 				<td class="field"></td>
 				<td>
-					<%= f.submit "Login", :disable_with => 'Logining...', :class => 'button submit' %>
-					or <%= link_to "Back to Home", :controller => "/home", :action => "index" %>
+					<%= f.submit "登录", :disable_with => '登录中...', :class => 'button submit' %>
+					或 <%= link_to "返回首页", :controller => "/home", :action => "index" %>
 				</td>
 			</tr>
 		</table>

@@ -1,10 +1,10 @@
 <div id="comments">
-	<h2>Comment</h2>
+	<h2>网友评论</h2>
 	<div class="list">
 		<% cache("posts/show/#{params[:slug]}/comments") do %>
 			<% if !@comments.blank? %>
 			  <% for item in @comments %>
-			    <div class="item">
+			    <div class="item<%= cycle('',' itemse') %>">
 			    	<div class="info">
 							<% if !item.url.blank? %>
 							<a href="<%= item.url %>" traget="_blank"><%= h(item.author) %></a>
@@ -19,7 +19,7 @@
 			    </div>
 			  <% end %>
 			<% else %>
-			  <div class="none_result">
+			  <div class="item none_result">
 			  	还未有人对此文发表过评论.
 			  </div>
 			<% end %>
