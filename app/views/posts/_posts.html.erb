@@ -7,16 +7,22 @@
 			</div>
 			<div class="post_info">
 				发表于 <span class="date"><%= item.created_at_s %></span>
+				<span class="view_count"><%= item.view_count + item.delay_view_count %>
+		次阅读</span>
+				<span class="comment_count"><a href="#comments"><%= item.comment_count %>条评论</a></span>
 			</div>
 			<div class="post_body">
 				<%= item.summary %>
 			</div>
 			<div class="post_tags">
-				<label>Tags:</label> <%= link_to "Python", :controller => "tags", :action => "show" %> <%= link_to "Django", :controller => "tags", :action => "show" %> <%= link_to "Opensource", :controller => "tags", :action => "show" %>
-			</div>
-			<div class="post_stats">
-				<%= link_to "评论#{item.comment_count}条", :controller => "posts", :action => "show", :slug => item.slug  %> | 
-				<%= link_to "#{item.view_count}次阅读", :controller => "posts", :action => "show", :slug => item.slug %>
+				<% if !item.tags.blank? %>
+				<div class="tags">
+					<label>Tags:</label>
+					<% for tag in item.tags %>
+					  <%= link_to (tag.name), :controller => "posts", :action => "index", :tag => tag.name %>
+					<% end %>
+				</div>
+				<% end %>
 			</div>
 		</div>
   <% end %>

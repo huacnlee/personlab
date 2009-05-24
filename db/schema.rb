@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090517064606) do
+ActiveRecord::Schema.define(:version => 20090524113052) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id",    :null => false
@@ -58,6 +58,13 @@ ActiveRecord::Schema.define(:version => 20090517064606) do
     t.integer  "comment_count",    :default => 0, :null => false
     t.string   "meta_keywords"
     t.string   "meta_description"
+  end
+
+  create_table "posts_tags", :force => true do |t|
+    t.integer  "post_id",    :null => false
+    t.integer  "tag_id",     :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "settings", :force => true do |t|

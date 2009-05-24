@@ -15,6 +15,14 @@
 		<div class="post_body">
 			<%= @post.body %>
 		</div>
+		<% if !@post.tags.blank? %>
+		<div class="tags">
+			<label>Tags:</label>
+			<% for tag in @post.tags %>
+			  <%= link_to (tag.name), :controller => "posts", :action => "index", :tag => tag.name %>
+			<% end %>
+		</div>
+		<% end %>
 	</div>
 	<%= render :partial => 'comments' %>
 	<div id="comment">

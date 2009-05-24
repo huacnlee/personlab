@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   validates_uniqueness_of :title, :slug, :case_sensitive => false , :message => "已经有同名的存在,请检查是否重发了."
   validates_presence_of :title,:body,:status
   has_many :comments
-  has_many :tags
+  has_and_belongs_to_many :tags
   
   # callback events
   before_validation :before_validation
@@ -33,6 +33,12 @@ class Post < ActiveRecord::Base
     else
       body.truncate_html(1500)
     end
+  end
+  
+  # cache delayed view_count
+  def delay_view_count
+    cache_key = "data/posts/view_count/#{slug}"
+    Rails.cache.read(cache_key).to_i || 0
   end
   
   # callback events
@@ -102,5 +108,13 @@ class Post < ActiveRecord::Base
     end
     Rails.cache.write(cache_key,count)  
     count
+  end
+  
+  
+  
+  def self.destroy_all
+    all.each do |p|
+      p.destroy
+    end
   end
 end

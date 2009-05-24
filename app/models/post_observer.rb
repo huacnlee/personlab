@@ -14,5 +14,7 @@ class PostObserver < ActiveRecord::Observer
   def after_destroy(post)
     # destroy post.comments
     post.comments.each { |c| c.destroy() }
+    # destroy posts_tags relete info
+    post.tags.destroy
   end
 end
