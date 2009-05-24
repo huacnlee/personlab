@@ -7,7 +7,8 @@
  */
 #posts { }
 	#posts .post_item { margin-bottom: 30px; }
-	#posts .post_item .post_title { font-size:16px; font-size: 16px; line-height: 28px; font-weight: bold;} 
+	#posts .post_item .post_title { font-size:16px; font-size: 20px; line-height: 28px; font-weight: bold;} 
+	#posts .post_item .post_title a { color:#222;}
 
 	
 

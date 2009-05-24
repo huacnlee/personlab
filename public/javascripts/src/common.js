@@ -50,7 +50,7 @@ Common.Editor = {
 		btnShow.click(function(){
 			$('.view button',editor).removeClass('selected');
 			$(this).addClass('selected');
-
+			tinyMCE.activeEditor.setContent(txtBody.val());
 			txtBody.hide();
 			subButtons.hide();
 			txtBody.focus();
@@ -60,7 +60,7 @@ Common.Editor = {
 		$('.buttons .view button.code',editor).click(function(){
 			$('.view button',editor).removeClass('selected');
 			$(this).addClass('selected');
-
+			txtBody.val(tinyMCE.activeEditor.getContent());
 			txtBody.show();
 			txtBody.focus();
 			subButtons.show();

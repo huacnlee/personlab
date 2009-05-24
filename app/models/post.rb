@@ -55,7 +55,7 @@ class Post < ActiveRecord::Base
   # list
   def self.find_list(page = 1, per_page = 20,options = {})
     with_scope :find => options do
-      paginate :page => page,:per_page => per_page, :order => 'created_at desc'
+      paginate(:page => page,:per_page => per_page, :order => 'created_at desc')
     end
   end
   
@@ -68,14 +68,14 @@ class Post < ActiveRecord::Base
   # find posts order by comment_count
   def self.find_hot(size = 10, options = {})
     with_scope :find => options do
-      paginate :page => 1,:per_page => size, :conditions => ["status = 1"] , :order => 'comment_count desc'
+      paginate(:page => 1,:per_page => size, :conditions => ["status = 1"] , :order => 'comment_count desc')
     end
   end
   
   # find recent posts
   def self.find_recent(size = 10, options = {})
     with_scope :find => options do
-      paginate :page => 1,:per_page => size, :conditions => ["status = 1"] , :order => 'created_at desc'
+      paginate(:page => 1,:per_page => size, :conditions => ["status = 1"] , :order => 'created_at desc')
     end
   end
   
