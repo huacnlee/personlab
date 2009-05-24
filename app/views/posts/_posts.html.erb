@@ -13,6 +13,9 @@
 			</div>
 			<div class="post_body">
 				<%= item.summary %>
+				<div class="more_link">
+					<%= link_to "继续阅读全文...", :controller => "posts", :action => "show", :slug => item.slug %>
+				</div>
 			</div>
 			<div class="post_tags">
 				<% if !item.tags.blank? %>
