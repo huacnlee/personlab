@@ -31,4 +31,5 @@ class Cpanel::HomeController < Cpanel::ApplicationController
     
     render :action => "login", :layout => false
   end
+  
 end
