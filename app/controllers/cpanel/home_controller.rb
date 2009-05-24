@@ -4,7 +4,10 @@ class Cpanel::HomeController < Cpanel::ApplicationController
   
   # cpanel
   def index
-    
+    @total = {}
+    @total[:post_count] = Post.count
+    @total[:page_count] = Page.count
+    @total[:comment_count] = Comment.count
   end
   
   # cpanel/logout

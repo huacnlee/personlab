@@ -12,4 +12,5 @@
 	<% if params[:action] == "edit" %>
 	<li class="current"><span>编辑</span></li>
 	<% end %>
+	<li><%= link_to "导入博客大巴备份文件", :controller => "posts", :action => "importblogbus" %></li>
 <% end %>

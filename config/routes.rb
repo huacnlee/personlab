@@ -8,7 +8,11 @@ ActionController::Routing::Routes.draw do |map|
     cpanel.login "login",:controller => "home", :action => "login" 
     cpanel.login "logout",:controller => "home", :action => "logout" 
     
+    cpanel.login "posts/importblogbus", :controller => "posts", :action => "importblogbus"
+    
     cpanel.resources :menus,:pages,:posts,:comments,:settings
+    
+    
   end
   
   # Share
