@@ -26,15 +26,16 @@ class Post < ActiveRecord::Base
     created_at.to_s(:short_date_string)
   end
   
+  # body summary
   def summary
     @sumarry_mark = "<!--{/summary}-->"
     if body.index(@sumarry_mark)
       body.split(@sumarry_mark)[0]
     else
-      body.truncate_html(1500)
+      body.truncate_html(1500,'')
     end
   end
-  
+    
   # cache delayed view_count
   def delay_view_count
     cache_key = "data/posts/view_count/#{slug}"
