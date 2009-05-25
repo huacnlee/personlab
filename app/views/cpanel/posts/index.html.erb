@@ -26,6 +26,7 @@
 	    </tr>
 	  <% end %>
 	</table>
+	<%= will_paginate @posts %>
 	<% else %>
 	<div class="none_result">
 		还未发表过文章.你可以 <%= link_to "创建", :controller => "posts", :action => "new" %> 一篇新文章.

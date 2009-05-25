@@ -10,8 +10,10 @@ class Comment < ActiveRecord::Base
     created_at.to_s(:short_time_string)
   end
   
-  def self.find_list
-    find(:all, :conditions => ['status = ?', 1], :order => "created_at asc")
+  def self.find_list(page = 1, per_page = 20,options = {})
+    with_scope :find => options do
+      paginate(:page => page, :per_page => per_page, :conditions => ['status = ?', 1], :order => "created_at asc")
+    end
   end
   
   def self.find_recent(size = 10, options = {})

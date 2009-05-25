@@ -27,6 +27,7 @@
 	    </tr>
 	  <% end %>
 	</table>
+	<%= will_paginate @pages %>
 	<% else %>
 	<div class="none_result">
 		还未创建过页面,你可以 <%= link_to "创建", :controller => "pages", :action => "new" %> 一页.

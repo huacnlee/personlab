@@ -46,45 +46,6 @@ table.grid {width:100%;}
 	.form table tr td .tip { color:#999;}
 	.form table tr td .tip_p { margin:8px 0; color:#999;}
 	
-.pagination { background: white;margin-bottom: 15px;  /* self-clearing method: */ }
-  .pagination a, .pagination span { padding: .4em .7em; display: block; float: left;font-size: 12px;			font-weight: bold; margin-right: 4px; }
-  .pagination span.disabled { color: #999; border: 1px solid #e9f3d1; }
-  .pagination span.current {
-    font-weight: bold;
-    background: #FFF;
-    color: #d18201;
-    border: 1px solid #66ae0c; }
-  .pagination a:link,.pagination a:visited {
-    text-decoration: none;
-    color: #FFF;
-		background:#77c615;
-    border: 1px solid #77c615; }
-    .pagination a:hover, .pagination a:focus {
-      color: #FFF;
-			background: #398700;
-      border-color: #398700; }
-  .pagination .page_info {
-    background: #2E6AB1;
-    color: white;
-    padding: .4em .6em;
-    width: 22em;
-    margin-bottom: .3em;
-    text-align: center; }
-    .pagination .page_info b {
-      color: #003;
-      background: #6aa6ed;
-      padding: .1em .25em; }
-  .pagination:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-  * html .pagination {
-    height: 1%; }
-  *:first-child+html .pagination {
-    overflow: hidden; }
-	
 .tinymce_box { background:#DDD;}
 	.tinymce_box .buttons { height:24px; line-height: 24px;}
 	.tinymce_box .buttons .insert { text-indent: 8px;}
