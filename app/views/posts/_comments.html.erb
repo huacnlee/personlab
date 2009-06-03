@@ -14,6 +14,9 @@
 			    		 在 <%= item.created_at_s %> 说:
 			    	</div>
 						<div class="content">
+							<div class="face">
+								<%= image_tag(face_url(item.email), :alt => item.author) %>
+							</div>
 							<%= simple_format(item.body) %>
 						</div>
 			    </div>

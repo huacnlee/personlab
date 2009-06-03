@@ -1,6 +1,9 @@
 class Tag < ActiveRecord::Base
   has_and_belongs_to_many :posts
 
+  def posts_count
+    posts.count
+  end
 
   # override save for name unique
   def save
@@ -14,5 +17,9 @@ class Tag < ActiveRecord::Base
     else
       super
     end
+  end
+  
+  def self.find_top(size = 10)
+    paginate :per_page => size, :page => 1
   end
 end

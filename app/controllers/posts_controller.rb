@@ -19,6 +19,10 @@ class PostsController < ApplicationController
     if !fragment_exist? "posts/sidebar/recent_comments"
       @recent_comments = Comment.find_recent
     end
+    
+    if !fragment_exist? "posts/sidebar/tags"
+      @tags = Tag.find_top
+    end
   end
   
   public

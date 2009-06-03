@@ -6,7 +6,8 @@
 #comments .itemse { background:#F5F5F5; }
 #comments .none_result { padding:20px 10px;}
 	#comments .item .info {color:#999; line-height: 24px; font-size: 12px;}
-	#comments .item .content { font-size: 14px; line-height: 160%;}
+	#comments .item .content { font-size: 14px; line-height: 160%; min-height:40px;}
+	#comments .item .face { float:right; padding:0 0 8px 8px; }
 #comment .form { margin:0 10px;}
 
 .post_item h1 { font-size:200%; padding:0; margin-bottom: 2px;}

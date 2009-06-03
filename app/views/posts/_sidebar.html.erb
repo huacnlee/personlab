@@ -10,6 +10,13 @@
 		<div class="title">分类标签</div>
 		<div class="content">
 			<ul>
+				<% if !@tags.blank? %>
+				  <% for item in @tags %>
+				    <li><%= link_to h(item.name), :controller => "posts", :action => "index", :tag => item.name %>(<%= item.posts_count %>)</li>
+				  <% end %>
+				<% else %>
+				  	<li>暂无</li>
+				<% end %>
 				
 			</ul>
 		</div>
@@ -60,18 +67,14 @@
 			<% if !@recent_comments.blank? %>
 				<ul>
 			  <% for item in @recent_comments %>
+					<% if item.post != nil %>
 			    <li>
 						<span class="author">
-							<% if item.url.blank? %>
-								<%= item.author %>
-							<% else %>
-								<a href="<%= item.url %>" target="_blank" title="点击查看评论者的网站"><%= item.author %></a>
-							<% end %>:
+							<%= link_to h(item.author), :controller => "posts", :action => "show", :slug => item.post.slug %>:
 						</span>
-						<% if item.post %>
-			    		<%= link_to h(item.summary), :controller => "posts", :action => "show", :slug => item.post.slug %>
-						<% end %>
+		    		<%= item.summary %>
 			    </li>
+					<% end %>
 			  <% end %>
 				</ul>
 			<% else %>
