@@ -1,4 +1,3 @@
-require "Fanfou"
 class HomeController < ApplicationController
   caches_page :show
   
