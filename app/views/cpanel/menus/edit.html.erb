@@ -2,7 +2,6 @@
 <%= stylesheet_link_tag "src/cpanel/menus", :cache => "cpanel/menus" %>
 <% end %>
 <%= render :partial => 'submenu' %>
-<h2><%= @menu.id ? "修改菜单" : "创建菜单" %></h2>
 <div class="form">
 	<% form_for(@menu,:url => (@menu.id ? cpanel_menu_url(@menu) : cpanel_menus_url)) do |f| %>
 	<%= f.error_messages %>

@@ -25,10 +25,135 @@
 		#nav_search input { display: block; border:0; font-size: 12px; margin:6px 3px 5px 50px; width:111px; padding:1px;}
 		#nav_search button { float:right; margin-top:-28px; width:42px; height:30px; margin-left:2px;  background:url(../../images/nav_search_button.jpg) left top no-repeat; border:0;}
 		
-#footer { background:#e9f3d1; clear: both; height:40px; padding-top:10px; font-size: 12px;}
+#footer { background:#e9f3d1; clear: both; padding:10px 0; font-size: 11px;}
 
 #main { padding: 20px 0; }
 	#mainbox { width:700px; float:left;}
 	#sidebar { width:285px;  float:right; }
 	
 
+
+
+	/* Code Style */
+pre.textmate-source {
+        overflow:auto;
+	font-family:Monaco,Verdana,Arial,monospace;
+	border:1px solid #DCE1E5;
+	padding:0 10px;
+        *padding:10px;
+	line-height: 1.3em;
+	word-wrap: break-word;
+}
+
+pre.textmate-source {
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+pre.textmate-source .linenum {
+	width: 75px;
+	padding: 0.1em 1em 0.2em 0;
+	color: #888;
+	background-color: #eee;
+}
+pre.textmate-source span {
+   padding-top: 0.2em;
+   padding-bottom: 0.1em;
+}
+pre.textmate-source ::selection {
+	background-color: #BAD6FD;
+}
+/* Comment */
+pre.textmate-source .comment {
+	color: #919191;
+}
+
+/* String */
+pre.textmate-source .string {
+	color: #00A33F;
+}
+
+/* Number */
+pre.textmate-source .constant_numeric {
+}
+
+/* Built-in constant */
+pre.textmate-source .constant_language {
+	color: #A535AE;
+}
+
+/* User-defined constant */
+pre.textmate-source .constant_character, pre.textmate-source .constant_other {
+}
+
+/* Variable */
+pre.textmate-source .variable_language, pre.textmate-source .variable_other {
+}
+
+/* Keyword */
+pre.textmate-source .keyword {
+	color: #FF5600;
+}
+
+/* Storage */
+pre.textmate-source .storage {
+	color: #FF5600;
+}
+
+/* Class name */
+pre.textmate-source .entity_name_class {
+	color: #21439C;
+}
+
+/* Inherited class */
+pre.textmate-source .entity_other_inherited-class {
+}
+
+/* Function name */
+
+pre.textmate-source .entity_name_function {
+	color: #21439C;
+}
+
+/* Function argument */
+pre.textmate-source .variable_parameter {
+}
+
+/* Tag name */
+pre.textmate-source .entity_name_tag {
+}
+
+/* Tag attribute */
+pre.textmate-source .entity_other_attribute-name {
+}
+
+/* Library function */
+pre.textmate-source .support_function {
+	color: #A535AE;
+}
+
+/* Library constant */
+pre.textmate-source .support_constant {
+	color: #A535AE;
+}
+
+/* Library class/type */
+pre.textmate-source .support_type, pre.textmate-source .support_class {
+	color: #A535AE;
+}
+
+/* Library variable */
+pre.textmate-source .support_other_variable {
+	color: #A535AE;
+}
+
+/* Invalid */
+pre.textmate-source .invalid {
+	color: #FFFFFF;
+	background-color: #990000;
+}
+
+/* String interpolation */
+pre.textmate-source .constant_other_placeholder_py {
+	color: #990000;
+}

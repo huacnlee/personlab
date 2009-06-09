@@ -1,0 +1,4 @@
+#comments { border:2px solid #DDD;}
+#comments .row { margin:10px; padding-bottom: 10px; border-bottom: 1px solid #DDD;}
+#comments .row .info { font-size:12px; color:#999;}
+#comments .row .body { font-size:14px; margin-top: 5px;}

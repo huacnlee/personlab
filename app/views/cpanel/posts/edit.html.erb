@@ -10,22 +10,20 @@
 </script>
 <% end %>
 <%= render :partial => 'submenu' %>
-<h2><%= @post.id ? "修改文章" : "创建文章"  %></h2>
 <div class="form">
-
 <% form_for @post, :url => (@post.id ? cpanel_post_url(@post.id) : cpanel_posts_url) do |f| %>
   <%= f.error_messages %>
 	<table border="0" cellspacing="0" cellpadding="0">
 		<tr class="row">
-			<td class="field"><%= f.label :title %></td>
+			<td class="field">标题</td>
 			<td><%= f.text_field :title, :class => "text long" %></td>
 		</tr>
 		<tr class="row">
-			<td class="field"><%= f.label :slug %></td>
+			<td class="field">Slug</td>
 			<td><%= f.text_field :slug, :class => "text" %></td>
 		</tr>
 		<tr class="row">
-			<td class="field" valign="top"><%= f.label :body %></td>
+			<td class="field" valign="top">内容</td>
 			<td>
 				<%= f.text_area :body, :class => "text body", :rows => "40" %>
 			</td>
@@ -39,14 +37,14 @@
 			<td><%= f.text_area :meta_description, :class => "text middle", :rows => "3" %></td>
 		</tr>
 		<tr class="row">
-			<td class="field"><%= f.label :status %></td>
+			<td class="field">状态</td>
 			<td>
 				<%= select("post","status",Post::STATUS,{:selected => @post.status}) %>
 			</td>
 		</tr>
 		<tr class="buttons row">
 			<td class="field"></td>
-			<td><%= f.submit( (@post.id ? "保存" : '发布'), :class => "button submit") %> or <%= link_to "Back", :action => "index" %></td>
+			<td><%= f.submit( (@post.id ? "保存" : '发布'), :class => "button submit") %> 或 <%= link_to "返回列表", :action => "index" %></td>
 		</tr>
 	</table>
 <% end %>

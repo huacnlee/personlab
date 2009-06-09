@@ -21,8 +21,8 @@
 		#top .userbar span.name { font-weight: bold; margin: 0px 2px; }
 		#top .userbar a {color:#DDD;}
 
-#footer { background:#F0F0F0; font-size: 11px; height:40px; padding-top:10px; font-size: 12px;}
-
+#footer { background:#F0F0F0; font-size: 11px; padding:10px 0; font-size: 11px; color:#999;}
+#footer a { color:#666;}
 #main { padding: 10px 0; background:#FFF;}
 
 #main h2 { font-size:16px; margin: 10px 0;}

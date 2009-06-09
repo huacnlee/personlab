@@ -1,23 +1,20 @@
-<h2>评论管理</h2>
+<% content_for :styles do %> 
+<%= stylesheet_link_tag "src/cpanel/comments", :cache => "cpanel/comments" %>
+<% end %>
 <%= success_messages %>
-<table class="grid" border="0" cellspacing="0" cellpadding="0">
-	<tr class="head">
-    <td class="author">评论人</td>
-    <td class="email">Email</td>
-    <td class="url">博客</td>
-    <td class="body">内容</td>
-		<td class="opt">操作</td>
-  </tr>
+<div id="comments">
 	<% @comments.each do |comment| %>
-	  <tr class="row">
-	    <td class="author"><%=h comment.author %></td>
-	    <td class="email"><%=h comment.email %></td>
-	    <td class="url"><%=h comment.url %></td>
-	    <td class="body"><%=h comment.body %></td>
-	    <td class="opt"><%= link_to 'Destroy', cpanel_comment_url(comment), :confirm => 'Are you sure?', :method => :delete %></td>
-	  </tr>
+	<div class="row">
+		<div class="info">
+			#<%= comment.id %> <span class="author"><a href="<%=h comment.url %>"><%=h comment.author %></a></span> <span class="email">&lt;<%=h comment.email %>&gt;</span> 在 <span class="date"><%= comment.created_at_s %></span> 评论说:
+			<span class="opts"><%= link_to '删除', cpanel_comment_url(comment), :confirm => '确定要删除吗?', :method => :delete %></span>
+		</div>
+		<div class="body">
+			<%= comment.body %>
+		</div>
+	</div>
 	<% end %>
-</table>
+</div>
 <%= will_paginate @comments %>
 
 

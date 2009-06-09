@@ -4,7 +4,6 @@
 <% content_for :scripts do %> 
 <% end %>
 <%= render :partial => 'submenu' %>
-<h2><%= @page.id ? "修改页面" : "创建页面" %></h2>
 <div id="pages" class="form">
 <% form_for @page,:url => (@page.id ? cpanel_page_url(@page) : cpanel_pages_url) do |f| %>
 <%= f.error_messages %>

@@ -4,10 +4,10 @@ class Setting < ActiveRecord::Base
     Rails.cache.fetch("data/setting") { 
       @setting = first
       if not @setting
-        @setting = new(:site_name => "李华顺", :sub_title => "这是一个用于介绍我的网站", 
-          :meta_keywords => "李华顺,Jason Lee,huacnlee", 
+        @setting = new(:site_name => "PersonLab Demo", :sub_title => "This is an person website build by Ruby on Rails.", 
+          :meta_keywords => "personlab,ruby on rails", 
           :email => "huacnlee@gmail.com",
-          :meta_description => "我是一个Web开发人员,.NET,Python,Ruby,PHP,Javascrip等都有在用,我是做互联网开发的,这是一个用于介绍我自已的网站.",
+          :meta_description => "This is an person website build by Ruby on Rails.",
           :fanfou_id => "huacn",
           :google_reader_id => "08982619185204047523",
           :home_show => '
