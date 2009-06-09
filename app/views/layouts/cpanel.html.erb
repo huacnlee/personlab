@@ -7,6 +7,7 @@
 	<%= stylesheet_link_tag "src/html","src/cpanel/layout",:cache => "cpanel/base" %>
 	<%= yield :styles %>
 </head>
+<body>
 <div id="top">
 	<div class="inner_panel">
 		<div id="site_name"><%= link_to "PersonLab CPanel", :controller => "cpanel/home", :action => "index" %></div>
@@ -72,4 +73,5 @@
 <%= javascript_include_tag "src/lib/tiny_mce/tiny_mce" %>
 <%= javascript_include_tag "src/lib/jquery","src/common", :cache => "cpanel/lib/common" %>
 <%= yield :scripts %>
+</body>
 </html>

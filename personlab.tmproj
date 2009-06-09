@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/controllers/cpanel/comments_controller.rb</string>
+	<string>app/models/fanfou.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -26,9 +26,23 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>36</integer>
+				<integer>20</integer>
 				<key>line</key>
-				<integer>25</integer>
+				<integer>17</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/controllers/home_controller.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>32</integer>
+				<key>line</key>
+				<integer>10</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -43,6 +57,20 @@
 				<integer>51</integer>
 				<key>line</key>
 				<integer>14</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/models/fanfou.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>7</integer>
+				<key>line</key>
+				<integer>10</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -137,6 +165,34 @@
 				<integer>28</integer>
 			</dict>
 		</dict>
+		<key>config/environment.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>26</integer>
+				<key>line</key>
+				<integer>44</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>24</integer>
+		</dict>
+		<key>config/locales/zh_cn.yml</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>21</integer>
+				<key>line</key>
+				<integer>119</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>101</integer>
+		</dict>
 		<key>public/stylesheets/src/cpanel/layout.css</key>
 		<dict>
 			<key>caret</key>
@@ -216,6 +272,10 @@
 		<string>app/views/cpanel/pages/index.html.erb</string>
 		<string>app/views/cpanel/comments/index.html.erb</string>
 		<string>app/controllers/cpanel/comments_controller.rb</string>
+		<string>config/locales/zh_cn.yml</string>
+		<string>app/controllers/home_controller.rb</string>
+		<string>app/models/fanfou.rb</string>
+		<string>config/environment.rb</string>
 		<string>app/models/comment.rb</string>
 		<string>app/models/post.rb</string>
 		<string>public/stylesheets/src/layout.css</string>
