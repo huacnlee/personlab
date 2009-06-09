@@ -1,7 +1,7 @@
 class AddBlogFeedHtmlToSettings < ActiveRecord::Migration
   def self.up
     change_table :settings do |t|
-      t.string :blog_feed_html
+      t.text :blog_feed_html
     end
   end
 

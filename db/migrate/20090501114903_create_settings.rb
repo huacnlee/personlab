@@ -6,7 +6,7 @@ class CreateSettings < ActiveRecord::Migration
       t.string :email
       t.string :meta_keywords
       t.string :meta_description
-      t.string :home_show
+      t.text :home_show
 
       t.timestamps
     end

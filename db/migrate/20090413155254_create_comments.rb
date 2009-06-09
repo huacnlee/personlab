@@ -5,7 +5,7 @@ class CreateComments < ActiveRecord::Migration
       t.string :author,:null => false
       t.string :email,:null => false
       t.string :url
-      t.string :body,:null => false
+      t.text :body,:null => false
       t.integer :status,:null => false
 
       t.timestamps
