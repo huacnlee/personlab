@@ -6,12 +6,22 @@
 	<% @comments.each do |comment| %>
 	<div class="row">
 		<div class="info">
-			#<%= comment.id %> <span class="author"><a href="<%=h comment.url %>"><%=h comment.author %></a></span> <span class="email">&lt;<%=h comment.email %>&gt;</span> 在 <span class="date"><%= comment.created_at_s %></span> 评论说:
-			<span class="opts"><%= link_to '删除', cpanel_comment_url(comment), :confirm => '确定要删除吗?', :method => :delete %></span>
+          <span class="author"><a href="<%=h comment.url %>"><%=h comment.author %></a></span> | <span class="email"><%=h comment.email %></span>
 		</div>
 		<div class="body">
-			<%= comment.body %>
+          <div class="face">
+              <%= image_tag(face_url(comment.email), :alt => comment.author) %>
+          </div>
+          <%= comment.body %>
 		</div>
+        <div class="opts">
+           评论于 <span class="date"><%= comment.created_at_s %></span> <span class="opts"><%= link_to '删除', cpanel_comment_url(comment), :confirm => '确定要删除吗?', :method => :delete %></span>
+           <% if comment.post %>
+           <span class="post_title">
+             <%= link_to (h comment.post.title), :controller => "posts", :action => "show", :slug => comment.post.slug %>
+           </span>
+           <% end %>
+        </div>
 	</div>
 	<% end %>
 </div>

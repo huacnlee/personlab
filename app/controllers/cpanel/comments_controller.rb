@@ -12,7 +12,7 @@ class Cpanel::CommentsController < Cpanel::ApplicationController
   # GET /comments
   # GET /comments.xml
   def index
-    @comments = Comment.find_list(params[:page])
+    @comments = Comment.find_list(params[:page],8)
 
     respond_to do |format|
       format.html # index.html.erb

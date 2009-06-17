@@ -9,7 +9,9 @@ ActionController::Routing::Routes.draw do |map|
     cpanel.login "logout",:controller => "home", :action => "logout" 
     
     cpanel.login "posts/importblogbus", :controller => "posts", :action => "importblogbus"
-    
+    # modify password
+    cpanel.login "settings/password", :controller => "settings", :action => "password"
+
     cpanel.resources :menus,:pages,:posts,:comments,:settings
     
     

@@ -8,6 +8,9 @@ class Cpanel::HomeController < Cpanel::ApplicationController
     @total[:post_count] = Post.count
     @total[:page_count] = Page.count
     @total[:comment_count] = Comment.count
+
+    @recent_posts = Post.find_recent(5)
+    @recent_comments = Comment.find_recent(5)
   end
   
   # cpanel/logout

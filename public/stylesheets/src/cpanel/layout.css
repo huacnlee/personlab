@@ -21,9 +21,9 @@
 		#top .userbar span.name { font-weight: bold; margin: 0px 2px; }
 		#top .userbar a {color:#DDD;}
 
-#footer { background:#F0F0F0; font-size: 11px; padding:10px 0; font-size: 11px; color:#999;}
+#footer { clear:both; background:#F0F0F0; font-size: 11px; padding:10px 0; font-size: 11px; color:#999;}
 #footer a { color:#666;}
-#main { padding: 10px 0; background:#FFF;}
+#main { padding: 10px 0; background:#FFF; min-height:450px;}
 
 #main h2 { font-size:16px; margin: 10px 0;}
 
@@ -33,13 +33,18 @@
 		#submenu li a:visited { color:#063; font-size: 14px; }
 		#submenu li.current { font-weight: bold;}
 
-table.grid { border:2px solid #CCC;}
+table.grid { border:1px solid #DDD;}
 	table.grid tr td { font-size: 12px; padding:4px; border-top: 1px solid #DDD; border-left: 1px solid #DDD;}
 	table.grid tr td.first { border-left: 0px;}
 	table.grid tr.head td { font-weight: bold; background:#EEE; border-top: 0px;}
 	table.grid tr td.choice { width:16px;}
 	table.grid tr td.slug { width:200px;}
-	table.grid tr td.date { width:50px;}
+	table.grid tr td.date { width:60px;}
 	table.grid tr td.status { width:38px;}
 
-.pagination { background: white; text-align: right; font-size:12px; margin: 5px;  /* self-clearing method: */ }
+.pagination { text-align: right; font-size:12px; font-weight:bold; margin: 5px;  /* self-clearing method: */ }
+.pagination span,.pagination a { padding:2px 4px;}
+
+.box { margin-bottom:20px;}
+.box h3 { color:#999;}
+.box ul li { line-height:200%;}

@@ -1,7 +1,7 @@
 <% content_for :styles do %> 
 <%= stylesheet_link_tag "src/cpanel/settings", :cache => "cpanel/settings" %>
 <% end %>
-<h2>参数设置</h2>
+<%= render :partial => 'submenu' %>
 <div class="form">
 	<% form_for(@setting,:url => cpanel_setting_url(@setting.id)) do |f| %>
 	<%= success_messages %>

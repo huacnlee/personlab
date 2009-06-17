@@ -3,22 +3,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<title>PersonLab CPanel</title>
+	<title>PersonLab 管理后台</title>
 	<%= stylesheet_link_tag "src/html","src/cpanel/layout",:cache => "cpanel/base" %>
 	<%= yield :styles %>
 </head>
 <body>
 <div id="top">
 	<div class="inner_panel">
-		<div id="site_name"><%= link_to "PersonLab CPanel", :controller => "cpanel/home", :action => "index" %></div>
+		<div id="site_name"><%= link_to "PersonLab 管理后台", :controller => "cpanel/home", :action => "index" %></div>
 		<div class="userbar">
 			<% if @current_user %>
-			Hello, <span class="name"><%= @current_user.name %></span> 
-			<% end %>
-			<%= link_to "设置", :controller => "cpanel/settings", :action => "index" %> | 
+			你好, <span class="name"><%= @current_user.name %></span>
+			<% end %>			
 			<%= link_to "查看网站", {:controller => "/home", :action => "index"},:target => '_blank' %> |
 			<% if @current_user %>
-			<%= link_to "Logout", :controller => "cpanel/home", :action => "logout" %>
+			<%= link_to "退出", :controller => "cpanel/home", :action => "logout" %>
 			<% end %>
 		</div>
 	</div>	
@@ -51,6 +50,11 @@
 		<% else %>
 		<li><%= link_to "菜单", :controller => "cpanel/menus", :action => "index" %></li>
 		<% end %>
+        <% if params[:controller] == "cpanel/settings" %>
+          <li class="current"><span>设置</span></li>
+		<% else %>
+          <%= link_to "设置", :controller => "cpanel/settings", :action => "index" %>
+        <% end %>
 	</ul>
 	</div>
 </div>
