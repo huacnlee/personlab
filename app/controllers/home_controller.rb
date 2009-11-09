@@ -6,10 +6,11 @@ class HomeController < ApplicationController
     set_nav_actived("home")
 
     # get fanfou messages
-	@fanfou_msgs = []
+		@fanfou_msgs = []
     if !@setting.fanfou_id.blank?
       #@fanfou_msgs = Fanfou.get_home_messages(@setting.fanfou_id,5)
-      @tweets = Tweet.get_home_messages(@setting.fanfou_id,5)
+			@tweets = []
+      #@tweets = Tweet.get_home_messages(@setting.fanfou_id,5)
     end
 
     

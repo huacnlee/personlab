@@ -5,6 +5,7 @@ sudo gem source -a http://gems.github.com
 sudo gem install -v=2.3.4 rails macaddr RedCloth simple-rss twitter4r --no-rdoc
 rake db:create RAILS_ENV=production
 rake db:migrate RAILS_ENV=production
+rake db:create_admin
 
 # Install Nginx + Passenger
 sudo gem install passenger

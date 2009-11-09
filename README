@@ -19,3 +19,9 @@ h2. Install & Configure
 
 h3. Install on Ubuntu
 * $ sudo sh install.sh
+
+
+h2. Admin password
+see the db.users, if not admin use existed, use this:
+* $ rake db:create_admin
+then rake task will create "admin" user to the DB, and login: admin password: 123123
