@@ -1,0 +1,69 @@
+<% content_for :styles do %> 
+<%= stylesheet_link_tag "src/cpanel/posts", :cache => "cpanel/posts" %>
+<% end %>
+<% content_for :scripts do %> 
+<%= javascript_include_tag "src/cpanel/posts", :cache => "cpanel/posts" %>
+<script type="text/javascript">
+	CpanelPosts.init({
+		bodyId : "post_body"
+	});
+</script>
+<% end %>
+<%= render :partial => 'submenu' %>
+<div class="form">
+<% form_for @post, :url => (@post.id ? cpanel_post_url(@post.id) : cpanel_posts_url) do |f| %>
+  <%= f.error_messages %>
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr class="row">
+			<td class="field">标题</td>
+			<td><%= f.text_field :title, :class => "text long" %></td>
+		</tr>
+		<tr class="row">
+			<td class="field">Slug</td>
+			<td><%= f.text_field :slug, :class => "text" %></td>
+		</tr>
+		<tr class="row">
+			<td class="field" valign="top">内容</td>
+			<td>
+				<%= f.text_area :body, :class => "text body", :rows => "40" %>
+			</td>
+		</tr>
+		<tr class="row">
+			<td class="field"></td>
+			<td><h4>Meta 信息</h4></td>
+		</tr>
+		<tr class="row">
+			<td class="field"><%= f.label :meta_keywords, "Keywords" %></td>
+			<td><%= f.text_field :meta_keywords, :class => "text long" %></td>
+		</tr>
+		<tr class="row">
+			<td class="field" valign="top"><%= f.label :meta_description, "Description" %></td>
+			<td><%= f.text_area :meta_description, :class => "text middle", :rows => "3" %></td>
+		</tr>
+		<tr class="row">
+			<td class="field"></td>
+			<td><h4>其他</h4></td>
+		</tr>
+		<tr class="row">
+			<td class="field">分类</td>
+			<td>
+				<%= select("post","category_id",Category.all.collect {|c| [ c.name, c.id ] },{:selected => @post.category}) %>
+			</td>
+		</tr>
+		<tr class="row">
+			<td class="field">状态</td>
+			<td>
+				<%= select("post","status",Post::STATUS,{:selected => @post.status}) %>
+			</td>
+		</tr>
+		<tr class="row">
+			<td class="field">Tags</td>
+			<td><%= text_field_tag("post[tag_list]",@post.tags.join(","),:class => "text long") %></td>
+		</tr>
+		<tr class="buttons row">
+			<td class="field"></td>
+			<td><%= f.submit( (@post.id ? "保存" : '发布'), :class => "button submit") %> 或 <%= link_to "返回列表", :action => "index" %></td>
+		</tr>
+	</table>
+<% end %>
+</div>

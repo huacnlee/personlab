@@ -1,0 +1,17 @@
+﻿h2. 介绍
+
+基于 Ruby on Rails 的个人网站系统(个人实验室)，这不仅仅是一个简单的博客。它包括博客，自定义页面，Google Reader 分享引用，迷你博客消息引用等功能，代码插入等功能。
+
+h2. 演示地址
+
+ * "前台":http://personlab.heroku.com/ 
+ * "后台":http://personlab.heroku.com/cpanel   (user:admin password:123123)
+
+h2. 项目特色
+
+* 饭否消息直接导入，并在首页显示功能；
+* 支持 Google Reader 分享展示功能，通过简单的设置你的 Google Reader ID就可以在 “分享” 页面上显示出你分享的文章列表；
+* 作者简介区自定义HTML代码功能，你可以像例子中哪样里面上加入你的照片、你在其它网站的个人页面连接等等；
+* 访客使用 Google Account,Twitter Account,OpenID 直接登录，并发表评论功能；
+* 使用简介的 Textile 做为自定义页面的内容格式；
+* BlogBus 备份文件导入功能，包括评论Tag等信息；

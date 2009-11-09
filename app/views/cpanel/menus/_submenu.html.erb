@@ -1,0 +1,15 @@
+<% content_for :submenu do %> 
+	<% if params[:action] == "index" %>
+	<li class="current"><span>菜单列表</span></li>
+	<% else %>
+	<li><%= link_to "菜单列表", :controller => "menus", :action => "index" %></li>
+	<% end %>
+	<% if params[:action] == "new" %>
+	<li class="current"><span>创建</span></li>
+	<% else %>
+	<li><%= link_to "创建", :controller => "menus", :action => "new" %></li>
+	<% end %>
+	<% if params[:action] == "edit" %>
+	<li class="current"><span>修改</span></li>
+	<% end %>
+<% end %>

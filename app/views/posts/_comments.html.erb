@@ -1,0 +1,31 @@
+<div id="comments">
+	<h2>网友评论</h2>
+	<div class="list">
+		<% cache("posts/show/#{params[:slug]}/comments") do %>
+			<% if !@comments.blank? %>
+			  <% for item in @comments %>
+			    <div class="item<%= cycle('',' itemse') %>">
+			    	<div class="info">
+							<% if !item.url.blank? %>
+							<a href="<%= item.url %>" traget="_blank"><%= h(item.author) %></a>
+							<% else %>
+							<%= h(item.author) %>
+							<% end -%>
+			    		 在 <%= item.created_at_s %> 说:
+			    	</div>
+						<div class="content">
+							<div class="face">
+								<%= image_tag(face_url(item.email), :alt => item.author) %>
+							</div>
+							<%= simple_format(h(item.body)) %>
+						</div>
+			    </div>
+			  <% end %>
+			<% else %>
+			  <div class="item none_result">
+			  	还未有人对此文发表过评论.
+			  </div>
+			<% end %>
+		<% end %>
+	</div>
+</div>

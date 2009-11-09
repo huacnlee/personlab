@@ -1,0 +1,68 @@
+/**
+ * name: html.css
+ * authors: Jason Lee<huacnlee@gmail.com>
+ * create at: 2009-04-10
+ * summary: 
+ *   base stylesheet       
+ */
+* { margin: 0;padding: 0; }
+body { 
+	font-family: Helvetica,Arial,'Liberation Sans',FreeSans,sans-serif;
+	font-size:   12px;
+	background-color: #FFF;
+	color: #333; 	
+	text-align: center;
+}
+ul,ol { list-style-position: inside; margin:10px 24px;}
+
+a:link,a:visited { color:#33C;}
+a:hover { color:#333;}
+
+input.text,textarea.text { padding:2px; font-size: 12px;}
+input.button { padding:6px 10px;}
+input.submit { padding:5px 30px; font-weight: bold;}
+input.long,textarea.long { width:700px;}
+input.short { width:80px;}
+textarea.middle { width:450px; height: 80px;}
+
+table.grid {width:100%;}
+
+.errorExplanation { margin:10px 0; background:#FFF8E7; padding:10px; border: 2px solid #F96;}
+.errorExplanation h2 { font-size: 14px; line-height: 180%;}
+.errorExplanation p { color:#999;}
+.errorExplanation ul { font-size: 12px; margin-top: 8px; list-style: square inside; margin-left: 20px;}
+.filter { text-align: right; line-height: 22px; }
+	.filter label	{color: #999;}
+	
+.successMessage {margin:10px 0; background:#CF9; padding:10px; border: 2px solid #6C0; }
+
+
+
+/* form style */
+.form {  }
+	.form table { border:0; }
+	.form table tr td { padding:5px; font-size: 12px;}
+	.form table tr td.field { color:#666; text-align: right;}
+	.form table tr td .tip { color:#999;}
+	.form table tr td .tip_p { margin:8px 0; color:#999;}
+	
+.tinymce_box { background:#DDD;}
+	.tinymce_box .buttons { height:24px; line-height: 24px;}
+	.tinymce_box .buttons .insert { text-indent: 8px;}
+	.tinymce_box .buttons .view { float:right; margin-top: -24px; }
+	.tinymce_box .buttons .view button { padding:0 8px; height: 20px; line-height: 20px; margin-top:3px;  border: 1px solid #AAA; background: #DDD; margin-right:8px; border-bottom: 0px;}
+	.tinymce_box .buttons .view button.selected { background:#EEE;}
+	.tinymce_box table.mceLayout tr td { padding:0;}
+
+
+/**
+ * name: login.css
+ * authors: Jason Lee<huacnlee@gmail.com>
+ * create at: 2009-04-14
+ * summary: 
+ *   for CPanel Login page       
+ */
+body { background:#DDD;}
+#main {background: #FFF; text-align: left; width:400px; border:1px solid #CCC; margin:40px auto; }
+#login { margin:30px; }
+h1 { font-size: 16px; padding:8px; text-align: left; color:#039;}

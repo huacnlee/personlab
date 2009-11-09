@@ -1,0 +1,30 @@
+<% content_for :styles do %> 
+<%= stylesheet_link_tag "src/cpanel/posts", :cache => "cpanel/posts" %>
+<% end %>
+<%= render :partial => 'submenu' %>
+<div id="import">
+	<div class="tip">
+		请将 blogbus 的备份xml文件放入 db/import 目录下面，并在下面输入框中填入文件名。
+	</div>
+	<div class="form">
+		<%= success_messages %>
+		<form action="importblogbus" method="post">
+			<%= auth_token %>
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr class="row">
+					<td class="field">BlogBus备份文件名：</td>
+					<td><input type="text" name="file_name" value="" id="file_name" /></td>
+				</tr>
+				<tr class="row">
+					<td class="field"></td>
+					<td><label for="clear_old_date"><input type="checkbox" name="clear_old_date" id="clear_old_date" /> 清除旧的数据</label>
+					</td>
+				</tr>
+				<tr class="row buttons">
+					<td class="field"></td>
+					<td><button type="submit">导入</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>

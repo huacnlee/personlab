@@ -1,0 +1,16 @@
+<% content_for :submenu do %> 
+	<li><%= link_to "文章管理", :controller => "posts", :action => "index" %></li>
+	<% if params[:action] == 'index' %>
+	<li class="current"><span>分类管理</span></li>
+	<% else %>
+	<li><%= link_to "分类管理", :controller => "categories", :action => "index" %></li>
+	<% end %>
+	<% if params[:action] == 'new' %>
+	<li class="current"><span>创建</span></li>
+	<% else %>
+	<li><%= link_to "创建", :controller => "categories", :action => "new" %></li>
+	<% end %>
+	<% if params[:action] == 'edit' %>
+	<li class="current"><span>编辑</span></li>
+	<% end %>
+<% end %>

@@ -1,0 +1,6 @@
+production:
+  - 127.0.0.1:11211
+development:
+  - localhost:11211
+benchmarking:
+  - ocalhost:11211

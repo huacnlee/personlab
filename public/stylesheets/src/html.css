@@ -1,0 +1,100 @@
+/**
+ * name: html.css
+ * authors: Jason Lee<huacnlee@gmail.com>
+ * create at: 2009-04-10
+ * summary: 
+ *   base stylesheet       
+ */
+* { margin: 0;padding: 0; }
+body { 
+	font-family: Helvetica,Arial,'Liberation Sans',FreeSans,sans-serif;
+	font-size:   12px;
+	background-color: #FFF;
+	color: #333; 	
+	text-align: center;
+}
+ul,ol { list-style-position: inside; margin:10px 24px;}
+
+a:link,a:visited { color:#33C;}
+a:hover { color:#333;}
+
+input.text,textarea.text { padding:2px; font-size: 12px;}
+input.button { padding:6px 10px;}
+input.submit { padding:5px 30px; font-weight: bold;}
+input.long,textarea.long { width:700px;}
+input.short { width:80px;}
+textarea.middle { width:450px; height: 80px;}
+
+table.grid {width:100%;}
+
+.errorExplanation { margin:10px 0; background:#FFF8E7; padding:10px; border: 2px solid #F96;}
+.errorExplanation h2 { font-size: 14px; line-height: 180%;}
+.errorExplanation p { color:#999;}
+.errorExplanation ul { font-size: 12px; margin-top: 8px; list-style: square inside; margin-left: 20px;}
+.filter { text-align: right; line-height: 22px; }
+	.filter label	{color: #999;}
+	
+.successMessage {margin:10px 0; background:#CF9; padding:10px; border: 2px solid #6C0; }
+
+
+
+/* form style */
+.form {  }
+	.form table { border:0; }
+	.form table tr td { padding:5px; font-size: 12px;}
+	.form table tr td.field { color:#666; text-align: right;}
+	.form table tr td .tip { color:#999;}
+	.form table tr td .tip_p { margin:8px 0; color:#999;}
+	
+.tinymce_box { background:#DDD;}
+	.tinymce_box .buttons { height:24px; line-height: 24px;}
+	.tinymce_box .buttons .insert { text-indent: 8px;}
+	.tinymce_box .buttons .view { float:right; margin-top: -24px; }
+	.tinymce_box .buttons .view button { padding:0 8px; height: 20px; line-height: 20px; margin-top:3px;  border: 1px solid #AAA; background: #DDD; margin-right:8px; border-bottom: 0px;}
+	.tinymce_box .buttons .view button.selected { background:#EEE;}
+	.tinymce_box table.mceLayout tr td { padding:0;}
+
+.highlight .hll { background: #0C1021 }
+.highlight { border:1px solid #EEE; overflow:hidden;	line-height:120%; }
+.highlight pre {
+  font-family:"Bitstream Vera Sans Mono","Monaco","Courier New",monospace,宋体;font-size:12px; font-weight:normal;
+  }
+.highlight .tt {  text-align: right;  font-size:11px; margin-top:6px; margin-right:6px;}
+.highlight .tt a { color:#3EAC5B; }
+.highlight .c { color: #919191; } /* Comment */
+.highlight .err {} /* Error */
+.highlight .k { color: #FF5600 } /* Keyword */
+.highlight .cm { color: #919191; } /* Comment.Multiline */
+.highlight .cp { color: #FF5600 } /* Comment.Preproc */
+.highlight .c1 { color: #919191 } /* Comment.Single */
+.highlight .cs { color: #919191 } /* Comment.Special */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gh { font-weight: bold } /* Generic.Heading */
+.highlight .gp { font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { font-weight: bold } /* Generic.Subheading */
+.highlight .kc { color: #FF5600 } /* Keyword.Constant */
+.highlight .kd { color: #FF5600 } /* Keyword.Declaration */
+.highlight .kn { color: #FF5600 } /* Keyword.Namespace */
+.highlight .kp { color: #FF5600 } /* Keyword.Pseudo */
+.highlight .kr { color: #FF5600 } /* Keyword.Reserved */
+.highlight .kt { color: #FF6400 } /* Keyword.Type */
+.highlight .s { color: #00A33F } /* Literal.String */
+.highlight .nc { color: #21439C } /* Name.Class */
+.highlight .no { color: #505AC9 } /* Name.Class */
+.highlight .nv { color: #505AC9 } /* shell var $DATE_NAME */
+.highlight .nb { color: #FF5600 } /* shell keyword */
+.highlight .o { color: #FF5600 } /* Operator */
+.highlight .ow { color: #FF5600 } /* Operator.Word */
+.highlight .sb { color: #00A33F } /* Literal.String.Backtick */
+.highlight .sc { color: #00A33F } /* Literal.String.Char */
+.highlight .sd { color: #00A33F } /* Literal.String.Doc */
+.highlight .s2 { color: #00A33F } /* Literal.String.Double */
+.highlight .se { color: #00A33F } /* Literal.String.Escape */
+.highlight .sh { color: #00A33F } /* Literal.String.Heredoc */
+.highlight .si { color: #00A33F } /* Literal.String.Interpol */
+.highlight .sx { color: #00A33F } /* Literal.String.Other */
+.highlight .sr { color: #00A33F } /* Literal.String.Regex */
+.highlight .s1 { color: #00A33F } /* Literal.String.Single */
+.highlight .ss { color: #00A33F } /* Literal.String.Symbol */
+

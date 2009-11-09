@@ -1,0 +1,26 @@
+<div id="tweet">
+		<div class="top">
+			<a href="http://twitese.appspot.com/info?id=<%= @setting.fanfou_id %>" target="_blank"><%= image_tag("fellow_button.jpg", :alt => "关注我的Twitter") %>
+			</a>
+		</div>
+		<div class="box">
+			<ul>
+			<% if !@tweets.blank? %>
+			  <% for item in @tweets do%>
+			    <li>
+						<p class="text">
+							<%= auto_link(item.text,:target => "_blank") %>
+						</p>
+						<p class="info">
+							<span class="date"><a href="https://twitter.com/<%= @setting.fanfou_id %>/status/<%= item.id %>" target="_blank"><%= time_ago_in_words(item.created_at) %>前</a></span>
+							通过<%= item.source %>
+						</p>
+					</li>
+			  <% end %>
+			<% else %>
+			  
+			<% end %>
+			</ul>			
+		</div>
+		<div class="bottom"></div>
+	</div>

@@ -1,0 +1,26 @@
+<div id="tweet">
+		<div class="top">
+			<a href="http://fanfou.com/friend.add/<%= @setting.fanfou_id %>" target="_blank"><%= image_tag("fellow_button.jpg", :alt => "关注我的饭否") %>
+			</a>
+		</div>
+		<div class="box">
+			<ul>
+			<% if !@fanfou_msgs.blank? %>
+			  <% for item in @fanfou_msgs do%>
+			    <li>
+						<p class="text">
+							<%= auto_link(item["text"],:target => "_blank") %>
+						</p>
+						<p class="info">
+							<span class="date"><a href="http://fanfou.com/statuses/<%= item['id'] %>" target="_blank"><%= time_ago_in_words(item["created_at"].to_datetime) %>前</a></span>
+							通过<%= item['source'] %>
+						</p>
+					</li>
+			  <% end %>
+			<% else %>
+			  
+			<% end %>
+			</ul>			
+		</div>
+		<div class="bottom"></div>
+	</div>

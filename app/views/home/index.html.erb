@@ -1,0 +1,11 @@
+<% content_for :styles do %> 
+<%= stylesheet_link_tag "src/home/index",:cache => "index" %>
+<%= auto_discovery_link_tag(:rss,'http://feed.feedsky.com/huacn',:title => 'RSS订阅') %>
+<% end %>
+<div id="mainbox">
+	<%= render :partial => 'recent_post' %>
+</div>
+<div id="sidebar">
+	<%= render :partial => 'webicons' %>
+	<%= render :partial => 'tweet' %>
+</div>

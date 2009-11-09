@@ -1,0 +1,66 @@
+<% content_for :styles do %> 
+<%= stylesheet_link_tag "src/posts/base","src/posts/show", :cache => "blog_show" %>
+<%= auto_discovery_link_tag(:rss,'http://feed.feedsky.com/huacn',:title => 'RSS订阅') %>
+<% end -%>
+<div id="mainbox">
+	<div id="post" class="post_item">
+		<h1>
+			<%= h(@post.title) %>
+ 		</h1>
+		<div class="post_info">
+			<span class="category">[<%= link_to (@post.category.name), :controller => "posts", :action => "index", :category => @post.category.slug %>]</span>
+			发表时间：<span class="date"><%= @post.created_at_s %></span> 
+			<span class="view_count"><%= @post.view_count + @view_count %>
+	次阅读</span>
+			<span class="comment_count"><a href="#comments"><%= @post.comment_count %>条评论</a></span>			
+		</div>
+		<div class="post_body">
+			<%= @post.body %>
+		</div>
+		<% if !@post.tags.blank? %>
+		<div class="tags">
+			<label>Tags:</label>
+			<% for tag in @post.tags %>
+			  <%= link_to (tag.name), :controller => "posts", :action => "index", :tag => tag.name %>
+			<% end %>
+		</div>
+		<% end %>
+	</div>
+	<%= render :partial => 'comments' %>
+	<div id="comment">
+		<h2>发表评论</h2>
+		<div class="form">
+			<% form_for @comment, :url => (url_for(:controller => "posts", :action => "show", :slug => params[:slug])) do |f| -%>
+			<%= f.error_messages %>
+			<%= success_messages %>
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr class="row">
+					<td class="field">名字:</td>
+					<td><%= f.text_field :author, :class => "text short" %></td>
+				</tr>
+				<tr class="row">
+					<td class="field">博客:</td>
+					<td><%= f.text_field :url, :class => "text" %></td>
+				</tr>
+				<tr class="row">
+					<td class="field">Email:</td>
+					<td><%= f.text_field :email, :class => "text" %></td>
+				</tr>
+				<tr class="row">
+					<td class="field" valign="top">评论内容:</td>
+					<td>
+						<%= f.text_area :body, :class => "text middle" %>
+					</td>
+				</tr>
+				<tr class="buttons row">
+					<td class="field"></td>
+					<td>
+						<%= f.submit "发表评论", :disable_with => '正在提交...', :class => "button submit" %>
+					</td>
+				</tr>
+			</table>
+			<% end -%>
+		</div>
+	</div>
+</div>
+<%= render :partial => 'sidebar' %>

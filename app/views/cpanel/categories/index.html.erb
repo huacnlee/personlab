@@ -1,0 +1,33 @@
+<% content_for :styles do %> 
+<%= stylesheet_link_tag "src/cpanel/categories" %>
+<% end %>
+<%= render :partial => 'submenu' %>
+<%= success_messages %>
+<div id="categories" class="form">
+<% if !@categories.blank? %>
+	<table class="grid" border="0" cellspacing="0" cellpadding="0">
+		<tr class="head">
+			<td class="name first">名称</td>
+			<td class="slug">Slug</td>
+			<td class="posts_count">文章数</td>
+			<td class="opt"></td>
+		</tr>
+		<% for item in @categories %>
+		<tr class="row">
+			<td class="name first"><%= item.name %></td>
+			<td class="slug"><%= item.slug %></td>
+			<td class="posts_count"><%= item.posts_count %></td>
+			<td class="opt">
+				<%= link_to "修改", edit_cpanel_category_url(item) %> 
+				<%= link_to '删除', cpanel_category_url(item), :confirm => '确定要删除吗?', :method => :delete %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+<% else %>
+	<div class="none_result">
+		There have no categories,please create.
+	</div>
+<% end %>
+</div>
+

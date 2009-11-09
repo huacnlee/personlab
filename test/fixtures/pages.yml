@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: "关于我"
+  slug: "about"
+  body: "h4. 技术能力
+  * 三年互联网开发经验；
+  * 在互联网网站架构策划等方面有较多经验，做过搜索引擎开发，了解SEO，熟悉互联网开发的技术，缓存部署、服务器部署、架构设计等。
+  * 主要使用 ASP.NET，并有穿插使用 PHP、Python、Ruby，目前对 Python 和 Ruby 比较感兴趣，正在研究 Ruby on Rails；
+  * 熟悉 MS SQLServer，用过 MySQL、PostgreSQL、SQLite 等一些其他的数据库；
+  * 熟悉 Windows 2003 Server 配置，分布式应用，IIS配置，熟练掌握他们的配置、部署及管理方法；
+  * 对 LAMP 服务配置有一定的了解；
+  * 经常在关注行业内的最新技术;
+  * 热衷与开源事业，做过几个开源项目，并时刻关注开源社区的技术；
+  * 对互联网有很大的尽情，并经常关注业内动态，在大多网站都有过足迹，经常去 Flickr、Twitter、饭否、FriendFeed、Google，通过使用这些网站研究他们的策划、设计、用户体验、架构、策略方向、盈利模式、用户群等。
+
+  h4. 其它能力
+  * 对项目管理有一些经验；
+  * 具有较多的策划能力，虽然职位是开发人员，但之前的项目中都在策划部分占有较高的位置。
+  * 对旅游行业的互联网比较了解，参与过两次大型的旅游网站项目开发；
+  * 有英文阅读能力，能写一些；
+  "
+  status: 1
+
+two:
+  title: "项目"
+  slug: "projects"
+  body: ""
+  status: 1

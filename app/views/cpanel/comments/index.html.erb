@@ -1,0 +1,37 @@
+<% content_for :styles do %> 
+<%= stylesheet_link_tag "src/cpanel/comments", :cache => "cpanel/comments" %>
+<% end %>
+<% content_for :submenu do %> 
+<%= link_to '清除所有垃圾评论',{:controller => "/cpanel/comments",:action => "destroy_spams" }, :confirm => '确定要清除所有垃圾评论吗?', :method => :post %>
+<% end %>
+<%= success_messages %>
+<div id="comments">  
+	<% @comments.each do |comment| %>
+	<div class="row">
+		<div class="info">
+        #<%= comment.id %> <span class="author"><a href="<%=h comment.url %>"><%=h comment.author %></a></span> 
+        | <span class="email"><%=h comment.email %></span> | <span class="user_ip"><%= comment.user_ip %></span>
+        | <span class="user_agent" title="<%=h comment.user_agent %>"><%=h truncate(comment.user_agent,25) %></span>
+        | <span class="spam"><% if comment.status == 2%>[垃圾]<% end %></span>
+		</div>
+		<div class="body">
+          <div class="face">
+              <%= image_tag(face_url(comment.email), :alt => comment.author) %>
+          </div>
+          <%= h(comment.body) %>
+		</div>
+        <div class="opts">
+           评论于 <span class="date"><%= comment.created_at_s %></span> <span class="opts"><%= link_to '删除', cpanel_comment_url(comment), :confirm => '确定要删除吗?', :method => :delete %></span>
+           <% if comment.post %>
+           <span class="post_title">
+             <%= link_to (h comment.post.title), :controller => "/posts", :action => "show", :slug => comment.post.slug %>
+           </span>
+           <% end %>
+        </div>
+	</div>
+	<% end %>
+</div>
+<%= will_paginate @comments %>
+
+
+

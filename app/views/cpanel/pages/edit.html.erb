@@ -1,0 +1,41 @@
+<% content_for :styles do %> 
+<%= stylesheet_link_tag "src/cpanel/pages" %>
+<% end %>
+<% content_for :scripts do %> 
+<% end %>
+<%= render :partial => 'submenu' %>
+<div id="pages" class="form">
+<% form_for @page,:url => (@page.id ? cpanel_page_url(@page) : cpanel_pages_url) do |f| %>
+<%= f.error_messages %>
+<table border="0" cellspacing="0" cellpadding="0">
+	<tr class="row">
+		<td class="field">标题</td>
+		<td><%= f.text_field :title, :class => 'text' %></td>
+	</tr>
+	<tr class="row">
+		<td class="field">Slug</td>
+		<td><%= f.text_field :slug, :class => 'text' %></td>
+	</tr>
+	<tr class="row">
+		<td class="field" valign="top">页面内容</td>
+		<td>
+		<%= f.text_area :body, :class => 'text body' %><br />
+		<p class="tip_p">
+			这里使用 Textile 格式, 请阅读 <%= link_to "这篇文档", "/doc/textile.html" %></a>.
+		</p>
+		</td>
+	</tr>
+	<tr class="row">
+		<td class="field">状态</td>
+		<td><%= select("page","status",Post::STATUS,{:selected => @page.status}) %></td>
+	</tr>
+	<tr class="buttons">
+		<td class="field"></td>
+		<td>
+			<%= f.submit (@page.id ? "保存" : "创建") %> or <%= link_to 'Back', :controller => "pages" %>
+		</td>
+	</tr>
+</table>
+<% end %>
+</div>
+

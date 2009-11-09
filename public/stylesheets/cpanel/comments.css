@@ -1,0 +1,8 @@
+#comments { border:1px solid #DDD;}
+#comments .row { margin:10px; padding-bottom: 10px; border-bottom: 1px solid #DDD;}
+#comments .row .info { font-size:12px; color:#999;}
+#comments .row .body { font-size:12px; margin-top: 5px; line-height:160%;}
+#comments .row .body .face { float:left; margin:0 10px 10px 0;}
+#comments .row .opts { clear:both; color:#999; margin-top:8px; }
+#comments .row .opts .post_title { float:right;}
+#comments .row .opts .post_title a { color:#333;}

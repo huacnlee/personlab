@@ -1,0 +1,23 @@
+<% content_for :styles do %> 
+<%= stylesheet_link_tag "src/cpanel/categories", :cache => "cpanel/categories" %>
+<% end %>
+<%= render :partial => 'submenu' %>
+<div class="form">
+	<% form_for(@category,:url => (@category.id ? cpanel_category_url(@category) : cpanel_categories_url)) do |f| %>
+	<%= f.error_messages %>
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr class="row">
+			<td class="field">名称</td>
+			<td><%= f.text_field :name, :class => "text" %></td>
+		</tr>
+		<tr class="row">
+			<td class="field">Slug</td>
+			<td><%= f.text_field :slug, :class => "text" %></td>
+		</tr>
+		<tr class="buttons row">
+			<td class="field"></td>
+			<td><%= f.submit (@category.id ? "保存" : "创建")%> 或 <%= link_to '返回', :action => "index" %></td>
+		</tr>
+	</table>
+	<% end %>
+</div>

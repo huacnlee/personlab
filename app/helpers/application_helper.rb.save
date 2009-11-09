@@ -1,0 +1,62 @@
+require "md5"
+# Methods added to this helper will be available to all templates in the application.
+module ApplicationHelper
+  
+  # return the formatted flash[:notice] html
+  def success_messages
+    if flash[:notice]
+      '
+      <div id="successMessage" class="successMessage">
+    		'+flash[:notice]+'
+    	</div>
+      '
+    else
+      ''
+    end
+  end
+
+  # form auth token
+  def auth_token
+    "<input name=\"authenticity_token\" type=\"hidden\" value=\"#{form_authenticity_token}\" />"
+  end
+  
+  # return the Gravatar face by Email
+  def face_url(email)
+    hash = MD5::md5(email)
+    "http://www.gravatar.com/avatar/#{hash}?s=32"
+  end
+
+  # close html tag when truncated
+  def close_tags(text)
+    open_tags = []
+    text.scan(/\<([^\>\s\/]+)[^\>\/]*?\>/).each { |t| open_tags.unshift(t) }
+    text.scan(/\<\/([^\>\s\/]+)[^\>]*?\>/).each { |t| open_tags.slice!(open_tags.index(t)) }
+    open_tags.each {|t| text += "</#{t}>" }
+    return text
+  end
+
+def truncate_html(html, size=50 )
+  # 2nd Textile HTML truncate by Joe Melberg
+  # assumes textile output.
+  # Sample usage: <%= html_truncate(category.description, 120 ) -%>...
+  tags = []
+  text = []
+  result = []
+  # get all opening and closing tags by themselves
+  html.scan(/<[^\>]*?\>/).each { |t| tags << t }
+  # get all non-tag text.
+  html.scan(/>([^\>]+)[^\>]*?\&lt;/).each { |t| text << t }
+  text &lt;&lt; #prevent nill error when threading arrays together.
+  # Thread arrays into new array (I'm sure there's a slicker way)
+  tags.each_index { |i| 
+    result << tags[i]
+    if size > 0
+      t = text[i].to_s.chars[0,size]
+      size -= t.chars.length
+      result << t
+    end
+  }
+  result = result.join("")
+end  
+
+end
