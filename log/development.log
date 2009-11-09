@@ -19,3 +19,76 @@ Cache miss: data/setting ({})
   [4;36;1mSQL (75.6ms)[0m   [0;1mCOMMIT[0m
 Cache write (will save 105.14ms): data/setting
 Cache read: data/tweet/huacn
+
+Errno::ETIMEDOUT (Connection timed out - connect(2)):
+  /usr/lib/ruby/1.8/net/http.rb:560:in `initialize'
+  /usr/lib/ruby/1.8/net/http.rb:560:in `open'
+  /usr/lib/ruby/1.8/net/http.rb:560:in `connect'
+  /usr/lib/ruby/1.8/timeout.rb:53:in `timeout'
+  /usr/lib/ruby/1.8/timeout.rb:93:in `timeout'
+  /usr/lib/ruby/1.8/net/http.rb:560:in `connect'
+  /usr/lib/ruby/1.8/net/http.rb:553:in `do_start'
+  /usr/lib/ruby/1.8/net/http.rb:542:in `start'
+  /var/lib/gems/1.8/gems/twitter4r-0.3.2/lib/twitter/client/base.rb:16:in `http_connect'
+  /var/lib/gems/1.8/gems/twitter4r-0.3.2/lib/twitter/client/timeline.rb:67:in `timeline_for'
+  app/models/tweet.rb:11:in `get_home_messages'
+  app/controllers/home_controller.rb:12:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (114.8ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.9ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/jason/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-11-10 00:01:46) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+Cached fragment exists?: views/posts/index/1 (0.1ms)
+  [4;36;1mPost Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT `posts`.* FROM `posts` INNER JOIN `categories` ON `categories`.id = `posts`.category_id WHERE (status = 1) ORDER BY id desc LIMIT 0, 5[0m
+Cached fragment exists?: views/posts/sidebar/recent_posts (0.1ms)
+  [4;36;1mPost Load Scrooged (0.2ms)[0m   [0;1mSELECT `posts`.id FROM `posts` WHERE (status = 1) ORDER BY id desc LIMIT 0, 10[0m
+Cached fragment exists?: views/posts/sidebar/recent_comments (0.1ms)
+  [4;35;1mComment Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mComment Load Scrooged (0.6ms)[0m   [0;1mSELECT `comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 10[0m
+Cache read: data/categories
+  [4;35;1mCategory Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load Scrooged (0.3ms)[0m   [0;1mSELECT `categories`.id FROM `categories` [0m
+Cache write: data/categories
+Rendering template within layouts/application
+Rendering posts/index
+Cached fragment hit: views/posts/index/1 (0.3ms)
+Cached fragment miss: views/posts/index/1 (2.0ms)
+Rendered posts/_posts (5.3ms)
+Cached fragment hit: views/posts/sidebar/recent_posts (0.3ms)
+Cached fragment miss: views/posts/sidebar/recent_posts (0.9ms)
+Cached fragment hit: views/posts/sidebar/recent_comments (0.2ms)
+Cached fragment miss: views/posts/sidebar/recent_comments (0.7ms)
+Rendered posts/_sidebar (9.0ms)
+Completed in 99ms (View: 60, DB: 7) | 200 OK [http://127.0.0.1/blog]
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/jason/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-10 00:06:19) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;36;1mSetting Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+Cache read: data/tweet/huacn
