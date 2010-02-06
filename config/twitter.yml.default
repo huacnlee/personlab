@@ -1,0 +1,7 @@
+development:
+  login: huacnlee
+  password: 123123
+
+production:
+  login: huacnlee 
+  password: 123123

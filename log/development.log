@@ -228,3 +228,4 @@ Processing Cpanel::HomeController#index (for 127.0.0.1 at 2009-11-10 00:24:23) [
 Rendering template within layouts/cpanel
 Rendering cpanel/home/index
 Completed in 35ms (View: 11, DB: 5) | 200 OK [http://127.0.0.1/cpanel]
+** acts_as_taggable_on: initialized properly.
