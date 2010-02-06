@@ -28529,3 +28529,171 @@ Cache hit: data/setting ({})
   [4;36;1mPage Load Scrooged (0.0ms)[0m   [0;1mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'favicon.ico') LIMIT 1[0m
 Rendering C:/Documents and Settings/hs.li/work/personlab/public/404.html (404 Not Found)
 Completed in 16ms (View: 16, DB: 0) | 404 Not Found [http://127.0.0.1/favicon.ico?v=001]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Cpanel::PagesController#index (for 127.0.0.1 at 2010-02-06 14:14:37) [GET]
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load Scrooged (0.0ms)[0m   [0;1mSELECT `users`.name,`users`.id FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mPage Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load Scrooged (0.0ms)[0m   [0;1mSELECT `pages`.slug,`pages`.status,`pages`.updated_at,`pages`.title,`pages`.id FROM `pages` ORDER BY created_at desc LIMIT 0, 20[0m
+Rendering template within layouts/cpanel
+Rendering cpanel/pages/index
+Rendered cpanel/pages/_submenu (0.0ms)
+Completed in 47ms (View: 16, DB: 0) | 200 OK [http://127.0.0.1/cpanel/pages]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Cpanel::PagesController#edit (for 127.0.0.1 at 2010-02-06 14:14:39) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load Scrooged (0.0ms)[0m   [0;1mSELECT `users`.name,`users`.id FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mPage Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load Scrooged (0.0ms)[0m   [0;1mSELECT `pages`.id FROM `pages` WHERE (`pages`.`id` = 3) [0m
+Rendering template within layouts/cpanel
+Rendering cpanel/pages/edit
+Rendered cpanel/pages/_submenu (16.0ms)
+  [4;35;1mPage Scrooge Reload (0.0ms)[0m   [0mSELECT `pages`.title,`pages`.slug,`pages`.body,`pages`.status,`pages`.created_at,`pages`.updated_at,`pages`.id FROM `pages` WHERE `pages`.id IN ('3')[0m
+Completed in 188ms (View: 47, DB: 0) | 200 OK [http://127.0.0.1/cpanel/pages/3/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Cpanel::PagesController#update (for 127.0.0.1 at 2010-02-06 14:14:42) [PUT]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"v+RCfEgIMex4x/Bnwt9/OOAbBuK1OeM9+YMekeNwTeE=", "id"=>"3", "page"=>{"status"=>"1", "slug"=>"work", "body"=>"<h1>我的项目</h1>\r\n<ul>\r\n  <li>\r\n    <h3>Pasite _\"website\":http://pasite.org_</h3>\r\n    <ul>\r\n      <li>Pasite 是一个用 Ruby on Rails 开发的 \"pastie.org\":http://pastie.org 的克隆版，用于存放代码片段。</li>\r\n    </ul>\r\n  </li>\r\n  <li>\r\n    <h3>Personlab _\"source code\":http://github.com/huacnlee/personlab_</h3>\r\n    <ul>\r\n      <li>本站的源代码，基于 Ruby on Rails 开发的个人网站、博客系统。</li>\r\n    </ul>\r\n  </li>\r\n  <li>\r\n    <h3>Tmitter _\"source code\":http://code.google.com/p/tmitter/_</h3>\r\n    <ul>\r\n      <li>Tmitter是我使用 Python + \"Django\":http://djangoproject.com/ 开发的类似于 Twitter 功能的开源项目，它是更加微型的。</li>\r\n      <li>Tmitter 最初是想做成手机的迷你博客网站的，但最近我一直在想是否要这样做，当然目前关于手机的应用一直都还没有做的。</li>\r\n      <li>我想把它做成像 饭否 Twitter 类似的网站，当然这项目是没有前途的，完全是为了学习 Python 的Web开发而已。</li>\r\n    </ul>\r\n  </li>\r\n  <li>\r\n    <h3>CoderBlogs _\"source code\":http://github.com/huacnlee/coderblogs/_</h3>\r\n    <ul>\r\n      <li>CoderBlogs是专为Python开发人员设计的博客系统，意在创建一个国内的开发人员博客圈子，以汇集更多的业内人士来到这里。</li>\r\n      <li>使用 Python + \"Django\":http://djangoproject.com/ 开发,目前还未完成</li>\r\n    </ul>\r\n  </li>\r\n  <li>\r\n    <h3>BookLib _\"source code\":http://github.com/huacnlee/booklib_</h3>\r\n    <ul>\r\n      <li>公司内部图书影碟管理系统,这是一个为以前公司内部做的图书管理系统,使用 PHP + \"CodeIgniter\":http://codeigniter.com/ 开发. </li>\r\n      <li>\"演示地址\":http://booklib.huacnlee.com/ _管理员:admin 密码:123123_</li>\r\n    </ul>\r\n  </li>\r\n  <li>\r\n    <h3>TwFramework _\"source code\":http://code.google.com/p/twframework/_</h3>\r\n    <ul>\r\n      <li>基本Web快速开发的.NET框架;</li>\r\n      <li>主要带有缓存,配置,方法扩展,日志,图形处理,文件操作,文本格式化,格式验证,页面基类,Cookie Session扩展,接口装配器,CodeSmith 简单三层代码模板 等功能.</li>\r\n    </ul>\r\n  </li>\r\n</ul>\r\n<h2>Javascript 项目</h2>\r\n<ul>\r\n  <li>\r\n    <h3>jCaches _\"source code\":http://github.com/huacnlee/jcaches/_</h3>\r\n    <ul>\r\n      <li>这是一个Javascript数据缓存实现类,用于在浏览器客户端内存中存放一些数据,以减少反复的AJAX到服务端的请求,提高前端程序的运行效率.通过数组变量的方式实现简单的数据缓存功能，你可以设定最大缓存空间（个数），当然实例化后可以同时存在很多个缓存对象。</li>\r\n    </ul>    \r\n  </li>\r\n  <li>\r\n    <h3>jsmin _\"source code\":http://github.com/huacnlee/jsmin/_</h3>\r\n    <ul>\r\n      <li>jsmin 是一个帮助精简Javascript代码的工具,它会帮助你去除多余的空格,换行,注释等等,从而减少js文件的大小,提高页面加载速度.</li>\r\n    </ul>\r\n  </li>\r\n  <li>\r\n    <h3>jSelectDate _\"source code\":http://github.com/huacnlee/jselectdate/_</h3>\r\n    <ul>\r\n      <li>jSelectDate is a simple drop-down list date select of jQuery plugin . It is different from previous choice of the date of control, it is embodied in the way the drop-down list, this may facilitate a better user experience.</li>\r\n    </ul>\r\n  </li>\r\n  <li>\r\n    <h3>jImageLink _\"source code\":http://github.com/huacnlee/jimagelink/_</h3>\r\n    <ul>\r\n      <li>模拟Yupoo照片列表里面的效果，当鼠标经过照片时会出现一个小图标，点击小图标时，就可以直接查看大图，它使用了Lightwindow这个JS.</li>\r\n    </ul>\r\n  </li>\r\n</ul>\r\n<h2>桌面应用程序</h2>\r\n<ul>\r\n  <li>\r\n    <h3>个人账目管理 _\"download\":http://tmitter.googlecode.com/files/account-2.0.exe_ </h3>\r\n    <ul>\r\n      <li>大学时的毕业设计，个人账目管理软件，Delphi开发。</li>\r\n      <li>你可以对你的收支进行分类，这样以后就可以很快地通过图表了解收支的主要出处。 </li>\r\n    </ul>\r\n  </li>\r\n  <li>\r\n    <h3>ArticleEncoder _\"download\":/blog/articleencoder_</h3>\r\n    <ul>\r\n      <li>大学的时候用Delphi开发的一个文本加密防止拷贝的软件</li>\r\n    </ul>\r\n  </li>\r\n</ul>\r\n<h2>参与的开源项目</h2>\r\n<ul>\r\n  <li>\r\n    <h3>pulog _\"source code\":http://code.google.com/p/pulog/_</h3>\r\n    <ul>\r\n      <li>Pulog is a personal weblog system written in Python and based on Django framework.</li>\r\n    </ul>\r\n  </li>\r\n  <li>\r\n    <h3>Captcha Rails plugin _\"source code\":http://github.com/huacnlee/captcha_</h3>\r\n    <ul>\r\n      <li>Rails 验证码插件</li>\r\n    </ul>\r\n  </li>\r\n</ul>", "title"=>"Work"}}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load Scrooged (0.0ms)[0m   [0mSELECT `users`.name,`users`.id FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mPage Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load Scrooged (16.0ms)[0m   [0mSELECT `pages`.id FROM `pages` WHERE (`pages`.`id` = 3) [0m
+  [4;36;1mPage Scrooge Reload (0.0ms)[0m   [0;1mSELECT `pages`.title,`pages`.slug,`pages`.body,`pages`.status,`pages`.created_at,`pages`.updated_at,`pages`.id FROM `pages` WHERE `pages`.id IN ('3')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPage Load (0.0ms)[0m   [0;1mSELECT `pages`.id FROM `pages` WHERE (LOWER(`pages`.`title`) = BINARY 'work' AND `pages`.id <> 3) LIMIT 1[0m
+  [4;35;1mPage Load (0.0ms)[0m   [0mSELECT `pages`.id FROM `pages` WHERE (LOWER(`pages`.`slug`) = BINARY 'work' AND `pages`.id <> 3) LIMIT 1[0m
+  [4;36;1mPage Update (0.0ms)[0m   [0;1mUPDATE `pages` SET `body` = '<h1>我的项目</h1>\r\n<ul>\r\n <li>\r\n <h3>Pasite _\"website\":http://pasite.org_</h3>\r\n <ul>\r\n <li>Pasite 是一个用 Ruby on Rails 开发的 \"pastie.org\":http://pastie.org 的克隆版，用于存放代码片段。</li>\r\n </ul>\r\n </li>\r\n <li>\r\n <h3>Personlab _\"source code\":http://github.com/huacnlee/personlab_</h3>\r\n <ul>\r\n <li>本站的源代码，基于 Ruby on Rails 开发的个人网站、博客系统。</li>\r\n </ul>\r\n </li>\r\n <li>\r\n <h3>Tmitter _\"source code\":http://code.google.com/p/tmitter/_</h3>\r\n <ul>\r\n <li>Tmitter是我使用 Python + \"Django\":http://djangoproject.com/ 开发的类似于 Twitter 功能的开源项目，它是更加微型的。</li>\r\n <li>Tmitter 最初是想做成手机的迷你博客网站的，但最近我一直在想是否要这样做，当然目前关于手机的应用一直都还没有做的。</li>\r\n <li>我想把它做成像 饭否 Twitter 类似的网站，当然这项目是没有前途的，完全是为了学习 Python 的Web开发而已。</li>\r\n </ul>\r\n </li>\r\n <li>\r\n <h3>CoderBlogs _\"source code\":http://github.com/huacnlee/coderblogs/_</h3>\r\n <ul>\r\n <li>CoderBlogs是专为Python开发人员设计的博客系统，意在创建一个国内的开发人员博客圈子，以汇集更多的业内人士来到这里。</li>\r\n <li>使用 Python + \"Django\":http://djangoproject.com/ 开发,目前还未完成</li>\r\n </ul>\r\n </li>\r\n <li>\r\n <h3>BookLib _\"source code\":http://github.com/huacnlee/booklib_</h3>\r\n <ul>\r\n <li>公司内部图书影碟管理系统,这是一个为以前公司内部做的图书管理系统,使用 PHP + \"CodeIgniter\":http://codeigniter.com/ 开发. </li>\r\n <li>\"演示地址\":http://booklib.huacnlee.com/ _管理员:admin 密码:123123_</li>\r\n </ul>\r\n </li>\r\n <li>\r\n <h3>TwFramework _\"source code\":http://code.google.com/p/twframework/_</h3>\r\n <ul>\r\n <li>基本Web快速开发的.NET框架;</li>\r\n <li>主要带有缓存,配置,方法扩展,日志,图形处理,文件操作,文本格式化,格式验证,页面基类,Cookie Session扩展,接口装配器,CodeSmith 简单三层代码模板 等功能.</li>\r\n </ul>\r\n </li>\r\n</ul>\r\n<h2>Javascript 项目</h2>\r\n<ul>\r\n <li>\r\n <h3>jCaches _\"source code\":http://github.com/huacnlee/jcaches/_</h3>\r\n <ul>\r\n <li>这是一个Javascript数据缓存实现类,用于在浏览器客户端内存中存放一些数据,以减少反复的AJAX到服务端的请求,提高前端程序的运行效率.通过数组变量的方式实现简单的数据缓存功能，你可以设定最大缓存空间（个数），当然实例化后可以同时存在很多个缓存对象。</li>\r\n </ul> \r\n </li>\r\n <li>\r\n <h3>jsmin _\"source code\":http://github.com/huacnlee/jsmin/_</h3>\r\n <ul>\r\n <li>jsmin 是一个帮助精简Javascript代码的工具,它会帮助你去除多余的空格,换行,注释等等,从而减少js文件的大小,提高页面加载速度.</li>\r\n </ul>\r\n </li>\r\n <li>\r\n <h3>jSelectDate _\"source code\":http://github.com/huacnlee/jselectdate/_</h3>\r\n <ul>\r\n <li>jSelectDate is a simple drop-down list date select of jQuery plugin . It is different from previous choice of the date of control, it is embodied in the way the drop-down list, this may facilitate a better user experience.</li>\r\n </ul>\r\n </li>\r\n <li>\r\n <h3>jImageLink _\"source code\":http://github.com/huacnlee/jimagelink/_</h3>\r\n <ul>\r\n <li>模拟Yupoo照片列表里面的效果，当鼠标经过照片时会出现一个小图标，点击小图标时，就可以直接查看大图，它使用了Lightwindow这个JS.</li>\r\n </ul>\r\n </li>\r\n</ul>\r\n<h2>桌面应用程序</h2>\r\n<ul>\r\n <li>\r\n <h3>个人账目管理 _\"download\":http://tmitter.googlecode.com/files/account-2.0.exe_ </h3>\r\n <ul>\r\n <li>大学时的毕业设计，个人账目管理软件，Delphi开发。</li>\r\n <li>你可以对你的收支进行分类，这样以后就可以很快地通过图表了解收支的主要出处。 </li>\r\n </ul>\r\n </li>\r\n <li>\r\n <h3>ArticleEncoder _\"download\":/blog/articleencoder_</h3>\r\n <ul>\r\n <li>大学的时候用Delphi开发的一个文本加密防止拷贝的软件</li>\r\n </ul>\r\n </li>\r\n</ul>\r\n<h2>参与的开源项目</h2>\r\n<ul>\r\n <li>\r\n <h3>pulog _\"source code\":http://code.google.com/p/pulog/_</h3>\r\n <ul>\r\n <li>Pulog is a personal weblog system written in Python and based on Django framework.</li>\r\n </ul>\r\n </li>\r\n <li>\r\n <h3>Captcha Rails plugin _\"source code\":http://github.com/huacnlee/captcha_</h3>\r\n <ul>\r\n <li>Rails 验证码插件</li>\r\n </ul>\r\n </li>\r\n</ul>', `updated_at` = '2010-02-06 06:14:42' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/cpanel/pages
+Completed in 31ms (DB: 16) | 302 Found [http://127.0.0.1/cpanel/pages/3]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Cpanel::PagesController#index (for 127.0.0.1 at 2010-02-06 14:14:42) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load Scrooged (0.0ms)[0m   [0mSELECT `users`.name,`users`.id FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mPage Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load Scrooged (0.0ms)[0m   [0mSELECT `pages`.slug,`pages`.status,`pages`.updated_at,`pages`.title,`pages`.id FROM `pages` ORDER BY created_at desc LIMIT 0, 20[0m
+Rendering template within layouts/cpanel
+Rendering cpanel/pages/index
+Rendered cpanel/pages/_submenu (0.0ms)
+Completed in 46ms (View: 15, DB: 0) | 200 OK [http://127.0.0.1/cpanel/pages]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 14:14:44) [GET]
+  Parameters: {"slug"=>"work"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;36;1mPage Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load Scrooged (0.0ms)[0m   [0mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'work') LIMIT 1[0m
+  [4;36;1mSetting Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mMenu Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `menus`[0m
+Completed in 78ms (View: 63, DB: 15) | 200 OK [http://127.0.0.1/work]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 14:15:02) [GET]
+  Parameters: {"slug"=>"work"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;36;1mPage Columns (16.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load Scrooged (0.0ms)[0m   [0mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'work') LIMIT 1[0m
+  [4;36;1mSetting Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mMenu Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `menus`[0m
+Completed in 47ms (View: 31, DB: 16) | 200 OK [http://127.0.0.1/work]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 14:15:48) [GET]
+  Parameters: {"slug"=>"work"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;36;1mPage Columns (16.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load Scrooged (0.0ms)[0m   [0mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'work') LIMIT 1[0m
+  [4;36;1mSetting Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mMenu Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `menus`[0m
+Completed in 47ms (View: 31, DB: 16) | 200 OK [http://127.0.0.1/work]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 14:15:49) [GET]
+  Parameters: {"slug"=>"work"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;36;1mPage Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load Scrooged (0.0ms)[0m   [0mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'work') LIMIT 1[0m
+  [4;36;1mSetting Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mMenu Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `menus`[0m
+Completed in 47ms (View: 16, DB: 15) | 200 OK [http://127.0.0.1/work]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 14:15:49) [GET]
+  Parameters: {"slug"=>"favicon.ico", "v"=>"001"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;36;1mPage Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load Scrooged (0.0ms)[0m   [0mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'favicon.ico') LIMIT 1[0m
+Rendering C:/Documents and Settings/hs.li/work/personlab/public/404.html (404 Not Found)
+Completed in 15ms (View: 0, DB: 15) | 404 Not Found [http://127.0.0.1/favicon.ico?v=001]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 14:16:00) [GET]
+  Parameters: {"slug"=>"work"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;36;1mPage Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load Scrooged (0.0ms)[0m   [0mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'work') LIMIT 1[0m
+  [4;36;1mSetting Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mMenu Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `menus`[0m
+Completed in 63ms (View: 31, DB: 0) | 200 OK [http://127.0.0.1/work]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 14:16:09) [GET]
+  Parameters: {"slug"=>"work"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;36;1mPage Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load Scrooged (0.0ms)[0m   [0mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'work') LIMIT 1[0m
+  [4;36;1mSetting Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mMenu Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `menus`[0m
+Completed in 47ms (View: 32, DB: 0) | 200 OK [http://127.0.0.1/work]
