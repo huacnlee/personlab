@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  caches_page :show
+  caches_action :show
   
   def index
     set_seo_meta(nil,@setting.meta_keywords,@setting.meta_description)
