@@ -26819,3 +26819,150 @@ ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:m
   c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-06 13:36:54) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;36;1mSetting Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT `posts`.* FROM `posts` INNER JOIN `categories` ON `categories`.id = `posts`.category_id WHERE (status = 1) ORDER BY id desc LIMIT 0, 5[0m
+  [4;35;1mTagging Load Scrooged (0.0ms)[0m   [0mSELECT `taggings`.tag_id,`taggings`.id,`taggings`.taggable_id FROM `taggings` WHERE (`taggings`.`taggable_id` IN (7,6,5,4,3) and `taggings`.`taggable_type` = 'Post' AND (taggings.context = 'tags')) [0m
+  [4;36;1mTag Load Scrooged (0.0ms)[0m   [0;1mSELECT `tags`.name,`tags`.id FROM `tags` WHERE (`tags`.`id` IN (6,5)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(DISTINCT `posts`.id) AS count_all FROM `posts` LEFT OUTER JOIN `taggings` ON (`posts`.`id` = `taggings`.`taggable_id` AND `taggings`.`taggable_type` = 'Post') LEFT OUTER JOIN `tags` ON (`tags`.`id` = `taggings`.`tag_id`) AND taggings.context = 'tags' INNER JOIN `categories` ON `categories`.id = `posts`.category_id WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mCategory Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load Scrooged (0.0ms)[0m   [0mSELECT `categories`.slug,`categories`.name,`categories`.id FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Cache read: data/posts/view_count/linux-auto-covert-filename-to-lower
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `categories`.slug,`categories`.name,`categories`.id FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Cache read: data/posts/view_count/install-php-from-source
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `categories`.slug,`categories`.name,`categories`.id FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Cache read: data/posts/view_count/rails-vs-django
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `categories`.slug,`categories`.name,`categories`.id FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Cache read: data/posts/view_count/acts-as-views-count
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `categories`.slug,`categories`.name,`categories`.id FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Cache read: data/posts/view_count/rails-attr-protected-or-attr-accesible-fields
+Rendered posts/_posts (156.0ms)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 219ms (View: 172, DB: 0) | 200 OK [http://127.0.0.1/blog]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 13:36:55) [GET]
+  Parameters: {"slug"=>"work"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mPage Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load Scrooged (0.0ms)[0m   [0;1mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'work') LIMIT 1[0m
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 32ms (View: 16, DB: 0) | 200 OK [http://127.0.0.1/work]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#share (for 127.0.0.1 at 2010-02-06 13:36:56) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+Cache read: data/shares
+Rendering template within layouts/application
+Rendering home/share
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 47ms (View: 0, DB: 0) | 200 OK [http://127.0.0.1/share]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 13:36:57) [GET]
+  Parameters: {"slug"=>"about"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mPage Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load Scrooged (0.0ms)[0m   [0;1mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'about') LIMIT 1[0m
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 31ms (View: 0, DB: 0) | 200 OK [http://127.0.0.1/about]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:36:58) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 5[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (16.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:23)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:23)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:23)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:23)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:23)
+Rendered home/_webicons (0.0ms)
+Rendered home/_tweet (0.0ms)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 47ms (View: 32, DB: 15) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:36:58) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:36:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
