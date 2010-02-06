@@ -33,12 +33,6 @@ class Cpanel::CommentsController < Cpanel::ApplicationController
       }
       format.xml  { head :ok }
     end
-  end
-  
-  def destroy_spams
-    Comment.delete_spams
-    flash[:notice] = "垃圾评论删除成功."
-    redirect_to(cpanel_comments_url) 
-  end
+  end  
 end
 

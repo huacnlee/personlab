@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   cache_sweeper :comment_sweeper,:only => [:show]
+  validates_captcha
   before_filter :init_posts
   
   private
@@ -117,21 +118,22 @@ class PostsController < ApplicationController
     end
     
     if request.post?
-      # post comment
       @pcomment = params[:comment]
       @comment = Comment.new(params[:comment])
-      @comment.request = request
-      @comment.post_id = @post.id
-
-      set_guest(@comment.author,@comment.url,@comment.email)
-
-      if @comment.save
-        if @comment.status == 2
-          flash[:notice] = "评论发表成功。<br />但由于经过 Akismet 自动判定，您的评论内容需要由管理人员审核过后方可显示。"
-        else
-          flash[:notice] = "评论发表成功."
-        end          
-        redirect_to :action => "show", :slug => @post.slug, :anchor => "comment"
+      
+      if captcha_validated?
+        @comment.post_id = @post.id  
+        set_guest(@comment.author,@comment.url,@comment.email)  
+        if @comment.save
+          if @comment.status == 2
+            flash[:notice] = "评论发表成功。<br />但由于经过 Akismet 自动判定，您的评论内容需要由管理人员审核过后方可显示。"
+          else
+            flash[:notice] = "评论发表成功."
+          end          
+          redirect_to :action => "show", :slug => @post.slug, :anchor => "comment"
+        end
+      else
+        @comment.errors.add("验证码","不正确")
       end
     else
       @comment = Comment.new

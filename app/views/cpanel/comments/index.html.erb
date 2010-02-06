@@ -2,7 +2,6 @@
 <%= stylesheet_link_tag "src/cpanel/comments", :cache => "cpanel/comments" %>
 <% end %>
 <% content_for :submenu do %> 
-<%= link_to '清除所有垃圾评论',{:controller => "/cpanel/comments",:action => "destroy_spams" }, :confirm => '确定要清除所有垃圾评论吗?', :method => :post %>
 <% end %>
 <%= success_messages %>
 <div id="comments">  
@@ -12,7 +11,6 @@
         #<%= comment.id %> <span class="author"><a href="<%=h comment.url %>"><%=h comment.author %></a></span> 
         | <span class="email"><%=h comment.email %></span> | <span class="user_ip"><%= comment.user_ip %></span>
         | <span class="user_agent" title="<%=h comment.user_agent %>"><%=h truncate(comment.user_agent,25) %></span>
-        | <span class="spam"><% if comment.status == 2%>[垃圾]<% end %></span>
 		</div>
 		<div class="body">
           <div class="face">

@@ -45,13 +45,6 @@ Rails::Initializer.run do |config|
 
 end
 
-require "twitter"
-# Twitter::Config.host = "nonlyli.appspot.com"
-
-Rakismet::KEY  = 'c614869fe7b6'
-Rakismet::URL  = 'http://huacnlee.com/'
-Rakismet::HOST = 'rest.akismet.com'
-
 Time::DATE_FORMATS[:short_date_string] = "%y年%m月%d日"
 Time::DATE_FORMATS[:short_date] = "%y-%m-%d"
 Time::DATE_FORMATS[:short_time_string] = "%y年%m月%d日 %H:%M"
@@ -67,3 +60,5 @@ require 'will_paginate'
 WillPaginate::ViewHelpers.pagination_options[:previous_label] = '« 上一页'
 WillPaginate::ViewHelpers.pagination_options[:next_label] = '下一页 »'
 
+# captcha secret key
+CAPTCHA_SALT = "8929&**&@#"

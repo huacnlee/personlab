@@ -52,6 +52,14 @@
 						<%= f.text_area :body, :class => "text middle" %>
 					</td>
 				</tr>
+				<tr class="row">
+					<td class="field" valign="top">验证码:</td>
+					<td>
+						<%= captcha_hidden_text %>
+						<%= captcha_input_text("",:class => "text", :style => "margin-bottom:4px;") %> <br />
+					 	<%= captcha_image %>
+					</td>
+				</tr>
 				<tr class="buttons row">
 					<td class="field"></td>
 					<td>

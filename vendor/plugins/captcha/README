@@ -1,0 +1,108 @@
+= Captcha
+
+This captcha generator is based on the very fine work of Eric Methot 
+(http://blogs.ericmethot.com/) all credit and thanks should go to him.
+
+This fork allows you to specify a file type for captcha image generation (png or gif).
+
+Using Captcha is a five step process
+
+  1. Install RMagick
+  2. Install the plugin 
+  3. Generate a bunch of images off-line
+  4. Use the helper method(s)
+  5. Validate user input
+
+The plugin has been tested on OS X 10.5 using ImageMagick @6.4.1-8_0+q16 (via MacPorts) and
+the rmagick 2.5.2 gem.
+
+== Demo
+ 
+http://pasite.org/login
+
+== Install RMagic
+
+Follow the instructions on their site: 
+http://rmagick.rubyforge.org/install-faq.html
+
+
+== Install the plugin
+
+Installing the plugin as a submodule is as simple as issuing these commands from the
+root of your rails application directory:
+
+  To add as a submodule
+  
+  git submodule add git://github.com/zendesk/captcha.git
+  git submodule init
+  git submodule update
+
+  To update the submodule
+
+  git pull git://github.com/zendesk/captcha.git master
+  
+  Or clone and make your own changes
+
+  git clone git@github.com:zendesk/captcha.git
+
+Update: Using submodules is a headache to the extent where they're not really worth while.
+Go for script/plugin install instead for increased happiness.
+
+== Generate a bunch of images off-line
+
+The reason why you don't need to generate images on the fly is that
+they have been generated in advance and all you do is pick one at 
+random. 
+
+First, define a salt for your application, do this by setting the global variable 
+CAPTCHA_SALT to a random string in e.g. your environment.rb
+  
+   CAPTCHA_SALT = 'Something really random here'
+
+Next, generate the images by running the following rake task, this takes a while:
+
+   rake captcha:generate COUNT=250
+
+This will create the '/public/system/captcha' directory if it doesn't
+already exist and put 250 randomly generated captcha images. 
+
+You can specify the following parameters when running the rake task:
+
+COUNT          - the number of images to generate, default 3
+IMAGE_HEIGHT   - the height of the captcha image in pixels, default 50
+IMAGE_WIDTH    - the width of the captcha image in pixels, default 260
+CAPTCHA_LENGTH - the number of characters in the captcha, default 5
+FILE_FORMAT    - the file type of the captcha image (png or gif)
+
+== Use the helper methods
+
+In your forms all you need to do is:
+
+  <%= captcha_block %>
+
+And add a little bit of CSS styling to get a nice looking captcha validation text field 
+and image. If you don't like the way it's setup then use the other helper methods 
+(see captcha_helper.rb), which are more granular.
+
+
+== Validate user input
+
+In your controller, you will need to do the following:
+
+PostController < ApplicationController
+
+   validates_captcha
+
+   def create
+      ...
+      if captcha_validated?
+         ...
+      else
+         ...
+      end
+   end
+end
+
+That's it.
+
+Copyright (c) 2008 Zendesk, released under the MIT license
