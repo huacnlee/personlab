@@ -28697,3 +28697,19 @@ Rendering template within layouts/application
 Rendering pages/show
   [4;35;1mMenu Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `menus`[0m
 Completed in 47ms (View: 32, DB: 0) | 200 OK [http://127.0.0.1/work]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 14:19:22) [GET]
+  Parameters: {"slug"=>"work"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;36;1mPage Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load Scrooged (0.0ms)[0m   [0mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'work') LIMIT 1[0m
+  [4;36;1mSetting Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mMenu Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `menus`[0m
+Completed in 47ms (View: 16, DB: 16) | 200 OK [http://127.0.0.1/work]
