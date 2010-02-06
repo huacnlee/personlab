@@ -3,9 +3,36 @@
 <%= auto_discovery_link_tag(:rss,'http://feed.feedsky.com/huacn',:title => 'RSS订阅') %>
 <% end %>
 <div id="mainbox">
-	<%= render :partial => 'recent_post' %>
+  <div id="recent_posts">
+    <div class="title">最近文章</div>
+    <%= render :partial => 'recent_posts' %>
+  </div>
+  
+  <div id="recent_comments" class="box">
+    <div class="title">最新评论</div>
+    <div class="content">
+      <% cache("posts/sidebar/recent_comments") do %>
+      <% if !@recent_comments.blank? %>
+        <ul>
+        <% for item in @recent_comments %>
+          <% if item.post != nil %>
+          <li>
+            <span class="author">
+              <%= link_to h(item.author), :controller => "posts", :action => "show", :slug => item.post.slug %>:
+            </span>
+            <%= truncate(h(item.body),40) %>
+          </li>
+          <% end %>
+        <% end %>
+        </ul>
+      <% else %>
+        暂时还未有文章发表
+      <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
 <div id="sidebar">
-	<%= render :partial => 'webicons' %>
-	<%= render :partial => 'tweet' %>
+  <%= render :partial => 'webicons' %>
+  <%= render :partial => 'tweet' %>
 </div>

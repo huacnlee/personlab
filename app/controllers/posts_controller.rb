@@ -76,9 +76,7 @@ class PostsController < ApplicationController
 			if !fragment_exist? @cache_key
 	      @posts = Post.find_list_with_front(params[:page],per_page)
 	    end
-    end    
-    
-    init_sidebar
+    end 
   end
 
 
@@ -104,10 +102,8 @@ class PostsController < ApplicationController
   
   def show
     @post_key = "data/posts/#{params[:slug]}"
-    # update pv
-    
-    init_sidebar
-    
+    # update pv    
+        
     @view_count = Post.update_view_count(params[:slug])
     
     @post = Rails.cache.read(@post_key)

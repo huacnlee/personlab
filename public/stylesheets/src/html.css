@@ -7,15 +7,15 @@
  */
 * { margin: 0;padding: 0; }
 body { 
-	font-family: Helvetica,Arial,'Liberation Sans',FreeSans,sans-serif;
-	font-size:   12px;
-	background-color: #FFF;
-	color: #333; 	
-	text-align: center;
+  font-family: Helvetica,Arial,'Liberation Sans',FreeSans,sans-serif;
+  font-size:   13px;
+  background-color: #FFF;
+  color: #333; 	
+  text-align: center;
 }
 ul,ol { list-style-position: inside; margin:10px 24px;}
 
-a:link,a:visited { color:#33C;}
+a:link,a:visited { color:#1259C7;}
 a:hover { color:#333;}
 
 input.text,textarea.text { padding:2px; font-size: 12px;}
@@ -32,33 +32,33 @@ table.grid {width:100%;}
 .errorExplanation p { color:#999;}
 .errorExplanation ul { font-size: 12px; margin-top: 8px; list-style: square inside; margin-left: 20px;}
 .filter { text-align: right; line-height: 22px; }
-	.filter label	{color: #999;}
-	
+  .filter label	{color: #999;}
+
 .successMessage {margin:10px 0; background:#CF9; padding:10px; border: 2px solid #6C0; }
 
 
 
 /* form style */
 .form {  }
-	.form table { border:0; }
-	.form table tr td { padding:5px; font-size: 12px;}
-	.form table tr td.field { color:#666; text-align: right;}
-	.form table tr td .tip { color:#999;}
-	.form table tr td .tip_p { margin:8px 0; color:#999;}
-	
+  .form table { border:0; }
+  .form table tr td { padding:5px; font-size: 12px;}
+  .form table tr td.field { color:#666; text-align: right;}
+  .form table tr td .tip { color:#999;}
+  .form table tr td .tip_p { margin:8px 0; color:#999;}
+
 .tinymce_box { background:#DDD;}
-	.tinymce_box .buttons { height:24px; line-height: 24px;}
-	.tinymce_box .buttons .insert { text-indent: 8px;}
-	.tinymce_box .buttons .view { float:right; margin-top: -24px; }
-	.tinymce_box .buttons .view button { padding:0 8px; height: 20px; line-height: 20px; margin-top:3px;  border: 1px solid #AAA; background: #DDD; margin-right:8px; border-bottom: 0px;}
-	.tinymce_box .buttons .view button.selected { background:#EEE;}
-	.tinymce_box table.mceLayout tr td { padding:0;}
+  .tinymce_box .buttons { height:24px; line-height: 24px;}
+  .tinymce_box .buttons .insert { text-indent: 8px;}
+  .tinymce_box .buttons .view { float:right; margin-top: -24px; }
+  .tinymce_box .buttons .view button { padding:0 8px; height: 20px; line-height: 20px; margin-top:3px;  border: 1px solid #AAA; background: #DDD; margin-right:8px; border-bottom: 0px;}
+  .tinymce_box .buttons .view button.selected { background:#EEE;}
+  .tinymce_box table.mceLayout tr td { padding:0;}
 
 .highlight .hll { background: #0C1021 }
-.highlight { border:1px solid #EEE; overflow:hidden;	line-height:120%; }
-.highlight pre {
-  font-family:"Bitstream Vera Sans Mono","Monaco","Courier New",monospace,宋体;font-size:12px; font-weight:normal;
-  }
+.highlight_top { font-size:11px; text-align: right; display:none; }
+.highlight { overflow:hidden; display:block; line-height:100%; margin-bottom:10px;}
+.highlight pre {font-family:"Bitstream Vera Sans Mono","Monaco","Courier New",monospace,宋体;font-size:12px; 
+ font-weight:normal;  }
 .highlight .tt {  text-align: right;  font-size:11px; margin-top:6px; margin-right:6px;}
 .highlight .tt a { color:#3EAC5B; }
 .highlight .c { color: #919191; } /* Comment */

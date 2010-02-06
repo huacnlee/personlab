@@ -12,83 +12,72 @@
 	<%= yield :styles -%>
 </head>
 <body>
-	<!--[if lt IE 7]>
-  <div style='border: 2px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
-    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://huacnlee.com/images/ie6nomore-cornerx.jpg' style='border: none;' alt='关闭提示'/></a></div>
-    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
-      <div style='width: 75px; float: left;'><img src='http://huacnlee.com/images/ie6nomore-warning.jpg' alt='警告!'/></div>
-      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
-        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>你正在使用一个非常过时的浏览器！</div>
-        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>为了能更好的展现本网站，请升级你的浏览器。</div>
-      </div>
-      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://huacnlee.com/images/ie6nomore-firefox.jpg' style='border: none;' alt='下载 Firefox 3.5'/></a></div>
-      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://huacnlee.com/images/ie6nomore-ie8.jpg' style='border: none;' alt='下载 Internet Explorer 8'/></a></div>
-      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://huacnlee.com/images/ie6nomore-safari.jpg' style='border: none;' alt='下载 Safari 4'/></a></div>
-      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://huacnlee.com/images/ie6nomore-chrome.jpg' style='border: none;' alt='下载 Google Chrome'/></a></div>
-    </div>
+<!--[if lt IE 7]>
+<div style='border: 2px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+<div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://huacnlee.com/images/ie6nomore-cornerx.jpg' style='border: none;' alt='关闭提示'/></a></div>
+<div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+  <div style='width: 75px; float: left;'><img src='http://huacnlee.com/images/ie6nomore-warning.jpg' alt='警告!'/></div>
+  <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+	<div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>你正在使用一个非常过时的浏览器！</div>
+	<div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>为了能更好的展现本网站，请升级你的浏览器。</div>
   </div>
-  <![endif]-->
-	<div id="header">
-		<div class="inner_panel">
-			<div class="left_box">
-				<div id="site_name">
-					<%= link_to @setting.site_name, :controller => "home", :action => "index" %>
-				</div>
-				<div class="sub_title">
-					<%= @setting.sub_title %>
-				</div>
-			</div>
-			<div class="right_box">
-				<a id="contact_me" href="mailto:<%= @setting.email %>" title="点击这里通过Email联系我"><%= image_tag("contact.jpg", :alt => "现在就联系我") %></a>
-			</div>
-		</div>
+  <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://huacnlee.com/images/ie6nomore-firefox.jpg' style='border: none;' alt='下载 Firefox 3.5'/></a></div>
+  <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://huacnlee.com/images/ie6nomore-ie8.jpg' style='border: none;' alt='下载 Internet Explorer 8'/></a></div>
+  <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://huacnlee.com/images/ie6nomore-safari.jpg' style='border: none;' alt='下载 Safari 4'/></a></div>
+  <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://huacnlee.com/images/ie6nomore-chrome.jpg' style='border: none;' alt='下载 Google Chrome'/></a></div>
+</div>
+</div>
+<![endif]-->
+<div id="container">
+	<div id="header">		
+		<div id="site_name">
+      <%= link_to @setting.site_name, :controller => "home", :action => "index" %>
+    </div>
+    <div class="sub_title">
+      <%= @setting.sub_title %>
+    </div>
+    <div id="nav_search">
+      <form action="/blog" method="get">
+      <input type="text" name="search" value="" id="search" /> 
+      <button type="submit">搜索</button>
+      </form>
+    </div>
 	</div>
 	<div id="nav">
-		<div class="inner_panel">
-			<ul>
-				<li<%= ' class="actived"' if @nav_actived == "home" %>><%= link_to "首页", :controller => "home", :action => "index" %></li>
-				<% if !@menus.blank? %>
-				  <% for item in @menus %>
-				  <li<%= ' class="actived"' if @nav_actived == item.url.gsub('/','') %>><a href="<%= item.url %>" title="<%= item.name %>"<%= ' target="_blank"' if item.new_window %>><%= item.name %></a></li>
-				  <% end -%>
-				<% end -%>
-			</ul>
-			<div id="nav_search">
-                <form action="/blog" method="get">
-				<input type="text" name="search" value="" id="search" /> 
-				<button type="submit">&nbsp;</button>
-                </form>
-			</div>
-		</div>
+		<ul>
+			<li<%= ' class="actived"' if @nav_actived == "home" %>><%= link_to "首页", :controller => "home", :action => "index" %></li>
+			<% if !@menus.blank? %>
+			  <% for item in @menus %>
+			  <li<%= ' class="actived"' if @nav_actived == item.url.gsub('/','') %>><a href="<%= item.url %>" title="<%= item.name %>"<%= ' target="_blank"' if item.new_window %>><%= item.name %></a></li>
+			  <% end -%>
+			<% end -%>
+		</ul>		
 	</div>
 	<div id="main">
-		<div class="inner_panel">
-			<%= yield %>
-		</div>
+		<%= yield %>
 	</div>
 	<div id="footer">
-		<div class="inner_panel">
-			<p class="copyright">
-				Powered by <a href="http://github.com/huacnlee/personlab" target="_blank">PersonLab</a> base on <a href="http://www.rubyonrails.org" target="_blank">Ruby on Rails</a>, Design by Jason Lee Version: <%= APP_VERSION %>. <%= link_to "CPanel", :controller => "cpanel" %>
-			</p>
-            <p class="other_info">
-              Valid  <a href="http://validator.w3.org/check?uri=referer">XHTML 1.0</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS 2.1</a>
-            </p>
-		</div>
+    <p class="copyright">
+      Powered by <a href="http://github.com/huacnlee/personlab" target="_blank">PersonLab</a> base on <a href="http://www.rubyonrails.org" target="_blank">Ruby on Rails</a>, Design by Jason Lee Version: <%= APP_VERSION %>. <%= link_to "CPanel", :controller => "cpanel" %>
+    </p>
+          <p class="other_info">
+            Valid  <a href="http://validator.w3.org/check?uri=referer">XHTML 1.0</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS 2.1</a>
+          </p>
 	</div>
-	<%= javascript_include_tag "src/lib/jquery","src/common", :cache => "lib/common" %>
-	<%= yield :scripts %>
-    <!-- Piwik -->
-    <script type="text/javascript">
-    var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.huacnlee.com/" : "http://piwik.huacnlee.com/");
-    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-    </script><script type="text/javascript">
-    try {
-      var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
-      piwikTracker.trackPageView();
-      piwikTracker.enableLinkTracking();
-    } catch( err ) {}
-    </script><noscript><p><img src="http://piwik.huacnlee.com/piwik.php?idsite=1" style="border:0" alt=""/></p></noscript>
-    <!-- End Piwik Tag -->
+</div>
+<%= javascript_include_tag "src/lib/jquery","src/common", :cache => "lib/common" %>
+<%= yield :scripts %>
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.huacnlee.com/" : "http://piwik.huacnlee.com/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+  var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+  piwikTracker.trackPageView();
+  piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://piwik.huacnlee.com/piwik.php?idsite=1" style="border:0" alt=""/></p></noscript>
+<!-- End Piwik Tag -->
 </body>
 </html>

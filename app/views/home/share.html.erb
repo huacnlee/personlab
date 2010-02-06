@@ -3,21 +3,11 @@
 <%= stylesheet_link_tag "src/home/share",:cache => "share" %>
 <% end %>
 <div id="shares">
-	<% if !@shares.blank? %>
-	  <% for item in @shares %>
-		<div class="item">
-			<div class="title">
-				<a href="<%= item["link"] %>" target="_blank"><%= h item["title"] %></a>
-				<% if not item["source_title"].blank? %>
-				<span class="author"><%= item["author"] %></span>
-				<% end %>
-			</div>
-			<div class="summary">
-				<%= simple_format(truncate(item["content"],1000)) %>
-			</div>			
-		</div>	    
-	  <% end %>
-	<% else %>
-	  
-	<% end %>	
+  <% if !@shares.blank? %>
+    <ul>
+    <% for item in @shares %>
+    <li><a href="<%= item["link"] %>" target="_blank"><%= h item["title"] %></a></li>
+    <% end %>
+    </ul>
+  <% end %>	
 </div>

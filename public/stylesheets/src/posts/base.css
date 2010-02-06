@@ -1,4 +1,4 @@
-.post_body { font-size: 14px; padding:5px 0; line-height: 140%; }
+.post_body { font-size: 13px; padding:5px 0; line-height: 140%; }
 
 
 	.post_body h2 { margin: 10px 0; font-size: 16px;}
@@ -13,35 +13,36 @@
 	.post_body pre { margin:10px 0; padding:10px; font-size:12px; font-family: "????"; line-height:140%;}
 
 #sidebar .box { margin-bottom: 30px;}
-	#sidebar .box .title { color:#BBB; font-size: 18px; font-weight: bold;}
+	#sidebar .box .title { color:#BBB; font-size: 14px; font-weight: bold;}
 	#sidebar .box .content { margin:10px 10px;}
 	#sidebar .box .content ul { margin: 0px; padding:0;  list-style: disc inside;}
 	#sidebar .box .content ul li {  border-bottom: 1px solid #EEE; padding:5px;}
 	#sidebar #feed #big_feed { float:left; margin-right:10px; margin-left: 10px;}
 	#sidebar #feed img {border:0;} 
-	#sidebar #categories ul li a { font-size:14px;  font-weight: bold; color:#70AF22;}
+	#sidebar #categories ul li a { font-size:13px;  font-weight: bold; color:#70AF22;}
 	#sidebar #categories ul li a:hover { color:#CB4802; }
 	#sidebar #categories span.count { color:#999; text-decoration: none;}
 	#sidebar #recent_comments a { color:#666; }
+	#sidebar #recent_posts { font-size:12px; }
 	
 	
-.pagination { background: white; margin-bottom:15px;  /* self-clearing method: */ }
-  .pagination a, .pagination span { padding: .4em .7em; display: block; float: left;font-size: 12px;			font-weight: bold; margin-right: 4px; }
-  .pagination span.disabled { color: #999; border: 1px solid #e9f3d1; }
+.pagination { background: white; margin-bottom:15px;  text-align: center; }
+  .pagination a, .pagination span { padding: .2em .4em; font-size: 12px; margin-right: 2px; }
+  .pagination span.disabled { color: #999; border: 1px solid #EEE; }
   .pagination span.current {
     font-weight: bold;
     background: #FFF;
-    color: #d18201;
-    border: 1px solid #66ae0c; }
+    color: #666;
+    border: 1px solid #CCC; }
   .pagination a:link,.pagination a:visited {
     text-decoration: none;
-    color: #FFF;
-		background:#77c615;
-    border: 1px solid #77c615; }
+    color: #1259C7;
+	background:#EEE;
+    border: 1px solid #1259C7; }
     .pagination a:hover, .pagination a:focus {
       color: #FFF;
-			background: #398700;
-      border-color: #398700; }
+	background: #1259C7;
+      border-color: #1259C7; }
   .pagination .page_info {
     background: #2E6AB1;
     color: white;

@@ -34,7 +34,7 @@ class Post < ActiveRecord::Base
     if body.index(@sumarry_mark)
       body.split(@sumarry_mark)[0]
     else
-      body.truncate_html(1500,'')
+      body.truncate_html(250,'')
     end
   end
     

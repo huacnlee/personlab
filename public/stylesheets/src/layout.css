@@ -5,31 +5,29 @@
  * summary: 
  *   layout.css
  */
-.inner_panel { width:960px; margin: 0px auto; text-align: left;}
+#container { width:960px; overflow:hidden; margin:20px auto; text-align: left; }
 		
-#header { height: 94px; background:#8fd300 url('../../images/header_bg.jpg');}
-	#header .left_box { float:left; width:710px; background: url('../../images/header_domain.jpg') right top no-repeat;}
-		#header #site_name { font-size:40px;  padding-top: 15px;}
-			#header #site_name a { color:#dbf0ab; font-weight: bold; text-decoration: none;}
-			#header .sub_title { color:#70af22; font-size: 14px; font-weight: bold;}
-	#header .right_box { float:right;padding-top:22px; text-align: left; }
-	#header .right_box img { border:0px;}
+#header { margin-bottom:10px; border-bottom:1px solid #DDD; padding:10px 0;  }
+	#header #site_name { font-size:30px;  padding-top: 15px;}
+		#header #site_name a { color:#1259C7; font-weight: bold; text-decoration: none;}
+		#header .sub_title { color:#999; font-size: 12px; }
 
-#nav { height:44px; overflow:hidden; background:#77c615;  font-size: 16px;}
-	#nav ul { margin:0; list-style: none; padding-top: 10px; }
-		#nav ul li { display:inline; font-weight: bold;}
-		#nav ul li a:link,#nav ul li a:visited	{ margin-top: 4px; display: block; text-align: center; height:30px; overflow: hidden; line-height: 35px; overflow:hidden; width:93px; background: #66ae0c url('../../images/nav_item.jpg') left -34px no-repeat; color:#FFF; text-decoration: none; float: left; margin-right: 4px;}
-		#nav ul li a:hover { background:#66ae0c url('../../images/nav_item.jpg') left -65px;}
-		#nav ul li.actived a { background:#FFF url('../../images/nav_item.jpg') left 0px; height:34px; line-height: 39px; margin-top: 0px; color:#d38101; }
-		#nav_search { float:right; width:214px; height:30px; text-align: left; background:url('../../images/nav_search_box.jpg') left top no-repeat; }
-		#nav_search input { display: block; border:0; font-size: 12px; margin:6px 3px 5px 50px; width:111px; padding:1px;}
-		#nav_search button { float:right; margin-top:-28px; width:42px; height:30px; margin-left:2px;  background:url(../../images/nav_search_button.jpg) left top no-repeat; border:0;}
+
+#nav { margin-bottom:30px;  font-size: 14px; }
+	#nav ul { margin:0; list-style: none; margin-right: 10px; text-align: center; }
+		#nav ul li { display:inline; font-weight: bold; }
+		#nav ul li a:link,#nav ul li a:visited	{ margin-right: 10px;}
+		#nav ul li a:hover { }
+		#nav ul li.actived a { color:#333; }
+		#nav_search { float:right; margin-top:-20px; text-align: left; }
+		#nav_search input { padding:2px; }
+		#nav_search button { padding:1px 6px; }
 		
-#footer { background:#e9f3d1; clear: both; padding:10px 0; font-size: 11px;}
+#footer { border-top:1px solid #DDD; margin-top:40px; text-align: center; clear: both; padding:10px 0; font-size: 11px;}
 
-#main { padding: 20px 0; }
-	#mainbox { width:700px; float:left;}
-	#sidebar { width:285px;  float:right; }
+#main { }
+	#mainbox { }
+	#sidebar {  }
 	
 
 

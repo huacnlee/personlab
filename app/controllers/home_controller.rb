@@ -6,16 +6,18 @@ class HomeController < ApplicationController
     set_nav_actived("home")
 
     # get fanfou messages
-		@fanfou_msgs = []
+    @fanfou_msgs = []
     if !@setting.fanfou_id.blank?
-      #@fanfou_msgs = Fanfou.get_home_messages(@setting.fanfou_id,5)
-			@tweets = []
-      #@tweets = Tweet.get_home_messages(@setting.fanfou_id,5)
+      @tweets = []
+      # @tweets = Tweet.get_home_messages(@setting.fanfou_id,5)
     end
-
     
     if !fragment_exist? "home/index/recent_posts"
-      @recent_post = Post.find(:first,:order => "created_at desc")
+      @recent_posts = Post.find(:all, :limit => 13,:order => "created_at desc")
+    end
+    
+    if !fragment_exist? "home/index/recent_comments"
+      @recent_comments = Comment.find_recent(5)
     end
   end
 
