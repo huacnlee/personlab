@@ -1,3 +1,4 @@
+require "md5"
 class User < ActiveRecord::Base
   validates_presence_of :uname, :pwd, :name,:message => "不能为空."
   

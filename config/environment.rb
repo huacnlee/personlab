@@ -41,7 +41,7 @@ Rails::Initializer.run do |config|
 	config.gem 'macaddr', :version => '~> 1.0'
 	config.gem 'RedCloth'
 	config.gem 'simple-rss'
-	config.gem 'twitter4r'
+	config.gem 'twitter4r', :lib => "twitter"
 
 end
 

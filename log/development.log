@@ -229,3 +229,1052 @@ Rendering template within layouts/cpanel
 Rendering cpanel/home/index
 Completed in 35ms (View: 11, DB: 5) | 200 OK [http://127.0.0.1/cpanel]
 ** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (62.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090413152411)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413152411')[0m
+Migrating to CreatePages (20090413154027)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `pages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154027')[0m
+Migrating to CreateMenus (20090413154146)
+  [4;35;1mSQL (47.0ms)[0m   [0mCREATE TABLE `menus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `url` varchar(255) NOT NULL, `sort` int(11) DEFAULT 0 NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154146')[0m
+Migrating to CreateShares (20090413154413)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `shares` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `summary` varchar(255) NOT NULL, `from` varchar(255), `cover` varchar(255), `url` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154413')[0m
+Migrating to CreateComments (20090413155254)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `post_id` int(11) NOT NULL, `author` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `url` varchar(255), `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413155254')[0m
+Migrating to PostFellow (20090413155442)
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mCREATE TABLE `post_fellow` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) NOT NULL, `post_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090413155442')[0m
+Migrating to CreateTableUser (20090414133351)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `uname` varchar(255) NOT NULL, `pwd` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090414133351')[0m
+Migrating to AddNewWindowToMenus (20090416164745)
+  [4;35;1mSQL (62.0ms)[0m   [0mALTER TABLE `menus` ADD `new_window` tinyint(1) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090416164745')[0m
+Migrating to AddViewCountToPosts (20090418165125)
+  [4;35;1mSQL (32.0ms)[0m   [0mALTER TABLE `posts` ADD `view_count` int(11) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418165125')[0m
+Migrating to AddCommentCountToPosts (20090418165332)
+  [4;35;1mSQL (32.0ms)[0m   [0mALTER TABLE `posts` ADD `comment_count` int(11) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418165332')[0m
+Migrating to CreateTags (20090418170234)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418170234')[0m
+Migrating to CreateSettings (20090501114903)
+  [4;35;1mSQL (32.0ms)[0m   [0mCREATE TABLE `settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `site_name` varchar(255), `sub_title` varchar(255), `email` varchar(255), `meta_keywords` varchar(255), `meta_description` varchar(255), `home_show` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090501114903')[0m
+Migrating to AddFanfouIdToSettings (20090501171421)
+  [4;35;1mSQL (31.0ms)[0m   [0mALTER TABLE `settings` ADD `fanfou_id` varchar(255)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090501171421')[0m
+Migrating to AddBlogFeedHtmlToSettings (20090502081323)
+  [4;35;1mSQL (31.0ms)[0m   [0mALTER TABLE `settings` ADD `blog_feed_html` text[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090502081323')[0m
+Migrating to AddMetaToPosts (20090517034648)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `posts` ADD `meta_keywords` varchar(255)[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mALTER TABLE `posts` ADD `meta_description` varchar(255)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517034648')[0m
+Migrating to AddGoogleReaderIdToSettings (20090517061014)
+  [4;36;1mSQL (47.0ms)[0m   [0;1mALTER TABLE `settings` ADD `google_reader_id` varchar(255)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517061014')[0m
+Migrating to RemoveShares (20090517064606)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDROP TABLE `shares`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517064606')[0m
+Migrating to CreatePostsTags (20090524113052)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mCREATE TABLE `posts_tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `post_id` int(11) NOT NULL, `tag_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090524113052')[0m
+Migrating to RetotalCommentCount (20090721085828)
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load Scrooged (0.0ms)[0m   [0;1mSELECT `posts`.id FROM `posts` ORDER BY id desc[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721085828')[0m
+Migrating to AddSitemapTable (20090815043049)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `sitemap_settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `xml_location` varchar(255), `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mCREATE TABLE `sitemap_static_links` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `url` varchar(255), `name` varchar(255), `priority` float, `frequency` varchar(255), `section` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (94.0ms)[0m   [0mCREATE TABLE `sitemap_widgets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `widget_model` varchar(255), `index_named_route` varchar(255), `frequency_index` varchar(255), `frequency_show` varchar(255), `priority` float, `custom_finder` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090815043049')[0m
+Migrating to RemoveTagTable (20090828013049)
+  [4;35;1mSQL (16.0ms)[0m   [0mDROP TABLE `tags`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDROP TABLE `posts_tags`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013049')[0m
+Migrating to CreateCategories (20090828013050)
+  [4;36;1mSQL (31.0ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013050')[0m
+Migrating to AddCategoryToPosts (20090828013051)
+  [4;36;1mSQL (78.0ms)[0m   [0;1mALTER TABLE `posts` ADD `category_id` int(11)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013051')[0m
+Migrating to ActsAsTaggableOnMigration (20090828031328)
+  [4;36;1mSQL (47.0ms)[0m   [0;1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `tagger_id` int(11), `tagger_type` varchar(255), `taggable_type` varchar(255), `context` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Specified key was too long; max key length is 1000 bytes: CREATE INDEX `index_taggings_on_taggable_id_and_taggable_type_and_context` ON `taggings` (`taggable_id`, `taggable_type`, `context`)[0m
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090413152411)
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413152411')[0m
+Migrating to CreatePages (20090413154027)
+  [4;35;1mSQL (15.0ms)[0m   [0mCREATE TABLE `pages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154027')[0m
+Migrating to CreateMenus (20090413154146)
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `menus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `url` varchar(255) NOT NULL, `sort` int(11) DEFAULT 0 NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154146')[0m
+Migrating to CreateShares (20090413154413)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `shares` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `summary` varchar(255) NOT NULL, `from` varchar(255), `cover` varchar(255), `url` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154413')[0m
+Migrating to CreateComments (20090413155254)
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `post_id` int(11) NOT NULL, `author` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `url` varchar(255), `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413155254')[0m
+Migrating to PostFellow (20090413155442)
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mCREATE TABLE `post_fellow` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) NOT NULL, `post_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090413155442')[0m
+Migrating to CreateTableUser (20090414133351)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `uname` varchar(255) NOT NULL, `pwd` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090414133351')[0m
+Migrating to AddNewWindowToMenus (20090416164745)
+  [4;35;1mSQL (32.0ms)[0m   [0mALTER TABLE `menus` ADD `new_window` tinyint(1) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090416164745')[0m
+Migrating to AddViewCountToPosts (20090418165125)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `posts` ADD `view_count` int(11) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418165125')[0m
+Migrating to AddCommentCountToPosts (20090418165332)
+  [4;35;1mSQL (31.0ms)[0m   [0mALTER TABLE `posts` ADD `comment_count` int(11) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418165332')[0m
+Migrating to CreateTags (20090418170234)
+  [4;35;1mSQL (32.0ms)[0m   [0mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418170234')[0m
+Migrating to CreateSettings (20090501114903)
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `site_name` varchar(255), `sub_title` varchar(255), `email` varchar(255), `meta_keywords` varchar(255), `meta_description` varchar(255), `home_show` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090501114903')[0m
+Migrating to AddFanfouIdToSettings (20090501171421)
+  [4;35;1mSQL (31.0ms)[0m   [0mALTER TABLE `settings` ADD `fanfou_id` varchar(255)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090501171421')[0m
+Migrating to AddBlogFeedHtmlToSettings (20090502081323)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `settings` ADD `blog_feed_html` text[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090502081323')[0m
+Migrating to AddMetaToPosts (20090517034648)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `posts` ADD `meta_keywords` varchar(255)[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mALTER TABLE `posts` ADD `meta_description` varchar(255)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517034648')[0m
+Migrating to AddGoogleReaderIdToSettings (20090517061014)
+  [4;36;1mSQL (31.0ms)[0m   [0;1mALTER TABLE `settings` ADD `google_reader_id` varchar(255)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517061014')[0m
+Migrating to RemoveShares (20090517064606)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDROP TABLE `shares`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517064606')[0m
+Migrating to CreatePostsTags (20090524113052)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `posts_tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `post_id` int(11) NOT NULL, `tag_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090524113052')[0m
+Migrating to RetotalCommentCount (20090721085828)
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load Scrooged (0.0ms)[0m   [0;1mSELECT `posts`.id FROM `posts` ORDER BY id desc[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721085828')[0m
+Migrating to AddSitemapTable (20090815043049)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `sitemap_settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `xml_location` varchar(255), `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `sitemap_static_links` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `url` varchar(255), `name` varchar(255), `priority` float, `frequency` varchar(255), `section` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mCREATE TABLE `sitemap_widgets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `widget_model` varchar(255), `index_named_route` varchar(255), `frequency_index` varchar(255), `frequency_show` varchar(255), `priority` float, `custom_finder` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090815043049')[0m
+Migrating to RemoveTagTable (20090828013049)
+  [4;35;1mSQL (0.0ms)[0m   [0mDROP TABLE `tags`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDROP TABLE `posts_tags`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013049')[0m
+Migrating to CreateCategories (20090828013050)
+  [4;36;1mSQL (32.0ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013050')[0m
+Migrating to AddCategoryToPosts (20090828013051)
+  [4;36;1mSQL (47.0ms)[0m   [0;1mALTER TABLE `posts` ADD `category_id` int(11)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013051')[0m
+Migrating to ActsAsTaggableOnMigration (20090828031328)
+  [4;36;1mSQL (31.0ms)[0m   [0;1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `tagger_id` int(11), `tagger_type` varchar(255), `taggable_type` varchar(255), `context` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090413152411)
+  [4;35;1mSQL (15.0ms)[0m   [0mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413152411')[0m
+Migrating to CreatePages (20090413154027)
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `pages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154027')[0m
+Migrating to CreateMenus (20090413154146)
+  [4;35;1mSQL (32.0ms)[0m   [0mCREATE TABLE `menus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `url` varchar(255) NOT NULL, `sort` int(11) DEFAULT 0 NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154146')[0m
+Migrating to CreateShares (20090413154413)
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `shares` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `summary` varchar(255) NOT NULL, `from` varchar(255), `cover` varchar(255), `url` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154413')[0m
+Migrating to CreateComments (20090413155254)
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `post_id` int(11) NOT NULL, `author` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `url` varchar(255), `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413155254')[0m
+Migrating to PostFellow (20090413155442)
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mCREATE TABLE `post_fellow` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) NOT NULL, `post_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090413155442')[0m
+Migrating to CreateTableUser (20090414133351)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `uname` varchar(255) NOT NULL, `pwd` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090414133351')[0m
+Migrating to AddNewWindowToMenus (20090416164745)
+  [4;35;1mSQL (31.0ms)[0m   [0mALTER TABLE `menus` ADD `new_window` tinyint(1) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090416164745')[0m
+Migrating to AddViewCountToPosts (20090418165125)
+  [4;35;1mSQL (31.0ms)[0m   [0mALTER TABLE `posts` ADD `view_count` int(11) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418165125')[0m
+Migrating to AddCommentCountToPosts (20090418165332)
+  [4;35;1mSQL (31.0ms)[0m   [0mALTER TABLE `posts` ADD `comment_count` int(11) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418165332')[0m
+Migrating to CreateTags (20090418170234)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418170234')[0m
+Migrating to CreateSettings (20090501114903)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `site_name` varchar(255), `sub_title` varchar(255), `email` varchar(255), `meta_keywords` varchar(255), `meta_description` varchar(255), `home_show` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090501114903')[0m
+Migrating to AddFanfouIdToSettings (20090501171421)
+  [4;35;1mSQL (32.0ms)[0m   [0mALTER TABLE `settings` ADD `fanfou_id` varchar(255)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090501171421')[0m
+Migrating to AddBlogFeedHtmlToSettings (20090502081323)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `settings` ADD `blog_feed_html` text[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090502081323')[0m
+Migrating to AddMetaToPosts (20090517034648)
+  [4;35;1mSQL (31.0ms)[0m   [0mALTER TABLE `posts` ADD `meta_keywords` varchar(255)[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mALTER TABLE `posts` ADD `meta_description` varchar(255)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517034648')[0m
+Migrating to AddGoogleReaderIdToSettings (20090517061014)
+  [4;36;1mSQL (31.0ms)[0m   [0;1mALTER TABLE `settings` ADD `google_reader_id` varchar(255)[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517061014')[0m
+Migrating to RemoveShares (20090517064606)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDROP TABLE `shares`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517064606')[0m
+Migrating to CreatePostsTags (20090524113052)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mCREATE TABLE `posts_tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `post_id` int(11) NOT NULL, `tag_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090524113052')[0m
+Migrating to RetotalCommentCount (20090721085828)
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load Scrooged (0.0ms)[0m   [0;1mSELECT `posts`.id FROM `posts` ORDER BY id desc[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721085828')[0m
+Migrating to AddSitemapTable (20090815043049)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `sitemap_settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `xml_location` varchar(255), `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `sitemap_static_links` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `url` varchar(255), `name` varchar(255), `priority` float, `frequency` varchar(255), `section` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `sitemap_widgets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `widget_model` varchar(255), `index_named_route` varchar(255), `frequency_index` varchar(255), `frequency_show` varchar(255), `priority` float, `custom_finder` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090815043049')[0m
+Migrating to RemoveTagTable (20090828013049)
+  [4;35;1mSQL (0.0ms)[0m   [0mDROP TABLE `tags`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDROP TABLE `posts_tags`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013049')[0m
+Migrating to CreateCategories (20090828013050)
+  [4;36;1mSQL (31.0ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013050')[0m
+Migrating to AddCategoryToPosts (20090828013051)
+  [4;36;1mSQL (32.0ms)[0m   [0;1mALTER TABLE `posts` ADD `category_id` int(11)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013051')[0m
+Migrating to ActsAsTaggableOnMigration (20090828031328)
+  [4;36;1mSQL (31.0ms)[0m   [0;1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `tagger_id` int(11), `tagger_type` varchar(255), `taggable_type` varchar(255), `context` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (78.0ms)[0m   [0;1mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Specified key was too long; max key length is 1000 bytes: CREATE INDEX `index_tagableid_type_content` ON `taggings` (`taggable_id`, `taggable_type`, `context`)[0m
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090413152411)
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413152411')[0m
+Migrating to CreatePages (20090413154027)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `pages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154027')[0m
+Migrating to CreateMenus (20090413154146)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `menus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `url` varchar(255) NOT NULL, `sort` int(11) DEFAULT 0 NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154146')[0m
+Migrating to CreateShares (20090413154413)
+  [4;35;1mSQL (15.0ms)[0m   [0mCREATE TABLE `shares` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `summary` varchar(255) NOT NULL, `from` varchar(255), `cover` varchar(255), `url` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154413')[0m
+Migrating to CreateComments (20090413155254)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `post_id` int(11) NOT NULL, `author` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `url` varchar(255), `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413155254')[0m
+Migrating to PostFellow (20090413155442)
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mCREATE TABLE `post_fellow` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) NOT NULL, `post_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090413155442')[0m
+Migrating to CreateTableUser (20090414133351)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `uname` varchar(255) NOT NULL, `pwd` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090414133351')[0m
+Migrating to AddNewWindowToMenus (20090416164745)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `menus` ADD `new_window` tinyint(1) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090416164745')[0m
+Migrating to AddViewCountToPosts (20090418165125)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `posts` ADD `view_count` int(11) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418165125')[0m
+Migrating to AddCommentCountToPosts (20090418165332)
+  [4;35;1mSQL (31.0ms)[0m   [0mALTER TABLE `posts` ADD `comment_count` int(11) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418165332')[0m
+Migrating to CreateTags (20090418170234)
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418170234')[0m
+Migrating to CreateSettings (20090501114903)
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `site_name` varchar(255), `sub_title` varchar(255), `email` varchar(255), `meta_keywords` varchar(255), `meta_description` varchar(255), `home_show` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090501114903')[0m
+Migrating to AddFanfouIdToSettings (20090501171421)
+  [4;35;1mSQL (32.0ms)[0m   [0mALTER TABLE `settings` ADD `fanfou_id` varchar(255)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090501171421')[0m
+Migrating to AddBlogFeedHtmlToSettings (20090502081323)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `settings` ADD `blog_feed_html` text[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090502081323')[0m
+Migrating to AddMetaToPosts (20090517034648)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `posts` ADD `meta_keywords` varchar(255)[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mALTER TABLE `posts` ADD `meta_description` varchar(255)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517034648')[0m
+Migrating to AddGoogleReaderIdToSettings (20090517061014)
+  [4;36;1mSQL (31.0ms)[0m   [0;1mALTER TABLE `settings` ADD `google_reader_id` varchar(255)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517061014')[0m
+Migrating to RemoveShares (20090517064606)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDROP TABLE `shares`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517064606')[0m
+Migrating to CreatePostsTags (20090524113052)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mCREATE TABLE `posts_tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `post_id` int(11) NOT NULL, `tag_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090524113052')[0m
+Migrating to RetotalCommentCount (20090721085828)
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load Scrooged (0.0ms)[0m   [0;1mSELECT `posts`.id FROM `posts` ORDER BY id desc[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721085828')[0m
+Migrating to AddSitemapTable (20090815043049)
+  [4;36;1mSQL (16.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `sitemap_settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `xml_location` varchar(255), `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `sitemap_static_links` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `url` varchar(255), `name` varchar(255), `priority` float, `frequency` varchar(255), `section` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mCREATE TABLE `sitemap_widgets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `widget_model` varchar(255), `index_named_route` varchar(255), `frequency_index` varchar(255), `frequency_show` varchar(255), `priority` float, `custom_finder` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090815043049')[0m
+Migrating to RemoveTagTable (20090828013049)
+  [4;35;1mSQL (0.0ms)[0m   [0mDROP TABLE `tags`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDROP TABLE `posts_tags`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013049')[0m
+Migrating to CreateCategories (20090828013050)
+  [4;36;1mSQL (32.0ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013050')[0m
+Migrating to AddCategoryToPosts (20090828013051)
+  [4;36;1mSQL (32.0ms)[0m   [0;1mALTER TABLE `posts` ADD `category_id` int(11)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013051')[0m
+Migrating to ActsAsTaggableOnMigration (20090828031328)
+  [4;36;1mSQL (78.0ms)[0m   [0;1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `tagger_id` int(11), `tagger_type` varchar(255), `taggable_type` varchar(255), `context` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (46.0ms)[0m   [0;1mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Specified key was too long; max key length is 1000 bytes: CREATE INDEX `idx_ableid_type_content` ON `taggings` (`taggable_id`, `taggable_type`, `context`)[0m
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090413152411)
+  [4;35;1mSQL (62.0ms)[0m   [0mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413152411')[0m
+Migrating to CreatePages (20090413154027)
+  [4;35;1mSQL (47.0ms)[0m   [0mCREATE TABLE `pages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154027')[0m
+Migrating to CreateMenus (20090413154146)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `menus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `url` varchar(255) NOT NULL, `sort` int(11) DEFAULT 0 NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154146')[0m
+Migrating to CreateShares (20090413154413)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `shares` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `summary` varchar(255) NOT NULL, `from` varchar(255), `cover` varchar(255), `url` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154413')[0m
+Migrating to CreateComments (20090413155254)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `post_id` int(11) NOT NULL, `author` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `url` varchar(255), `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413155254')[0m
+Migrating to PostFellow (20090413155442)
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mCREATE TABLE `post_fellow` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) NOT NULL, `post_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090413155442')[0m
+Migrating to CreateTableUser (20090414133351)
+  [4;36;1mSQL (15.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `uname` varchar(255) NOT NULL, `pwd` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090414133351')[0m
+Migrating to AddNewWindowToMenus (20090416164745)
+  [4;35;1mSQL (32.0ms)[0m   [0mALTER TABLE `menus` ADD `new_window` tinyint(1) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090416164745')[0m
+Migrating to AddViewCountToPosts (20090418165125)
+  [4;35;1mSQL (32.0ms)[0m   [0mALTER TABLE `posts` ADD `view_count` int(11) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418165125')[0m
+Migrating to AddCommentCountToPosts (20090418165332)
+  [4;35;1mSQL (31.0ms)[0m   [0mALTER TABLE `posts` ADD `comment_count` int(11) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418165332')[0m
+Migrating to CreateTags (20090418170234)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418170234')[0m
+Migrating to CreateSettings (20090501114903)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `site_name` varchar(255), `sub_title` varchar(255), `email` varchar(255), `meta_keywords` varchar(255), `meta_description` varchar(255), `home_show` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090501114903')[0m
+Migrating to AddFanfouIdToSettings (20090501171421)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `settings` ADD `fanfou_id` varchar(255)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090501171421')[0m
+Migrating to AddBlogFeedHtmlToSettings (20090502081323)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `settings` ADD `blog_feed_html` text[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090502081323')[0m
+Migrating to AddMetaToPosts (20090517034648)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `posts` ADD `meta_keywords` varchar(255)[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mALTER TABLE `posts` ADD `meta_description` varchar(255)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517034648')[0m
+Migrating to AddGoogleReaderIdToSettings (20090517061014)
+  [4;36;1mSQL (47.0ms)[0m   [0;1mALTER TABLE `settings` ADD `google_reader_id` varchar(255)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517061014')[0m
+Migrating to RemoveShares (20090517064606)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDROP TABLE `shares`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517064606')[0m
+Migrating to CreatePostsTags (20090524113052)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `posts_tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `post_id` int(11) NOT NULL, `tag_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090524113052')[0m
+Migrating to RetotalCommentCount (20090721085828)
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load Scrooged (0.0ms)[0m   [0;1mSELECT `posts`.id FROM `posts` ORDER BY id desc[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721085828')[0m
+Migrating to AddSitemapTable (20090815043049)
+  [4;36;1mSQL (15.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `sitemap_settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `xml_location` varchar(255), `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `sitemap_static_links` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `url` varchar(255), `name` varchar(255), `priority` float, `frequency` varchar(255), `section` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mCREATE TABLE `sitemap_widgets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `widget_model` varchar(255), `index_named_route` varchar(255), `frequency_index` varchar(255), `frequency_show` varchar(255), `priority` float, `custom_finder` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090815043049')[0m
+Migrating to RemoveTagTable (20090828013049)
+  [4;35;1mSQL (0.0ms)[0m   [0mDROP TABLE `tags`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDROP TABLE `posts_tags`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013049')[0m
+Migrating to CreateCategories (20090828013050)
+  [4;36;1mSQL (31.0ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013050')[0m
+Migrating to AddCategoryToPosts (20090828013051)
+  [4;36;1mSQL (47.0ms)[0m   [0;1mALTER TABLE `posts` ADD `category_id` int(11)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013051')[0m
+Migrating to ActsAsTaggableOnMigration (20090828031328)
+  [4;36;1mSQL (31.0ms)[0m   [0;1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `tagger_id` int(11), `tagger_type` varchar(255), `taggable_type` varchar(255), `context` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Specified key was too long; max key length is 1000 bytes: CREATE INDEX `idx_idtypecont` ON `taggings` (`taggable_id`, `taggable_type`, `context`)[0m
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090413152411)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413152411')[0m
+Migrating to CreatePages (20090413154027)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `pages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154027')[0m
+Migrating to CreateMenus (20090413154146)
+  [4;35;1mSQL (32.0ms)[0m   [0mCREATE TABLE `menus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `url` varchar(255) NOT NULL, `sort` int(11) DEFAULT 0 NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154146')[0m
+Migrating to CreateShares (20090413154413)
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `shares` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `summary` varchar(255) NOT NULL, `from` varchar(255), `cover` varchar(255), `url` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413154413')[0m
+Migrating to CreateComments (20090413155254)
+  [4;35;1mSQL (32.0ms)[0m   [0mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `post_id` int(11) NOT NULL, `author` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `url` varchar(255), `body` text NOT NULL, `status` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090413155254')[0m
+Migrating to PostFellow (20090413155442)
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mCREATE TABLE `post_fellow` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) NOT NULL, `post_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090413155442')[0m
+Migrating to CreateTableUser (20090414133351)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `uname` varchar(255) NOT NULL, `pwd` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090414133351')[0m
+Migrating to AddNewWindowToMenus (20090416164745)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `menus` ADD `new_window` tinyint(1) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090416164745')[0m
+Migrating to AddViewCountToPosts (20090418165125)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `posts` ADD `view_count` int(11) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418165125')[0m
+Migrating to AddCommentCountToPosts (20090418165332)
+  [4;35;1mSQL (63.0ms)[0m   [0mALTER TABLE `posts` ADD `comment_count` int(11) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418165332')[0m
+Migrating to CreateTags (20090418170234)
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090418170234')[0m
+Migrating to CreateSettings (20090501114903)
+  [4;35;1mSQL (15.0ms)[0m   [0mCREATE TABLE `settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `site_name` varchar(255), `sub_title` varchar(255), `email` varchar(255), `meta_keywords` varchar(255), `meta_description` varchar(255), `home_show` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090501114903')[0m
+Migrating to AddFanfouIdToSettings (20090501171421)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `settings` ADD `fanfou_id` varchar(255)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090501171421')[0m
+Migrating to AddBlogFeedHtmlToSettings (20090502081323)
+  [4;35;1mSQL (47.0ms)[0m   [0mALTER TABLE `settings` ADD `blog_feed_html` text[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090502081323')[0m
+Migrating to AddMetaToPosts (20090517034648)
+  [4;35;1mSQL (46.0ms)[0m   [0mALTER TABLE `posts` ADD `meta_keywords` varchar(255)[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mALTER TABLE `posts` ADD `meta_description` varchar(255)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517034648')[0m
+Migrating to AddGoogleReaderIdToSettings (20090517061014)
+  [4;36;1mSQL (47.0ms)[0m   [0;1mALTER TABLE `settings` ADD `google_reader_id` varchar(255)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517061014')[0m
+Migrating to RemoveShares (20090517064606)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDROP TABLE `shares`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517064606')[0m
+Migrating to CreatePostsTags (20090524113052)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mCREATE TABLE `posts_tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `post_id` int(11) NOT NULL, `tag_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090524113052')[0m
+Migrating to RetotalCommentCount (20090721085828)
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load Scrooged (0.0ms)[0m   [0;1mSELECT `posts`.id FROM `posts` ORDER BY id desc[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721085828')[0m
+Migrating to AddSitemapTable (20090815043049)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mCREATE TABLE `sitemap_settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `xml_location` varchar(255), `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `sitemap_static_links` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `url` varchar(255), `name` varchar(255), `priority` float, `frequency` varchar(255), `section` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mCREATE TABLE `sitemap_widgets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `widget_model` varchar(255), `index_named_route` varchar(255), `frequency_index` varchar(255), `frequency_show` varchar(255), `priority` float, `custom_finder` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090815043049')[0m
+Migrating to RemoveTagTable (20090828013049)
+  [4;35;1mSQL (0.0ms)[0m   [0mDROP TABLE `tags`[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mDROP TABLE `posts_tags`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013049')[0m
+Migrating to CreateCategories (20090828013050)
+  [4;36;1mSQL (47.0ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013050')[0m
+Migrating to AddCategoryToPosts (20090828013051)
+  [4;36;1mSQL (47.0ms)[0m   [0;1mALTER TABLE `posts` ADD `category_id` int(11)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828013051')[0m
+Migrating to ActsAsTaggableOnMigration (20090828031328)
+  [4;36;1mSQL (32.0ms)[0m   [0;1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (46.0ms)[0m   [0mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `tagger_id` int(11), `tagger_type` varchar(255), `taggable_type` varchar(255), `context` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828031328')[0m
+Migrating to AddPostsCountToCategories (20090828031330)
+  [4;36;1mSQL (47.0ms)[0m   [0;1mALTER TABLE `categories` ADD `posts_count` int(11)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828031330')[0m
+Migrating to AddUserClientToComments (20090909030001)
+  [4;36;1mSQL (47.0ms)[0m   [0;1mALTER TABLE `comments` ADD `user_ip` varchar(255)[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mALTER TABLE `comments` ADD `user_agent` varchar(255)[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mALTER TABLE `comments` ADD `referrer` varchar(255)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090909030001')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `categories`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `categories`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `comments`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `comments`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `menus`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `menus`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `menus`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `pages`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `pages`[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mSHOW FIELDS FROM `post_fellow`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `post_fellow`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `post_fellow`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `posts`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `settings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `settings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `sitemap_settings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `sitemap_settings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `sitemap_settings`[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mSHOW FIELDS FROM `sitemap_static_links`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `sitemap_static_links`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `sitemap_static_links`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `sitemap_widgets`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `sitemap_widgets`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `sitemap_widgets`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `taggings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `taggings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `taggings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `tags`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `tags`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 11:13:56) [GET]
+Cache miss: data/menus ({})
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+  [4;35;1mMenu Load Scrooged (0.0ms)[0m   [0mSELECT `menus`.id FROM `menus` ORDER BY sort desc[0m
+Cache write (will save 0.00ms): data/menus
+Cache miss: data/setting ({})
+  [4;36;1mSetting Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+  [4;35;1mSetting Load Scrooged (0.0ms)[0m   [0mSELECT `settings`.id FROM `settings` LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSetting Create (0.0ms)[0m   [0mINSERT INTO `settings` (`home_show`, `updated_at`, `meta_keywords`, `fanfou_id`, `meta_description`, `sub_title`, `site_name`, `blog_feed_html`, `google_reader_id`, `created_at`, `email`) VALUES('\n <div class=\"info\">\n <div class=\"face\">\n 		<img alt=\"李华顺的照片\" src=\"/images/face.jpg\">\n 	</div>\n 	<div class=\"feed\">\n 		<a id=\"get_feed\" href=\"#\" title=\"订阅我的博客\">\n 			<img alt=\"订阅我的博客\" src=\"/images/feed_big.jpg\">\n 		</a><br>\n 		<img alt=\"Email:huacnlee@gmail.com\" src=\"/images/gmail_label.jpg\">\n 	</div>\n </div>\n <div class=\"icons\">\n 	<a href=\"http://fanfou.com/huacn\" target=\"_blank\" title=\"关注我的饭否\"><img alt=\"我的饭否\" src=\"/images/webicons/fanfou.jpg\"></a>\n 	<a href=\"http://twitter.com/huacnlee\" target=\"_blank\" title=\"我的Twitter\"><img alt=\"我的Twitter\" src=\"/images/webicons/twitter.jpg\"></a> <a href=\"http://www.xiami.com/u/8008\" title=\"我的虾米音乐分享\" target=\"_blank\"><img alt=\"我的虾米音乐分享\" src=\"/images/webicons/xiami.jpg\"></a> \n 	<a href=\"http://del.icio.us/huacnlee\" target=\"_blank\" title=\"我的Delicious收藏夹\"><img alt=\"我的Delicious收藏夹\" src=\"/images/webicons/delicious.jpg\"></a> \n 	<a href=\"http://www.douban.com/people/huacnlee/\" target=\"_blank\" title=\"我的豆瓣\"><img alt=\"我的豆瓣\" src=\"/images/webicons/douban.jpg\"></a>\n 	<a href=\"http://huacnlee.stumbleupon.com/\" style=\"display: none;\" title=\"我的\n 	StumbleUpon\"><img alt=\"simple\" src=\"/images/webicons/stumbleupon.jpg\"></a> \n 	<a href=\"http://friendfeed.com/huacn\" target=\"_blank\" title=\"我的FriendFeed\"><img alt=\"我的FriendFeed分享\" src=\"/images/webicons/friendfeed.jpg\"></a> \n 	<a href=\"http://huacn.yupoo.com/\" target=\"_blank\" title=\"我的Yupoo相册\"><img alt=\"我的Yupoo相册\" src=\"/images/webicons/yupoo.jpg\"></a> \n 	<a href=\"http://flickr.com/photos/huacnlee\" traget=\"_blank\"><img alt=\"我的Flickr相册\" src=\"/images/webicons/flickr.jpg\"></a>\n 	<a href=\"http://picasaweb.google.com/huacnlee\" title=\"我的Picasa相册\"><img alt=\"我的Picasa相册\" src=\"/images/webicons/picasaweb.jpg\"></a> \n 	<a href=\"http://www.youtube.com/huacnlee\" target=\"_blank\" title=\"我的Youtube收藏\"><img alt=\"我的Youtube收藏\" src=\"/images/webicons/youtube.jpg\"></a> \n 	<a href=\"http://cn.last.fm/user/huacnlee/\" target=\"_blank\" title=\"我的Last.fm\"><img alt=\"我的Last.fm\" src=\"/images/webicons/lastfm.jpg\"></a> \n 	<a href=\"http://wakoopa.com/huacnlee\" title=\"我最常用的软件及评价(Wakoopa)\"><img alt=\"我最常用的软件及评价(Wakoopa)\" src=\"/images/webicons/wakoopa.jpg\"></a>\n </div>', '2010-02-06 03:13:56', 'personlab,ruby on rails', 'huacn', 'This is an person website build by Ruby on Rails.', 'This is an person website build by Ruby on Rails.', 'PersonLab Demo', '<div id=\"big_feed\">\n <a id=\"get_feed\" href=\"#\" title=\"订阅我的博客\"><img alt=\"订阅我的博客\" src=\"/images/feed_big.jpg\"></a>\n </div>\n <div id=\"other_feed\">\n <!-- Feedsky FEED发布代码开始 -->\n <!-- FEED自动发现标记开始 -->\n <link title=\"RSS 2.0\" type=\"application/rss+xml\" href=\"http://feed.feedsky.com/huacn\" rel=\"alternate\" />\n <!-- FEED自动发现标记结束 -->\n <a href=\"http://www.zhuaxia.com/add_channel.php?url=http://feed.feedsky.com/huacn\"><img border=\"0\" src=\"http://img.feedsky.com/images/icon_subshot01_zhuaxia.gif\" alt=\"&#25235;&#34430;\" vspace=\"2\" style=\"margin-bottom:3px\" ></a><br />\n <a href=\"http://fusion.google.com/add?feedurl=http://feed.feedsky.com/huacn\"><img border=\"0\" src=\"http://img.feedsky.com/images/icon_subshot01_google.gif\" alt=\"google reader\" vspace=\"2\" style=\"margin-bottom:3px\" ></a><br />\n <a href=\"http://www.xianguo.com/subscribe.php?url=http://feed.feedsky.com/huacn\"><img border=\"0\" src=\"http://img.feedsky.com/images/icon_subshot01_xianguo.gif\" alt=\"&#40092;&#26524;\" vspace=\"2\" style=\"margin-bottom:3px\" ></a><br />\n <a href=\"http://reader.youdao.com/b.do?keyfrom=feedsky&url=http://feed.feedsky.com/huacn\"><img border=\"0\" src=\"http://img.feedsky.com/images/icon_subshot01_youdao.gif\" alt=\"&#26377;&#36947;\" vspace=\"2\" style=\"margin-bottom:3px\" ></a><br />\n <a href=\"http://mail.qq.com/cgi-bin/feed?u=http://feed.feedsky.com/huacn\"><img border=\"0\" src=\"http://img.feedsky.com/images/icon_subshot01_qq.gif\" alt=\"QQ&#37038;&#31665;\" vspace=\"2\" style=\"margin-bottom:3px\" ></a><br />\n <!-- Feedsky FEED发布代码结束 -->\n </div>\n ', '08982619185204047523', '2010-02-06 03:13:56', 'huacnlee@gmail.com')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Cache write (will save 47.00ms): data/setting
+  [4;35;1mPost Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load Scrooged (0.0ms)[0m   [0;1mSELECT `posts`.id FROM `posts` ORDER BY created_at desc, id desc LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_post (0.0ms)
+Rendered home/_webicons (0.0ms)
+Rendered home/_tweet (15.0ms)
+Completed in 1610ms (View: 172, DB: 16) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 11:13:58) [GET]
+  Parameters: {"slug"=>"favicon.ico", "v"=>"001"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mPage Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load Scrooged (0.0ms)[0m   [0;1mSELECT `pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'favicon.ico') LIMIT 1[0m
+Rendering C:/Documents and Settings/hs.li/work/personlab/public/404.html (404 Not Found)
+Completed in 156ms (View: 16, DB: 16) | 404 Not Found [http://127.0.0.1/favicon.ico?v=001]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 11:13:58) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 11:13:58) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Cpanel::HomeController#index (for 127.0.0.1 at 2010-02-06 11:14:02) [GET]
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load Scrooged (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/cpanel/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 15ms (DB: 0) | 302 Found [http://127.0.0.1/cpanel]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Cpanel::HomeController#login (for 127.0.0.1 at 2010-02-06 11:14:02) [GET]
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load Scrooged (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering cpanel/home/login
+Completed in 125ms (View: 109, DB: 0) | 200 OK [http://127.0.0.1/cpanel/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 11:14:03) [GET]
+  Parameters: {"slug"=>"favicon.ico"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mPage Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load Scrooged (0.0ms)[0m   [0;1mSELECT `pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'favicon.ico') LIMIT 1[0m
+Rendering C:/Documents and Settings/hs.li/work/personlab/public/404.html (404 Not Found)
+Completed in 32ms (View: 0, DB: 0) | 404 Not Found [http://127.0.0.1/favicon.ico]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Cpanel::HomeController#login (for 127.0.0.1 at 2010-02-06 11:14:06) [POST]
+  Parameters: {"user"=>{"uname"=>"admin", "pwd"=>"123123"}, "commit"=>"登录", "authenticity_token"=>"v+RCfEgIMex4x/Bnwt9/OOAbBuK1OeM9+YMekeNwTeE="}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load Scrooged (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load Scrooged (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (uname = 'admin' and pwd = 'dbb9676ba9f339da83c512f801703945') LIMIT 1[0m
+Rendering cpanel/home/login
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://127.0.0.1/cpanel/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Cpanel::HomeController#login (for 127.0.0.1 at 2010-02-06 11:14:10) [POST]
+  Parameters: {"user"=>{"uname"=>"admin", "pwd"=>"lhs117sb"}, "commit"=>"登录", "authenticity_token"=>"v+RCfEgIMex4x/Bnwt9/OOAbBuK1OeM9+YMekeNwTeE="}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load Scrooged (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load Scrooged (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (uname = 'admin' and pwd = 'b0c6cb73e7db7a0cebf74e531bdec123') LIMIT 1[0m
+Rendering cpanel/home/login
+Completed in 32ms (View: 16, DB: 0) | 200 OK [http://127.0.0.1/cpanel/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Cpanel::HomeController#login (for 127.0.0.1 at 2010-02-06 11:14:14) [POST]
+  Parameters: {"user"=>{"uname"=>"admin", "pwd"=>"admin"}, "commit"=>"登录", "authenticity_token"=>"v+RCfEgIMex4x/Bnwt9/OOAbBuK1OeM9+YMekeNwTeE="}
+  [4;35;1mUser Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load Scrooged (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load Scrooged (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (uname = 'admin' and pwd = '24646f2a55f8434e4fec88eb974c720b') LIMIT 1[0m
+Rendering cpanel/home/login
+Completed in 31ms (View: 15, DB: 16) | 200 OK [http://127.0.0.1/cpanel/login]
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090413152411)
+Migrating to CreatePages (20090413154027)
+Migrating to CreateMenus (20090413154146)
+Migrating to CreateShares (20090413154413)
+Migrating to CreateComments (20090413155254)
+Migrating to PostFellow (20090413155442)
+Migrating to CreateTableUser (20090414133351)
+Migrating to AddNewWindowToMenus (20090416164745)
+Migrating to AddViewCountToPosts (20090418165125)
+Migrating to AddCommentCountToPosts (20090418165332)
+Migrating to CreateTags (20090418170234)
+Migrating to CreateSettings (20090501114903)
+Migrating to AddFanfouIdToSettings (20090501171421)
+Migrating to AddBlogFeedHtmlToSettings (20090502081323)
+Migrating to AddMetaToPosts (20090517034648)
+Migrating to AddGoogleReaderIdToSettings (20090517061014)
+Migrating to RemoveShares (20090517064606)
+Migrating to CreatePostsTags (20090524113052)
+Migrating to RetotalCommentCount (20090721085828)
+Migrating to AddSitemapTable (20090815043049)
+Migrating to RemoveTagTable (20090828013049)
+Migrating to CreateCategories (20090828013050)
+Migrating to AddCategoryToPosts (20090828013051)
+Migrating to ActsAsTaggableOnMigration (20090828031328)
+Migrating to AddPostsCountToCategories (20090828031330)
+Migrating to AddUserClientToComments (20090909030001)
+Migrating to AddAdmin (20100206000001)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 11:17:54) [GET]
+  Parameters: {"slug"=>"favicon.ico"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;36;1mPage Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load Scrooged (0.0ms)[0m   [0mSELECT `pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'favicon.ico') LIMIT 1[0m
+Rendering C:/Documents and Settings/hs.li/work/personlab/public/404.html (404 Not Found)
+Completed in 32ms (View: 16, DB: 0) | 404 Not Found [http://127.0.0.1/favicon.ico]
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090413152411)
+Migrating to CreatePages (20090413154027)
+Migrating to CreateMenus (20090413154146)
+Migrating to CreateShares (20090413154413)
+Migrating to CreateComments (20090413155254)
+Migrating to PostFellow (20090413155442)
+Migrating to CreateTableUser (20090414133351)
+Migrating to AddNewWindowToMenus (20090416164745)
+Migrating to AddViewCountToPosts (20090418165125)
+Migrating to AddCommentCountToPosts (20090418165332)
+Migrating to CreateTags (20090418170234)
+Migrating to CreateSettings (20090501114903)
+Migrating to AddFanfouIdToSettings (20090501171421)
+Migrating to AddBlogFeedHtmlToSettings (20090502081323)
+Migrating to AddMetaToPosts (20090517034648)
+Migrating to AddGoogleReaderIdToSettings (20090517061014)
+Migrating to RemoveShares (20090517064606)
+Migrating to CreatePostsTags (20090524113052)
+Migrating to RetotalCommentCount (20090721085828)
+Migrating to AddSitemapTable (20090815043049)
+Migrating to RemoveTagTable (20090828013049)
+Migrating to CreateCategories (20090828013050)
+Migrating to AddCategoryToPosts (20090828013051)
+Migrating to ActsAsTaggableOnMigration (20090828031328)
+Migrating to AddPostsCountToCategories (20090828031330)
+Migrating to AddUserClientToComments (20090909030001)
+Migrating to AddAdmin (20100206000001)
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090413152411)
+Migrating to CreatePages (20090413154027)
+Migrating to CreateMenus (20090413154146)
+Migrating to CreateShares (20090413154413)
+Migrating to CreateComments (20090413155254)
+Migrating to PostFellow (20090413155442)
+Migrating to CreateTableUser (20090414133351)
+Migrating to AddNewWindowToMenus (20090416164745)
+Migrating to AddViewCountToPosts (20090418165125)
+Migrating to AddCommentCountToPosts (20090418165332)
+Migrating to CreateTags (20090418170234)
+Migrating to CreateSettings (20090501114903)
+Migrating to AddFanfouIdToSettings (20090501171421)
+Migrating to AddBlogFeedHtmlToSettings (20090502081323)
+Migrating to AddMetaToPosts (20090517034648)
+Migrating to AddGoogleReaderIdToSettings (20090517061014)
+Migrating to RemoveShares (20090517064606)
+Migrating to CreatePostsTags (20090524113052)
+Migrating to RetotalCommentCount (20090721085828)
+Migrating to AddSitemapTable (20090815043049)
+Migrating to RemoveTagTable (20090828013049)
+Migrating to CreateCategories (20090828013050)
+Migrating to AddCategoryToPosts (20090828013051)
+Migrating to ActsAsTaggableOnMigration (20090828031328)
+Migrating to AddPostsCountToCategories (20090828031330)
+Migrating to AddUserClientToComments (20090909030001)
+Migrating to AddAdmin (20100206000001)
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Create (0.0ms)[0m   [0;1mINSERT INTO `users` (`name`, `uname`, `updated_at`, `pwd`, `created_at`) VALUES('Admin', 'admin', '2010-02-06 03:19:17', 'dbb9676ba9f339da83c512f801703945', '2010-02-06 03:19:17')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100206000001')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `categories`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `categories`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `menus`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `menus`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `pages`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `pages`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `post_fellow`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `post_fellow`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `post_fellow`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `posts`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `settings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `settings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `sitemap_settings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `sitemap_settings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `sitemap_settings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `sitemap_static_links`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `sitemap_static_links`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `sitemap_static_links`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `sitemap_widgets`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `sitemap_widgets`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `sitemap_widgets`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `taggings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `taggings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `tags`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `tags`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddAdmin (20100206000001)
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load Scrooged (15.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`uname` = 'admin') LIMIT 1[0m
+  [4;36;1mUser Scrooge Reload (0.0ms)[0m   [0;1mSELECT `users`.uname,`users`.pwd,`users`.name,`users`.created_at,`users`.updated_at,`users`.id FROM `users` WHERE `users`.id IN ('1')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Destroy (0.0ms)[0m   [0;1mDELETE FROM `users` WHERE `id` = 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100206000001'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `categories`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `categories`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mdescribe `menus`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `menus`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `pages`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `pages`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `post_fellow`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `post_fellow`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `post_fellow`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `posts`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `settings`[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mSHOW KEYS FROM `settings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `sitemap_settings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `sitemap_settings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `sitemap_settings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `sitemap_static_links`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `sitemap_static_links`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `sitemap_static_links`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `sitemap_widgets`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `sitemap_widgets`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `sitemap_widgets`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `taggings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `taggings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mdescribe `tags`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `tags`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090413152411)
+Migrating to CreatePages (20090413154027)
+Migrating to CreateMenus (20090413154146)
+Migrating to CreateShares (20090413154413)
+Migrating to CreateComments (20090413155254)
+Migrating to PostFellow (20090413155442)
+Migrating to CreateTableUser (20090414133351)
+Migrating to AddNewWindowToMenus (20090416164745)
+Migrating to AddViewCountToPosts (20090418165125)
+Migrating to AddCommentCountToPosts (20090418165332)
+Migrating to CreateTags (20090418170234)
+Migrating to CreateSettings (20090501114903)
+Migrating to AddFanfouIdToSettings (20090501171421)
+Migrating to AddBlogFeedHtmlToSettings (20090502081323)
+Migrating to AddMetaToPosts (20090517034648)
+Migrating to AddGoogleReaderIdToSettings (20090517061014)
+Migrating to RemoveShares (20090517064606)
+Migrating to CreatePostsTags (20090524113052)
+Migrating to RetotalCommentCount (20090721085828)
+Migrating to AddSitemapTable (20090815043049)
+Migrating to RemoveTagTable (20090828013049)
+Migrating to CreateCategories (20090828013050)
+Migrating to AddCategoryToPosts (20090828013051)
+Migrating to ActsAsTaggableOnMigration (20090828031328)
+Migrating to AddPostsCountToCategories (20090828031330)
+Migrating to AddUserClientToComments (20090909030001)
+Migrating to AddAdmin (20100206000001)
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Create (0.0ms)[0m   [0;1mINSERT INTO `users` (`name`, `uname`, `updated_at`, `pwd`, `created_at`) VALUES('Admin', 'admin', '2010-02-06 03:19:45', 'dbb9676ba9f339da83c512f801703945', '2010-02-06 03:19:45')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100206000001')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `categories`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `categories`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `menus`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `menus`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `pages`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `pages`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `post_fellow`[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mdescribe `post_fellow`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `post_fellow`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `posts`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `settings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `settings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `sitemap_settings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `sitemap_settings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `sitemap_settings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `sitemap_static_links`[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mdescribe `sitemap_static_links`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `sitemap_static_links`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `sitemap_widgets`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `sitemap_widgets`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `sitemap_widgets`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `taggings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `taggings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `tags`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `tags`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m

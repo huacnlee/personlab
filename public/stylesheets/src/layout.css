@@ -5,7 +5,7 @@
  * summary: 
  *   layout.css
  */
-.inner_panel { width:1000px; margin: 0px auto; text-align: left;}
+.inner_panel { width:960px; margin: 0px auto; text-align: left;}
 		
 #header { height: 94px; background:#8fd300 url('../../images/header_bg.jpg');}
 	#header .left_box { float:left; width:710px; background: url('../../images/header_domain.jpg') right top no-repeat;}
