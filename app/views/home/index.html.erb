@@ -8,6 +8,13 @@
     <%= render :partial => 'recent_posts' %>
   </div>
   
+  <%= render :partial => 'tweet' %>
+  
+  
+</div>
+<div id="sidebar">
+  <%= render :partial => 'webicons' %>  
+  
   <div id="recent_comments" class="box">
     <div class="title">最新评论</div>
     <div class="content">
@@ -31,8 +38,4 @@
       <% end %>
     </div>
   </div>
-</div>
-<div id="sidebar">
-  <%= render :partial => 'webicons' %>
-  <%= render :partial => 'tweet' %>
 </div>

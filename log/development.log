@@ -26966,3 +26966,1566 @@ ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:m
   c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:47:53) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 5[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (15.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:23)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:23)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:23)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:23)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:23)
+Rendered home/_webicons (0.0ms)
+Rendered home/_tweet (0.0ms)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:47:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:47:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:49:11) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 5[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (15.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:23)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:23)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:23)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:23)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:23)
+Rendered home/_webicons (0.0ms)
+Rendered home/_tweet (0.0ms)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:49:11) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:49:11) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:55:45) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 5[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (16.0ms)
+Rendered home/_tweet (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:25)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:25)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:25)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:25)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:25)
+Rendered home/_webicons (0.0ms)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 78ms (View: 62, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:55:46) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:55:46) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:56:04) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 5[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (16.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 63ms (View: 47, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:56:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:56:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:56:25) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 5[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (15.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 63ms (View: 47, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:56:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:56:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:56:44) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 5[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (0.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 62ms (View: 46, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:56:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:56:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:57:07) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (15.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 63ms (View: 47, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:57:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:57:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:57:53) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (15.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 47ms (View: 31, DB: 16) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:57:53) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:57:53) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:58:13) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (15.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 62ms (View: 31, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:58:14) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:58:14) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:58:22) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (0.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 62ms (View: 31, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:58:22) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:58:23) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:58:49) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (0.0ms)
+Rendered home/_tweet (16.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 62ms (View: 32, DB: 30) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:58:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (15.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:58:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:59:00) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (15.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:59:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:59:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:59:29) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (15.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 188ms (View: 156, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:59:29) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:59:30) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:59:30) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (0.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 63ms (View: 47, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:59:30) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:59:30) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 13:59:30) [GET]
+  Parameters: {"slug"=>"favicon.ico", "v"=>"001"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mPage Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load Scrooged (0.0ms)[0m   [0;1mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'favicon.ico') LIMIT 1[0m
+Rendering C:/Documents and Settings/hs.li/work/personlab/public/404.html (404 Not Found)
+Completed in 16ms (View: 0, DB: 0) | 404 Not Found [http://127.0.0.1/favicon.ico?v=001]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:59:50) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (0.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (16.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 63ms (View: 47, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:59:50) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:59:50) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:59:51) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (15.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:59:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 13:59:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 13:59:51) [GET]
+  Parameters: {"slug"=>"favicon.ico", "v"=>"001"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mPage Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load Scrooged (0.0ms)[0m   [0;1mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'favicon.ico') LIMIT 1[0m
+Rendering C:/Documents and Settings/hs.li/work/personlab/public/404.html (404 Not Found)
+Completed in 0ms (View: 0, DB: 0) | 404 Not Found [http://127.0.0.1/favicon.ico?v=001]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 14:00:03) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (15.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 14:00:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 14:00:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 14:00:04) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (16.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 47ms (View: 32, DB: 15) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 14:00:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 14:00:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 14:00:04) [GET]
+  Parameters: {"slug"=>"favicon.ico", "v"=>"001"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mPage Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load Scrooged (0.0ms)[0m   [0;1mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'favicon.ico') LIMIT 1[0m
+Rendering C:/Documents and Settings/hs.li/work/personlab/public/404.html (404 Not Found)
+Completed in 0ms (View: 0, DB: 0) | 404 Not Found [http://127.0.0.1/favicon.ico?v=001]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 14:00:11) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (16.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 14:00:12) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 14:00:12) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 14:00:12) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (16.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 62ms (View: 47, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 14:00:12) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 14:00:12) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 14:00:13) [GET]
+  Parameters: {"slug"=>"favicon.ico", "v"=>"001"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mPage Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load Scrooged (0.0ms)[0m   [0;1mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'favicon.ico') LIMIT 1[0m
+Rendering C:/Documents and Settings/hs.li/work/personlab/public/404.html (404 Not Found)
+Completed in 0ms (View: 0, DB: 0) | 404 Not Found [http://127.0.0.1/favicon.ico?v=001]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 14:00:28) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (0.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 63ms (View: 47, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 14:00:29) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 14:00:29) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 14:00:29) [GET]
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mSetting Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.slug,`posts`.body,`posts`.title,`posts`.id,`posts`.created_at FROM `posts` ORDER BY created_at desc, id desc LIMIT 13[0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mComment Load Scrooged (0.0ms)[0m   [0mSELECT `comments`.body,`comments`.author,`comments`.post_id,`comments`.id FROM `comments` WHERE (status = 1) ORDER BY id desc, id ASC LIMIT 0, 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (status = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_recent_posts (16.0ms)
+Rendered home/_tweet (0.0ms)
+Rendered home/_webicons (0.0ms)
+  [4;35;1mPost Load Scrooged (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `posts`.status,`posts`.slug,`posts`.updated_at,`posts`.body,`posts`.title,`posts`.meta_keywords,`posts`.comment_count,`posts`.id,`posts`.meta_description,`posts`.category_id,`posts`.view_count,`posts`.created_at FROM `posts` WHERE (`posts`.`id` = 5) ORDER BY id desc[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47home47index46html46erb at C:/Documents and Settings/hs.li/work/personlab/app/views/home/index.html.erb:30)
+  [4;36;1mMenu Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Completed in 46ms (View: 31, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 14:00:29) [GET]
+
+ActionController::RoutingError (No route matches "/images/face.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 14:00:29) [GET]
+
+ActionController::RoutingError (No route matches "/images/feed_big.jpg" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Documents and Settings/hs.li/work/personlab/app/controllers/application_controller.rb:7)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2010-02-06 14:00:30) [GET]
+  Parameters: {"slug"=>"favicon.ico", "v"=>"001"}
+Cache hit: data/menus ({})
+Cache hit: data/setting ({})
+  [4;35;1mPage Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load Scrooged (0.0ms)[0m   [0;1mSELECT `pages`.slug,`pages`.body,`pages`.title,`pages`.id FROM `pages` WHERE (`pages`.`status` = 1 AND `pages`.`slug` = 'favicon.ico') LIMIT 1[0m
+Rendering C:/Documents and Settings/hs.li/work/personlab/public/404.html (404 Not Found)
+Completed in 16ms (View: 16, DB: 0) | 404 Not Found [http://127.0.0.1/favicon.ico?v=001]
