@@ -1,5 +1,5 @@
 class Cpanel::PostsController < Cpanel::ApplicationController
-  cache_sweeper :post_sweeper,:only => [:create,:update,:destory]
+  cache_sweeper :post_sweeper,:only => [:create,:update,:destroy]
   # GET /posts
   # GET /posts.xml
   def index

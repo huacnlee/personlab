@@ -7,9 +7,11 @@ class PostSweeper < ActionController::Caching::Sweeper
   
   def after_create(post)
     clear_index_recent_posts
+		sweeper(post)
   end
   
   def after_destroy(post)
+		clear_index_recent_posts
     sweeper(post)
   end
   

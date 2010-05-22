@@ -1,6 +1,12 @@
 .DS_Store
-log/*.log
+log/*
 tmp/**/*
 config/database.yml
 config/twitter.yml
+public/images/me.jpg
 public/system/*
+public/stylesheets/*.css
+public/stylesheets/cpanel
+public/javascripts/lib
+public/javascripts/cpanel
+public/javascripts/*.js

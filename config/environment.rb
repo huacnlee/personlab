@@ -36,8 +36,7 @@ Rails::Initializer.run do |config|
   config.i18n.default_locale = :zh_cn
   
   # check will_paginate installed.
-  config.gem 'mislav-will_paginate', :version => '~> 2.2.3', :lib => 'will_paginate', 
-      :source => 'http://gems.github.com'	
+  config.gem 'will_paginate'	
 	config.gem 'macaddr', :version => '~> 1.0'
 	config.gem 'RedCloth'
 	config.gem 'simple-rss'
