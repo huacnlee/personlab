@@ -10,9 +10,9 @@
 	#comments .item .face { float:right; padding:0 0 8px 8px; }
 #comment .form { margin:0 10px;}
 
-.post_item h1 { font-size:160%; color:#666; padding:0; margin-bottom: 2px; text-align: center;}
+.post_item h1 { font-size:160%; color:#666; padding:0; margin-bottom: 2px; text-align: left;}
 .post_item h1 span.category { font-size:12px; }
-.post_item .post_info { margin-bottom:8px; text-align: center;}
+.post_item .post_info { margin-bottom:8px; text-align: left;}
 .post_item .post_body { font-size:14px; }
 .post_item .post_info span.date { margin-right:16px;}
 .post_item .post_info span.view_count { margin-right:5px;}

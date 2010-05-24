@@ -26,7 +26,7 @@
   #tweet .title a {  margin-right: 12px;}
   #tweet .title img { border: 0;}
   #tweet ul { list-style: none; padding:0; font-size: 12px;}
-  #tweet ul li { list-style-position: outside; padding:4px 0; margin:4px 0; border-bottom: 1px solid #e9f3d1;}
+  #tweet ul li { list-style-position: outside; padding:4px 0; margin:4px 0; border-bottom: 1px solid #eee;}
   #tweet ul li p.info { color:#999; margin-top: 3px;}
   #tweet ul li p.info a:link,#tweet ul li p.info a:visited { color:#999;}
   #tweet ul li p.info a:hover { color:#d38101;}
@@ -37,5 +37,5 @@
 #recent_comments ul li { line-height:160%; }
 #recent_comments ul li a { color:#444; }
 
-#mainbox { width:700px; float:left;}
-  #sidebar { width:250px; margin-left:10px; float:right;  }
+#mainbox { width:460px; float:left;}
+  #sidebar { width:250px; float:right; padding:10px; background:#FFF; margin-left:10px; }

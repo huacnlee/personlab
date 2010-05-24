@@ -5,26 +5,27 @@
  * summary: 
  *   layout.css
  */
-#container { width:960px; overflow:hidden; margin:20px auto; text-align: left; }
+body { overflow-x:hidden; padding:10px; }
+#container { overflow-x:hidden; max-width:800px; margin:0px auto; text-align: left; }
 		
 #header { margin-bottom:10px; border-bottom:1px solid #DDD; padding:10px 0;  }
-	#header #site_name { font-size:30px;  padding-top: 15px;}
+	#header #site_name { font-size:30px; }
 		#header #site_name a { color:#1259C7; font-weight: bold; text-decoration: none;}
 		#header .sub_title { color:#999; font-size: 12px; }
 
 
 #nav { margin-bottom:30px;  font-size: 14px; }
-	#nav ul { margin:0; list-style: none; margin-right: 10px; text-align: center; }
+	#nav ul { margin:0; list-style: none; margin-right: 10px; text-align: left; }
 		#nav ul li { display:inline; font-weight: bold; }
 		#nav ul li a:link,#nav ul li a:visited	{ margin-right: 10px;}
 		#nav ul li a:hover { }
 		#nav ul li.actived a { color:#333; }
 		#nav_search { float:right; margin-top:-20px; text-align: left; }
 		#nav_search input { padding:2px; }
-		#nav_search button { padding:1px 6px; }
+		#nav_search button { padding:2px 2px; }
 		
-#footer { border-top:1px solid #DDD; margin-top:40px; text-align: center; clear: both; padding:10px 0; font-size: 11px;}
-
+#footer { border-top:1px solid #DDD; color:#999; margin-top:40px; text-align: center; clear: both; padding:10px 0; font-size: 11px;}
+#footer a:link, #footer a:visited { color:#777; }
 #main { }
 	#mainbox { }
 	#sidebar {  }

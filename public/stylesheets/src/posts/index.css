@@ -7,7 +7,8 @@
  */
 #posts { }
   #posts .post_item { margin-bottom: 10px; }
-  #posts .post_item .post_title { font-size:14px; line-height: 24px; } 
-  #posts .post_item .post_title a { color:#222;}
+  #posts .post_item .post_title { font-size:16px; line-height:180%;font-weight:bold; }
+  #posts .post_item .post_title a:link,
+  #posts .post_item .post_title a:visited	{ color:#555;}
 
 
