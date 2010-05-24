@@ -1,0 +1,130 @@
+
+user  jason;
+worker_processes  2;
+
+error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+#pid        logs/nginx.pid;
+
+
+events {
+	use epoll;
+	worker_connections  2024;
+}
+
+
+http {
+    passenger_root /usr/local/lib/ruby/gems/1.8/gems/passenger-2.2.9;
+    passenger_ruby /usr/local/bin/ruby;
+
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  logs/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+
+
+		gzip on;
+		gzip_min_length  1100;
+		gzip_buffers     4 8k;
+		gzip_comp_level 2;
+		gzip_proxied any;
+		gzip_disable "msie6";
+		gzip_types  text/plain text/css application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+
+    server {
+			listen       80;
+			server_name  huacnlee.com;
+
+			root   /home/jason/wwwroot/personlab/public;
+			passenger_enabled on;
+			access_log  logs/host.access.log  main;
+
+			#error_page  404              /404.html;
+
+			# redirect server error pages to the static page /50x.html
+			#
+			error_page   500 502 503 504  /50x.html;
+			location = /50x.html {
+					root   /home/jason/wwwroot/personlab/500.html;
+			}
+
+			location ~* ^(/images|/javascripts|/stylesheets|/system|/favicon.ico) {
+				access_log        off;
+				expires           max;
+			}
+
+    }
+
+		server {
+			listen 80;
+			server_name www.huacnlee.com;
+			rewrite ^(.*) http://huacnlee.com$1 permanent;
+		}
+
+    server {
+			listen       80;
+			server_name  pasite.org;
+
+			root   /home/jason/wwwroot/pasite/public;
+			passenger_enabled on;
+
+			location ~* ^(/images|/javascripts|/stylesheets|/system|/favicon.ico) {
+				access_log        off;
+				expires           max;
+			}
+		}
+
+		server {
+			listen 80;
+			server_name www.pasite.org;
+			rewrite ^(.*) http://pasite.org$1 permanent;
+		}
+    # another virtual host using mix of IP-, name-, and port-based configuration
+    #
+    #server {
+    #    listen       8000;
+    #    listen       somename:8080;
+    #    server_name  somename  alias  another.alias;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+
+    # HTTPS server
+    #
+    #server {
+    #    listen       443;
+    #    server_name  localhost;
+
+    #    ssl                  on;
+    #    ssl_certificate      cert.pem;
+    #    ssl_certificate_key  cert.key;
+
+    #    ssl_session_timeout  5m;
+
+    #    ssl_protocols  SSLv2 SSLv3 TLSv1;
+    #    ssl_ciphers  ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
+    #    ssl_prefer_server_ciphers   on;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+}
