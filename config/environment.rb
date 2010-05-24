@@ -61,3 +61,6 @@ WillPaginate::ViewHelpers.pagination_options[:next_label] = '下一页 »'
 
 # captcha secret key
 CAPTCHA_SALT = "8929&**&@#"
+
+# feed url
+FEED_URL = "http://feeds.feedburner.com/huacnlee"
