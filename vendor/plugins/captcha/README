@@ -80,6 +80,12 @@ In your forms all you need to do is:
 
   <%= captcha_block %>
 
+Auto skip captcha when validated:
+
+	<% if captcha_skip? %>
+  	<%= captcha_block %>
+	<% end %>
+
 And add a little bit of CSS styling to get a nice looking captcha validation text field 
 and image. If you don't like the way it's setup then use the other helper methods 
 (see captcha_helper.rb), which are more granular.

@@ -51,6 +51,7 @@
 						<%= f.text_area :body, :class => "text middle" %>
 					</td>
 				</tr>
+				<% if !captcha_skip? %>
 				<tr class="row">
 					<td class="field" valign="top">验证码:</td>
 					<td>
@@ -59,6 +60,7 @@
 					 	<%= captcha_image %>
 					</td>
 				</tr>
+				<% end %>
 				<tr class="buttons row">
 					<td class="field"></td>
 					<td>

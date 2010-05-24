@@ -12,7 +12,13 @@ module ValidatesCaptcha
   
   module InstanceMethods
     def captcha_validated?
-       CaptchaUtil::encrypt_string(params[:captcha].to_s.gsub(' ', '').downcase) == params[:captcha_validation]
+      return true if session[:captcha_skip] == true
+ 
+      validated = CaptchaUtil::encrypt_string(params[:captcha].to_s.gsub(' ', '').downcase) == params[:captcha_validation]
+      # if validated, save mark in the session, so the Captcha well not show
+      if validated
+        session[:captcha_skip] = true
+      end
     end    
   end  
 end  

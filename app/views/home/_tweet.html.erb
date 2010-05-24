@@ -10,7 +10,8 @@
           <%= auto_link(item.text,:target => "_blank") %>
         </p>
         <p class="info">
-          <span class="date"><a href="https://twitter.com/<%= @setting.fanfou_id %>/status/<%= item.id %>" target="_blank"><%= time_ago_in_words(item.created_at) %>前</a></span>
+				<span class="date"><a href="https://twitter.com/<%= @setting.fanfou_id %>/status/<%= item.id %>" target="_blank">
+						<%= time_ago_in_words(item.created_at) %>前</a></span>
           通过<%= item.source %>
         </p>
       </li>
