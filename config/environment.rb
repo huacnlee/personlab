@@ -66,7 +66,7 @@ CAPTCHA_SALT = "8929&**&@#"
 FEED_URL = "http://feeds.feedburner.com/huacnlee"
 
 # twitter toggle, because there was GFW in China, If you was blocked, set this to false
-TWITTER_ENABLE = false
+TWITTER_ENABLE = true
 
 # action mailer config
 ActionMailer::Base.default_content_type = "text/html"
