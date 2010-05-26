@@ -125,6 +125,7 @@ class PostsController < ApplicationController
         @comment.post_id = @post.id  
         set_guest(@comment.author,@comment.url,@comment.email)  
         if @comment.save
+          NoticeMailer.new_comment_notice(@post,@comment)
           if @comment.status == 2
             flash[:notice] = "评论发表成功。<br />但由于经过 Akismet 自动判定，您的评论内容需要由管理人员审核过后方可显示。"
           else
@@ -146,7 +147,7 @@ class PostsController < ApplicationController
     
     # get comments list
     if !fragment_exist? "posts/show/#{params[:slug]}/comments"
-      @comments = @post.comments.find_list
+      @comments = @post.comments
     end
    
   end

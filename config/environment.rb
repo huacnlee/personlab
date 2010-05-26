@@ -50,7 +50,7 @@ Time::DATE_FORMATS[:short_time_string] = "%y年%m月%d日 %H:%M"
 Time::DATE_FORMATS[:short_time] = "%y-%m-%d %H:%M"
 
 # custom configs
-APP_VERSION = '0.3'
+APP_VERSION = '0.4'
 
 APP_DOMAIN = 'huacnlee.com'
 
@@ -67,3 +67,19 @@ FEED_URL = "http://feeds.feedburner.com/huacnlee"
 
 # twitter toggle, because there was GFW in China, If you was blocked, set this to false
 TWITTER_ENABLE = false
+
+# action mailer config
+ActionMailer::Base.default_content_type = "text/html"
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.default_charset = "utf-8"
+ActionMailer::Base.default_url_options[:host] = APP_DOMAIN
+ActionMailer::Base.raise_delivery_errors = true
+ActionMailer::Base.smtp_settings = {
+  :address => "smtp.gmail.com",
+  :enable_starttls_auto => true,
+  :port => 587,
+  :domain => "huacnlee.com",
+  :authentication => :plain,
+  :user_name => "support@pasite.org",
+  :password => "SU_123123"
+}

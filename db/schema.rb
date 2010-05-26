@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090909030001) do
+ActiveRecord::Schema.define(:version => 20100526132121) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
@@ -132,6 +132,14 @@ ActiveRecord::Schema.define(:version => 20090909030001) do
 
   create_table "tags", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "unfollowers", :force => true do |t|
+    t.integer  "unfollowerable_id"
+    t.string   "unfollowerable_type"
+    t.string   "email",               :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

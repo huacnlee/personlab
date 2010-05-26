@@ -39,4 +39,20 @@ class HomeController < ApplicationController
     @api_url = Share.api_url(@setting)
     @shares = Share.find_all(@setting)
   end
+  
+  # unfollow for email notice
+  # type  Model
+  # id    Model id
+  # key   email encode key
+  def unfollow
+    return render_404  if params[:type].blank? or params[:id].blank? or params[:key].blank?
+    email = Encoder.decode(params[:key])
+    return render_404 if email.blank?
+
+    Unfollower.create(:email => email, 
+                      :unfollowerable_type => params[:type].capitalize, 
+                      :unfollowerable_id => params[:id].to_i)
+                      
+    render :text => "你已经成功退定."
+  end
 end

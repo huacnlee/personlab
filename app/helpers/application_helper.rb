@@ -63,5 +63,11 @@ module ApplicationHelper
     end
     return result.join(" ") + options[:omission].to_s
   end
+  
+  # 退定连接
+  def unfollow_link(email,unfollowerable)
+    unfollow_url(:type => unfollowerable.class.class_name.downcase,
+                  :id => unfollowerable.id,:key => Encoder.encode(email))
+  end
 
 end

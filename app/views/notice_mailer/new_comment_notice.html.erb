@@ -1,0 +1,14 @@
+<% content_for :title do %>
+<%= @setting.site_name %>
+<% end %>
+你好<%= @comment.author %>,<br />
+你在 [<%= @setting.site_name %>] 参与过的文章 [<a href="<%= blog_url(@post.slug) %>"><%= h @post.title %></a>] 被 <b><%= @new_comment.author %></b> 在 <%= @new_comment.created_at.to_s(:short_time_string) %> 回复了,因此我们发送此邮件提醒你.<br />
+
+<div style="border:1px solid #DDD; margin:8px 0; background:#F0F0F0; padding:8px;">
+	<%= simple_format(h @new_comment.body) %>
+</div>
+
+你可以点击下面的连接查看:<br />
+<%= blog_url(@post.slug) %><br /><br /><br />
+如果你不想再收到此文章的评论提醒邮件,请点击下面的连接退定:<br />
+<%= unfollow_link(@comment.email,@post) %>
