@@ -80,6 +80,6 @@ ActionMailer::Base.smtp_settings = {
   :port => 587,
   :domain => "huacnlee.com",
   :authentication => :plain,
-  :user_name => "support@pasite.org",
+  :user_name => "support@huacnlee.com",
   :password => "SU_123123"
 }
