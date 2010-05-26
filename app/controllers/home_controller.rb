@@ -7,7 +7,7 @@ class HomeController < ApplicationController
 
     # get fanfou messages
     @fanfou_msgs = []
-    if !@setting.fanfou_id.blank?
+    if !@setting.fanfou_id.blank? and TWITTER_ENABLE
       # @tweets = []
       @tweets = Tweet.get_home_messages(@setting.fanfou_id,5)
     end
