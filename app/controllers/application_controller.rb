@@ -13,7 +13,8 @@ class ApplicationController < ActionController::Base
     
     @setting = Setting.find_create
     
-    @guest = session[:guest]
+    @guest = { :author => cookies[:guest_author],:email => cookies[:guest_email],:url=> cookies[:guest_url]}
+
     if @guest.blank?
       @guest = set_guest
     end
@@ -42,7 +43,9 @@ class ApplicationController < ActionController::Base
   
   # 保存评论者信息
   def set_guest(author = "",url = "",email = "")
-    session[:guest] = {:author => author,:url => url,:email => email}
-  end
+    cookies[:guest_author] = { :value => author, :expires => 1.month.from_now } 
+    cookies[:guest_url] = { :value => url, :expires => 1.month.from_now } 
+    cookies[:guest_email] = { :value => email, :expires => 1.month.from_now } 
+ 	end
   
 end

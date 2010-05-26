@@ -121,9 +121,9 @@ class PostsController < ApplicationController
       @pcomment = params[:comment]
       @comment = Comment.new(params[:comment])
       
+			set_guest(@comment.author,@comment.url,@comment.email)  
       if captcha_validated?
         @comment.post_id = @post.id  
-        set_guest(@comment.author,@comment.url,@comment.email)  
         if @comment.save
           NoticeMailer.new_comment_notice(@post,@comment)
           if @comment.status == 2
