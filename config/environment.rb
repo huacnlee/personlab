@@ -50,7 +50,7 @@ Time::DATE_FORMATS[:short_time_string] = "%y年%m月%d日 %H:%M"
 Time::DATE_FORMATS[:short_time] = "%y-%m-%d %H:%M"
 
 # custom configs
-APP_VERSION = '0.4'
+APP_VERSION = '0.4.1'
 
 APP_DOMAIN = 'huacnlee.com'
 
