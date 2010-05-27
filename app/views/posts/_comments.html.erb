@@ -7,7 +7,7 @@
 			    <div class="item<%= cycle('',' itemse') %>">
 			    	<div class="info">
 							<% if !item.url.blank? %>
-							<a href="<%= item.url %>" traget="_blank"><%= h(item.author) %></a>
+								<a href="<%= item.url.match("http[s]{0,1}://") == nil ? "http://#{item.url}" : item.url %>" rel="nofollow" traget="_blank"><%= h(item.author) %></a>
 							<% else %>
 							<%= h(item.author) %>
 							<% end -%>
@@ -17,7 +17,7 @@
 							<div class="face">
 								<%= image_tag(face_url(item.email), :alt => item.author) %>
 							</div>
-							<%= simple_format(h(item.body)) %>
+							<%= simple_format(auto_link(h(item.body))) %>
 						</div>
 			    </div>
 			  <% end %>
