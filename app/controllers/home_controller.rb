@@ -17,7 +17,7 @@ class HomeController < ApplicationController
     end
     
     if !fragment_exist? "home/index/recent_comments"
-      @recent_comments = Comment.find_recent(3)
+      @recent_comments = Comment.find_recent(5)
     end
   end
 
