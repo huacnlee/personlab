@@ -1,6 +1,3 @@
-<% content_for :styles do %> 
-<%= stylesheet_link_tag "src/cpanel/categories", :cache => "cpanel/categories" %>
-<% end %>
 <%= render :partial => 'submenu' %>
 <div class="form">
 	<% form_for(@category,:url => (@category.id ? cpanel_category_url(@category) : cpanel_categories_url)) do |f| %>
