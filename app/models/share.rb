@@ -17,10 +17,10 @@ class Share < ActiveRecord::Base
       feed = SimpleRSS::parse open(api_url(setting))
       if feed != nil
         feed.items.each do |item|
+					continue if item.blank?
           feeds << {  
             "title" => item.title,
             "link" => item.link,
-            "content" => item.content == nil ? item.summary.html_decode.remove_html_tag : item.content.html_decode.remove_html_tag,
             "updated_at" => item.updated,
             "author" => item.author,
           }
