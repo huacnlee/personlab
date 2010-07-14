@@ -83,3 +83,6 @@ ActionMailer::Base.smtp_settings = {
   :user_name => "support@huacnlee.com",
   :password => "SU_123123"
 }
+
+# Google Analytics Account ID
+GOOGLE_ANALYTICS_ID = "UA-9745660-1"
