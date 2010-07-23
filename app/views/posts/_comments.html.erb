@@ -7,7 +7,7 @@
 			    <div class="item<%= cycle('',' itemse') %>">
 			    	<div class="info">
 							<% if !item.url.blank? %>
-								<a href="<%= item.url.match("http[s]{0,1}://") == nil ? "http://#{item.url}" : item.url %>" rel="nofollow" traget="_blank"><%= h(item.author) %></a>
+								<a href="<%= item.url.match("http[s]{0,1}://") == nil ? "http://#{item.url}" : item.url %>" rel="nofollow" target="_blank"><%= h(item.author) %></a>
 							<% else %>
 							<%= h(item.author) %>
 							<% end -%>
