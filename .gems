@@ -4,5 +4,5 @@ macaddr
 RedCloth
 simple-rss
 twitter4r
-RMagick
+rmagick -v 2.13.1
 
