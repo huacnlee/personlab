@@ -1,4 +1,5 @@
 rails -v 2.3.5
+will_paginate
 macaddr
 RedCloth
 simple-rss
