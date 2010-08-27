@@ -1,9 +1,0 @@
-<ul>
-<% cache("home/index/recent_posts") do %>
-  <% if !@recent_posts.blank?%>
-    <% for item in @recent_posts %>
-    <li><%= link_to h(item.title), :controller => "posts", :action => "show", :slug => item.slug %> <span class="date"><%= item.created_at.to_date %></span></li>
-    <% end %>
-  <% end %>
-<% end %>
-</ul>

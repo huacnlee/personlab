@@ -1,3 +1,4 @@
+# coding: utf-8 
 class Cpanel::PostsController < Cpanel::ApplicationController
   cache_sweeper :post_sweeper,:only => [:create,:update,:destroy]
   # GET /posts

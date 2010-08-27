@@ -1,12 +1,12 @@
 <% content_for :styles do %> 
 <%= stylesheet_link_tag "src/cpanel/pages" %>
 <% end %>
-<% content_for :scripts do %> 
+<%= content_for :scripts do %> 
 <% end %>
 <%= render :partial => 'submenu' %>
 <div id="pages" class="form">
-<% form_for @page,:url => (@page.id ? cpanel_page_url(@page) : cpanel_pages_url) do |f| %>
-<%= f.error_messages %>
+<%= form_for @page,:url => (@page.id ? cpanel_page_url(@page) : cpanel_pages_url) do |f| %>
+    <%= render "shared/error_messages", :target => @page %>
 <table border="0" cellspacing="0" cellpadding="0">
 	<tr class="row">
 		<td class="field">标题</td>

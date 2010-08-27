@@ -1,3 +1,4 @@
+# coding: utf-8 
 class PostsController < ApplicationController
   cache_sweeper :comment_sweeper,:only => [:show]
   validates_captcha
@@ -107,23 +108,19 @@ class PostsController < ApplicationController
         
     @view_count = Post.update_view_count(params[:slug])
     
-    @post = Rails.cache.read(@post_key)
     if (not @post) or (@view_count == 0)
       @post = Post.find_slug(params[:slug])
       if not @post
         return render_404
       end
-      
-      Rails.cache.write(@post_key,@post)
     end
     
     if request.post?
       @pcomment = params[:comment]
-      @comment = Comment.new(params[:comment])
+      @comment = @post.comments.build(params[:comment])
       
 			set_guest(@comment.author,@comment.url,@comment.email)  
       if captcha_validated?
-        @comment.post_id = @post.id  
         if @comment.save
           NoticeMailer.new_comment_notice(@post,@comment)
           if @comment.status == 2

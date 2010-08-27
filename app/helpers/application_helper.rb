@@ -1,30 +1,31 @@
-require "md5"
+# coding: utf-8 
+require "digest/md5"
 require "encoder"
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   
   # return the formatted flash[:notice] html
   def success_messages
+    msg = ''
     if flash[:notice]
-      '
+      msg = '
       <div id="successMessage" class="successMessage">
     		'+flash[:notice]+'
     	</div>
       '
-    else
-      ''
     end
+    raw msg
   end
 
   # form auth token
   def auth_token
-    "<input name=\"authenticity_token\" type=\"hidden\" value=\"#{form_authenticity_token}\" />"
+    raw "<input name=\"authenticity_token\" type=\"hidden\" value=\"#{form_authenticity_token}\" />"
   end
   
   # return the Gravatar face by Email
   def face_url(email)
-    hash = MD5::md5(email)
-    "http://www.gravatar.com/avatar/#{hash}?s=32"
+    hash = Digest::MD5.hexdigest(email)
+    raw "http://www.gravatar.com/avatar/#{hash}?s=32"
   end
 
   # close html tag when truncated
@@ -33,7 +34,7 @@ module ApplicationHelper
     text.scan(/\<([^\>\s\/]+)[^\>\/]*?\>/).each { |t| open_tags.unshift(t) }
     text.scan(/\<\/([^\>\s\/]+)[^\>]*?\>/).each { |t| open_tags.slice!(open_tags.index(t)) }
     open_tags.each {|t| text += "</#{t}>" }
-    return text
+    return raw text
   end
 
   def truncate_html(html, options={})
@@ -62,7 +63,7 @@ module ApplicationHelper
         end
       end
     end
-    return result.join(" ") + options[:omission].to_s
+    return raw(result.join(" ") + options[:omission].to_s)
   end
   
   # 退定连接

@@ -1,17 +1,15 @@
 # Add your own tasks in files placed in lib/tasks ending in .rake,
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
-require(File.join(File.dirname(__FILE__), 'config', 'boot'))
-
+require File.expand_path('../config/application', __FILE__)
 require 'rake'
-require 'rake/testtask'
-require 'rake/rdoctask'
-require 'tasks/rails'
+
+Personlab::Application.load_tasks
 
 # Twitter 
-namespace :tweet do 
+namespace :tweet do
   desc "Twitter reload."
-  task :update => :environment do 
+  task :update => :environment do
     require 'app/models/setting'
     require 'app/models/tweet'
     setting = Setting.find_create
@@ -25,9 +23,9 @@ namespace :tweet do
 end
 
 # Google Reader 
-namespace :reader_share do 
+namespace :reader_share do
   desc "Google Reader reload shere items."
-  task :update => :environment do 
+  task :update => :environment do
     require 'app/models/setting'
     require 'app/models/share'
     setting = Setting.find_create

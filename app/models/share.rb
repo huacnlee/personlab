@@ -1,7 +1,7 @@
+# coding: utf-8 
 require "rubygems"
 require 'simple-rss'
 require 'open-uri'
-require "lib/string"
 
 class Share < ActiveRecord::Base
   

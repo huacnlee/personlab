@@ -14,7 +14,7 @@
 			<span class="comment_count"><a href="#comments"><%= @post.comment_count %>条评论</a></span>			
 		</div>
 		<div class="post_body">
-			<%= @post.body %>
+			<%= raw @post.body %>
 		</div>
 		<% if !@post.tags.blank? %>
 		<div class="tags">
@@ -29,8 +29,8 @@
 	<div id="comment">
 		<h2>发表评论</h2>
 		<div class="form">
-			<% form_for @comment, :url => (url_for(:controller => "posts", :action => "show", :slug => params[:slug])) do |f| -%>
-			<%= f.error_messages %>
+			<%= form_for @comment, :url => (url_for(:controller => "posts", :action => "show", :slug => params[:slug])) do |f| -%>
+      <%= render "shared/error_messages", :target => @post %>
 			<%= success_messages %>
 			<table border="0" cellspacing="0" cellpadding="0">
 				<tr class="row">

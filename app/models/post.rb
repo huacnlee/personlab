@@ -1,16 +1,16 @@
-require "lib/string"
-
+# coding: utf-8 
+require "string_extensions"
 class Post < ActiveRecord::Base
   validates_uniqueness_of :title, :slug, :case_sensitive => false , :message => "已经有同名的存在,请检查是否重发了."
   validates_presence_of :title,:body,:status
-  has_many :comments
+  has_many :comments, :dependent => :destroy
 	belongs_to :category, :counter_cache => true
   acts_as_taggable_on :tags
 	default_scope :order => 'id desc'
   
   # callback events
-  before_validation :before_validation
-  before_save :before_save
+  before_validation :safe_slug_validation
+  before_save :default_value
   
   # enum sets
   
@@ -47,14 +47,14 @@ class Post < ActiveRecord::Base
   # callback events
   private
   # before save
-  def before_save
+  def default_value
     if self.comment_count < 0
       self.comment_count = 0
     end
   end
   
   # before validation
-  def before_validation
+  def safe_slug_validation
     self.slug = self.slug.safe_slug
   end
   

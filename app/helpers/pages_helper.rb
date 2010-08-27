@@ -1,3 +1,4 @@
+# coding: utf-8 
 require "RedCloth"
 module PagesHelper
   def textile(body)

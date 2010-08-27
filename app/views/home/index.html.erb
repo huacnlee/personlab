@@ -4,11 +4,38 @@
 <div id="mainbox">
   <div id="recent_posts">
     <div class="title">最近文章</div>
-    <%= render :partial => 'recent_posts' %>
+    <ul>
+    <% cache("home/index/recent_posts") do %>
+      <% if !@recent_posts.blank?%>
+        <% for item in @recent_posts %>
+        <li><%= link_to h(item.title), :controller => "posts", :action => "show", :slug => item.slug %> <span class="date"><%= item.created_at.to_date %></span></li>
+        <% end %>
+      <% end %>
+    <% end %>
+    </ul>
   </div>
   
-  <%= render :partial => 'tweet' %>
-  
+  <div id="tweet" class="box">
+    <div class="title">
+      <a href="http://twitter.com/<%= @setting.fanfou_id %>" target="_blank"><%= image_tag("fellow_button.jpg", :alt => "关注我的Twitter") %>    </a>
+    </div>
+    <ul>
+    <% if !@tweets.blank? %>
+      <% for item in @tweets do%>
+        <li>
+          <p class="text">
+            <%= auto_link(item.text,:target => "_blank") %>
+          </p>
+          <p class="info">
+          <span class="date"><a href="https://twitter.com/<%= @setting.fanfou_id %>/status/<%= item.id %>" target="_blank">
+              <%= time_ago_in_words(item.created_at) %>前</a></span>
+            通过<%= item.source %>
+          </p>
+        </li>
+      <% end %>
+    <% end %>
+    </ul>			
+  </div>
   
 </div>
 <div id="sidebar">
@@ -26,7 +53,7 @@
             <span class="author">
               <%= link_to h(item.author), :controller => "posts", :action => "show", :slug => item.post.slug %>:
             </span>
-            <%= truncate(h(item.body),40) %>
+            <%= truncate(item.body,:length => 40) %>
           </li>
           <% end %>
         <% end %>

@@ -3,9 +3,9 @@
 <% end %>
 <%= render :partial => 'submenu' %>
 <div class="form">
-	<% form_for(@setting,:url => cpanel_setting_url(@setting.id)) do |f| %>
+	<%= form_for(@setting,:url => cpanel_setting_url(@setting.id)) do |f| %>
 	<%= success_messages %>
-	<%= f.error_messages %>
+  <%= render "shared/error_messages", :target => @setting %>
 	<table border="0" cellspacing="0" cellpadding="0">
 		<tr class="row">
 			<td class="field">站点名称</td>

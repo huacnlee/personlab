@@ -1,4 +1,5 @@
-require "md5"
+# coding: utf-8 
+require "digest/md5"
 class User < ActiveRecord::Base
   validates_presence_of :uname, :pwd, :name,:message => "不能为空."
   

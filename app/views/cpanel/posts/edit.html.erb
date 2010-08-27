@@ -11,8 +11,8 @@
 <% end %>
 <%= render :partial => 'submenu' %>
 <div class="form">
-<% form_for @post, :url => (@post.id ? cpanel_post_url(@post.id) : cpanel_posts_url) do |f| %>
-  <%= f.error_messages %>
+<%= form_for @post, :url => (@post.id ? cpanel_post_url(@post.id) : cpanel_posts_url) do |f| %>
+  <%= render "shared/error_messages", :target => @post %>
 	<table border="0" cellspacing="0" cellpadding="0">
 		<tr class="row">
 			<td class="field">标题</td>

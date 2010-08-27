@@ -1,4 +1,4 @@
-#! /usr/bin/ruby1.8 -w
+# coding: utf-8 
 require'open-uri' 
 require'net/http'  
 

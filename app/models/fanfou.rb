@@ -1,3 +1,4 @@
+# coding: utf-8 
 # Fanfou API data model
 # virtual model not have database table
 class Fanfou < ActiveRecord::Base

@@ -1,3 +1,4 @@
+# coding: utf-8 
 class Cpanel::SettingsController < Cpanel::ApplicationController
   cache_sweeper :setting_sweeper,:page_sweeper, :only => [:update]
   

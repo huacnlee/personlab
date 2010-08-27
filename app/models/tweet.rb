@@ -1,3 +1,4 @@
+# coding: utf-8 
 # Twitter API data model
 require "twitter"
 # virtual model not have database table

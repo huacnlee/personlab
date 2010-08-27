@@ -1,3 +1,4 @@
+# coding: utf-8 
 # ----------------------------------------------------
 # name: menus_controller.rb
 # authors: Jason Lee<huacnlee@gmail.com>,

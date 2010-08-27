@@ -1,3 +1,4 @@
+# coding: utf-8 
 # admin home controller
 class Cpanel::HomeController < Cpanel::ApplicationController
   before_filter :require_login,:only => [:index,:logout]

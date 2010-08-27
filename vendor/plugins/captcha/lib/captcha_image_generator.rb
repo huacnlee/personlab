@@ -58,8 +58,8 @@ module CaptchaImageGenerator
     # black_img = black_img.gaussian_blur(0.8, 0.8)
     # black_img.dissolve(black_img.sketch(0, 10, 135), 0.75, 0.25)
     # black_img = black_img.spread(0.5)
-    wave_ranges = (-8..8).collect
-    wave_direct = wave_ranges[rand(wave_ranges.size)]
+    wave_ranges = (-8..8).collect.to_a
+    wave_direct = wave_ranges[rand(wave_ranges.count)]
     black_img = black_img.wave(wave_direct, 100)
     black_img = black_img.resize_to_fill(params[:image_width],params[:image_height])
     # Write the file to disk

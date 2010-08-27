@@ -1,3 +1,4 @@
+# coding: utf-8 
 class Setting < ActiveRecord::Base
   
   def self.find_create

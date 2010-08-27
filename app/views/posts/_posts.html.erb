@@ -3,7 +3,7 @@
   <% for item in @posts %>
     <div id="item<%= item.id %>" class="post_item">
       <div class="post_title">
-        <%= link_to h(item.title), :controller => "posts", :action => "show", :slug => item.slug %>
+        <%= link_to item.title, :controller => "posts", :action => "show", :slug => item.slug %>
       </div>
       <div class="post_info">
         分类：<span class="category">[<%= link_to (item.category.name), :controller => "posts", :action => "index", :category => item.category.slug %>]</span>
@@ -15,7 +15,7 @@
                 </span>
       </div>
       <div class="post_body">
-        <%= item.summary %>				
+        <%= raw item.summary %>				
       </div>			
     </div>		
   <% end %>	

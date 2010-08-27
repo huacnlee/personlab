@@ -1,7 +1,7 @@
+# coding: utf-8 
 class Page < ActiveRecord::Base
   validates_uniqueness_of :title, :slug, :case_sensitive => false , :message => "已经有同名的存在,请检查是否重发了."
-  before_save :before_save
-  before_validation :before_validation
+  before_validation :safe_slug_for_validation
   
   # status
   STATUS = [
@@ -11,12 +11,8 @@ class Page < ActiveRecord::Base
     ].freeze
   
   private
-  # callback events
-  def before_save
-  end
-
   # before validation
-  def before_validation
+  def safe_slug_for_validation
     self.slug = self.slug.safe_slug
   end
     

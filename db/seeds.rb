@@ -1,3 +1,5 @@
+# coding: utf-8 
+require "string_extensions"#
 puts "Creating administrator, username:admin password:123123"
 User.find_or_create_by_uname(:uname => "admin", :pwd => User.encode("123123"), :name => "Admin")
 

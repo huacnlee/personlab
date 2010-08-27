@@ -1,3 +1,4 @@
+# coding: utf-8 
 class Unfollower < ActiveRecord::Base
   belongs_to :unfollowerable, :polymorphic => true
   
