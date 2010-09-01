@@ -1,4 +1,4 @@
-<% cache(@cache_key) do %>
+<% cache(@cache_key,:expires_in => 1.hours) do %>
 <% if !@posts.blank? %>
   <% for item in @posts %>
     <div id="item<%= item.id %>" class="post_item">
@@ -7,7 +7,7 @@
       </div>
       <div class="post_info">
         分类：<span class="category">[<%= link_to (item.category.name), :controller => "posts", :action => "index", :category => item.category.slug %>]</span>
-        时间：<span class="date"><%= item.created_at_s %></span>
+        时间：<span class="date"><%= l item.created_at, :format => :long %></span>
         <span class="view_count"><%= item.view_count + item.delay_view_count %>
     次阅读</span>
         <span class="comment_count">

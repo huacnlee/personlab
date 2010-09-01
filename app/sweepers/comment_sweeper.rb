@@ -17,7 +17,7 @@ class CommentSweeper < ActionController::Caching::Sweeper
   end
   
   def sweeper(comment)
-    expire_fragment %r"posts/index/*"
+    # expire_fragment %r"posts/index/*"
     clear_posts_sidebar(comment)
     clear_post_comments(comment)
   end

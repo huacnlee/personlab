@@ -8,7 +8,7 @@
  		</h1>
 		<div class="post_info">
 			<span class="category">[<%= link_to (@post.category.name), :controller => "posts", :action => "index", :category => @post.category.slug %>]</span>
-			发表时间：<span class="date"><%= @post.created_at_s %></span> 
+      发表时间：<span class="date"><%= l @post.created_at, :format => :long %></span> 
 			<span class="view_count"><%= @post.view_count + @view_count %>
 	次阅读</span>
 			<span class="comment_count"><a href="#comments"><%= @post.comment_count %>条评论</a></span>			

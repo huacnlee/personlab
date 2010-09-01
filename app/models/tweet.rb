@@ -9,6 +9,7 @@ class Tweet < ActiveRecord::Base
     if not msgs or force
       config_file = "#{RAILS_ROOT}/config/twitter.yml"
       twitter = Twitter::Client.from_config(config_file,RAILS_ENV)
+      puts "#{twitter.inspect}"
       msgs = twitter.timeline_for(:user, :id => uid,:count => count)
       Rails.cache.write("data/tweet/#{uid}",msgs)
     end

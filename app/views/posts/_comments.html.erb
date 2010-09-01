@@ -11,7 +11,7 @@
 							<% else %>
 							<%= h(item.author) %>
 							<% end -%>
-			    		 在 <%= item.created_at_s %> 说:
+              在 <%= l item.created_at, :format => :long %> 说:
 			    	</div>
 						<div class="content">
 							<div class="face">

@@ -10,14 +10,16 @@ Personlab::Application.load_tasks
 namespace :tweet do
   desc "Twitter reload."
   task :update => :environment do
-    require 'app/models/setting'
-    require 'app/models/tweet'
     setting = Setting.find_create
     if !setting.fanfou_id.blank?
       puts "#{Time.now}"
       puts 'Load tweets from twitter.com...'
       items = Tweet.get_home_messages(setting.fanfou_id,5,true)
-      puts "Done. there have #{items.count} tweet."
+      if items.blank?
+        puts "Not found or get error."
+      else
+        puts "Done. there have #{items.count} tweet."
+      end
     end
   end
 end
@@ -26,8 +28,6 @@ end
 namespace :reader_share do
   desc "Google Reader reload shere items."
   task :update => :environment do
-    require 'app/models/setting'
-    require 'app/models/share'
     setting = Setting.find_create
     puts "#{Time.now}"
     puts 'Load Google Reader share articles...'

@@ -55,7 +55,6 @@ table.grid {width:100%;}
   .tinymce_box table.mceLayout tr td { padding:0;}
 
 .highlight .hll { background: #0C1021 }
-.highlight_top { font-size:11px; text-align: right; display:none; }
 .highlight { overflow:hidden; display:block; line-height:100%; margin-bottom:10px;}
 .highlight pre {font-family:"Bitstream Vera Sans Mono","Monaco","Courier New",monospace,宋体;font-size:12px; 
  font-weight:normal;  }

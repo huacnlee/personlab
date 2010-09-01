@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
     @setting = Setting.find_create
     
     @guest = { :author => cookies[:guest_author],:email => cookies[:guest_email],:url=> cookies[:guest_url]}
+    @guest = { :author => '', :email => '', :url => '' }
 
     if @guest.blank?
       @guest = set_guest

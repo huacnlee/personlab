@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.rc2'
+gem 'rails', '3.0.0'
 gem 'mysql2'
 gem 'RedCloth'
 gem 'simple-rss'
