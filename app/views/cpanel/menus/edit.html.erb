@@ -1,7 +1,7 @@
 <%= render :partial => 'submenu' %>
 <div class="form">
 	<%= form_for(@menu,:url => (@menu.id ? cpanel_menu_url(@menu) : cpanel_menus_url)) do |f| %>
-  <%= render "shared/error_messages", :target => @page %>
+  <%= render "shared/error_messages", :target => @menu %>
 	<table border="0" cellspacing="0" cellpadding="0">
 		<tr class="row">
 			<td class="field">名称</td>
