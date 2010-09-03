@@ -1,6 +1,3 @@
-<% content_for :styles do %> 
-<%= stylesheet_link_tag "src/cpanel/posts", :cache => "cpanel/posts" %>
-<% end %>
 <% content_for :scripts do %> 
 <%= javascript_include_tag "src/cpanel/posts", :cache => "cpanel/posts" %>
 <script type="text/javascript">
@@ -25,7 +22,7 @@
 		<tr class="row">
 			<td class="field" valign="top">内容</td>
 			<td>
-				<%= f.text_area :body, :class => "text body", :rows => "40" %>
+        <%= f.text_area :body, :class => "text long tinymce", :rows => "40"  %>
 			</td>
 		</tr>
 		<tr class="row">

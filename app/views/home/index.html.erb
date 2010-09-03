@@ -1,67 +1,66 @@
-<% content_for :styles do %> 
-<%= stylesheet_link_tag "src/home/index",:cache => "index" %>
-<% end %>
 <div id="mainbox">
-  <div id="recent_posts">
-    <div class="title">最近文章</div>
-    <ul>
-    <% cache("home/index/recent_posts") do %>
-      <% if !@recent_posts.blank?%>
-        <% for item in @recent_posts %>
-        <li><%= link_to h(item.title), :controller => "posts", :action => "show", :slug => item.slug %> <span class="date"><%= item.created_at.to_date %></span></li>
-        <% end %>
-      <% end %>
-    <% end %>
-    </ul>
-  </div>
-  
-  <div id="tweet" class="box">
-    <div class="title">
-      <a href="http://twitter.com/<%= @setting.fanfou_id %>" target="_blank"><%= image_tag("fellow_button.jpg", :alt => "关注我的Twitter") %>    </a>
-    </div>
-    <ul>
-    <% if !@tweets.blank? %>
-      <% for item in @tweets do%>
-        <li>
-          <p class="text">
-            <%= auto_link(item.text,:target => "_blank") %>
-          </p>
-          <p class="info">
-          <span class="date"><a href="https://twitter.com/<%= @setting.fanfou_id %>/status/<%= item.id %>" target="_blank">
-              <%= time_ago_in_words(item.created_at) %>前</a></span>
-            通过<%= item.source %>
-          </p>
-        </li>
-      <% end %>
-    <% end %>
-    </ul>			
-  </div>
-  
-</div>
-<div id="sidebar">
-  <%= render :partial => 'webicons' %>  
-  
-  <div id="recent_comments" class="box">
-    <div class="title">最新评论</div>
-    <div class="content">
-      <% cache("posts/sidebar/recent_comments") do %>
-      <% if !@recent_comments.blank? %>
-        <ul>
-        <% for item in @recent_comments %>
-          <% if item.post != nil %>
-          <li>
-            <span class="author">
-              <%= link_to h(item.author), :controller => "posts", :action => "show", :slug => item.post.slug %>:
-            </span>
-            <%= truncate(item.body,:length => 40) %>
-          </li>
+  <table>
+    <tr>
+      <td>
+        <div id="recent_posts" class="box">
+          <h2>最近文章</h2>
+          <ul>
+          <% cache("home/index/recent_posts") do %>
+            <% if !@recent_posts.blank?%>
+              <% for item in @recent_posts %>
+                <li><a href="<%= blog_path(item.slug) %>" title="<%= item.title %>"><%= truncate(item.title, :length => 30) %></a> <span class="date"><%= item.created_at.to_date %></span></li>
+              <% end %>
+            <% end %>
           <% end %>
+          </ul>
+        </div>
+        
+        <% cache("posts/sidebar/recent_comments") do %>
+        <% if !@recent_comments.blank? %>
+        <div id="recent_comments" class="box">
+          <h2>最新评论</h2>
+          <ul>
+          <% for item in @recent_comments %>
+            <% if item.post != nil %>
+            <li>
+              <span class="author">
+                <a href="<%= blog_path(item.post.slug) %>"><%= item.author %></a>
+              </span>
+              <%= truncate(item.body,:length => 40) %>
+            </li>
+            <% end %>
+          <% end %>
+          </ul>
+          <% end %>
+        </div>
         <% end %>
-        </ul>
-      <% else %>
-        暂时还未有文章发表
-      <% end %>
-      <% end %>
-    </div>
-  </div>
+      </td>
+      <td>
+        <div id="webicons" class="box">
+          <%= raw @setting.home_show %>
+        </div>
+
+        <% if !@tweets.blank? %>
+        <div id="tweet" class="box">
+          <h2>Twitter</h2>
+          <ul>
+            <% for item in @tweets do%>
+              <li>
+                <p class="text">
+                  <%= auto_link(item.text,:target => "_blank") %>
+                </p>
+                <p class="info">
+                <span class="date"><a href="https://twitter.com/<%= @setting.fanfou_id %>/status/<%= item.id %>" target="_blank">
+                    <%= time_ago_in_words(item.created_at) %>前</a></span>
+                  通过<%= item.source %>
+                </p>
+              </li>
+            <% end %>
+          </ul>			
+        </div>
+        <% end %>
+
+      </td>
+    </tr>
+  </table>
 </div>

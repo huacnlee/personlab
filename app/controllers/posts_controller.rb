@@ -8,24 +8,6 @@ class PostsController < ApplicationController
   def init_posts
     set_nav_actived("blog")
   end
-
-  def init_sidebar
-
-    if !fragment_exist? "posts/sidebar/recent_posts"
-      @recent_posts = Post.find_recent
-    end
-
-    if !fragment_exist? "posts/sidebar/recent_comments"
-      @recent_comments = Comment.find_recent
-    end
-    
-		@categories = Rails.cache.read("data/categories")
-		if not @categories
-      @categories = Category.all
-			Rails.cache.write("data/categories",@categories)
-    end
-
-  end
   
   public
   def index		
@@ -103,21 +85,21 @@ class PostsController < ApplicationController
   end
   
   def show
-    @post_key = "data/posts/#{params[:slug]}"
+    @post_key = "data/posts/#{params[:id]}"
     # update pv    
         
-    @view_count = Post.update_view_count(params[:slug])
+    @view_count = Post.update_view_count(params[:id])
     
     if (not @post) or (@view_count == 0)
-      @post = Post.find_slug(params[:slug])
+      @post = Post.find_slug(params[:id])
       if not @post
         return render_404
       end
     end
     
     if request.post?
-      @pcomment = params[:comment]
-      @comment = @post.comments.build(params[:comment])
+      @comment = Comment.new(params[:comment])
+      @comment.post_id = @post.id
       
 			set_guest(@comment.author,@comment.url,@comment.email)  
       if captcha_validated?
@@ -128,7 +110,7 @@ class PostsController < ApplicationController
           else
             flash[:notice] = "评论发表成功."
           end          
-          redirect_to :action => "show", :slug => @post.slug, :anchor => "comment"
+          redirect_to blog_path(@post.slug), :anchor => "comment"
         end
       else
         @comment.errors.add("验证码","不正确")
@@ -143,7 +125,7 @@ class PostsController < ApplicationController
     set_seo_meta(@post.title,@post.meta_keywords,@post.meta_description)
     
     # get comments list
-    if !fragment_exist? "posts/show/#{params[:slug]}/comments"
+    if !fragment_exist? "posts/show/#{params[:id]}/comments"
       @comments = @post.comments
     end
    

@@ -1,6 +1,3 @@
-<% content_for :styles do %> 
-<%= stylesheet_link_tag "src/cpanel/pages" %>
-<% end %>
 <%= content_for :scripts do %> 
 <% end %>
 <%= render :partial => 'submenu' %>
@@ -19,7 +16,7 @@
 	<tr class="row">
 		<td class="field" valign="top">页面内容</td>
 		<td>
-		<%= f.text_area :body, :class => 'text body' %><br />
+		<%= f.text_area :body, :class => 'text long' %><br />
 		<p class="tip_p">
 			这里使用 Textile 格式, 请阅读 <%= link_to "这篇文档", "/doc/textile.html" %></a>.
 		</p>
@@ -32,7 +29,7 @@
 	<tr class="buttons">
 		<td class="field"></td>
 		<td>
-			<%= f.submit (@page.id ? "保存" : "创建") %> or <%= link_to 'Back', :controller => "pages" %>
+      <%= f.submit (@page.id ? "保存" : "创建"), :class => "button submit" %> or <%= link_to 'Back', :controller => "pages" %>
 		</td>
 	</tr>
 </table>

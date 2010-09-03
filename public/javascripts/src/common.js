@@ -22,51 +22,6 @@ Common.Editor = {
 			return false;
 		}
 
-		var owner = $("#"+elementId);
-		var editorid = "editor_box_"+elementId;
-		var elementName = owner.attr("name");
-		var content = owner.val();
-
-		if(rows == undefined){
-			rows = 24;
-		}
-
-		var result = EDITOR_TEMPLATE;
-		result = result.replace('{{editorid}}',editorid);
-		result = result.replace('{{textId}}',elementId);
-		result = result.replace('{{txtName}}',elementName);
-		result = result.replace('{{value}}',content);
-		result = result.replace('{{rows}}',rows);
-
-		owner.after(result);
-		owner.remove();
-
-		var editor = $('#' + editorid);
-		var txtBody = $('#' + elementId);
-		var subButtons = $(".sub_buttons",editor)
-		var btnShow = $('.buttons .view button.show',editor);
-
-		// 绑定事件
-		btnShow.click(function(){
-			$('.view button',editor).removeClass('selected');
-			$(this).addClass('selected');
-			tinyMCE.activeEditor.setContent(txtBody.val());
-			txtBody.hide();
-			subButtons.hide();
-			txtBody.focus();
-			 $('#' + elementId + '_parent').show();
-		});
-
-		$('.buttons .view button.code',editor).click(function(){
-			$('.view button',editor).removeClass('selected');
-			$(this).addClass('selected');
-			txtBody.val(tinyMCE.activeEditor.getContent());
-			txtBody.show();
-			txtBody.focus();
-			subButtons.show();
-			 $('#' + elementId + '_parent').hide();
-		});
-
 		// tinyMCE init
 		tinyMCE.init({
 			mode : "textareas",
@@ -97,24 +52,4 @@ Common.Editor = {
 	}
 
 }
-
-
-// Coderblogs Editor HTML 模板
-EDITOR_TEMPLATE = '\
-<div id="{{editorid}}" class="tinymce_box">\
-	<div class="buttons">\
-		<div class="insert">\
-			上传/插入 <span class="link"><a href="#" class="insert_image"></a><a href="#" class="insert_file"></a></link>\
-		</div>\
-		<div class="view">\
-			<button	type="button" class="show selected">可视化</button><button type="button" class="code">代码</button>\
-		</div>\
-		<div class="clear"></div>\
-	</div>\
-	<div id="edit_box">	\
-		<div class="sub_buttons" style="display:none;"></div>		\
-		<textarea id="{{textId}}" name="{{txtName}}" class="tinymce text long" rows="{{rows}}">{{value}}</textarea>\
-	</div>\
-</div>';
-
 

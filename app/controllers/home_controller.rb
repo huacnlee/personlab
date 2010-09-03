@@ -15,11 +15,11 @@ class HomeController < ApplicationController
     end
     
     if !fragment_exist? "home/index/recent_posts"
-      @recent_posts = Post.find(:all, :limit => 13,:order => "created_at desc")
+      @recent_posts = Post.limit(13)
     end
     
     if !fragment_exist? "home/index/recent_comments"
-      @recent_comments = Comment.find_recent(5)
+      @recent_comments = Comment.recents.limit(5)
     end
   end
 

@@ -1,6 +1,3 @@
-<% content_for :styles do %> 
-<%= stylesheet_link_tag "src/cpanel/pages" %>
-<% end %>
 <%= render :partial => 'submenu' %>
 <%= success_messages %>
 <div id="pages">
@@ -17,8 +14,8 @@
 	    <tr class="row">
 	    	<td class="first id"><%= item.id %></td>
 				<td class="status"><%=h item.status == 1 ? "已发布" : "草稿" %></td>
-				<td class="title"><%= link_to (truncate(h(item.title), :length => 40)), :controller => "/home", :action => "show", :slug => item.slug %></td>
-				<td class="date"><%= item.updated_at.to_s(:short_date) %></td>
+				<td class="title"><%= link_to (truncate(h(item.title), :length => 40)), page_path(item.slug) %></td>
+        <td class="date"><%= l item.updated_at, :format => :short %></td>
 				<td class="opt">
 					<%= link_to "编辑", edit_cpanel_page_url(item.id) %>
 					<%= link_to '删除', cpanel_page_url(item.id),  :confirm => 'Are you sure?', :method => :delete  %>

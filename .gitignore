@@ -10,3 +10,4 @@ public/stylesheets/cpanel
 public/javascripts/lib
 public/javascripts/cpanel
 public/javascripts/*.js
+public/[a-z]+.html

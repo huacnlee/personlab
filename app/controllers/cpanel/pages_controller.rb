@@ -48,7 +48,7 @@ class Cpanel::PagesController < Cpanel::ApplicationController
 
     respond_to do |format|
       if @page.save
-        save_notice("页面创建成功,可以 <a href=\"#{url_for(:controller => "/home", :action => "show", :slug => @page.slug)}\" target=\"_blank\">点击这里</a> 查看.")
+        save_notice("页面创建成功,可以 <a href=\"#{page_path(@page.slug)}\" target=\"_blank\">点击这里</a> 查看.")
         format.html { redirect_to :action => "index" }
         format.xml  { render :xml => @page, :status => :created, :location => @page }
       else
@@ -66,7 +66,7 @@ class Cpanel::PagesController < Cpanel::ApplicationController
 
     respond_to do |format|
       if @page.update_attributes(params[:page])
-        save_notice("页面修改成功,可以 <a href=\"#{url_for(:controller => "/home", :action => "show", :slug => @page.slug)}\" target=\"_blank\">点击这里</a> 查看.")
+        save_notice("页面修改成功,可以 <a href=\"#{page_path(@page.slug)}\" target=\"_blank\">点击这里</a> 查看.")
         format.html { redirect_to :action => "index" }
         format.xml  { head :ok }
       else

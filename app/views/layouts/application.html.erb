@@ -6,12 +6,12 @@
 	<title><%= raw (@page_title ? @page_title : @setting.site_name) %></title>
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /> 
 	<meta name="HandheldFriendly" content="True" />
-	<meta name="description" content="<%= h(@meta_description) %>" />
-	<meta name="keywords" content="<%= h(@meta_keywords) %>" />
+	<meta name="description" content="<%= @meta_description %>" />
+	<meta name="keywords" content="<%= @meta_keywords %>" />
   <link rel="shortcut icon" href="/favicon.ico?v=001" />
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <%= csrf_meta_tag %>
-	<%= stylesheet_link_tag "src/html","src/layout",:cache => "base" %>
+	<%= stylesheet_link_tag "application","front",:cache => "cached_front" %>
 	<%= yield :styles -%>
 	<%= auto_discovery_link_tag(:rss,FEED_URL,:title => '定阅最新博客') %>
   <%= javascript_include_tag "src/lib/jquery","src/rails.js","src/common", :cache => "lib/common" %>
@@ -19,12 +19,16 @@
 <body>
 <div id="container">
 	<div id="header">		
-		<div id="site_name">
-      <%= link_to @setting.site_name, :controller => "home", :action => "index" %>
-    </div>
-    <div class="sub_title">
-      <%= @setting.sub_title %>
-    </div>
+    <a id="site_name" href="/"><%= @setting.site_name %></a>
+    <span class="sub_title"><%= @setting.sub_title %></span>
+	</div>
+	<div id="nav">
+    <a href="/"<%= " class='actived'" if @nav_actived == "home" %> title="首页">首页</a>
+    <% if !@menus.blank? %>
+      <% for item in @menus %>
+        <a href="<%= item.url %>"<%= " class='actived'" if @nav_actived == item.url.gsub('/','') %> title="<%= item.name %>"<%= ' target="_blank"' if item.new_window %>><%= item.name %></a>
+      <% end -%>
+    <% end -%>
     <div id="nav_search">
       <form action="/blog" method="get">
       <input type="text" name="search" value="" id="search" /> 
@@ -32,29 +36,14 @@
       </form>
     </div>
 	</div>
-	<div id="nav">
-		<ul>
-      <li<%= " class='actived'" if @nav_actived == "home" %>><%= link_to "首页", :controller => "home", :action => "index" %></li>
-			<% if !@menus.blank? %>
-			  <% for item in @menus %>
-          <li<%= " class='actived'" if @nav_actived == item.url.gsub('/','') %>>
-            <a href="<%= item.url %>" title="<%= item.name %>"<%= ' target="_blank"' if item.new_window %>><%= item.name %></a>
-          </li>
-			  <% end -%>
-			<% end -%>
-		</ul>		
-	</div>
 	<div id="main">
 		<%= yield %>
 	</div>
 	<div id="footer">
     <p class="copyright">
-    Powered by <a href="http://github.com/huacnlee/personlab" target="_blank">PersonLab</a> base on <a href="http://ruby-lang.org" target="_blank">Ruby1.9</a> + <a href="http://www.rubyonrails.org" target="_blank">Rails3</a>, 
-    Design by Jason Lee Version: <%= APP_VERSION %> <%= link_to "CPanel", :controller => "cpanel" %>
+    Powered by opensource project <a href="http://github.com/huacnlee/personlab" target="_blank">PersonLab</a> running on <a href="http://ruby-lang.org" target="_blank">Ruby1.9</a> + <a href="http://www.rubyonrails.org" target="_blank">Rails3</a>.<br />
+    Version: <%= APP_VERSION %>
     </p>
-          <p class="other_info">
-            Valid  <a href="http://validator.w3.org/check?uri=referer">XHTML 1.0</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS 2.1</a>
-          </p>
 	</div>
 </div>
 <%= yield :scripts %>

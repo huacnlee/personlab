@@ -8,6 +8,7 @@ gem 'will_paginate', '3.0.pre'
 gem 'twitter4r'
 gem 'acts-as-taggable-on'
 gem 'rmagick'
+gem 'heroku'
 # gem 'aws-s3', :require => 'aws/s3'
 
 # Bundle gems for the local environment. Make sure to

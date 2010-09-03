@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.root :controller => "home"  
+  root :controller => :home,:action => :index  
 
   # Control Panel 
   map.namespace(:cpanel) do |cpanel|
@@ -15,24 +15,20 @@ ActionController::Routing::Routes.draw do |map|
     
   end
   
-  # Share
-  
   # Blog
-  map.blogs "blog", :controller => "posts"
-	map.blogs_page "blog/page/:page", :controller => "posts", :action => "index", :requirements => { :page => /[\d]+/ }
-  map.blogs_rss "blog/rss", :controller => "posts", :action => "rss"
-	map.blogs_category "blog/category/:category", :controller => "posts", :action => "index", :requirements => { :category => /[a-z0-9A-Z\-\_\.]+/ }
-	map.blogs_category_page "blog/category/:category/:page", :controller => "posts", :action => "index", :requirements => { :category => /[a-z0-9A-Z\-\_\.]+/,:page => /[\d]+/ }  
-	map.blogs_tag "blog/tag/:tag", :controller => "posts", :action => "index", :requirements => { :tag => /.+?/ }
-	map.blogs_tag_page "blog/tag/:tag/:page", :controller => "posts", :action => "index", :requirements => { :tag => /.+?/,:page => /[\d]+/ }  
-  map.blog "blog/:slug", :controller => "posts", :action => "show", :requirements => { :slug => /[a-z0-9A-Z\-\_\.]+/ }
+  resources :blogs, :controller => :posts, :path => "blog" do
+    collection do
+      get :category, :path => "category/:category", :action => :index
+      get :tag, :path => "tag/:tag", :action => :index
+    end
+    member do
+      post :comment, :path => "/comment", :action => :show
+    end
+  end
  
-  map.share "share", :controller => "home", :action => "share"
- 
-  map.unfollow "unfollow", :controller => "home", :action => :unfollow
-  
-  # Pages (This well be stay last line)
-  map.page ":slug", :controller => "home", :action => "show", :requirements => { :slug => /[a-z0-9A-Z\-\_\.]+/ }
+  match "share" => "home#share"
+  match "unfollow" => "unfollow"
+  map.page ":slug", :controller => :home, :action => :show, :requirements => { :slug => /[a-z0-9A-Z\-\_\.]+/ }
   
   # base routes
   map.connect ':controller/:action/:id'

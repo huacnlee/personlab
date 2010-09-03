@@ -22,7 +22,7 @@ class Cpanel::SettingsController < Cpanel::ApplicationController
   end
 
   def password
-    if request.method == :put
+    if request.post?
       if @current_user.update_pwd(params[:old_pwd], params[:new_pwd], params[:confirm_pwd])
         save_notice("密码修改成功。")
         redirect_to :action => "password"

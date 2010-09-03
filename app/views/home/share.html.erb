@@ -1,8 +1,8 @@
 <% content_for :styles do %> 
 <link rel="alternate" title="ATOM" type="application/atom+xml" href="<%= @api_url %>">
-<%= stylesheet_link_tag "src/home/share",:cache => "share" %>
 <% end %>
-<div id="shares">
+<div id="shares" class="box">
+  <h2>Google Reader 分享</h2>
   <% if !@shares.blank? %>
     <ul>
     <% for item in @shares %>

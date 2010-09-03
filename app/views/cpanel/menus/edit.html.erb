@@ -1,6 +1,3 @@
-<% content_for :styles do %> 
-<%= stylesheet_link_tag "src/cpanel/menus", :cache => "cpanel/menus" %>
-<% end %>
 <%= render :partial => 'submenu' %>
 <div class="form">
 	<%= form_for(@menu,:url => (@menu.id ? cpanel_menu_url(@menu) : cpanel_menus_url)) do |f| %>

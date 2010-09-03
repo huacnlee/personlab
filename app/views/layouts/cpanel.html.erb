@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="shortcut icon" href="/favicon.ico?v=001">
   <%= csrf_meta_tag %>
-	<%= stylesheet_link_tag "src/html","src/cpanel/layout",:cache => "cpanel/base" %>
+	<%= stylesheet_link_tag "application","cpanel",:cache => "cached_cpanel" %>
 	<%= yield :styles %>
   <%= javascript_include_tag "src/lib/tiny_mce/tiny_mce" %>
   <%= javascript_include_tag "src/lib/jquery","src/rails.js","src/common", :cache => "cpanel/lib/common" %>

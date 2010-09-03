@@ -1,10 +1,27 @@
-<% content_for :styles do %> 
-<%= stylesheet_link_tag "src/posts/base","src/posts/index", :cache => "blog_index" %>
+<div id="posts">
+<% if !@posts.blank? %>
+  <% for item in @posts %>
+    <div class="item">
+      <div class="title">
+        <a href="<%= blog_path(item.slug) %>" title="<%= item.title %>"><%= truncate(item.title,:length => 80) %></a>
+      </div>
+      <div class="info">
+        分类：<span class="category">[<a href="<%= category_blogs_path(item.category.slug) %>" title="<%= item.category.name %>"><%= item.category.name %></a>]</span>
+        时间：<span class="date"><%= l item.created_at, :format => :long %></span>,
+        <span class="view_count"><%= item.view_count + item.delay_view_count %>次阅读</span>,
+        <span class="comment_count">
+          <a href="<%= blog_path(item.slug, :anchor => "comments") %>" title="查看评论"><%= item.comment_count %>条评论</a>
+        </span>
+      </div>
+      <div class="body">
+        <%= raw item.summary %>
+      </div>			
+    </div>		
+  <% end %>	
+  <%= will_paginate @posts %>
+<% else %>
+  <div class="none_result">
+    作者还未发表过文章.
+  </div>
 <% end %>
-<div id="mainbox">
-	<div id="posts">
-	<%= render :partial => 'posts' %>
-	</div>
 </div>
-
-

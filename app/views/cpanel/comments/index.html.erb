@@ -1,6 +1,3 @@
-<% content_for :styles do %> 
-<%= stylesheet_link_tag "src/cpanel/comments", :cache => "cpanel/comments" %>
-<% end %>
 <% content_for :submenu do %> 
 <% end %>
 <%= success_messages %>
@@ -23,7 +20,7 @@
           <span class="opts"><%= link_to '删除', cpanel_comment_path(comment), :confirm => '确定要删除吗?', :method => :delete %></span>
            <% if comment.post %>
            <span class="post_title">
-             <%= link_to comment.post.title, :controller => "/posts", :action => "show", :slug => comment.post.slug %>
+             <a href="<%= blog_url(comment.post.slug) %>"><%= comment.post.title %></a>
            </span>
            <% end %>
         </div>

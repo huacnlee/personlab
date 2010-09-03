@@ -1,35 +1,61 @@
-<% content_for :styles do %> 
-<%= stylesheet_link_tag "src/posts/base","src/posts/show", :cache => "blog_show" %>
-<% end -%>
 <div id="mainbox">
-	<div id="post" class="post_item">
+	<div id="posts">
 		<h1>
 			<%= h(@post.title) %>
  		</h1>
-		<div class="post_info">
+		<div class="info">
 			<span class="category">[<%= link_to (@post.category.name), :controller => "posts", :action => "index", :category => @post.category.slug %>]</span>
-      发表时间：<span class="date"><%= l @post.created_at, :format => :long %></span> 
-			<span class="view_count"><%= @post.view_count + @view_count %>
-	次阅读</span>
+      发表时间：<span class="date"><%= l @post.created_at, :format => :long %></span>, 
+			<span class="view_count"><%= @post.view_count + @view_count %>次阅读</span>, 
 			<span class="comment_count"><a href="#comments"><%= @post.comment_count %>条评论</a></span>			
 		</div>
-		<div class="post_body">
+		<div class="body">
 			<%= raw @post.body %>
 		</div>
 		<% if !@post.tags.blank? %>
 		<div class="tags">
 			<label>Tags:</label>
 			<% for tag in @post.tags %>
-			  <%= link_to (tag.name), :controller => "posts", :action => "index", :tag => tag.name %>
+        <a href="<%= tag_blogs_path(tag.name) %>"><%= tag.name %></a>
 			<% end %>
 		</div>
 		<% end %>
 	</div>
-	<%= render :partial => 'comments' %>
+  <div id="comments">
+    <h2>网友评论</h2>
+    <div class="list">
+      <%= cache("posts/show/#{params[:slug]}/comments") do %>
+        <% if !@comments.blank? %>
+          <% for item in @comments %>
+            <div class="item<%= cycle('',' itemse') %>">
+              <div class="info">
+                <% if !item.url.blank? %>
+                  <a href="<%= item.url.match("http[s]{0,1}://") == nil ? "http://#{item.url}" : item.url %>" rel="nofollow" target="_blank"><%= h(item.author) %></a>
+                <% else %>
+                <%= h(item.author) %>
+                <% end -%>
+                在 <%= l item.created_at, :format => :long %> 说:
+              </div>
+              <div class="content">
+                <div class="face">
+                  <%= image_tag(face_url(item.email), :alt => item.author) %>
+                </div>
+                <%= simple_format(auto_link(h(item.body))) %>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="item none_result">
+            还未有人对此文发表过评论.
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 	<div id="comment">
 		<h2>发表评论</h2>
 		<div class="form">
-			<%= form_for @comment, :url => (url_for(:controller => "posts", :action => "show", :slug => params[:slug])) do |f| -%>
+      <%= form_for @comment, :url => comment_blog_path(@post.slug,:anchor => :comment) do |f| -%>
       <%= render "shared/error_messages", :target => @comment %>
 			<%= success_messages %>
 			<table border="0" cellspacing="0" cellpadding="0">

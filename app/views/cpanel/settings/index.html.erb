@@ -1,6 +1,3 @@
-<% content_for :styles do %> 
-<%= stylesheet_link_tag "src/cpanel/settings", :cache => "cpanel/settings" %>
-<% end %>
 <%= render :partial => 'submenu' %>
 <div class="form">
 	<%= form_for(@setting,:url => cpanel_setting_url(@setting.id)) do |f| %>
@@ -20,7 +17,7 @@
 			<td><%= f.text_field :email, :class => "text middle"  %></td>
 		</tr>
 		<tr class="row">
-			<td class="field">饭否ID</td>
+			<td class="field">Twitter ID</td>
 			<td><%= f.text_field :fanfou_id, :class => "text middle"  %></td>
 		</tr>
 		<tr class="row">
