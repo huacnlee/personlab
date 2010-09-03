@@ -1,11 +1,10 @@
 ﻿h2. About
 
-Simple personlab website CMS base on Ruby on Rails
+Simple person website for you, I can deploy on Heroku cloud server, base on Rails 3.0 + Ruby (1.8.7 or 1.9.2).
 
 h2. Demo
 
- * "Front":http://personlab.heroku.com/ 
- * "Admin":http://personlab.heroku.com/cpanel   (user:admin password:123123)
+ * "http://huacnlee.com":http://huacnlee/ 
 
 h2. Features 
 
@@ -15,13 +14,24 @@ h2. Features
 * custom About with HTML at Admin panel.
 * Textile with Signle page body format.
 
-h2. Install & Configure
+h2. Install on Heroku
 
-h3. Install on Ubuntu
-* $ sudo sh install.sh
+	$ git clone git@github.com:huacnlee/personlab.git
+  $ cd personlab
+	$ heroku create --stack bamboo-ree-1.8.7 youappname
+  $ git push heroku master
+
+h2. Install on Ubuntu
+
+	$ git clone git@github.com:huacnlee/personlab.git
+  $ cd personlab
+  $ bundle install
+  $ RAILS_ENV=production rake db:create
+  $ RAILS_ENV=production rake db:migrate
+  $ RAILS_ENV=production rake db:seed
+
 
 
 h2. Admin password
-see the db.users, if not admin use existed, use this:
-* $ rake db:create_admin
-then rake task will create "admin" user to the DB, and login: admin password: 123123
+
+When you run you run "rake db:seed" it can create a default user login: admin password: 123123
