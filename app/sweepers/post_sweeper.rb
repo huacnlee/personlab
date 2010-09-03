@@ -12,6 +12,7 @@ class PostSweeper < ActionController::Caching::Sweeper
   
   def after_destroy(post)
 		clear_index_recent_posts
+		expire_fragment "home/index/recent_comments"
     sweeper(post)
   end
   
@@ -31,7 +32,6 @@ class PostSweeper < ActionController::Caching::Sweeper
   # 清除首页缓存
   def clear_index_recent_posts
     expire_fragment "home/index/recent_posts"
-    expire_fragment 'posts/sidebar/recent_posts'
   end
   
 end

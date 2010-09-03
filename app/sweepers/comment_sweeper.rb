@@ -25,5 +25,6 @@ class CommentSweeper < ActionController::Caching::Sweeper
     if comment.post
       expire_fragment "posts/show/#{comment.post.slug}/comments"
     end
+    expire_fragment "home/index/recent_comments"
   end
 end
