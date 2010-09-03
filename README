@@ -20,6 +20,9 @@ $ git clone git://github.com/huacnlee/personlab.git
 $ cd personlab
 $ heroku create --stack bamboo-ree-1.8.7 youappname
 $ git push heroku master
+$ heroku rake db:create
+$ heroku rake db:migrate
+$ heroku rake db:seed
 
 h2. Install on Ubuntu
 
