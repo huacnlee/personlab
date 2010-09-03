@@ -44,7 +44,7 @@ module Personlab
 end
 
 # custom configs
-APP_VERSION = '0.4.2'
+APP_VERSION = '0.4.5'
 
 APP_DOMAIN = 'huacnlee.com'
 
