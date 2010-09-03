@@ -11,10 +11,10 @@
   <link rel="shortcut icon" href="/favicon.ico?v=001" />
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <%= csrf_meta_tag %>
-	<%= stylesheet_link_tag "application","front",:cache => "cached_front" %>
+	<%= stylesheet_link_tag "application","front" %>
 	<%= yield :styles -%>
 	<%= auto_discovery_link_tag(:rss,FEED_URL,:title => '定阅最新博客') %>
-  <%= javascript_include_tag "src/lib/jquery","src/rails.js","src/common", :cache => "cached_application" %>
+  <%= javascript_include_tag "src/lib/jquery","src/rails.js","src/common" %>
 </head>
 <body>
 <div id="container">
