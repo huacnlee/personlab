@@ -1,6 +1,7 @@
 # coding: utf-8 
 class HomeController < ApplicationController
-  caches_action :show
+  caches_page :show
+  caches_action :share, :expires_in => 10.seconds
   
   def index
     set_seo_meta(nil,@setting.meta_keywords,@setting.meta_description)
