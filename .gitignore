@@ -3,7 +3,6 @@ log/*
 tmp/**/*
 config/database.yml
 config/twitter.yml
-public/images/me.jpg
 public/work.html
 public/about.html
 public/links.html
