@@ -16,14 +16,14 @@ h2. Features
 
 h2. Install on Heroku
 
-$ git clone git@github.com:huacnlee/personlab.git
+$ git clone git://github.com/huacnlee/personlab.git
 $ cd personlab
 $ heroku create --stack bamboo-ree-1.8.7 youappname
 $ git push heroku master
 
 h2. Install on Ubuntu
 
-$ git clone git@github.com:huacnlee/personlab.git
+$ git clone git://github.com/huacnlee/personlab.git
 $ cd personlab
 $ bundle install
 $ RAILS_ENV=production rake db:create
