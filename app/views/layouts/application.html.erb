@@ -14,7 +14,8 @@
 	<%= stylesheet_link_tag "application","front",:cache => "cached_front" %>
 	<%= yield :styles -%>
 	<%= auto_discovery_link_tag(:rss,FEED_URL,:title => '定阅最新博客') %>
-  <%= javascript_include_tag "src/lib/jquery","src/rails.js","src/common", :cache => "cached_application" %>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+  <%= javascript_include_tag "rails.js","common", :cache => "cached_application" %>
 </head>
 <body>
 <div id="container">

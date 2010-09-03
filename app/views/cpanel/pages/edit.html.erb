@@ -1,5 +1,3 @@
-<%= content_for :scripts do %> 
-<% end %>
 <%= render :partial => 'submenu' %>
 <div id="pages" class="form">
 <%= form_for @page,:url => (@page.id ? cpanel_page_url(@page) : cpanel_pages_url) do |f| %>
@@ -29,7 +27,7 @@
 	<tr class="buttons">
 		<td class="field"></td>
 		<td>
-      <%= f.submit (@page.id ? "保存" : "创建"), :class => "button submit" %> or <%= link_to 'Back', :controller => "pages" %>
+      <%= f.submit "保存", :class => "button submit" %> or <%= link_to 'Back', cpanel_pages_path %>
 		</td>
 	</tr>
 </table>

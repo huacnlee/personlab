@@ -9,8 +9,9 @@
   <%= csrf_meta_tag %>
 	<%= stylesheet_link_tag "application","cpanel",:cache => "cached_cpanel" %>
 	<%= yield :styles %>
-  <%= javascript_include_tag "src/lib/tiny_mce/tiny_mce" %>
-  <%= javascript_include_tag "src/lib/jquery","src/rails.js","src/common", :cache => "cached_cpanel" %>
+  <%= javascript_include_tag "tiny_mce/tiny_mce" %>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+  <%= javascript_include_tag "rails.js","common", :cache => "cached_application" %>
 </head>
 <body>
 <div id="top">
