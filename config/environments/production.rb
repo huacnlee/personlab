@@ -26,7 +26,7 @@ Personlab::Application.configure do
 
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
-  config.cache_store = :file_store,"/tmp/cache/personlab" #:mem_cache_store,"127.0.0.1:11211" #
+  config.cache_store = :file_store,"#{Rails.root}/tmp/cache" #:mem_cache_store,"127.0.0.1:11211" #
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
