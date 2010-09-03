@@ -50,3 +50,9 @@ table.grid { border:1px solid #DDD;}
 #comments .row .opts { clear:both; color:#999; margin-top:8px; }
 #comments .row .opts .post_title { float:right;}
 #comments .row .opts .post_title a { color:#333;}
+
+#login {background: #FFF; border-radius:10px; box-shadow:2px 2px 4px rgba(0, 0, 0, 0.5); text-align: left; width:450px; border:1px solid #CCC; margin:40px auto; }
+#login form { margin:30px;  }
+#login form tr td { padding:6px;}
+#login form tr td.field { text-align: right; padding-right:6px; width:60px;}
+h1 { font-size: 16px; padding:8px 10px; text-align: left; color:#039;}

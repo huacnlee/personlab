@@ -10,7 +10,7 @@
 	<%= stylesheet_link_tag "application","cpanel",:cache => "cached_cpanel" %>
 	<%= yield :styles %>
   <%= javascript_include_tag "src/lib/tiny_mce/tiny_mce" %>
-  <%= javascript_include_tag "src/lib/jquery","src/rails.js","src/common", :cache => "cpanel/lib/common" %>
+  <%= javascript_include_tag "src/lib/jquery","src/rails.js","src/common", :cache => "cached_cpanel" %>
 </head>
 <body>
 <div id="top">

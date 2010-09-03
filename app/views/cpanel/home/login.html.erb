@@ -4,11 +4,11 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>PersonLab 管理后台 - 登录</title>
-	<%= stylesheet_link_tag "src/html","src/cpanel/login", :cache => "cpanel/login" %>
+	<%= stylesheet_link_tag "application","cpanel",:cache => "cached_cpanel" %>
 </head>
-<div id="main">
-	<h1>登录管理后台</h1>
+<body style="background:#EEE;">
 	<div id="login" class="form">
+		<h1>登录管理后台</h1>
 		<% form_for @user,:url => "login" do |f| -%>
 		<% if flash[:errors] %>
 		<div class="errorExplanation">
@@ -33,6 +33,6 @@
 			</tr>
 		</table>
 		<% end -%>
-	</div>
 </div>
+</body>
 </html>
