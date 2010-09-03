@@ -4,7 +4,7 @@
 			<%= h(@post.title) %>
  		</h1>
 		<div class="info">
-			<span class="category">[<%= link_to (@post.category.name), :controller => "posts", :action => "index", :category => @post.category.slug %>]</span>
+			<span class="category">[<%= link_to (@post.category.name), category_blogs_path(@post.category.slug) %>]</span>
       发表时间：<span class="date"><%= l @post.created_at, :format => :long %></span>, 
 			<span class="view_count"><%= @post.view_count + @view_count %>次阅读</span>, 
 			<span class="comment_count"><a href="#comments"><%= @post.comment_count %>条评论</a></span>			
@@ -24,7 +24,7 @@
   <div id="comments">
     <h2>网友评论</h2>
     <div class="list">
-      <%= cache("posts/show/#{params[:slug]}/comments") do %>
+      <%= cache("posts/show/#{params[:id]}/comments") do %>
         <% if !@comments.blank? %>
           <% for item in @comments %>
             <div class="item<%= cycle('',' itemse') %>">

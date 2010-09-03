@@ -85,7 +85,6 @@ class PostsController < ApplicationController
   end
   
   def show
-    @post_key = "data/posts/#{params[:id]}"
     # update pv    
         
     @view_count = Post.update_view_count(params[:id])
