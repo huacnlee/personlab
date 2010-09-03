@@ -1,0 +1,52 @@
+body { font-size:12px; }
+.inner_panel { width:950px; margin: 0px auto; text-align: left;}
+
+#nav { height:40px; line-height: 40px; background:#333; font-size: 14px; overflow:hidden;}
+	#nav ul { margin: 0px; list-style: none; padding-top: 7px;}
+		#nav ul li { display:inline; margin-right: 5px;}
+		#nav ul a	{ text-decoration: none; color:#FFF; padding:7px 15px 5px 15px; background:#444; border: 1px solid #555; border-bottom: 0px;}
+		#nav ul li.current span { color:#F30; padding:7px 15px 5px 15px; background:#FFF; border: 1px solid #FFF;border-bottom: 0px;}
+		
+#top { height: 30px; background:#039; overflow:hidden;}
+	#top #site_name { font-size:20px; height:30px; line-height: 30px;}
+		#top #site_name a { color:#FFF; text-decoration: none;}
+		#top .userbar { height:30px; line-height: 30px; color:#AAA; float:right; margin-right:10px; margin-top: -30px;}
+		#top .userbar span.name { font-weight: bold; margin: 0px 2px; }
+		#top .userbar a {color:#DDD;}
+
+#footer { clear:both; background:#F0F0F0; font-size: 11px; padding:10px 0; font-size: 11px; color:#999;}
+#footer a { color:#666;}
+#main { padding: 10px 0; background:#FFF; min-height:450px;}
+
+#main h2 { font-size:16px; margin: 10px 0;}
+
+#submenu { height:22px; line-height: 22px; margin-bottom: 10px; list-style: none; }
+	#submenu li { display:inline; margin-right:10px;}
+		#submenu li a:link,
+		#submenu li a:visited { color:#063; font-size: 14px; }
+		#submenu li.current { font-weight: bold;}
+
+table.grid { border:1px solid #DDD;}
+	table.grid tr td { font-size: 12px; padding:4px; border-top: 1px solid #DDD; border-left: 1px solid #DDD;}
+	table.grid tr td.first { border-left: 0px;}
+	table.grid tr.head td { font-weight: bold; background:#EEE; border-top: 0px;}
+	table.grid tr td.choice { width:16px;}
+	table.grid tr td.slug { width:200px;}
+	table.grid tr td.date { width:120px;}
+	table.grid tr td.status { width:38px;}
+
+.pagination { text-align: right; font-size:12px; font-weight:bold; margin:10px 0;  /* self-clearing method: */ }
+.pagination span,.pagination a,.pagination em { padding:2px 4px;}
+
+.box { margin-bottom:20px;}
+.box h3 { color:#999;}
+.box ul li { line-height:200%;}
+
+#comments { border:1px solid #DDD;}
+#comments .row { margin:10px; padding-bottom: 10px; border-bottom: 1px solid #DDD;}
+#comments .row .info { font-size:12px; color:#999;}
+#comments .row .body { font-size:12px; margin-top: 5px; line-height:160%;}
+#comments .row .body .face { float:left; margin:0 10px 10px 0;}
+#comments .row .opts { clear:both; color:#999; margin-top:8px; }
+#comments .row .opts .post_title { float:right;}
+#comments .row .opts .post_title a { color:#333;}
