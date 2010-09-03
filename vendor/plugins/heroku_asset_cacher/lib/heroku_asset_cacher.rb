@@ -49,7 +49,7 @@ class HerokuAssetCacher
   end
   
 	def heroku_file_location
-		"#{RAILS_ROOT}/tmp/asset_cache"
+		"#{Rails.root}/tmp/asset_cache"
 	end
 	
 end
