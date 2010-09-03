@@ -4,4 +4,7 @@ tmp/**/*
 config/database.yml
 config/twitter.yml
 public/images/me.jpg
-public/[a-z]+.html
+public/work.html
+public/about.html
+public/links.html
+public/share.html
