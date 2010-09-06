@@ -100,7 +100,7 @@ class Post < ActiveRecord::Base
   
   # static method
   def self.update_view_count(slug)
-    delay = 30
+    delay = 10
     cache_key = "data/posts/view_count/#{slug}"
     count = Rails.cache.read(cache_key).to_i || 0
     if count % delay == 0 && count != 0

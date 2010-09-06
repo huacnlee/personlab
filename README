@@ -42,6 +42,13 @@ $ RAILS_ENV=production rake db:create
 $ RAILS_ENV=production rake db:migrate
 $ RAILS_ENV=production rake db:seed
 
+h2. Update new version
+
+$ git pull origin master
+$ git push heroku master
+$ heroku db:migrate
+$ heroku restart
+
 h2. Config with your self
 
 You can change some config in application.rb bottom, etc. Feed url, Google Analytics Id ...
