@@ -52,7 +52,7 @@ end
 # *********************    CUSTOM CONFIGS    **********************
 # *****************************************************************
 # you app domain
-APP_DOMAIN = 'huacnlee.com'
+APP_DOMAIN = 'xinfuqiu.huacnlee.com'
 
 # captcha secret key
 CAPTCHA_SALT = "8929&**&@#"
