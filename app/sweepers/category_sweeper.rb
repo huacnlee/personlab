@@ -11,7 +11,6 @@ class CategorySweeper < ActionController::Caching::Sweeper
   
   def clear_category_cache(category)
     Rails.cache.delete("data/categories")
-		expire_fragment %r"posts/index/*"
 		for p in category.posts do
 			Rails.cache.write("data/posts/#{p.slug}",nil)
 		end
