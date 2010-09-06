@@ -5,23 +5,21 @@ class HerokuAssetCacher
   
   def initialize(app)
     @app = app
-    initialize_asset_packager if ActionController::Base.perform_caching
+    initialize_asset_packager
     @@regex_css = /\/stylesheets\/cached_([\w]+).css/i
     @@regex_js =  /\/javascripts\/cached_([\w]+).js/i
   end
   
   def call(env)
 		@env = env
-		if ActionController::Base.perform_caching
-			return render_css if env['PATH_INFO'] =~ @@regex_css
-			return render_js if env['PATH_INFO'] =~ @@regex_js
-		end
+    return render_css if env['PATH_INFO'] =~ @@regex_css
+    return render_js if env['PATH_INFO'] =~ @@regex_js
     
 		@app.call(env)
   end
   
   def render_js
-    file_name = @@regex_js .match(@env['PATH_INFO'])[1]
+    file_name = @@regex_js.match(@env['PATH_INFO'])[1]
 		file = "#{heroku_file_location}/cached_#{file_name}.js"
 			[
 				200,

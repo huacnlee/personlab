@@ -8,3 +8,5 @@ public/about.html
 public/blog
 public/links.html
 public/share.html
+public/javascripts/cached_*
+public/stylesheets/cached_*
