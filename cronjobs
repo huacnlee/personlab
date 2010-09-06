@@ -1,3 +1,0 @@
-*/15 * * * * cd /home/jason/wwwroot/personlab/ && rake RAILS_ENV=production tweet:update >>log/rake.log
-*/30 * * * * cd /home/jason/wwwroot/personlab/ && rake RAILS_ENV=production reader_share:update >>log/rake.log
-32 3 * * * cd /home/jason/wwwroot/personlab && sh autobackup.sh

@@ -64,7 +64,7 @@ class Post < ActiveRecord::Base
   # list
   def self.find_list(page = 1, per_page = 20,options = {})
     with_scope :find => options do
-      paginate(:page => page,:per_page => per_page,:joins => [:category],:include => [:tags])
+      paginate(:page => page,:per_page => per_page,:include => [:category])
     end
   end
   
