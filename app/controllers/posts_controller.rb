@@ -1,5 +1,6 @@
 # coding: utf-8 
 class PostsController < ApplicationController
+  caches_page :rss, :expires_in => 1.days
   cache_sweeper :comment_sweeper,:only => [:show]
   validates_captcha
   before_filter :init_posts
@@ -66,17 +67,14 @@ class PostsController < ApplicationController
 
   
   def rss
-		@cache_key = "posts/index/feed"
-		if !fragment_exist? @cache_key
-   	 # Get the 10 most recent photos
-	    @posts = Post.find_list_with_front(1,20)
-	    # Title for the RSS feed
-	    @feed_title = "10 most recent photos"
-	    # Get the absolute URL which produces the feed
-	    @feed_url = "http://" + request.host_with_port + request.request_uri
-	    # Description of the feed as a whole
-	    @feed_description = "20 most recent posts"
-		end
+    # Get the 10 most recent photos
+    @posts = Post.find_list_with_front(1,20)
+    # Title for the RSS feed
+    @feed_title = "10 most recent photos"
+    # Get the absolute URL which produces the feed
+    @feed_url = "http://" + request.host_with_port + request.request_uri
+    # Description of the feed as a whole
+    @feed_description = "20 most recent posts"
     # Set the content type to the standard one for RSS
     response.headers['Content-Type'] = 'application/rss+xml'
     # Render the feed using an RXML template
