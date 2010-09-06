@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  before_filter :init
+  before_filter :check_login, :init
   
   # 初始化
   def init
@@ -16,9 +16,17 @@ class ApplicationController < ActionController::Base
     
     @guest = { :author => session[:guest_author].to_s,:email => session[:guest_email],:url=> session[:guest_url]}
 
-    if @guest.blank?
-      @guest = set_guest
+    if session[:guest_author].blank?
+      if @current_user
+        @guest = { :author => @current_user.name, :email => @current_user.email, :url => root_url }
+      else
+        @guest = set_guest
+      end
     end
+  end
+  
+  def check_login
+    @current_user = User.find_by_id(session[:user_id])
   end
 
   # 输出404错误

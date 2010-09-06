@@ -4,9 +4,15 @@
   <% else %>
   <li><%= link_to "参数设置", :controller => "cpanel/settings", :action => "index" %></li>
   <% end %>
+	<% if params[:action] == 'profile' %>
+  <li class="current"><span>管理员信息</span></li>
+  <% else %>
+  <li><%= link_to "管理员信息", :controller => "cpanel/settings", :action => "profile" %></li>
+  <% end %>
   <% if params[:action] == 'password' %>
   <li class="current"><span>修改密码</span></li>
   <% else %>
   <li><%= link_to "修改密码", :controller => "cpanel/settings", :action => "password" %></li>
   <% end %>
+	
 <% end %>

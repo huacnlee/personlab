@@ -2,17 +2,20 @@ ActionController::Routing::Routes.draw do |map|
   root :controller => :home,:action => :index  
 
   # Control Panel 
-  map.namespace(:cpanel) do |cpanel|
-    cpanel.root :controller => "home"  
-    cpanel.login "login",:controller => "home", :action => "login" 
-    cpanel.logout "logout",:controller => "home", :action => "logout" 
-    
-    cpanel.posts_importblogbus "posts/importblogbus", :controller => "posts", :action => "importblogbus"
-    # modify password
-    cpanel.settings_password "settings/password", :controller => "settings", :action => "password"
+  namespace 'cpanel' do
+    root :controller => :home, :action => :index
+    map.login "login", :controller => :home, :action => :login
+    map.logout "logout", :controller => :home, :action => :logout
 
-    cpanel.resources :menus,:pages,:posts,:comments,:settings,:categories   
-    
+    resources :menus,:pages,:posts,:comments,:categories
+    resources :settings, :only => [:index, :create] do
+      collection do
+        get :password
+        post :password
+        get :profile
+        post :profile
+      end
+    end
   end
   
   # Blog

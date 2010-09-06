@@ -1,0 +1,25 @@
+<%= render :partial => 'submenu' %>
+<div class="form">
+  <%= form_for(@current_user,:url => '') do |f| %>
+    <%= success_messages %>
+    <%= render "shared/error_messages", :target => @current_user %>
+    <table border="0" cellspacing="0" cellpadding="0">
+		<tr class="row">
+          <td class="field">用户名</td>
+          <td><%= f.text_field :uname, :class => "text" %></td>
+        </tr>
+        <tr class="row">
+          <td class="field">姓名</td>
+          <td><%= f.text_field :name, :class => "text" %></td>
+        </tr>
+        <tr class="row">
+          <td class="field">Email</td>
+          <td><%= f.text_field :email, :class => "text middle" %></td>
+        </tr>
+        <tr class="row">
+          <td class="field"></td>
+          <td><%= f.submit("保存", :class => "button submit")  %> </td>
+        </tr>
+     </table>
+  <% end %>
+</div>

@@ -28,10 +28,7 @@ class Cpanel::MenusController < Cpanel::ApplicationController
   def new
     @menu = Menu.new
 
-    respond_to do |format|
-      format.html { render :action => "edit" }
-      format.xml  { render :xml => @menu }
-    end
+    render :action => "edit"
   end
 
   # GET /posts/1/edit
@@ -44,15 +41,11 @@ class Cpanel::MenusController < Cpanel::ApplicationController
   def create
     @menu = Menu.new(params[:menu])
 
-    respond_to do |format|
-      if @menu.save
-        flash[:notice] = '菜单创建成功.'
-        format.html { redirect_to(cpanel_menus_url) }
-        format.xml  { render :xml => @menu, :status => :created, :location => @menu }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @menu.errors, :status => :unprocessable_entity }
-      end
+    if @menu.save
+      flash[:notice] = '菜单创建成功.'
+      redirect_to(cpanel_menus_path) 
+    else
+      render "edit"
     end
   end
 
