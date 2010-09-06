@@ -4,20 +4,23 @@ Simple person website for you, I can deploy on Heroku cloud server, base on Rail
 
 h2. Demo
 
+ * http://personlab.heroku.com
  * http://huacnlee.com
 
 h2. Features 
 
 * Weblog,Single page system.
-* auto sync Twitter message show on Homepage.
+* auto get Twitter message on Homepage.
 * auto show recent Google Reader share entry on Share page.
-* custom About with HTML at Admin panel.
 * Textile with Signle page body format.
+* "Heroku":http://heroku.com support.
+* Rails 3.0 powered, support beteen Ruby 1.8.7 and 1.9.2
 
 h2. Install on Heroku
 
 $ git clone git://github.com/huacnlee/personlab.git
 $ cd personlab
+$ vi config/application.rb
 $ heroku create --stack bamboo-ree-1.8.7 youappname
 $ git push heroku master
 $ heroku rake db:create
@@ -28,12 +31,19 @@ h2. Install on Ubuntu
 
 $ git clone git://github.com/huacnlee/personlab.git
 $ cd personlab
+$ cp config/database.yml.default config/database.yml
+$ vi config/database.yml 
+$ cp config/twitter.yml.default config/twitter.yml
+$ vi config/twitter.yml
+$ vi config/application.rb
 $ bundle install
 $ RAILS_ENV=production rake db:create
 $ RAILS_ENV=production rake db:migrate
 $ RAILS_ENV=production rake db:seed
 
+h2. Comfigure
 
+You can change some config in application.rb bottom, etc. Feed url, Google Analytics Id ...
 
 h2. Admin password
 
