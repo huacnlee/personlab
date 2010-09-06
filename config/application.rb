@@ -3,6 +3,8 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+APP_VERSION = "0.5.2"
+
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
@@ -43,9 +45,13 @@ module Personlab
   end
 end
 
-# custom configs
-APP_VERSION = '0.5.2'
 
+
+
+# *****************************************************************
+# *********************    CUSTOM CONFIGS    **********************
+# *****************************************************************
+# you app domain
 APP_DOMAIN = 'huacnlee.com'
 
 # captcha secret key
