@@ -1,6 +1,7 @@
 .DS_Store
 log/*
 tmp/**/*
+config/application.rb
 config/database.yml
 config/twitter.yml
 public/work.html
@@ -10,3 +11,4 @@ public/links.html
 public/share.html
 public/javascripts/cached_*
 public/stylesheets/cached_*
+tags
