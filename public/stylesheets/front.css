@@ -30,6 +30,7 @@ span.date { color:#999; font-size:12px; }
 #posts .body {}
 #posts .body h2 { font-size:16px; line-height:200%; }
 #posts .body ul, #posts .body ol { margin:5px 20px; }
+#posts .body p { margin-bottom:10px; }
 #posts .tags { font-size:12px; padding:5px 10px; background:#F5F5F5;  }
 #posts .tags label { margin-right:10px; color:#999; }
 #posts .tags a { margin-right:10px; color:#666;font-weight:bold;  }
