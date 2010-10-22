@@ -6,8 +6,8 @@
         <a href="<%= blog_path(item.slug) %>" title="<%= item.title %>"><%= truncate(item.title,:length => 80) %></a>
       </div>
       <div class="info">
-        分类：<span class="category">[<a href="<%= category_blogs_path(item.category.slug) %>" title="<%= item.category.name %>"><%= item.category.name %></a>]</span>
-        时间：<span class="date"><%= l item.created_at, :format => :long %></span>,
+        <span class="rbox category"><a href="<%= category_blogs_path(item.category.slug) %>" title="<%= item.category.name %>"><%= item.category.name %></a></span>
+        <span class="date"><%= l item.created_at, :format => :long %></span>,
         <span class="view_count"><%= item.view_count + item.delay_view_count %>次阅读</span>,
         <span class="comment_count">
           <a href="<%= blog_path(item.slug, :anchor => "comments") %>" title="查看评论"><%= item.comment_count %>条评论</a>

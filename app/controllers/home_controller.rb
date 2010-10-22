@@ -10,8 +10,8 @@ class HomeController < ApplicationController
     # get fanfou messages
     @fanfou_msgs = []
     if !@setting.fanfou_id.blank? and TWITTER_ENABLE
-      # @tweets = []
-      @tweets = Tweet.get_home_messages(@setting.fanfou_id,5)
+      @tweets = []
+      # @tweets = Tweet.get_home_messages(@setting.fanfou_id,5)
     end
     
     if !fragment_exist? "home/index/recent_posts"

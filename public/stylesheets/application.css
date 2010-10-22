@@ -6,8 +6,8 @@ body { text-align:center;
   font-family: "Helvetica Neue","Yahei", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti !important; 
   color:#333;
   font-size:14px;
-  line-height:160%;
-  padding-bottom:30px;
+  line-height:140%;
+  padding-bottom:30px;  
 }
 a:link, a:visited { color:#4183C4; }
 a:hover { color:#cf3400; }
@@ -56,3 +56,4 @@ textarea.middle,input.middle { width:500px; }
 textarea.middle { height:100px; }
 textarea.long,input.long { width:800px; }
 
+.rbox { -webkit-border-radius: 13px; -moz-border-radius: 13px; border-radius: 13px;}

@@ -25,7 +25,7 @@ module ApplicationHelper
   # return the Gravatar face by Email
   def face_url(email)
     hash = Digest::MD5.hexdigest(email)
-    raw "http://www.gravatar.com/avatar/#{hash}?s=32"
+    raw "http://www.gravatar.com/avatar/#{hash}?s=64"
   end
 
   # close html tag when truncated
