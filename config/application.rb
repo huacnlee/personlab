@@ -69,4 +69,4 @@ GOOGLE_ANALYTICS_ID = "UA-9745660-1"
 # GOOGLE_ANALYTICS_ID = false
 
 # Custom html code in footer.
-FOOTER_HTML = ""
+FOOTER_HTML = "My websites: <a href=\"http://lanxs.com\" target=\"_blank\" title=\"楠香山\">楠香山</a> <a href=\"http://www.xiangguo.org\" target=\"_blank\" title=\"橡果房产网\">橡果房产网</a>"
