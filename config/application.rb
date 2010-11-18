@@ -67,3 +67,6 @@ TWITTER_ENABLE = false
 # Google Analytics Account ID
 GOOGLE_ANALYTICS_ID = "UA-9745660-1"
 # GOOGLE_ANALYTICS_ID = false
+
+# Custom html code in footer.
+FOOTER_HTML = ""
