@@ -3,7 +3,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-APP_VERSION = "0.6"
+APP_VERSION = "0.7"
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
@@ -69,4 +69,11 @@ GOOGLE_ANALYTICS_ID = "UA-9745660-1"
 # GOOGLE_ANALYTICS_ID = false
 
 # Custom html code in footer.
+<<<<<<< HEAD
 FOOTER_HTML = "My websites: <a href=\"http://lanxs.com/users/1\" target=\"_blank\" title=\"楠香山\">楠香山</a> <a href=\"http://www.xiangguo.org/chengdu/sells/p9\" target=\"_blank\" title=\"橡果房产网\">橡果房产网</a>"
+=======
+FOOTER_HTML = ""
+
+# Blog theme
+THEME_NAME = 'friendfeed-bret'
+>>>>>>> 35706bc52ba4a63438bc0df96077991a9f0f0cbc

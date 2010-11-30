@@ -1,0 +1,13 @@
+<% render "/sidebar" %>
+<ul class="archive">
+<% cache("home/index/recent_posts") do %>
+<% if !@recent_posts.blank?%>
+  <% for item in @recent_posts %>
+    <li>
+      <div class="title"><a href="<%= blog_path(item.slug) %>" title="<%= item.title %>"><%= truncate(item.title, :length => 30) %></a></div>
+      <div class="date"><%= item.created_at.to_date %></div>  
+    </li>
+  <% end %>
+<% end %>
+<% end %>
+</ul>

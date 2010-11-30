@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   root :controller => :home,:action => :index  
-
+  themes_for_rails
   # Control Panel 
   namespace 'cpanel' do
     root :controller => :home, :action => :index

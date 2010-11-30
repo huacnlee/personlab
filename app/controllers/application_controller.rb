@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   before_filter :check_login, :init
+  theme THEME_NAME
   
   # 初始化
   def init
@@ -20,7 +21,7 @@ class ApplicationController < ActionController::Base
       if @current_user
         @guest = { :author => @current_user.name, :email => @current_user.email, :url => root_url }
       else
-        @guest = set_guest
+        set_guest
       end
     end
   end

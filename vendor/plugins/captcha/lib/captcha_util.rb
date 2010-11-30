@@ -4,6 +4,11 @@ module CaptchaUtil
 
   def self.random_image
     @@captcha_files ||= Dir.glob("#{Rails.root}/public/system/captcha/*.gif").map {|f| File.basename(f)}
+    
+    if @@captcha_files.blank?
+      Rails.logger.warn("Not generate captcha images in public/system/captcha.")
+      return ""
+    end
     @@captcha_files[rand(@@captcha_files.size)]
   end
 

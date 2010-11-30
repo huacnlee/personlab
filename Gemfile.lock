@@ -65,6 +65,7 @@ GEM
       thor (~> 0.14.0)
     rake (0.8.7)
     simple-rss (1.2.3)
+    themes_for_rails (0.3.0)
     thor (0.14.0)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
@@ -83,5 +84,6 @@ DEPENDENCIES
   mysql2
   rails (= 3.0.0)
   simple-rss
+  themes_for_rails
   twitter4r
   will_paginate (= 3.0.pre)

@@ -1,0 +1,263 @@
+ /*
+ * Copyright 2009 Bret Taylor
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may
+ * not use this file except in compliance with the License. You may obtain
+ * a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ */
+
+body {
+  background: white;
+  color: black;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+body,
+textarea {
+  font-family: Georgia, serif;
+  font-size: 12pt;
+}
+
+h1,
+h2,
+h3,
+h4,
+input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12pt;
+}
+
+table {
+  border-collapse: collapse;
+  border: 0;
+}
+
+td {
+  border: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+pre,
+code {
+  font-family: monospace;
+  color: #050;
+}
+
+pre {
+  margin: 17pt;
+  margin-right: 0;
+  padding-left: 15pt;
+  border-left: 1px solid #ddd;
+  line-height: 16pt;
+  overflow: auto;
+}
+
+a,
+a code {
+  color: #00c;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#header {
+  background: black;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 0;
+}
+
+#header .menu {
+margin-top:3px;
+  float: right;
+}
+
+#header .menu span {
+  margin-left: 18px;
+}
+
+#header .menu a { color:#FFF;}
+#header .menu a:hover {text-decoration: none;}
+#header .title a:link,
+#header .title a:hover,
+#header .title a:visited { font-size:20px; color:#FFF; text-decoration: none;}
+
+#footer,
+#main {
+  margin: 25px;
+  margin-left: 35px;
+  margin-right: 35px;
+  max-width: 1280px;
+}
+
+
+#sidebar {
+  float: right;
+  line-height: 0;
+  margin-top:50px;
+}
+
+#sidebar .section {
+  padding-bottom: 30px;
+}
+
+#sidebar .headline {
+  padding-top: 15px;
+}
+
+#sidebar .icons {
+  padding-top: 9px;
+  padding-right: 9px;
+  line-height: 0;
+}
+
+#sidebar .icons td.last {
+  padding-right: 0;
+}
+
+#content { margin-right: 250px; }
+
+#content h1 {
+  font-size: 20pt;
+}
+
+.entry h1 a {
+  color: black;
+  text-decoration: none;
+}
+
+.entry h2 {
+  font-size: 15pt;
+  margin-bottom: 3pt;
+}
+
+.entry {
+  margin-bottom: 2em;
+}
+
+#content ul, #content ol { margin:8px 15px; padding:5px;}
+
+.entry .date {
+  margin-top: 3px;
+}
+.entry .date a { color:#000;}
+
+.entry .body {
+  margin-top: 1em;
+}
+
+.entry .footer {
+  margin-top: 1em;
+}
+
+#content p,
+#content li {
+  line-height: 17pt;
+}
+
+#content p {
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+
+ul.archive {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+ul.archive li {
+margin-bottom: 1em;
+}
+ul.archive .title {
+font-family: "Helvetica Nue", Helvetica, Arial, sans-serif;
+font-size: 14pt;
+}
+
+
+.form {}
+.form .row, .form tr.row td { padding:5px 0; }
+textarea.text,input.text { width:300px; border:1px solid #DDD; font-size:12px; 
+  border-left:1px solid #AAA; border-top:1px solid #AAA; padding:2px; }
+textarea.text:focus, input.text:focus { background:#fbf5bf; outline:0; }
+input.checkbox { width:auto; }
+input.button { border:normal; padding:5px 20px; }
+textarea.middle,input.middle { width:500px; }
+textarea.middle { height:100px; }
+textarea.long,input.long { width:800px; }
+
+#comments { margin-top: 20px; }
+#comments h2,#comment h2 { font-size: 20pt; line-height:200%; color:#000;  }
+#comment { }
+#comments .list { margin-bottom:20px;  }
+#comments .item { padding:4px;  }
+#comments .itemse {}
+#comments .none_result { padding:20px 10px;}
+	#comments .item .info {color:#999; line-height: 24px; font-size: 15px;}
+	#comments .item .content { font-size: 14px; color:#111; line-height: 150%; min-height:40px;}
+  #comments .item .content p { margin-bottom:8px; }
+	#comments .item .face { float:right; padding:0 0 8px 8px; margin-top:-20px; }
+
+#comments { margin-top:30px; }
+#comment .form { margin:0 5px;}
+
+/* old code style hack, if you don't need, remove it. */
+.highlight pre,pre.textmate-source, pre {border: 1px solid #DEDEDE;background-color: ghostWhite;font-size:13px; line-height:150%; padding: 0.25em 0.5em 0.5em;overflow: auto;word-wrap: normal;}
+pre.textmate-source pre { border:0; padding:0; }
+.highlight .tt,.highlight .linenos,.highlight_top { display:none; }
+
+
+/* pagination style */
+.pagination { background: white; margin-bottom:15px;  text-align: left; }
+  .pagination a, 
+  .pagination span, 
+  .pagination em { padding: .5em .7em; font-size: 13px; margin-right: 2px; }
+  .pagination span.disabled { color: #999; border: 1px solid #EEE; }
+  .pagination a:link,
+  .pagination a:visited { text-decoration: none; color: #000;	background:#fff; border: 1px solid #222; }
+  .pagination em, 
+  .pagination a:hover, 
+  .pagination a:focus {color: #FFF;background: #222; border:1px solid #000; font-style:normal; }
+  .pagination .page_info { background: #2E6AB1; color: white; padding: .4em .6em; width: 22em; margin-bottom: .3em; text-align: center; }
+  .pagination .page_info b {color: #003; background: #6aa6ed;padding: .1em .25em; } 
+  .pagination:after {content: ".";display: block;height: 0;clear: both;visibility: hidden; }
+  .pagination span.gap { padding:0;}
+  * html .pagination {height: 1%; }
+  *:first-child+html .pagination {overflow: hidden; }
+
+div.field, div.actions { margin-bottom: 10px;}
+div.field .hint { font-size:12px; color:#999;}
+
+.field_with_errors {  display:inline;  color:#b16125;}
+.errorExplanation { margin:10px 0; background:#FFF8E7; padding:10px; border: 2px solid #F96;}
+.errorExplanation h2 { font-size: 14px; line-height: 180%;}
+.errorExplanation p { color:#999;}
+.errorExplanation ul { font-size: 12px; margin-top: 8px; list-style: square inside; margin-left: 20px;}
+.filter { text-align: right; line-height: 22px; }
+  .filter label	{color: #999;}
+
+.successMessage {margin:10px 0; background:#CF9; padding:10px; border: 2px solid #6C0; }
+
