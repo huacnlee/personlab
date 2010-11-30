@@ -3,7 +3,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-APP_VERSION = "0.6"
+APP_VERSION = "0.7"
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
@@ -70,3 +70,6 @@ GOOGLE_ANALYTICS_ID = "UA-9745660-1"
 
 # Custom html code in footer.
 FOOTER_HTML = ""
+
+# Blog theme
+THEME_NAME = 'friendfeed-bret'

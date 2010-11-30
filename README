@@ -53,6 +53,11 @@ h2. Config with your self
 
 You can change some config in application.rb bottom, etc. Feed url, Google Analytics Id ...
 
+h2. Custom Theme
+
+If you want custom theme, you shoud create theme files like themes/friendfeed-bret, view more theme documents in "themes_for_rails":http://github.com/lucasefe/themes_for_rails.
+Then theme created, you need change THEME_NAME value as you theme directory name in  config/application.rb file.
+
 h2. Admin password
 
 When you run you run "rake db:seed" it can create a default user login: admin password: 123123
