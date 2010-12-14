@@ -3,7 +3,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-APP_VERSION = "0.7"
+APP_VERSION = "0.7.2"
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
@@ -60,9 +60,6 @@ CAPTCHA_SALT = "8929&**&@#"
 # custom feed url, set false to use system feed url
 # FEED_URL = "http://feeds.feedburner.com/huacnlee"
 FEED_URL = false
-
-# twitter toggle, because there was GFW in China, If you was blocked, set this to false
-TWITTER_ENABLE = false
 
 # Google Analytics Account ID
 GOOGLE_ANALYTICS_ID = "UA-9745660-1"

@@ -1,0 +1,16 @@
+<% if !items.blank? %>
+<ul>
+  <% for item in items do%>
+  <li>
+    <p class="text">
+        <%= auto_link(item.text,:target => "_blank", :rel => "nofollow") %>
+      </p>
+      <p class="info">
+        <span class="date"><a href="http://twitter.com/<%= @setting.twitter_id %>/status/<%= item.id %>" target="_blank">
+      <%= time_ago_in_words(item.created_at) %>前</a></span> <%= "<span class='retweeted'>转发</span>" if item.retweeted == true %>
+        通过 <%= raw item.source %>
+      </p>
+    </li>
+  <% end %>
+</ul>			
+<% end %>

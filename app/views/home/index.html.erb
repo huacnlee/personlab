@@ -40,25 +40,10 @@
           <%= raw @setting.home_show %>
         </div>
 
-        <% if !@tweets.blank? %>
         <div id="tweet" class="box">
           <h2>Twitter</h2>
-          <ul>
-            <% for item in @tweets do%>
-              <li>
-                <p class="text">
-                  <%= auto_link(item.text,:target => "_blank") %>
-                </p>
-                <p class="info">
-                <span class="date"><a href="https://twitter.com/<%= @setting.fanfou_id %>/status/<%= item.id %>" target="_blank">
-                    <%= time_ago_in_words(item.created_at) %>前</a></span>
-                  通过<%= item.source %>
-                </p>
-              </li>
-            <% end %>
-          </ul>			
+          <%= render "shared/tweets", :items => @tweets %>
         </div>
-        <% end %>
 
       </td>
     </tr>
