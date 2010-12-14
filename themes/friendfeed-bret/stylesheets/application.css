@@ -200,6 +200,9 @@ font-size: 14pt;
 
 #tweet  { margin-top:40px; }
 #tweet h2 { font-size:20px;}
+#tweet li { margin-bottom:10px; }
+#tweet .text { margin:4px 0; }
+#tweet .info { margin:0; color:#999; font-size:12px; }
 
 .form {}
 .form .row, .form tr.row td { padding:5px 0; }
