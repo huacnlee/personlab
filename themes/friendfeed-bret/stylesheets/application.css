@@ -192,11 +192,14 @@ padding: 0;
 ul.archive li {
 margin-bottom: 1em;
 }
-ul.archive .title {
+ul.archive li .date { color:#999; margin-left:10px; font-size:14px;}
+ul.archive a {
 font-family: "Helvetica Nue", Helvetica, Arial, sans-serif;
 font-size: 14pt;
 }
 
+#tweet  { margin-top:40px; }
+#tweet h2 { font-size:20px;}
 
 .form {}
 .form .row, .form tr.row td { padding:5px 0; }
