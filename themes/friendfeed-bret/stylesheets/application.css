@@ -203,6 +203,7 @@ font-size: 14pt;
 #tweet li { margin-bottom:10px; }
 #tweet .text { margin:4px 0; }
 #tweet .info { margin:0; color:#999; font-size:12px; }
+#tweet a { color:#333; text-decoration:underline; margin:0 2px;}
 
 .form {}
 .form .row, .form tr.row td { padding:5px 0; }
