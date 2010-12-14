@@ -52,7 +52,7 @@ end
 # *********************    CUSTOM CONFIGS    **********************
 # *****************************************************************
 # you app domain
-APP_DOMAIN = 'huacnlee.com'
+APP_DOMAIN = 'youdomain.com'
 
 # captcha secret key
 CAPTCHA_SALT = "8929&**&@#"
@@ -62,8 +62,7 @@ CAPTCHA_SALT = "8929&**&@#"
 FEED_URL = false
 
 # Google Analytics Account ID
-GOOGLE_ANALYTICS_ID = "UA-9745660-1"
-# GOOGLE_ANALYTICS_ID = false
+GOOGLE_ANALYTICS_ID = false
 
 # Custom html code in footer.
 FOOTER_HTML = ""
