@@ -43,7 +43,7 @@
 		<tr class="row">
 			<td class="field">分类</td>
 			<td>
-				<%= select("post","category_id",Category.all.collect {|c| [ c.name, c.id ] },{:selected => @post.category}) %>
+				<%= f.select(:category_id, Category.all.collect { |c| [c.name,c.id] }) %>
 			</td>
 		</tr>
 		<tr class="row">
