@@ -11,7 +11,7 @@ class HomeController < ApplicationController
     @fanfou_msgs = []
     if !@setting.twitter_id.blank?
       @tweets = []
-      # @tweets = Tweet.gets(@setting.twitter_id,5)
+      @tweets = Tweet.gets(@setting.twitter_id,5)
     end
     
     if !fragment_exist? "home/index/recent_posts"
