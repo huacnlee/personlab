@@ -58,12 +58,10 @@ APP_DOMAIN = 'huacnlee.com'
 CAPTCHA_SALT = "8929&**&@#"
 
 # custom feed url, set false to use system feed url
-# FEED_URL = "http://feeds.feedburner.com/huacnlee"
 FEED_URL = false
 
 # Google Analytics Account ID
 GOOGLE_ANALYTICS_ID = "UA-9745660-1"
-# GOOGLE_ANALYTICS_ID = false
 
 # Blog theme
 THEME_NAME = 'friendfeed-bret'
