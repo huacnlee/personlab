@@ -8,6 +8,7 @@ gem 'will_paginate', '3.0.pre'
 gem 'acts-as-taggable-on'
 gem 'themes_for_rails'
 gem 'twitter'
+gem 'dalli'
 
 # gem 'rmagick'
 # gem 'aws-s3', :require => 'aws/s3'
