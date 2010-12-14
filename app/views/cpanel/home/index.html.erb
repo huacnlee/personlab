@@ -21,7 +21,7 @@
     <h3>最近发表的博客</h3>
     <ul>
       <% for item in @recent_posts %>
-        <li><%= link_to (h item.title), :controller => "posts", :action => "show", :slug => item.slug %> 发布于 <%= item.created_at_s  %></li>
+      <li><a href="<%= blog_path(item.slug)%>"><%= item.title %></a> 发布于 <%= item.created_at_s  %></li>
       <% end %>
     </ul>
   </div>
@@ -30,7 +30,7 @@
     <ul>
       <% for item in @recent_comments %>
         <% if item.post %>
-        <li><a href="<%= item.url %>"><%=h item.author %></a> 对 <%= link_to (h item.post.title), :controller => "posts", :action => "show", :slug => item.post.slug %> 评论于 <%= item.created_at_s  %></li>
+        <li><a href="<%= item.url %>"><%=h item.author %></a> 对 <a href="<%= blog_path(item.post.slug)%>"><%= item.post.title %></a> 评论于 <%= item.created_at_s  %></li>
         <% end %>
       <% end %>
     </ul>
