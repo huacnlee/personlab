@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   before_filter :check_login, :init
-  theme THEME_NAME
+  theme THEME_NAME if !THEME_NAME.blank?
   
   # 初始化
   def init
@@ -32,7 +32,8 @@ class ApplicationController < ActionController::Base
 
   # 输出404错误
   def render_404
-    render_optional_error_file(404)
+    render(:file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404)
+    return
   end
   
   # 设置主菜单的活动标签
@@ -43,7 +44,11 @@ class ApplicationController < ActionController::Base
   # 设置SEO 的Meta 值
   def set_seo_meta(title,keywords = '',desc = '')
     if title
-      @page_title =  "#{title} &raquo; #{@setting.site_name}"
+      @page_title =  "#{title}"
+      if params[:page]
+        @page_title += " &raquo; (第#{params[:page]}页)"
+      end
+      @page_title += " &raquo; #{@setting.site_name}"
     else
       @page_title = @setting.site_name
     end

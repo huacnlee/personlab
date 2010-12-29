@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
 	belongs_to :category, :counter_cache => true
   acts_as_taggable_on :tags
-	default_scope :order => 'id desc'
+  default_scope :order => 'posts.id desc'
   
   # callback events
   before_validation :safe_slug_validation
@@ -61,37 +61,12 @@ class Post < ActiveRecord::Base
   
   # custom method
   public
-  # list
-  def self.find_list(page = 1, per_page = 20,options = {})
-    with_scope :find => options do
-      paginate(:page => page,:per_page => per_page,:include => [:category])
-    end
-  end
-  
-  def self.find_list_with_front(page = 1, per_page = 5, options = {})
-    with_scope :find => options do
-      find_list(page, per_page,:conditions => ["status = 1"])
-    end
+	def self.find_list_with_front_by_tag(page = 1, per_page = 5,tag = '', options = {})
+    tagged_with(tag,:on => :tags).paginate(:page => page,:per_page => per_page,    
+      :include => [:tags,:category],
+      :conditions => ["status =1"])
   end
 
-	def self.find_list_with_front_by_tag(page = 1, per_page = 5,tag = '', options = {})
-    tagged_with(tag,:on => :tags).paginate(:page => page,:per_page => per_page,:joins => [:category],:include => [:tags],:conditions => ["status =1"])
-  end
-  
-  # find posts order by comment_count
-  def self.find_hot(size = 10, options = {})
-    with_scope :find => options do
-      paginate(:page => 1,:per_page => size, :conditions => ["status = 1"] , :order => 'comment_count desc')
-    end
-  end
-  
-  # find recent posts
-  def self.find_recent(size = 10, options = {})
-    with_scope :find => options do
-      paginate(:page => 1,:per_page => size, :conditions => ["status = 1"])
-    end
-  end
-  
   # show
   def self.find_slug(slug)
     find_by_slug_and_status(slug,1,:include => [:tags,:category])

@@ -16,7 +16,7 @@
       <% if !@post.tags.blank? %>
       <label>Tags:</label>
 			<% for tag in @post.tags %>
-  <a href="<%= tag_blogs_path(tag.name) %>" class="rbox"><%= tag.name %></a>
+  <a href="<%= blogs_path(:tag => tag.name) %>" class="rbox"><%= tag.name %></a>
 			<% end %>
       <% end %>
 		</div>

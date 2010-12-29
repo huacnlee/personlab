@@ -22,13 +22,14 @@ ActionController::Routing::Routes.draw do |map|
   resources :blogs, :controller => :posts, :path => "blog" do
     collection do
       get :category, :path => "category/:category", :action => :index
-      get :rss
-      get :tag, :path => "tag/:tag", :action => :index
+      get :rss      
     end
     member do
       post :comment, :path => "/comment", :action => :show
     end
   end
+  
+  match "xmlrpc" => "xmlrpc#index"
  
   match "share" => "home#share"
   match "unfollow" => "unfollow"
