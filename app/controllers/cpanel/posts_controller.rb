@@ -4,7 +4,7 @@ class Cpanel::PostsController < Cpanel::ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.find_list(params[:page])
+    @posts = Post.paginate(:page => params[:page], :include => [:category])
 
     respond_to do |format|
       format.html # index.html.erb
