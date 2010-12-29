@@ -3,7 +3,9 @@ class Tag < ActiveRecord::Base
   has_and_belongs_to_many :posts
 
   def posts_count
-    posts.count
+    Rails.cache.fetch("tag:#{self.id}:posts_count",:expires_in => 1.days) {
+      posts.count
+    }
   end
 
   # override save for name unique
