@@ -29,6 +29,8 @@ ActionController::Routing::Routes.draw do |map|
       post :comment, :path => "/comment", :action => :show
     end
   end
+  
+  match "xmlrpc" => "xmlrpc#index"
  
   match "share" => "home#share"
   match "unfollow" => "unfollow"
