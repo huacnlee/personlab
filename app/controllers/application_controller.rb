@@ -32,7 +32,8 @@ class ApplicationController < ActionController::Base
 
   # 输出404错误
   def render_404
-    render_optional_error_file(404)
+    render(:file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404)
+    return
   end
   
   # 设置主菜单的活动标签
