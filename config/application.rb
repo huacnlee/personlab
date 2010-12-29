@@ -3,7 +3,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-APP_VERSION = "0.7.2"
+APP_VERSION = "0.7.3"
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
