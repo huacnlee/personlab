@@ -67,3 +67,12 @@ GOOGLE_ANALYTICS_ID = "UA-9745660-1"
 THEME_NAME = 'friendfeed-bret'
 
 FOOTER_HTML = "<a href=\"http://lanxs.com/users/1\" target=\"_blank\" title=\"楠香山\">楠香山</a> <a href=\"http://www.xiangguo.org/chengdu/sells/p9\" target=\"_blank\" title=\"橡果房产网\">橡果房产网</a> <a href=\"http://www.ytrip.com\" target=\"_blank\" rel=\"nofollow\">壹旅游</a> "
+
+ActionMailer::Base.smtp_settings = {
+  :address        => "smtp.sendgrid.net",
+  :port           => "25",
+  :authentication => :plain,
+  :user_name      => 'huacnlee@gmail.com',
+  :password       => 'lhs117sb',
+  :domain         => 'sendgrid.com'
+}
