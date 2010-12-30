@@ -13,7 +13,7 @@ class NoticeMailer < ActionMailer::Base
   end
   
   def self.new_comment_notice(post,new_comment)
-    # Thread.new {
+    Thread.new {
       setting = Setting.find_create
     
       # 找出不重复的评论,并带有Email的
@@ -31,7 +31,7 @@ class NoticeMailer < ActionMailer::Base
           NoticeMailer.deliver_new_comment_notice(post,new_comment,comment,setting)
         end
       end
-    # }
+    }
   end
 
 end
