@@ -7,6 +7,6 @@ class Unfollower < ActiveRecord::Base
   
   # 检查是否存在
   def self.exist(email,item)
-    !find_by_email_and_unfollowerable_type_and_unfollowerable_id(email,item.class.class_name,item.id).blank?
+    !find_by_email_and_unfollowerable_type_and_unfollowerable_id(email,item.class.name,item.id).blank?
   end
 end
