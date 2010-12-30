@@ -32,7 +32,7 @@ ActionController::Routing::Routes.draw do |map|
   match "xmlrpc" => "xmlrpc#index"
  
   match "share" => "home#share"
-  match "unfollow" => "unfollow"
+  match "unfollow" => "home#unfollow"
   map.page ":slug", :controller => :home, :action => :show, :requirements => { :slug => /[a-z0-9A-Z\-\_\.]+/ }
   
   # base routes
