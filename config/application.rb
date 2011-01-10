@@ -41,7 +41,7 @@ module Personlab
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
-    config.filter_parameters += [:password,:password_confirm]
+    config.filter_parameters += [:pwd,:confirm_pwd]
   end
 end
 
