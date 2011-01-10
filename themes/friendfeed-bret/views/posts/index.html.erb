@@ -1,24 +1,26 @@
 <div id="content">
+	<%= cache("posts/index#{params[:page]}") do %>
   <% if !@posts.blank? %>
-  <% for item in @posts %>
-    <div class="entry">
-      <h1>
-        <a href="<%= blog_path(item.slug) %>" title="<%= item.title %>"><%= truncate(item.title,:length => 80) %></a>
-      </h1>
-      <div class="date"><a href="<%= category_blogs_path(item.category.slug) %>" title="<%= item.category.name %>"><%= item.category.name %></a> - <%= l item.created_at, :format => :long %></div>
-      <div class="body">
-        <%= raw item.summary %>
-      </div>		
-      <div class="footer"> 
-        <a href="<%= blog_path(item.slug, :anchor => "comments") %>" title="查看评论"><%= item.comment_count %>条评论</a>
-        <a href="<%= blog_path(item.slug)%>"><%= item.view_count + item.delay_view_count %>次阅读</a>
-      </div>
-    </div>		
-  <% end %>	
-  <%= will_paginate @posts %>
-<% else %>
-  <div class="none_result">
-    作者还未发表过文章.
-  </div>
-<% end %>
+	  <% for item in @posts %>
+	    <div class="entry">
+	      <h1>
+	        <a href="<%= blog_path(item.slug) %>" title="<%= item.title %>"><%= truncate(item.title,:length => 80) %></a>
+	      </h1>
+	      <div class="date"><a href="<%= category_blogs_path(item.category.slug) %>" title="<%= item.category.name %>"><%= item.category.name %></a> - <%= l item.created_at, :format => :long %></div>
+	      <div class="body">
+	        <%= raw item.summary %>
+	      </div>		
+	      <div class="footer"> 
+	        <a href="<%= blog_path(item.slug, :anchor => "comments") %>" title="查看评论"><%= item.comment_count %>条评论</a>
+	        <a href="<%= blog_path(item.slug)%>"><%= item.view_count + item.delay_view_count %>次阅读</a>
+	      </div>
+	    </div>		
+	  <% end %>	
+	  <%= will_paginate @posts %>
+	<% else %>
+	  <div class="none_result">
+	    作者还未发表过文章.
+	  </div>
+	<% end %>
+	<% end %>
 </div>

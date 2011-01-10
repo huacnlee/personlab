@@ -6,7 +6,6 @@ class SettingSweeper < ActionController::Caching::Sweeper
   end
   
   def clear_setting_cache(setting)
-    Rails.cache.delete("data/setting")
-    Rails.cache.delete("data/fanfou/me")
+    Rails.cache.delete("models/setting")
   end
 end

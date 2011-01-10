@@ -19,9 +19,10 @@ class PostSweeper < ActionController::Caching::Sweeper
   def sweeper(post)
     clear_index_recent_posts
     expire_page "/blog/rss"
-    Rails.cache.write("data/posts/#{post.slug}",nil)
+    Rails.cache.delete("models/posts/#{post.slug}")
     clear_post_comments(post)
 		Rails.cache.delete("data/categories")
+		expire_fragment "posts/index"
   end
   
   # 清除评论列表

@@ -8,10 +8,13 @@ class HomeController < ApplicationController
     set_nav_actived("home")
 
     # get fanfou messages
-    @fanfou_msgs = []
     if !@setting.twitter_id.blank?
       @tweets = []
-      @tweets = Tweet.gets(@setting.twitter_id,5)
+      begin
+        @tweets = Tweet.gets(@setting.twitter_id,5)
+      rescue => e
+        logger.error { "Home twitter load failed: #{e}" }
+      end
     end
     
     if !fragment_exist? "home/index/recent_posts"

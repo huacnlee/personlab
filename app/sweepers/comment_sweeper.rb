@@ -24,6 +24,7 @@ class CommentSweeper < ActionController::Caching::Sweeper
   def clear_post_comments(comment)
     if comment.post
       expire_fragment "posts/show/#{comment.post.slug}/comments"
+      Rails.cache.delete("models/posts/#{comment.post.slug}")
     end
     expire_fragment "home/index/recent_comments"
   end

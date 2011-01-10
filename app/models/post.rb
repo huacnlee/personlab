@@ -69,7 +69,12 @@ class Post < ActiveRecord::Base
 
   # show
   def self.find_slug(slug)
-    find_by_slug_and_status(slug,1,:include => [:tags,:category])
+    p = Rails.cache.read("models/posts/#{slug}")
+    if not p
+      p = find_by_slug_and_status(slug,1)
+      Rails.cache.write("models/posts/#{slug}",p)
+    end
+    return p
   end
   
   

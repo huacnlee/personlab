@@ -28,18 +28,13 @@ class PostsController < ApplicationController
 
     page = params[:page] ? params[:page] : 1    
     if params[:category]
-			@cache_key = "posts/index/category/#{params[:category]}/#{page}"
-			if !fragment_exist? @cache_key
-				@posts = @category.posts.paginate :include => [:category],:page => page, :per_page => 5
-			end
+			@posts = @category.posts.paginate :include => [:category],:page => page, :per_page => 5
 		elsif params[:tag]
-			@cache_key = "posts/index/category/#{params[:tag]}/#{page}"
-			if !fragment_exist? @cache_key
-				@posts = Post.tagged_with(params[:tag]).paginate :include => [:category],:page => page, :per_page => 5
-			end
+			@posts = Post.tagged_with(params[:tag]).paginate :include => [:category],:page => page, :per_page => 5
     else
-      @cache_key = "posts/index/#{page}"
-			if !fragment_exist? @cache_key
+      if params[:page].blank? and !fragment_exist?("posts/index")
+  	    @posts = Post.paginate :include => [:category], :page => page, :per_page => 5
+	    elsif !params[:page].blank?
 	      @posts = Post.paginate :include => [:category], :page => page, :per_page => 5
 	    end
     end 
@@ -68,13 +63,11 @@ class PostsController < ApplicationController
         
     @view_count = Post.update_view_count(params[:id])
     
-    if (not @post) or (@view_count == 0)
-      @post = Post.find_slug(params[:id])
-      if not @post
-        return render_404
-      end
+    @post = Post.find_slug(params[:id])
+    if not @post
+      return render_404
     end
-    
+ 
     if request.post?
       @comment = Comment.new(params[:comment])
       @comment.post_id = @post.id

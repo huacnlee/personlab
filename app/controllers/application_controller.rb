@@ -27,6 +27,7 @@ class ApplicationController < ActionController::Base
   end
   
   def check_login
+    return if session[:user_id].blank?
     @current_user = User.find_by_id(session[:user_id])
   end
 
