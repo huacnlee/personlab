@@ -68,7 +68,7 @@ module ApplicationHelper
   
   # 退定连接
   def unfollow_link(email,unfollowerable)
-    unfollow_url(:type => unfollowerable.class.class_name.downcase,
+    unfollow_url(:type => unfollowerable.class.name.downcase,
                   :id => unfollowerable.id,:key => Encoder.encode(email))
   end
 

@@ -11,7 +11,7 @@ class Cpanel::HomeController < Cpanel::ApplicationController
     @total[:comment_count] = Comment.count
 
     @recent_posts = Post.limit(5)
-    @recent_comments = Comment.recents.limit(5)
+    @recent_comments = Comment.recents.all(:include => [:post], :limit => 5)
   end
   
   # cpanel/logout

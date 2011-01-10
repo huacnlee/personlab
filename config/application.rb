@@ -3,7 +3,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-APP_VERSION = "0.7"
+APP_VERSION = "0.7.4"
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
@@ -52,7 +52,7 @@ end
 # *********************    CUSTOM CONFIGS    **********************
 # *****************************************************************
 # you app domain
-APP_DOMAIN = 'huacnlee.com'
+APP_DOMAIN = 'youdomain.com'
 
 # captcha secret key
 CAPTCHA_SALT = "8929&**&@#"
@@ -61,12 +61,8 @@ CAPTCHA_SALT = "8929&**&@#"
 # FEED_URL = "http://feeds.feedburner.com/huacnlee"
 FEED_URL = false
 
-# twitter toggle, because there was GFW in China, If you was blocked, set this to false
-TWITTER_ENABLE = false
-
 # Google Analytics Account ID
-GOOGLE_ANALYTICS_ID = "UA-9745660-1"
-# GOOGLE_ANALYTICS_ID = false
+GOOGLE_ANALYTICS_ID = false
 
 # Custom html code in footer.
 FOOTER_HTML = ""

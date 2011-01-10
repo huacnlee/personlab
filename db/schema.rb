@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100906133604) do
+ActiveRecord::Schema.define(:version => 20101214015858) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(:version => 20100906133604) do
     t.text     "home_show"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "fanfou_id"
+    t.string   "twitter_id"
     t.string   "google_reader_id"
   end
 

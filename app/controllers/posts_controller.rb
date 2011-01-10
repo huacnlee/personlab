@@ -12,54 +12,35 @@ class PostsController < ApplicationController
   
   public
   def index		
-    if params[:search]      
-      set_seo_meta("#{params[:search]}的搜索结果")
-		elsif params[:category]
+    if params[:category]
 			@category = Category.find_by_slug(params[:category])
 			if not @category
 				render_404
 				return
 			end
-			if not params[:page]
-        set_seo_meta("博客 &raquo; 分类：#{@category.name}")
-      else
-        set_seo_meta("博客 &raquo; 分类：#{@category.name} &raquo; 第#{params[:page]}页")
-      end
-		elsif params[:tag]
-			if not params[:page]
-        set_seo_meta("博客 &raquo; Tag:#{params[:tag]}")
-      else
-        set_seo_meta("博客 &raquo; Tag:#{params[:tag]} &raquo; 第#{params[:page]}页")
-      end
-    else
-			if not params[:page]
-        set_seo_meta("博客")
-      else
-        set_seo_meta("博客 &raquo; 第#{params[:page]}页")
-      end
+      
+      set_seo_meta("博客 &raquo; 分类：#{@category.name}")        
+    elsif params[:tag]        
+      set_seo_meta("博客 &raquo; Tag:#{params[:tag]}")
+    else      
+      set_seo_meta("博客")
     end
 
-    page = params[:page] ? params[:page] : 1
-		per_page = 5
-    if params[:search] 
-      @cache_key = "posts/index/search/#{params[:search]}/#{page}"
-			if !fragment_exist? @cache_key
-	      @posts = Post.find_list_with_front(params[:page],per_page,:conditions => ['title like ? or body like ? or meta_keywords like ?',"%#{params[:search]}%","%#{params[:search]}%","%#{params[:search]}%"])
-	    end
-		elsif params[:category]
+    page = params[:page] ? params[:page] : 1    
+    if params[:category]
 			@cache_key = "posts/index/category/#{params[:category]}/#{page}"
 			if !fragment_exist? @cache_key
-				@posts = Post.find_list_with_front(params[:page],per_page,:conditions => ['categories.slug = ?',params[:category]])
+				@posts = @category.posts.paginate :include => [:category],:page => page, :per_page => 5
 			end
 		elsif params[:tag]
 			@cache_key = "posts/index/category/#{params[:tag]}/#{page}"
 			if !fragment_exist? @cache_key
-				@posts = Post.find_list_with_front_by_tag(page,per_page,params[:tag])
+				@posts = Post.tagged_with(params[:tag]).paginate :include => [:category],:page => page, :per_page => 5
 			end
     else
       @cache_key = "posts/index/#{page}"
 			if !fragment_exist? @cache_key
-	      @posts = Post.find_list_with_front(params[:page],per_page)
+	      @posts = Post.paginate :include => [:category], :page => page, :per_page => 5
 	    end
     end 
   end
@@ -68,7 +49,7 @@ class PostsController < ApplicationController
   
   def rss
     # Get the 10 most recent photos
-    @posts = Post.find_list_with_front(1,20)
+    @posts = Post.paginate :include => [:category], :page => 1, :per_page => 20
     # Title for the RSS feed
     @feed_title = "10 most recent photos"
     # Get the absolute URL which produces the feed
