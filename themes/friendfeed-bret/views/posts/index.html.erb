@@ -1,5 +1,5 @@
 <div id="content">
-	<%= cache("posts/index#{params[:page]}") do %>
+<%= cache("posts/index/#{params[:page]}", :depends => ["posts_list"]) do %>
   <% if !@posts.blank? %>
 	  <% for item in @posts %>
 	    <div class="entry">

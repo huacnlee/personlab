@@ -9,6 +9,7 @@ gem 'acts-as-taggable-on'
 gem 'themes_for_rails'
 gem 'twitter'
 gem 'dalli'
+gem 'tagged-cache'
 
 # gem 'rmagick'
 # gem 'aws-s3', :require => 'aws/s3'

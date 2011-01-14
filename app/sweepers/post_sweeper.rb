@@ -22,7 +22,7 @@ class PostSweeper < ActionController::Caching::Sweeper
     Rails.cache.delete("models/posts/#{post.slug}")
     clear_post_comments(post)
 		Rails.cache.delete("data/categories")
-		expire_fragment "posts/index"
+		Rails.cache.touch_tag("posts_list")
   end
   
   # 清除评论列表

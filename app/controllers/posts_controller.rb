@@ -32,10 +32,8 @@ class PostsController < ApplicationController
 		elsif params[:tag]
 			@posts = Post.tagged_with(params[:tag]).paginate :include => [:category],:page => page, :per_page => 5
     else
-      if params[:page].blank? and !fragment_exist?("posts/index")
-  	    @posts = Post.paginate :include => [:category], :page => page, :per_page => 5
-	    elsif !params[:page].blank?
-	      @posts = Post.paginate :include => [:category], :page => page, :per_page => 5
+      if !fragment_exist?("posts/index/#{params[:page]}")
+        @posts = Post.paginate :include => [:category], :page => page, :per_page => 5        
 	    end
     end 
   end

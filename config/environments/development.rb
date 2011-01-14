@@ -12,15 +12,19 @@ Personlab::Application.configure do
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
   config.action_view.debug_rjs             = true
-  config.action_controller.perform_caching = false
+  config.action_controller.perform_caching = true
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
-  config.cache_store = :file_store,"/tmp/cache/personlab" #:mem_cache_store,"127.0.0.1:11211" #
-
+  
+  config.cache_store = :tagged_store, { 
+    :tag_store => [:dalli_store,{ :namespace => "plab_t", :compress => true, :compress_threshold => 64*1024 }], 
+    :entity_store => [:dalli_store,{ :namespace => "plab_e", :compress => true, :compress_threshold => 64*1024 }] 
+  }
+  
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 end
