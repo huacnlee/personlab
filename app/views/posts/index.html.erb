@@ -1,5 +1,4 @@
-<div id="posts">
-<%= cache("posts/index/#{params[:page]}", :depends => ["posts_list"]) do %>
+<div id="posts">  
 <% if !@posts.blank? %>
   <% for item in @posts %>
     <div class="item">
@@ -24,6 +23,5 @@
   <div class="none_result">
     作者还未发表过文章.
   </div>
-<% end %>
 <% end %>
 </div>

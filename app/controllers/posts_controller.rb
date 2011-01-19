@@ -1,6 +1,9 @@
 # coding: utf-8 
 class PostsController < ApplicationController
-  caches_page :rss, :expires_in => 1.days
+  caches_page :rss, :depends => ["posts_list"]
+  caches_action :index,
+    :cache_path =>  Proc.new { |c| "blog/index/#{c.request.params[:page]}:#{c.request.params[:category]}:#{c.request.params[:tag]}" },
+    :depends => ["posts_list"]
   cache_sweeper :comment_sweeper,:only => [:show]
   validates_captcha
   before_filter :init_posts
@@ -12,6 +15,7 @@ class PostsController < ApplicationController
   
   public
   def index		
+    page = params[:page] ? params[:page] : 1    
     if params[:category]
 			@category = Category.find_by_slug(params[:category])
 			if not @category
@@ -19,23 +23,15 @@ class PostsController < ApplicationController
 				return
 			end
       
+      @posts = @category.posts.paginate :include => [:category],:page => page, :per_page => 5
       set_seo_meta("博客 &raquo; 分类：#{@category.name}")        
-    elsif params[:tag]        
+    elsif params[:tag]    
+      @posts = Post.tagged_with(params[:tag]).paginate :include => [:category],:page => page, :per_page => 5
       set_seo_meta("博客 &raquo; Tag:#{params[:tag]}")
     else      
+      @posts = Post.paginate :include => [:category], :page => page, :per_page => 5            
       set_seo_meta("博客")
     end
-
-    page = params[:page] ? params[:page] : 1    
-    if params[:category]
-			@posts = @category.posts.paginate :include => [:category],:page => page, :per_page => 5
-		elsif params[:tag]
-			@posts = Post.tagged_with(params[:tag]).paginate :include => [:category],:page => page, :per_page => 5
-    else
-      if !fragment_exist?("posts/index/#{params[:page]}")
-        @posts = Post.paginate :include => [:category], :page => page, :per_page => 5        
-	    end
-    end 
   end
 
 
