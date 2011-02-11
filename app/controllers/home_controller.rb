@@ -68,7 +68,13 @@ class HomeController < ApplicationController
   
   def auth_callback
     auth = request.env["omniauth.auth"]
-    name = auth['user_info']['name']
+    first_name = auth['user_info']['first_name']
+    last_name = auth['user_info']['last_name']
+		if /[a-zA-Z]/.match(first_name)
+			name = auth['user_info']['name']
+		else
+			name = "#{last_name.strip}#{first_name.strip}"
+		end
     email = auth['user_info']['email']
     login = email.split('@').first
     set_guest(name,"https://www.google.com/profiles/#{login}",email)
