@@ -83,15 +83,14 @@ a:hover {
 }
 
 #header {
-  background: black;
-  padding: 10px;
+  background: black;  
+  line-height:25px;
+  height:28px;
   padding-left: 15px;
-  padding-right: 15px;
-  line-height: 0;
+  padding-right: 15px;  
 }
 
 #header .menu {
-margin-top:3px;
   float: right;
 }
 

@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
     if session[:guest_author].blank?
       if @current_user
-        @guest = { :author => @current_user.name, :email => @current_user.email, :url => root_url }
+        @guest = { :author => @current_user.name, :email => @setting.email, :url => root_url }
       else
         set_guest
       end

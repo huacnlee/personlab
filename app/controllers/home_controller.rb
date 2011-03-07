@@ -60,4 +60,37 @@ class HomeController < ApplicationController
                       
     render :text => "你已经成功退定."
   end
+  
+  def guest_login
+    session[:last_page] = params[:url]
+    redirect_to "/auth/google"
+  end
+  
+  def auth_callback
+    auth = request.env["omniauth.auth"]
+    first_name = auth['user_info']['first_name']
+    last_name = auth['user_info']['last_name']
+		if /[a-zA-Z]/.match(first_name)
+			name = auth['user_info']['name']
+		else
+			name = "#{last_name.strip}#{first_name.strip}"
+		end
+    email = auth['user_info']['email']
+    login = email.split('@').first
+    set_guest(name,"https://www.google.com/profiles/#{login}",email)
+    last_page = session[:last_page]
+    session[:last_page] = nil
+    redirect_to last_page
+  end
+  
+  def auth_failure
+    render_404
+  end
+  
+  def auth_destroy
+    set_guest
+    @current_user = nil
+    session[:user_id] = nil
+    redirect_to request.referer
+  end
 end
