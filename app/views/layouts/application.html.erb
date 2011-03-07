@@ -25,7 +25,6 @@
     <span class="sub_title"><%= @setting.sub_title %></span>
 	</div>
 	<div id="nav">
-    <a href="/"<%= " class='actived'" if @nav_actived == "home" %> title="首页">首页</a>
     <% if !@menus.blank? %>
       <% for item in @menus %>
         <a href="<%= item.url %>"<%= " class='actived'" if @nav_actived == item.url.gsub('/','') %> title="<%= item.name %>"<%= ' target="_blank"' if item.new_window %>><%= item.name %></a>

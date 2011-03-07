@@ -22,7 +22,6 @@
 <div id="body">
 	<div id="header">		
     <div class="menu">
-      <span><a href="/"<%= " class='actived'" if @nav_actived == "home" %> title="首页">首页</a></span>
       <% if !@menus.blank? %>
         <% for item in @menus %>
         <span><a href="<%= item.url %>"<%= " class='actived'" if @nav_actived == item.url.gsub('/','') %> title="<%= item.name %>"<%= ' target="_blank"' if item.new_window %>><%= item.name %></a></span>
