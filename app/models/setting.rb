@@ -10,7 +10,7 @@ class Setting < ActiveRecord::Base
           :meta_keywords => "personlab,ruby on rails", 
           :email => "huacnlee@gmail.com",
           :meta_description => "This is an person website build by Ruby on Rails.",
-          :fanfou_id => "huacn",
+          :twitter_id => "huacnlee",
           :google_reader_id => "08982619185204047523",
           :home_show => '')
         @setting.save

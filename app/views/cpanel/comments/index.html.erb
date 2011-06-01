@@ -1,9 +1,9 @@
-<% content_for :submenu do %> 
+<%= content_for :submenu do %> 
 <% end %>
 <%= success_messages %>
 <div id="comments">  
 	<% @comments.each do |comment| %>
-	<div class="row">
+    <div class="row" id="comment<%= comment.id %>">
 		<div class="info">
         #<%= comment.id %> <span class="author"><a href="<%= comment.url %>"><%= comment.author %></a></span> 
         | <span class="email"><%= comment.email %></span> | <span class="user_ip"><%= comment.user_ip %></span>
@@ -17,7 +17,7 @@
 		</div>
         <div class="opts">
           评论于 <span class="date"><%= comment.created_at_s %></span> 
-          <span class="opts"><%= link_to '删除', cpanel_comment_path(comment), :confirm => '确定要删除吗?', :method => :delete %></span>
+          <span class="opts"><%= link_to '删除', cpanel_comment_path(comment), :remote => true, :confirm => '确定要删除吗?', :method => :delete %></span>
            <% if comment.post %>
            <span class="post_title">
              <a href="<%= blog_url(comment.post.slug) %>"><%= comment.post.title %></a>

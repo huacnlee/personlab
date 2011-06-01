@@ -32,7 +32,7 @@ class Cpanel::CommentsController < Cpanel::ApplicationController
         flash[:notice] = "评论删除成功."
         redirect_to(cpanel_comments_url) 
       }
-      format.xml  { head :ok }
+      format.js {}
     end
   end  
 end
