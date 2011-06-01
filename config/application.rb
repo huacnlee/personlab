@@ -52,20 +52,18 @@ end
 # *********************    CUSTOM CONFIGS    **********************
 # *****************************************************************
 # you app domain
-APP_DOMAIN = 'youdomain.com'
+APP_DOMAIN = 'huacnlee.com'
 
 # captcha secret key
 CAPTCHA_SALT = "8929&**&@#"
 
 # custom feed url, set false to use system feed url
-# FEED_URL = "http://feeds.feedburner.com/huacnlee"
 FEED_URL = false
 
 # Google Analytics Account ID
-GOOGLE_ANALYTICS_ID = false
-
-# Custom html code in footer.
-FOOTER_HTML = ""
+GOOGLE_ANALYTICS_ID = "UA-9745660-1"
 
 # Blog theme
 THEME_NAME = 'friendfeed-bret'
+
+FOOTER_HTML = "<a href=\"http://lanxs.com/users/1\" target=\"_blank\" title=\"楠香山\">楠香山</a> <a href=\"http://www.xiangguo.org/chengdu/sells/p9\" target=\"_blank\" title=\"橡果房产网\">橡果房产网</a> <a href=\"http://www.ytrip.com\" target=\"_blank\" rel=\"nofollow\">壹旅游</a> "
