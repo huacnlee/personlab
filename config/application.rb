@@ -55,7 +55,7 @@ end
 APP_DOMAIN = 'huacnlee.com'
 
 # captcha secret key
-CAPTCHA_SALT = "8929&**&@#"
+CAPTCHA_SALT = "(&*1987@#"
 
 # custom feed url, set false to use system feed url
 FEED_URL = false

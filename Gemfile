@@ -13,7 +13,7 @@ gem 'tagged-cache'
 gem 'omniauth', '0.2.0.beta3'
 gem "oa-openid", '0.2.0.beta3'
 
-# gem 'rmagick', ""
+gem 'rmagick'
 # gem 'aws-s3', :require => 'aws/s3'
 
 # Bundle gems for the local environment. Make sure to
