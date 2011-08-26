@@ -70,8 +70,7 @@
 					<td class="field" valign="top">验证码:</td>
 					<td>
 						<%= captcha_hidden_text %>
-						<%= captcha_input_text("",:class => "text", :style => "margin-bottom:4px;") %> <br />
-					 	<%= captcha_image %>
+						<%= captcha_input_text("",:class => "text", :style => "width:80px;") %><%= captcha_image(:style => "margin-bottom:-8px") %>
 					</td>
 				</tr>
 				<% end %>

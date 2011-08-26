@@ -13,9 +13,9 @@ module CaptchaImageGenerator
   @@default_bg_colors  = ['#FFFFFF']
   @@default_fonts      = ['Arial','Verdana,Tahoma','MS Serif','Lucida Sans','Georgia']
   @@default_parameters = {
-    :image_width    => 100,
-    :image_height   => 30,
-    :captcha_length => 4
+    :image_width    => 60,
+    :image_height   => 20,
+    :captcha_length => 5
   }
 
   def self.generate_captcha_image(params = {})
@@ -50,15 +50,15 @@ module CaptchaImageGenerator
       self.fill = fore_color
       self.stroke = fore_color
       self.stroke_width = 0.3
-      self.kerning = -3.5
-      self.pointsize = 16
+      self.kerning = -1.5
+      self.pointsize = 14
     }
 
     # Apply a little blur and fuzzing
     # black_img = black_img.gaussian_blur(1, 0.8)
     # black_img.dissolve(black_img.sketch(0, 2, 2), 0.75, 0.25)
     # black_img = black_img.spread(0.10)
-    wave_ranges = (-8..8).collect.to_a
+    wave_ranges = (-5..5).collect.to_a
     wave_direct = wave_ranges[rand(wave_ranges.count)]
     black_img = black_img.wave(wave_direct, 120)
     black_img = black_img.resize_to_fill(params[:image_width],params[:image_height])
