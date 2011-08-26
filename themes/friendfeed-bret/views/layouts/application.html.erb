@@ -16,7 +16,7 @@
 	<%= yield :styles -%>
 	<%= auto_discovery_link_tag(:rss,(FEED_URL || rss_blogs_url),:title => '定阅最新博客') %>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
-  <%= javascript_include_tag "rails","common", :cache => "cached_application" %>
+  <%= javascript_include_tag "rails","will_paginate","common", :cache => "cached_application" %>
 </head>
 <body>
 <div id="body">
