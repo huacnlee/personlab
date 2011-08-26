@@ -55,7 +55,7 @@ end
 APP_DOMAIN = 'huacnlee.com'
 
 # captcha secret key
-CAPTCHA_SALT = "(&*1987@#"
+CAPTCHA_SALT = "*_8**^%$%"
 
 # custom feed url, set false to use system feed url
 FEED_URL = false
@@ -66,4 +66,4 @@ GOOGLE_ANALYTICS_ID = "UA-9745660-1"
 # Blog theme
 THEME_NAME = 'friendfeed-bret'
 
-FOOTER_HTML = "<a href=\"http://lanxs.com/users/1\" target=\"_blank\" title=\"楠香山\">楠香山</a> <a href=\"http://www.xiangguo.org/chengdu/sells/p9\" target=\"_blank\" title=\"橡果房产网\">橡果房产网</a> <a href=\"http://www.ytrip.com\" target=\"_blank\" rel=\"nofollow\">壹旅游</a> "
+FOOTER_HTML = ""
