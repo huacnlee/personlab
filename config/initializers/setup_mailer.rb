@@ -1,11 +1,11 @@
 ActionMailer::Base.smtp_settings = {
-  :address => "smtp.gmail.com",
+  :address => "smtp.sendgrid.net",
   :enable_starttls_auto => true,
   :port => 587,
   :domain => "huacnlee.com",
   :authentication => :plain,
-  :user_name => "support@huacnlee.com",
-  :password => "SU_123123"
+  :user_name => "app279409@heroku.com",
+  :password => "lhs117sb"
 }
 # action mailer config
 ActionMailer::Base.default_content_type = "text/html"
