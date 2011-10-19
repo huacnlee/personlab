@@ -12,6 +12,7 @@ gem 'dalli'
 gem 'tagged-cache'
 gem 'omniauth', '0.2.0.beta3'
 gem "oa-openid", '0.2.0.beta3'
+gem "heroku"
 
 gem 'rmagick'
 # gem 'aws-s3', :require => 'aws/s3'
