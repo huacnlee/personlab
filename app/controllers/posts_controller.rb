@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   caches_action :index,
     :cache_path =>  Proc.new { |c| "blog/index/#{c.request.params[:page]}:#{c.request.params[:category]}:#{c.request.params[:tag]}" },
     :depends => ["posts_list"]
-  validates_captcha
   before_filter :init_posts
   
   private

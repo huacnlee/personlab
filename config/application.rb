@@ -54,9 +54,6 @@ end
 # you app domain
 APP_DOMAIN = 'youdomain.com'
 
-# captcha secret key
-CAPTCHA_SALT = "(&*1987@#"
-
 # custom feed url, set false to use system feed url
 # FEED_URL = "http://feeds.feedburner.com/huacnlee"
 FEED_URL = false
@@ -65,8 +62,6 @@ FEED_URL = false
 GOOGLE_ANALYTICS_ID = false
 
 # Custom html code in footer.
-FOOTER_HTML = ""
-
 FOOTER_HTML = ""
 
 require 'yaml'

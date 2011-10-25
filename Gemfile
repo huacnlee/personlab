@@ -1,26 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '3.0.9'
 gem 'mysql2', "0.2.7"
-gem 'RedCloth'
-gem 'simple-rss'
+gem 'simple-rss', '1.2.3'
 gem 'will_paginate', '3.0.pre'  
-gem 'acts-as-taggable-on'
-gem 'twitter'
-gem 'dalli'
-gem 'tagged-cache'
-gem 'omniauth', '0.2.0.beta3'
-gem "oa-openid", '0.2.0.beta3'
+gem 'acts-as-taggable-on','2.0.6'
+gem 'twitter', '1.2.0'
+gem 'dalli', '1.0.4'
+gem 'tagged-cache', '1.1.1'
 gem "heroku"
-gem "taps"
-gem "disqus"
-
-gem 'rmagick'
-# gem 'aws-s3', :require => 'aws/s3'
-
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+gem "taps", '0.3.23'
+gem "bluecloth","2.1.0"

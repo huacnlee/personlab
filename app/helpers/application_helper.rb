@@ -1,6 +1,7 @@
 # coding: utf-8 
 require "digest/md5"
 require "encoder"
+require "bluecloth"
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   
@@ -70,6 +71,10 @@ module ApplicationHelper
   def unfollow_link(email,unfollowerable)
     unfollow_url(:type => unfollowerable.class.name.downcase,
                   :id => unfollowerable.id,:key => Encoder.encode(email))
+  end
+  
+  def markdown(str)
+    raw "<div class=\"markdown_content\">#{BlueCloth.new(str).to_html}</div>"
   end
 
 end
