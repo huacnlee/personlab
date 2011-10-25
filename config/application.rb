@@ -61,6 +61,4 @@ FEED_URL = false
 GOOGLE_ANALYTICS_ID = "UA-9745660-1"
 
 FOOTER_HTML = ''
-require 'yaml'
-YAML::ENGINE.yamler= 'syck'
 
