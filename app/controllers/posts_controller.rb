@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   caches_action :index,
     :cache_path =>  Proc.new { |c| "blog/index/#{c.request.params[:page]}:#{c.request.params[:category]}:#{c.request.params[:tag]}" },
     :depends => ["posts_list"]
-  cache_sweeper :comment_sweeper,:only => [:show]
   validates_captcha
   before_filter :init_posts
   
@@ -61,46 +60,12 @@ class PostsController < ApplicationController
     if not @post
       return render_404
     end
- 
-    if request.post?
-      @comment = Comment.new(params[:comment])
-      @comment.post_id = @post.id
-      
-			set_guest(@comment.author,@comment.url,@comment.email)  
-      if captcha_validated?
-        if @comment.save
-          NoticeMailer.new_comment_notice(@post,@comment)
-          if @comment.status == 2
-            flash[:notice] = "评论发表成功。<br />但由于经过 Akismet 自动判定，您的评论内容需要由管理人员审核过后方可显示。"
-          else
-            flash[:notice] = "评论发表成功."
-          end          
-          redirect_to blog_path(@post.slug), :anchor => "comment"
-        end
-      else
-        @comment.errors.add("验证码","不正确")
-      end
-    else
-      @comment = Comment.new
-      @comment.author = @guest[:author]
-      @comment.url = @guest[:url]
-      @comment.email = @guest[:email]
-    end
     
     set_seo_meta(@post.title,@post.meta_keywords,@post.meta_description)
     
-    # get comments list
-    if !fragment_exist? "posts/show/#{params[:id]}/comments"
-      @comments = @post.comments
-    end
    
   end
-  
-  def comments
-    @comments = Comment.all
-    @posts = Post.unscoped.order("id asc")
-    render :layout => false
-  end
+
   
 end
 

@@ -215,21 +215,6 @@ textarea.middle,input.middle { width:500px; }
 textarea.middle { height:100px; }
 textarea.long,input.long { width:800px; }
 
-#comments { margin-top: 20px; }
-#comments h2,#comment h2 { font-size: 20pt; line-height:200%; color:#000;  }
-#comment { }
-#comments .list { margin-bottom:20px;  }
-#comments .item { padding:4px;  }
-#comments .itemse {}
-#comments .none_result { padding:20px 10px;}
-	#comments .item .info {color:#999; line-height: 24px; font-size: 15px;}
-	#comments .item .content { font-size: 14px; color:#111; line-height: 150%; min-height:40px;}
-  #comments .item .content p { margin-bottom:8px; }
-	#comments .item .face { float:right; padding:0 0 8px 8px; margin-top:-20px; }
-
-#comments { margin-top:30px; }
-#comment .form { margin:0 5px;}
-
 /* old code style hack, if you don't need, remove it. */
 .highlight pre,pre.textmate-source, pre {border: 1px solid #DEDEDE;background-color: ghostWhite;font-size:13px; line-height:150%; padding: 0.25em 0.5em 0.5em;overflow: auto;word-wrap: normal;}
 pre.textmate-source pre { border:0; padding:0; }

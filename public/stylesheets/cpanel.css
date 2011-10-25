@@ -1,4 +1,4 @@
-body { font-size:12px; background:#F0F0F0; }
+body { font-size:12px; background:#FFF; }
 .inner_panel { width:950px; margin: 0px auto; text-align: left;}
 
 #nav { height:40px; line-height: 40px; background:#222; font-size: 14px; overflow:hidden;}
@@ -28,7 +28,7 @@ body { font-size:12px; background:#F0F0F0; }
 		#submenu li a:visited { font-size: 14px; }
 		#submenu li.current { font-weight: bold;}
 
-table.grid { border:1px solid #DDD;}
+table.grid { border:1px solid #DDD; width:100%; }
 	table.grid tr td { font-size: 12px; padding:4px; border-top: 1px solid #DDD; border-left: 1px solid #DDD;}
 	table.grid tr td.first { border-left: 0px;}
 	table.grid tr.head td { font-weight: bold; background:#EEE; border-top: 0px;}
@@ -43,15 +43,6 @@ table.grid { border:1px solid #DDD;}
 .box { margin-bottom:20px;}
 .box h3 { color:#999;}
 .box ul li { line-height:200%;}
-
-#comments { border:1px solid #DDD;}
-#comments .row { margin:10px; padding-bottom: 10px; border-bottom: 1px solid #DDD;}
-#comments .row .info { font-size:12px; color:#999;}
-#comments .row .body { font-size:12px; margin-top: 5px; line-height:160%;}
-#comments .row .body .face { float:left; margin:0 10px 10px 0;}
-#comments .row .opts { clear:both; color:#999; margin-top:8px; }
-#comments .row .opts .post_title { float:right;}
-#comments .row .opts .post_title a { color:#333;}
 
 #login {background: #FFF; border-radius:10px; padding:20px; 
    text-align: left; width:450px; border:1px solid #CCC; margin:40px auto;

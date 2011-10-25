@@ -11,9 +11,6 @@
 <% end %>
 </ul>
 
-<% cache("home/index/recent_comments") do %>
-<% end %>
-
  <div id="tweet" class="section">
   <h2>Twitter</h2>
   <%= render "shared/tweets", :items => @tweets %>

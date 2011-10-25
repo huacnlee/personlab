@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111025033816) do
+ActiveRecord::Schema.define(:version => 20111025044849) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
@@ -21,22 +21,6 @@ ActiveRecord::Schema.define(:version => 20111025033816) do
   end
 
   add_index "categories", ["slug"], :name => "index_categories_on_slug"
-
-  create_table "comments", :force => true do |t|
-    t.integer  "post_id",    :null => false
-    t.string   "author",     :null => false
-    t.string   "email",      :null => false
-    t.string   "url"
-    t.text     "body",       :null => false
-    t.integer  "status",     :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "user_ip"
-    t.string   "user_agent"
-    t.string   "referrer"
-  end
-
-  add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
 
   create_table "menus", :force => true do |t|
     t.string   "name",                          :null => false
@@ -73,7 +57,6 @@ ActiveRecord::Schema.define(:version => 20111025033816) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "view_count",       :default => 0, :null => false
-    t.integer  "comment_count",    :default => 0, :null => false
     t.string   "meta_keywords"
     t.string   "meta_description"
     t.integer  "category_id"

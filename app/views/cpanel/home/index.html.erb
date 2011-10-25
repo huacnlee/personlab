@@ -4,14 +4,13 @@
     <ul>
       <li><%= link_to "撰写文章", :controller => "cpanel/posts", :action => "new" %></li>
       <li><%= link_to "创建一个新页面", :controller => "cpanel/pages", :action => "new" %></li>
-      <li><%= link_to "管理评论", :controller => "cpanel/comments", :action => "index" %></li>
       <li><%= link_to "修改系统设置", :controller => "cpanel/settings", :action => "index" %></li>
     </ul>
   </div>
   <div class="box statistics">
       <h3>统计信息</h3>
       <ul>
-          <li>目前有 <span class="num"><%= @total[:post_count] %></span> 篇博客文章，并收到 <span class="num"><%= @total[:comment_count] %></span> 条网友评论。</li>
+          <li>目前有 <span class="num"><%= @total[:post_count] %></span> 篇博客文章</li>
           <li>此外还有 <span class="num"><%= @total[:page_count] %></span> 个独立页面</li>
       </ul>
   </div>
@@ -22,16 +21,6 @@
     <ul>
       <% for item in @recent_posts %>
       <li><a href="<%= blog_path(item.slug)%>"><%= item.title %></a> 发布于 <%= item.created_at_s  %></li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="box recent_comments">
-    <h3>最近收到的评论</h3>
-    <ul>
-      <% for item in @recent_comments %>
-        <% if item.post %>
-        <li><a href="<%= item.url %>"><%=h item.author %></a> 对 <a href="<%= blog_path(item.post.slug)%>"><%= item.post.title %></a> 评论于 <%= item.created_at_s  %></li>
-        <% end %>
       <% end %>
     </ul>
   </div>

@@ -46,11 +46,6 @@
 		<% else %>
 		<li><%= link_to "文章", :controller => "cpanel/posts", :action => "index" %></li>
 		<% end %>
-		<% if params[:controller] == "cpanel/comments" %>
-		<li class="current"><span>评论</span></li>
-		<% else %>
-		<li><%= link_to "评论", :controller => "cpanel/comments", :action => "index" %></li>
-		<% end %>
 		<% if params[:controller] == "cpanel/menus" %>
 		<li class="current"><span>菜单</span></li>
 		<% else %>

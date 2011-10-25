@@ -12,7 +12,6 @@ class PostSweeper < ActionController::Caching::Sweeper
   
   def after_destroy(post)
 		clear_index_recent_posts
-		expire_fragment "home/index/recent_comments"
     sweeper(post)
   end
   
@@ -20,14 +19,8 @@ class PostSweeper < ActionController::Caching::Sweeper
     clear_index_recent_posts
     expire_page "/blog/rss"
     Rails.cache.delete("models/posts/#{post.slug}")
-    clear_post_comments(post)
 		Rails.cache.delete("data/categories")
 		Rails.cache.touch_tag("posts_list")
-  end
-  
-  # 清除评论列表
-  def clear_post_comments(post)
-    expire_fragment "posts/show/#{post.slug}/comments"
   end
   
   # 清除首页缓存

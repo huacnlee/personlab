@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
     map.login "login", :controller => :home, :action => :login
     map.logout "logout", :controller => :home, :action => :logout
 
-    resources :menus,:pages,:posts,:comments,:categories
+    resources :menus,:pages,:posts,:categories
     resources :settings, :only => [:index, :create] do
       collection do
         get :password
@@ -21,11 +21,7 @@ ActionController::Routing::Routes.draw do |map|
   resources :blogs, :controller => :posts, :path => "blog" do
     collection do
       get :category, :path => "category/:category", :action => :index
-      get :rss 
-      get :comments     
-    end
-    member do
-      post :comment, :path => "/comment", :action => :show
+      get :rss    
     end
   end
   
