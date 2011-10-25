@@ -12,11 +12,11 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <%= csrf_meta_tag %>
   <link href='http://fonts.googleapis.com/css?family=Crimson+Text&subset=latin' rel='stylesheet' type='text/css'>
-	<%= stylesheet_link_tag "application", :cache => "cached/application" %>
+	<%= stylesheet_link_tag "application", :cache => "cached_application" %>
 	<%= yield :styles -%>
 	<%= auto_discovery_link_tag(:rss,(FEED_URL || rss_blogs_url),:title => '定阅最新博客') %>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
-  <%= javascript_include_tag "rails","will_paginate","common", :cache => "cached/application" %>
+  <%= javascript_include_tag "rails","will_paginate","common", :cache => "cached_application" %>
 </head>
 <body>
 <div id="body">

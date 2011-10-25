@@ -64,6 +64,4 @@ GOOGLE_ANALYTICS_ID = false
 # Custom html code in footer.
 FOOTER_HTML = ""
 
-require 'yaml'
-YAML::ENGINE.yamler= 'syck'
 
