@@ -60,5 +60,6 @@ FEED_URL = false
 # Google Analytics Account ID
 GOOGLE_ANALYTICS_ID = "UA-9745660-1"
 
-FOOTER_HTML = ''
+# Custom html code in footer.
+FOOTER_HTML = ""
 
