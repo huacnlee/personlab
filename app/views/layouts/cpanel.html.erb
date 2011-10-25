@@ -7,11 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="shortcut icon" href="/favicon.ico?v=001">
   <%= csrf_meta_tag %>
-	<%= stylesheet_link_tag "application","cpanel",:cache => "cached_cpanel" %>
+	<%= stylesheet_link_tag "application","cpanel",:cache => "cached/cpanel" %>
 	<%= yield :styles %>
   <%= javascript_include_tag "tiny_mce/tiny_mce" %>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
-  <%= javascript_include_tag "rails","will_paginate","common", :cache => "cached_application" %>
+  <%= javascript_include_tag "rails","will_paginate","common", :cache => "cached/cpanel" %>
 </head>
 <body>
 <div id="top">
@@ -45,11 +45,6 @@
 		<li class="current"><span>文章</span></li>
 		<% else %>
 		<li><%= link_to "文章", :controller => "cpanel/posts", :action => "index" %></li>
-		<% end %>
-		<% if params[:controller] == "cpanel/comments" %>
-		<li class="current"><span>评论</span></li>
-		<% else %>
-		<li><%= link_to "评论", :controller => "cpanel/comments", :action => "index" %></li>
 		<% end %>
 		<% if params[:controller] == "cpanel/menus" %>
 		<li class="current"><span>菜单</span></li>

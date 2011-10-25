@@ -1,17 +1,219 @@
-* { margin:0; padding:0; }
-ul, ol { list-style-position:inside; }
-img, iframe { border:0; }
-table {width:100%;border-collapse:collapse;border-spacing:0} 
-body { text-align:center; 
-  font-family: "Helvetica Neue","Yahei", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti !important; 
-  color:#333;
-  font-size:14px;
-  line-height:140%;
-  padding-bottom:30px;  
-}
-a:link, a:visited { color:#4183C4; }
-a:hover { color:#cf3400; }
+ /*
+ * Copyright 2009 Bret Taylor
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may
+ * not use this file except in compliance with the License. You may obtain
+ * a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ */
 
+body {
+  background: white;
+  color: black;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+body,
+textarea {
+  font-family: Georgia, serif;
+  font-size: 12pt;
+}
+
+h1,
+h2,
+h3,
+h4,
+input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12pt;
+}
+
+table {
+  border-collapse: collapse;
+  border: 0;
+}
+
+td {
+  border: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+pre,
+code {
+  font-family: monospace;
+  color: #050;
+}
+
+pre {
+  margin: 17pt;
+  margin-right: 0;
+  padding-left: 15pt;
+  border-left: 1px solid #ddd;
+  line-height: 16pt;
+  overflow: auto;
+}
+
+a,
+a code {
+  color: #00c;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#header {
+  background: black;  
+  line-height:25px;
+  height:28px;
+  padding-left: 15px;
+  padding-right: 15px;  
+}
+
+#header .menu {
+  float: right;
+}
+
+#header .menu span {
+  margin-left: 18px;
+}
+
+#header .menu a { color:#FFF;}
+#header .menu a:hover {text-decoration: none;}
+#header .title a:link,
+#header .title a:hover,
+#header .title a:visited { font-size:20px; color:#FFF; text-decoration: none;}
+
+#footer,
+#main {
+  margin: 25px;
+  margin-left: 35px;
+  margin-right: 35px;
+  max-width: 1280px;
+}
+
+
+#sidebar {
+  float: right;
+  line-height: 0;
+  margin-top:50px;
+}
+
+#sidebar .section {
+  padding-bottom: 30px;
+}
+
+#sidebar .headline {
+  padding-top: 15px;
+}
+
+#sidebar .icons {
+  padding-top: 9px;
+  padding-right: 9px;
+  line-height: 0;
+}
+
+#sidebar .icons td.last {
+  padding-right: 0;
+}
+
+#content { margin-right: 250px; }
+
+#content h1 {
+  font-size: 20pt;
+}
+
+.entry h1 a {
+  color: black;
+  text-decoration: none;
+}
+
+.entry h2 {
+  font-size: 15pt;
+  margin-bottom: 3pt;
+}
+
+.entry {
+  margin-bottom: 2em;
+}
+
+#content ul, #content ol { margin:8px 15px; padding:5px;}
+
+.entry .date {
+  margin-top: 3px;
+}
+.entry .date a { color:#000; text-decoration: underline;}
+
+.entry .body {
+  margin-top: 1em;
+}
+
+.entry .footer {
+  margin-top: 1em;
+}
+
+#content p,
+#content li {
+  line-height: 17pt;
+}
+
+#content p {
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+
+ul.archive {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+ul.archive li {
+margin-bottom: 1em;
+}
+ul.archive li .date { color:#999; margin-left:10px; font-size:14px;}
+ul.archive a {
+font-family: "Helvetica Nue", Helvetica, Arial, sans-serif;
+font-size: 14pt;
+}
+
+#tweet  { margin-top:40px; }
+#tweet h2 { font-size:20px;}
+#tweet li { margin-bottom:10px; }
+#tweet .text { margin:4px 0; }
+#tweet .info { margin:0; color:#999; font-size:12px; }
+#tweet a { color:#333; text-decoration:underline; margin:0 2px;}
+
+.form {}
+.form .row, .form tr.row td { padding:5px 0; }
+textarea.text,input.text { width:300px; border:1px solid #DDD; font-size:12px; 
+  border-left:1px solid #AAA; border-top:1px solid #AAA; padding:2px; }
+textarea.text:focus, input.text:focus { background:#fbf5bf; outline:0; }
+input.checkbox { width:auto; }
+input.button { border:normal; padding:5px 20px; }
+textarea.middle,input.middle { width:500px; }
+textarea.middle { height:100px; }
+textarea.long,input.long { width:800px; }
 
 /* old code style hack, if you don't need, remove it. */
 .highlight pre,pre.textmate-source, pre {border: 1px solid #DEDEDE;background-color: ghostWhite;font-size:13px; line-height:150%; padding: 0.25em 0.5em 0.5em;overflow: auto;word-wrap: normal;}
@@ -21,10 +223,15 @@ pre.textmate-source pre { border:0; padding:0; }
 
 /* pagination style */
 .pagination { background: white; margin-bottom:15px;  text-align: left; }
-  .pagination a, .pagination span, .pagination em { padding: .5em .6em; font-size: 13px; margin-right: 2px; }
+  .pagination a, 
+  .pagination span, 
+  .pagination em { padding: .5em .7em; font-size: 13px; margin-right: 2px; }
   .pagination span.disabled { color: #999; border: 1px solid #EEE; }
-  .pagination a:link,.pagination a:visited { text-decoration: none; color: #333;	background:#EEE; border: 1px solid #999; }
-  .pagination em, .pagination a:hover, .pagination a:focus {color: #FFF;background: #4183C4; border:1px solid #1259C7; font-style:normal; }
+  .pagination a:link,
+  .pagination a:visited { text-decoration: none; color: #000;	background:#fff; border: 1px solid #222; }
+  .pagination em, 
+  .pagination a:hover, 
+  .pagination a:focus {color: #FFF;background: #222; border:1px solid #000; font-style:normal; }
   .pagination .page_info { background: #2E6AB1; color: white; padding: .4em .6em; width: 22em; margin-bottom: .3em; text-align: center; }
   .pagination .page_info b {color: #003; background: #6aa6ed;padding: .1em .25em; } 
   .pagination:after {content: ".";display: block;height: 0;clear: both;visibility: hidden; }
@@ -45,15 +252,3 @@ div.field .hint { font-size:12px; color:#999;}
 
 .successMessage {margin:10px 0; background:#CF9; padding:10px; border: 2px solid #6C0; }
 
-.form {}
-.form .row, .form tr.row td { padding:5px 0; }
-textarea.text,input.text { width:300px; border:1px solid #DDD; font-size:12px; 
-  border-left:1px solid #AAA; border-top:1px solid #AAA; padding:2px; }
-textarea.text:focus, input.text:focus { background:#fbf5bf; outline:0; }
-input.checkbox { width:auto; }
-input.button { border:normal; padding:5px 20px; }
-textarea.middle,input.middle { width:500px; }
-textarea.middle { height:100px; }
-textarea.long,input.long { width:800px; }
-
-.rbox { -webkit-border-radius: 13px; -moz-border-radius: 13px; border-radius: 13px;}

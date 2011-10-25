@@ -29,9 +29,7 @@ span.date { color:#999; font-size:12px; }
 #posts { }
 #posts .item { margin-bottom:28px; }
 #posts .title a,
-#posts h1,
-#comments h2,
-#comment h2 { text-decoration: none; font-size:23px;  color:#d66220; display:block; margin-bottom:10px;}
+#posts h1 { text-decoration: none; font-size:23px;  color:#d66220; display:block; margin-bottom:10px;}
 #posts .info { font-size:12px; color:#999; margin-bottom:5px; }
 #posts .info a { color:#999; }
 #posts .info .category  { font-weight:normal; background:#F0F0F0; padding:2px 8px;} 
@@ -52,19 +50,4 @@ span.date { color:#999; font-size:12px; }
 #content h3 { font-size:14px; line-height:180%; }
 #content h4 { font-size:12px; line-height:160%; }
 #content ul, #content ol { margin:5px 20px; }
-
-#comments { margin-top: 20px; }
-#comments h2,#comment h2 { color:#999;  }
-#comment { }
-#comments .list { margin-bottom:20px; border-bottom:1px solid #F0F0F0; }
-#comments .item { border-top:1px solid #F0F0F0; padding:10px 20px;  }
-#comments .itemse { background:#F5F5F5;}
-#comments .none_result { padding:20px 10px;}
-	#comments .item .info {color:#999; line-height: 24px; font-size: 15px;}
-	#comments .item .content { font-size: 13px; color:#444; line-height: 150%; min-height:40px;}
-  #comments .item .content p { margin-bottom:8px; }
-	#comments .item .face { float:right; padding:0 0 8px 8px; margin-top:-20px; }
-
-#comments { margin-top:30px; }
-#comment .form { margin:0 5px;}
 

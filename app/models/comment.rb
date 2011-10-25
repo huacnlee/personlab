@@ -1,6 +1,6 @@
 # coding: utf-8 
 class Comment < ActiveRecord::Base
-  belongs_to :post,:counter_cache => "comment_count"
+  belongs_to :post
 
   validates_presence_of :author,:email,:body
   scope :recents, :order => "id desc"

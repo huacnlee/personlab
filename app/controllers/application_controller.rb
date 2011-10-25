@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   before_filter :check_login, :init
-  theme THEME_NAME if !THEME_NAME.blank?
   
   # 初始化
   def init

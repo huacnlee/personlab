@@ -3,7 +3,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-APP_VERSION = "0.7.8"
+APP_VERSION = "0.8"
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
@@ -54,16 +54,12 @@ end
 # you app domain
 APP_DOMAIN = 'huacnlee.com'
 
-# captcha secret key
-CAPTCHA_SALT = "*_8**^%$%"
-
 # custom feed url, set false to use system feed url
 FEED_URL = false
 
 # Google Analytics Account ID
 GOOGLE_ANALYTICS_ID = "UA-9745660-1"
 
-# Blog theme
-THEME_NAME = 'friendfeed-bret'
+require 'yaml'
+YAML::ENGINE.yamler= 'syck'
 
-FOOTER_HTML = ""
