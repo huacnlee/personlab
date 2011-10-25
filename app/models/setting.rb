@@ -2,7 +2,7 @@
 class Setting < ActiveRecord::Base
   
   def self.find_create
-    @setting = Rails.cache.read("models/setting")
+    @setting = Rails.cache.read("models/setting1")
     if @setting.blank?
       @setting = first
       if not @setting

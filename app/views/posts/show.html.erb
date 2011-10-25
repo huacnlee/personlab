@@ -1,25 +1,38 @@
-<div id="mainbox">
-	<div id="posts">
+<div id="content">
+  <div class="entry">
 		<h1>
-			<%= h(@post.title) %>
- 		</h1>
-		<div class="info">
-			<span class="rbox category"><%= link_to (@post.category.name), category_blogs_path(@post.category.slug) %></span>
-      <span class="date"><%= l @post.created_at, :format => :long %></span>, 
-			<span class="view_count"><%= @post.view_count + @view_count %>次阅读</span>, 
-			<span class="comment_count"><a href="#comments"><%= @post.comment_count %>条评论</a></span>			
-		</div>
+      <a href="<%= blog_path(@post.slug) %>" rel="nofollow"><%= h(@post.title) %></a>
+		</h1>
+		<div class="date">
+			<%= link_to (@post.category.name), category_blogs_path(@post.category.slug) %>
+      <%= l @post.created_at, :format => :long %>
+    </div>    
 		<div class="body">
 			<%= raw @post.body %>
-		</div>
-		<% if !@post.tags.blank? %>
-		<div class="rbox tags">
-			<label>Tags:</label>
+    </div>    
+    <div class="footer">      
+			<span class="view_count"><%= @post.view_count + @view_count %> Views</span>, 
+			<span class="comment_count"><a href="#disqus_thread" ata-disqus-identifier="disqus:huacnlee:posts:<%= @post.id %>">Comments</a></span>			
+      <% if !@post.tags.blank? %>
+      <label style="margin-left:20px;">Tags:</label>
 			<% for tag in @post.tags %>
-        <a href="<%= blogs_path(:tag => tag.name) %>" class="rbox"><%= tag.name %></a>
+  <a href="<%= blogs_path(:tag => tag.name) %>" class="rbox"><%= tag.name %></a>
 			<% end %>
+      <% end %>
 		</div>
-		<% end %>
-	</div>  
-  <%= render "comments" %>
+	</div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = '<%= @setting.disqus_shortname %>'; // required: replace example with your forum shortname
+      var disqus_identifier = 'disqus:huacnlee:posts:<%= @post.id %>';
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>

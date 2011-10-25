@@ -96,5 +96,11 @@ class PostsController < ApplicationController
    
   end
   
+  def comments
+    @comments = Comment.all
+    @posts = Post.unscoped.order("id asc")
+    render :layout => false
+  end
+  
 end
 

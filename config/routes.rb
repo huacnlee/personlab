@@ -1,6 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
   root :controller => :home,:action => :index  
-  themes_for_rails
   # Control Panel 
   namespace 'cpanel' do
     root :controller => :home, :action => :index
@@ -22,7 +21,8 @@ ActionController::Routing::Routes.draw do |map|
   resources :blogs, :controller => :posts, :path => "blog" do
     collection do
       get :category, :path => "category/:category", :action => :index
-      get :rss      
+      get :rss 
+      get :comments     
     end
     member do
       post :comment, :path => "/comment", :action => :show

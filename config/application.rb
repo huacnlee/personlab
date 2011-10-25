@@ -67,5 +67,8 @@ GOOGLE_ANALYTICS_ID = false
 # Custom html code in footer.
 FOOTER_HTML = ""
 
-# Blog theme
-THEME_NAME = 'friendfeed-bret'
+FOOTER_HTML = ""
+
+require 'yaml'
+YAML::ENGINE.yamler= 'syck'
+

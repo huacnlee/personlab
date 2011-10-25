@@ -35,6 +35,8 @@ GEM
       activesupport (~> 3.0.0)
     builder (2.1.2)
     dalli (1.0.4)
+    disqus (1.0.4)
+      json
     erubis (2.6.6)
       abstract (>= 1.0.0)
     faraday (0.5.7)
@@ -50,6 +52,7 @@ GEM
       rubyzip
       term-ansicolor (~> 1.0.5)
     i18n (0.4.2)
+    json (1.6.1)
     launchy (2.0.5)
       addressable (~> 2.2.6)
     mail (2.2.19)
@@ -134,14 +137,23 @@ GEM
       ruby-openid (>= 2.1.7)
     rubyntlm (0.1.1)
     rubyzip (0.9.4)
+    sequel (3.20.0)
     simple-rss (1.2.3)
     simple_oauth (0.1.5)
+    sinatra (1.0)
+      rack (>= 1.0)
+    sqlite3 (1.3.4)
+    sqlite3-ruby (1.3.3)
+      sqlite3 (>= 1.3.3)
     tagged-cache (1.1.1)
       activesupport (>= 3.0.0)
+    taps (0.3.23)
+      rack (>= 1.0.1)
+      rest-client (>= 1.4.0, < 1.7.0)
+      sequel (~> 3.20.0)
+      sinatra (~> 1.0.0)
+      sqlite3-ruby (~> 1.2)
     term-ansicolor (1.0.6)
-    themes_for_rails (0.4.2)
-      rails (~> 3.0.0)
-      themes_for_rails
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
@@ -162,6 +174,7 @@ DEPENDENCIES
   RedCloth
   acts-as-taggable-on
   dalli
+  disqus
   heroku
   mysql2 (= 0.2.7)
   oa-openid (= 0.2.0.beta3)
@@ -170,6 +183,6 @@ DEPENDENCIES
   rmagick
   simple-rss
   tagged-cache
-  themes_for_rails
+  taps
   twitter
   will_paginate (= 3.0.pre)

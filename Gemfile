@@ -6,13 +6,14 @@ gem 'RedCloth'
 gem 'simple-rss'
 gem 'will_paginate', '3.0.pre'  
 gem 'acts-as-taggable-on'
-gem 'themes_for_rails'
 gem 'twitter'
 gem 'dalli'
 gem 'tagged-cache'
 gem 'omniauth', '0.2.0.beta3'
 gem "oa-openid", '0.2.0.beta3'
 gem "heroku"
+gem "taps"
+gem "disqus"
 
 gem 'rmagick'
 # gem 'aws-s3', :require => 'aws/s3'
