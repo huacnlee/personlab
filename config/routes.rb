@@ -30,10 +30,6 @@ ActionController::Routing::Routes.draw do |map|
   match "share" => "home#share"
   match "twitter" => "home#twitter"
   match "unfollow" => "home#unfollow"
-  match "guest_login" => "home#guest_login"
-  match "auth/:provider/callback" => "home#auth_callback"
-  match "auth/failure" => "home#auth_failure"
-  match "auth/destroy" => "home#auth_destroy"
   map.page ":slug", :controller => :home, :action => :show, :requirements => { :slug => /[a-z0-9A-Z\-\_\.]+/ }
   
   # base routes
