@@ -17,7 +17,7 @@ class PostSweeper < ActionController::Caching::Sweeper
   
   def sweeper(post)
     clear_index_recent_posts
-    expire_page "/blog/rss"
+    expire_action "/blog/rss"
     Rails.cache.delete("models/posts/#{post.slug}")
 		Rails.cache.delete("data/categories")
 		Rails.cache.touch_tag("posts_list")

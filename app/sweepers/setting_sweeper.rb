@@ -7,5 +7,6 @@ class SettingSweeper < ActionController::Caching::Sweeper
   
   def clear_setting_cache(setting)
     Rails.cache.delete("models/setting")
+    expire_action "home/share"
   end
 end

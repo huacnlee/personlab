@@ -6,30 +6,15 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  before_filter :check_login, :init
+  before_filter :init
   
   # 初始化
   def init
     @menus = Menu.find_all
     
     @setting = Setting.find_create
-    
-    @guest = { :author => session[:guest_author].to_s,:email => session[:guest_email],:url=> session[:guest_url]}
-
-    if session[:guest_author].blank?
-      if @current_user
-        @guest = { :author => @current_user.name, :email => @setting.email, :url => root_url }
-      else
-        set_guest
-      end
-    end
   end
   
-  def check_login
-    return if session[:user_id].blank?
-    @current_user = User.find_by_id(session[:user_id])
-  end
-
   # 输出404错误
   def render_404
     render(:file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404)
@@ -55,12 +40,4 @@ class ApplicationController < ActionController::Base
     @meta_keywords = keywords
     @meta_description = desc
   end
-  
-  # 保存评论者信息
-  def set_guest(author = "",url = "",email = "")
-    session[:guest_author] = author 
-    session[:guest_url] = url
-    session[:guest_email] = email
- 	end
-  
 end

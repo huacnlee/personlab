@@ -1,7 +1,7 @@
 # coding: utf-8 
 class HomeController < ApplicationController
   caches_action :show
-  caches_action :share, :cache_path =>  Proc.new { |c| "home/share/#{Time.now.to_date.to_s}" }
+  caches_action :share, :cache_path =>  Proc.new { |c| "home/share" }, :expires_in => 1.days
   
   def index
     set_seo_meta(nil,@setting.meta_keywords,@setting.meta_description)
@@ -60,38 +60,5 @@ class HomeController < ApplicationController
                       :unfollowerable_id => params[:id].to_i)
                       
     render :text => "你已经成功退定."
-  end
-  
-  def guest_login
-    session[:last_page] = params[:url]
-    redirect_to "/auth/google"
-  end
-  
-  def auth_callback
-    auth = request.env["omniauth.auth"]
-    first_name = auth['user_info']['first_name']
-    last_name = auth['user_info']['last_name']
-		if /[a-zA-Z]/.match(first_name)
-			name = auth['user_info']['name']
-		else
-			name = "#{last_name.strip}#{first_name.strip}"
-		end
-    email = auth['user_info']['email']
-    login = email.split('@').first
-    set_guest(name,"https://www.google.com/profiles/#{login}",email)
-    last_page = session[:last_page]
-    session[:last_page] = nil
-    redirect_to last_page
-  end
-  
-  def auth_failure
-    render_404
-  end
-  
-  def auth_destroy
-    set_guest
-    @current_user = nil
-    session[:user_id] = nil
-    redirect_to request.referer
   end
 end
