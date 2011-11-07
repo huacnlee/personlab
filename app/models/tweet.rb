@@ -8,7 +8,7 @@ class Tweet < ActiveRecord::Base
     msgs = Rails.cache.read("data/tweet/#{uid}")
     if not msgs or force      
       msgs = Twitter.user_timeline(uid, :count => count)
-      Rails.cache.write("data/tweet/#{uid}",msgs, :expires_in => 20.minutes)
+      Rails.cache.write("data/tweet/#{uid}",msgs, :expires_in => 15.minutes)
     end
     
     msgs

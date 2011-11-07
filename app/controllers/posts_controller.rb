@@ -21,13 +21,13 @@ class PostsController < ApplicationController
 				return
 			end
       
-      @posts = @category.posts.paginate :include => [:category],:page => page, :per_page => 5
+      @posts = @category.posts.publish.paginate :include => [:category],:page => page, :per_page => 5
       set_seo_meta("博客 &raquo; 分类：#{@category.name}")        
     elsif params[:tag]    
-      @posts = Post.tagged_with(params[:tag]).paginate :include => [:category],:page => page, :per_page => 5
+      @posts = Post.tagged_with(params[:tag]).publish.paginate :include => [:category],:page => page, :per_page => 5
       set_seo_meta("博客 &raquo; Tag:#{params[:tag]}")
     else      
-      @posts = Post.paginate :include => [:category], :page => page, :per_page => 5            
+      @posts = Post.publish.paginate :include => [:category], :page => page, :per_page => 5            
       set_seo_meta("博客")
     end
   end
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   
   def rss
     # Get the 10 most recent photos
-    @posts = Post.paginate :include => [:category], :page => 1, :per_page => 20
+    @posts = Post.publish.paginate :include => [:category], :page => 1, :per_page => 20
     # Title for the RSS feed
     @feed_title = "10 most recent photos"
     # Get the absolute URL which produces the feed

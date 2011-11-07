@@ -10,7 +10,7 @@ class Share < ActiveRecord::Base
   end
   
   def self.find_all(setting,force = false)
-    cache_key = "data/shares"
+    cache_key = "data/share_items"
     feeds = Rails.cache.read(cache_key)
     if not feeds or force
       feeds = []
@@ -26,7 +26,7 @@ class Share < ActiveRecord::Base
           }
         end
       end
-      Rails.cache.write(cache_key,feeds)
+      Rails.cache.write(cache_key,feeds, :expires_in => 1.days)
     end
     feeds
   end

@@ -18,7 +18,7 @@ class HomeController < ApplicationController
     end
     
     if !fragment_exist? "home/index/recent_posts"
-      @recent_posts = Post.limit(13).where(:status => 1)
+      @recent_posts = Post.publish.limit(13).where(:status => 1)
     end
   end
 
