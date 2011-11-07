@@ -37,7 +37,7 @@ class HomeController < ApplicationController
   def twitter
     set_nav_actived("twitter")
     set_seo_meta("我的 Twitter")
-    @tweets = Tweet.gets(@setting.twitter_id,50)
+    @tweets = Tweet.gets(@setting.twitter_id,20)
   end
   
   def share
