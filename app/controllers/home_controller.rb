@@ -1,6 +1,6 @@
 # coding: utf-8 
 class HomeController < ApplicationController
-  caches_page :show
+  caches_action :show
   caches_action :share, :cache_path =>  Proc.new { |c| "home/share/#{Time.now.to_date.to_s}" }
   
   def index
@@ -24,7 +24,6 @@ class HomeController < ApplicationController
 
   def show
     @page = Page.find_show(params[:slug])
-    
     if not @page
       render_404
       return

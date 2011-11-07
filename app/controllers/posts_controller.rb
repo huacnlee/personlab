@@ -1,6 +1,6 @@
 # coding: utf-8 
 class PostsController < ApplicationController
-  caches_page :rss, :depends => ["posts_list"]
+  caches_action :rss, :depends => ["posts_list"]
   caches_action :index,
     :cache_path =>  Proc.new { |c| "blog/index/#{c.request.params[:page]}:#{c.request.params[:category]}:#{c.request.params[:tag]}" },
     :depends => ["posts_list"]
