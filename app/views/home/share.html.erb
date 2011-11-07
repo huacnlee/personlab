@@ -1,12 +1,12 @@
-<% content_for :styles do %> 
-<link rel="alternate" title="ATOM" type="application/atom+xml" href="<%= @api_url %>">
+<%= content_for :styles do %> 
+  <link rel="alternate" title="ATOM" type="application/atom+xml" href="<%= @api_url %>">
 <% end %>
 <div id="shares" class="box">
   <h2>Google Reader 分享</h2>
   <% if !@shares.blank? %>
     <ul>
     <% for item in @shares %>
-    <li><a href="<%= item["link"] %>" target="_blank"><%= h item["title"] %></a></li>
+    <li><a href="<%= item["link"] %>" target="_blank"><%= item["title"] %></a></li>
     <% end %>
     </ul>
   <% end %>	
