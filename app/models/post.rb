@@ -1,16 +1,17 @@
 # coding: utf-8 
 require "string_extensions"
 class Post < ActiveRecord::Base
+  acts_as_taggable_on :tags
+  belongs_to :category, :counter_cache => true
+  
   validates_uniqueness_of :title, :slug, :case_sensitive => false , :message => "已经有同名的存在,请检查是否重发了."
   validates_presence_of :title,:body,:status
-	belongs_to :category, :counter_cache => true
-  acts_as_taggable_on :tags
-  default_scope :order => 'posts.id desc'
-  
+	
   # callback events
   before_validation :safe_slug_validation
-  
-  # enum sets
+  def safe_slug_validation
+    self.slug = self.slug.safe_slug
+  end
   
   # status
   STATUS = [
@@ -19,7 +20,9 @@ class Post < ActiveRecord::Base
     ["草稿",2],
     ].freeze
   
-  # custome field
+  # scope
+  default_scope :order => 'posts.id desc'
+  scope :publish, where(:status => 1)
   
   # string formated created_at
   def created_at_s
@@ -42,21 +45,8 @@ class Post < ActiveRecord::Base
     Rails.cache.read(cache_key).to_i || 0
   end
   
-  
-  # before validation
-  def safe_slug_validation
-    self.slug = self.slug.safe_slug
-  end
-  
-  
   # custom method
   public
-	def self.find_list_with_front_by_tag(page = 1, per_page = 5,tag = '', options = {})
-    tagged_with(tag,:on => :tags).paginate(:page => page,:per_page => per_page,    
-      :include => [:tags,:category],
-      :conditions => ["status =1"])
-  end
-
   # show
   def self.find_slug(slug)
     p = Rails.cache.read("models/posts/#{slug}")
@@ -85,13 +75,5 @@ class Post < ActiveRecord::Base
     end
     Rails.cache.write(cache_key,count)  
     count
-  end
-  
-  
-  
-  def self.destroy_all
-    all.each do |p|
-      p.destroy
-    end
   end
 end

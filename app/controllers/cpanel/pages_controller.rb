@@ -13,7 +13,7 @@ class Cpanel::PagesController < Cpanel::ApplicationController
   
   # 页面列表
   def index
-    @pages = Page.find_list(1)
+    @pages = Page.paginate :page => params[:page], :per_page => 20, :order => 'id desc'
   end  
   
   # 创建页面

@@ -6,7 +6,6 @@ class Category < ActiveRecord::Base
 	has_many :posts
 	
 	before_update :recount_posts_count
-	
 	def recount_posts_count
 		self.posts_count = self.posts.count
 	end
