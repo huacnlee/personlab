@@ -1,7 +1,7 @@
 # coding: utf-8 
 class HomeController < ApplicationController
   caches_page :show
-  caches_action :share, :expires_in => 10.seconds
+  caches_action :share, :cache_path =>  Proc.new { |c| "home/share/#{Time.now.to_date.to_s}" }
   
   def index
     set_seo_meta(nil,@setting.meta_keywords,@setting.meta_description)
@@ -32,6 +32,12 @@ class HomeController < ApplicationController
     set_seo_meta(@page.title)
     set_nav_actived(@page.slug)
     render :file => "pages/show", :layout => "application"
+  end
+  
+  def twitter
+    set_nav_actived("twitter")
+    set_seo_meta("我的 Twitter")
+    @tweets = Tweet.gets(@setting.twitter_id,50)
   end
   
   def share

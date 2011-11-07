@@ -5,10 +5,11 @@ require "twitter"
 class Tweet < ActiveRecord::Base
   
   def self.gets(uid = 'huacnlee',count = 5,force = false)
-    msgs = Rails.cache.read("data/tweet/#{uid}")
+    key = "data/tweet/#{uid}/#{count}"
+    msgs = Rails.cache.read(key)
     if not msgs or force      
       msgs = Twitter.user_timeline(uid, :count => count)
-      Rails.cache.write("data/tweet/#{uid}",msgs, :expires_in => 15.minutes)
+      Rails.cache.write(key,msgs, :expires_in => 15.minutes)
     end
     
     msgs

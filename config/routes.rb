@@ -28,6 +28,7 @@ ActionController::Routing::Routes.draw do |map|
   match "xmlrpc" => "xmlrpc#index"
  
   match "share" => "home#share"
+  match "twitter" => "home#twitter"
   match "unfollow" => "home#unfollow"
   match "guest_login" => "home#guest_login"
   match "auth/:provider/callback" => "home#auth_callback"

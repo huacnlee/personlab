@@ -199,6 +199,7 @@ font-size: 14pt;
 
 #tweet  { margin-top:40px; }
 #tweet h2 { font-size:20px;}
+#tweet h2 a { font-size:13px; margin-left:10px; color:#2C35CD; }
 #tweet li { margin-bottom:10px; }
 #tweet .text { margin:4px 0; }
 #tweet .info { margin:0; color:#999; font-size:12px; }
@@ -252,3 +253,6 @@ div.field .hint { font-size:12px; color:#999;}
 
 .successMessage {margin:10px 0; background:#CF9; padding:10px; border: 2px solid #6C0; }
 
+
+#shares ul { }
+#shares ul li { line-height:160%; margin-bottom:10px; }
