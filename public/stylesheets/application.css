@@ -23,7 +23,7 @@ body {
 
 body,
 textarea {
-  font-family: Georgia, serif;
+  font-family: Georgia, 'Hiragino Sans GB', 'Helvetica Neue',Helvetica,Arial,Sans-serif;
   font-size: 12pt;
 }
 
@@ -32,7 +32,6 @@ h2,
 h3,
 h4,
 input {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12pt;
 }
 
@@ -59,22 +58,26 @@ h4 {
 
 pre,
 code {
-  font-family: monospace;
+  font-family: monaco;
   color: #050;
+  margin: 1em 0;
+  font-size: 12px;
+  background-color: #EEE;
+  border: 1px solid #DDD;
+  padding: 5px;
+  color: #444;
+  overflow: auto;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0 1px 2px inset;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
-pre {
-  margin: 17pt;
-  margin-right: 0;
-  padding-left: 15pt;
-  border-left: 1px solid #ddd;
-  line-height: 16pt;
-  overflow: auto;
-}
+pre.textmate-source { border:0px; background-color: transparent;-webkit-box-shadow:none;  margin:0; padding:0; margin:0; }
 
 a,
 a code {
-  color: #00c;
+  color: #0069D6;
   text-decoration: none;
 }
 
@@ -157,8 +160,6 @@ a:hover {
   margin-bottom: 2em;
 }
 
-#content ul, #content ol { margin:8px 15px; padding:5px;}
-
 .entry .date {
   margin-top: 3px;
 }
@@ -167,6 +168,15 @@ a:hover {
 .entry .body {
   margin-top: 1em;
 }
+
+.entry .body ul,
+.entry .body ol  { margin:11px 34px padding:5px;}
+.markdown_content ul li,
+.markdown_content ol li,
+.entry .body ul li,
+.entry .body ol li{ margin-bottom:8px; }
+.markdown_content h3,
+.markdown_content h2 { margin-bottom:10px;}
 
 .entry .footer {
   margin-top: 1em;
@@ -193,7 +203,6 @@ margin-bottom: 1em;
 }
 ul.archive li .date { color:#999; margin-left:10px; font-size:14px;}
 ul.archive a {
-font-family: "Helvetica Nue", Helvetica, Arial, sans-serif;
 font-size: 14pt;
 }
 
@@ -217,28 +226,26 @@ textarea.middle { height:100px; }
 textarea.long,input.long { width:800px; }
 
 /* old code style hack, if you don't need, remove it. */
-.highlight pre,pre.textmate-source, pre {border: 1px solid #DEDEDE;background-color: ghostWhite;font-size:13px; line-height:150%; padding: 0.25em 0.5em 0.5em;overflow: auto;word-wrap: normal;}
-pre.textmate-source pre { border:0; padding:0; }
 .highlight .tt,.highlight .linenos,.highlight_top { display:none; }
 
 
 /* pagination style */
 .pagination { background: white; margin-bottom:15px;  text-align: left; }
-  .pagination a, 
-  .pagination span, 
-  .pagination em { padding: .5em .7em; font-size: 13px; margin-right: 2px; }
-  .pagination span.disabled { color: #999; border: 1px solid #EEE; }
-  .pagination a:link,
-  .pagination a:visited { text-decoration: none; color: #000;	background:#fff; border: 1px solid #222; }
-  .pagination em, 
-  .pagination a:hover, 
-  .pagination a:focus {color: #FFF;background: #222; border:1px solid #000; font-style:normal; }
-  .pagination .page_info { background: #2E6AB1; color: white; padding: .4em .6em; width: 22em; margin-bottom: .3em; text-align: center; }
-  .pagination .page_info b {color: #003; background: #6aa6ed;padding: .1em .25em; } 
-  .pagination:after {content: ".";display: block;height: 0;clear: both;visibility: hidden; }
-  .pagination span.gap { padding:0;}
-  * html .pagination {height: 1%; }
-  *:first-child+html .pagination {overflow: hidden; }
+.pagination a, 
+.pagination span, 
+.pagination em { padding: .5em .7em; font-size: 13px; margin-right: 2px; }
+.pagination span.disabled { color: #999; border: 1px solid #EEE; }
+.pagination a:link,
+.pagination a:visited { text-decoration: none; color: #000;	background:#fff; border: 1px solid #222; }
+.pagination em, 
+.pagination a:hover, 
+.pagination a:focus {color: #FFF;background: #222; border:1px solid #000; font-style:normal; }
+.pagination .page_info { background: #2E6AB1; color: white; padding: .4em .6em; width: 22em; margin-bottom: .3em; text-align: center; }
+.pagination .page_info b {color: #003; background: #6aa6ed;padding: .1em .25em; } 
+.pagination:after {content: ".";display: block;height: 0;clear: both;visibility: hidden; }
+.pagination span.gap { padding:0;}
+* html .pagination {height: 1%; }
+*:first-child+html .pagination {overflow: hidden; }
 
 div.field, div.actions { margin-bottom: 10px;}
 div.field .hint { font-size:12px; color:#999;}
