@@ -4,7 +4,6 @@ class TestMailer < ActionMailer::Base
   def try(to,subject)
     subject "#{subject}"
     recipients to
-    from "no-reply@#{APP_DOMAIN}"
     sent_on Time.now
     body subject
   end

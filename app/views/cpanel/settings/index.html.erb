@@ -29,6 +29,10 @@
 			<td>http://www.google.com/reader/shared/<%= f.text_field :google_reader_id, :class => "text short" %></td>
 		</tr>
 		<tr class="row">
+			<td class="field">Google Analytics Id</td>
+			<td><%= f.text_field :google_analytics_id, :class => "text short" %></td>
+		</tr>
+		<tr class="row">
 			<td class="field">Meta Keywords</td>
 			<td><%= f.text_field :meta_keywords, :class => "text long"  %></td>
 		</tr>
@@ -43,6 +47,10 @@
 			<td>
 				<%= f.text_area :home_show, :class => "text long"  %>
 			</td>
+		</tr>
+		<tr class="row">
+			<td class="field">Footer HTML</td>
+			<td><%= f.text_area :footer_html, :class => "text long" %></td>
 		</tr>
 		<tr class="row buttons">
 			<td class="field"></td>

@@ -25,7 +25,7 @@ module Personlab
     # Activate observers that should always be running.
     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 
-    # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
+    # Set Time.zone default to the specified zone\ and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
     config.time_zone = 'Beijing'
@@ -44,22 +44,4 @@ module Personlab
     config.filter_parameters += [:pwd,:confirm_pwd]
   end
 end
-
-
-
-
-# *****************************************************************
-# *********************    CUSTOM CONFIGS    **********************
-# *****************************************************************
-# you app domain
-APP_DOMAIN = 'huacnlee.com'
-
-# custom feed url, set false to use system feed url
-FEED_URL = false
-
-# Google Analytics Account ID
-GOOGLE_ANALYTICS_ID = "UA-9745660-1"
-
-# Custom html code in footer.
-FOOTER_HTML = ""
 

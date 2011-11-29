@@ -14,7 +14,7 @@
   <link href='http://fonts.googleapis.com/css?family=Crimson+Text&subset=latin' rel='stylesheet' type='text/css'>
 	<%= stylesheet_link_tag "application", :cache => "cached_application" %>
 	<%= yield :styles -%>
-	<%= auto_discovery_link_tag(:rss,(FEED_URL || rss_blogs_url),:title => '定阅最新博客') %>
+	<%= auto_discovery_link_tag(:rss,(@setting.feed_url || rss_blogs_url),:title => '定阅最新博客') %>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
   <%= javascript_include_tag "rails","will_paginate","common", :cache => "cached_application" %>
 </head>
@@ -35,7 +35,7 @@
     <div id="sidebar">      
       <div class="section">
         <h2>订阅我的博客</h2>
-        <div class="icons"><a href="<%= (FEED_URL || rss_blogs_url) %>"><%= image_tag("feed-big.png") %></a></div>
+        <div class="icons"><a href="<%= (@setting.feed_url || rss_blogs_url) %>"><%= image_tag("feed-big.png") %></a></div>
       </div>
       <div class="section">
         <%= raw @setting.home_show %>
@@ -44,9 +44,9 @@
 		<%= yield %>      
 	</div>
 	<div id="footer">
-		<% if !FOOTER_HTML.blank? %>
+		<% if !@setting.footer_html.blank? %>
 		<p>
-			<%=raw FOOTER_HTML %>
+			<%=raw @setting.footer_html %>
 		</p>
 		<% end %>
     <p class="copyright">
@@ -70,8 +70,8 @@
     }());
 </script>
 
-<% if !GOOGLE_ANALYTICS_ID.blank? %>
-<script type='text/javascript'>var _gaq = _gaq || []; _gaq.push(['_setAccount', '<%= GOOGLE_ANALYTICS_ID %>']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script>
+<% if !@setting.google_analytics_id.blank? %>
+<script type='text/javascript'>var _gaq = _gaq || []; _gaq.push(['_setAccount', '<%= @setting.google_analytics_id %>']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script>
 <% end %>
 </body>
 </html>

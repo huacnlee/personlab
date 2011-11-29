@@ -5,7 +5,7 @@ class Cpanel::SettingsController < Cpanel::ApplicationController
   # GET /settings
   # GET /settings.xml
   def index
-    @setting = Setting.find_create
+    @setting = Setting.first
 
     if request.put?
       if @setting.update_attributes(params[:setting])
