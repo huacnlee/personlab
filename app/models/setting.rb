@@ -16,7 +16,7 @@ class Setting < ActiveRecord::Base
           :home_show => '')
         @setting.save
       end
-      Rails.cache.write("models/setting",@setting)
+      Rails.cache.write("models/setting1",@setting)
     end
     return @setting
   end
