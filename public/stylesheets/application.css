@@ -115,6 +115,8 @@ a:hover {
   max-width: 1280px;
 }
 
+#footer { font-size:12px; color:#999; font-family:Helvetica,Arial; }
+
 
 #sidebar {
   float: right;
@@ -175,8 +177,13 @@ a:hover {
 .markdown_content ol li,
 .entry .body ul li,
 .entry .body ol li{ margin-bottom:8px; }
+.markdown_content h1,h2,h3,h4 { font-family: 'Hiragino Sans GB', 'Helvetica Neue',Helvetica,Arial,Sans-serif; }
 .markdown_content h3,
 .markdown_content h2 { margin-bottom:10px;}
+.markdown_content h2 { font-size:16pt; color:#ddd; font-weight:normal; }
+.markdown_content h3 { font-size:13pt; }
+.markdown_content h3 a { color:#333; }
+.markdown_content p { color:#555; }
 
 .entry .footer {
   margin-top: 1em;
