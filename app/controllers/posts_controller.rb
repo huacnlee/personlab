@@ -51,20 +51,15 @@ class PostsController < ApplicationController
   end
   
   def show
-    # update pv    
-        
+    # update pv
     @view_count = Post.update_view_count(params[:id])
     
-    @post = Post.find_slug(params[:id])
+    @post = Post.publish.where(:slug => params[:id]).includes(:category).first
     if not @post
       return render_404
     end
     
-    set_seo_meta(@post.title,@post.meta_keywords,@post.meta_description)
-    
-   
+    set_seo_meta(@post.title,@post.meta_keywords,@post.meta_description)   
   end
-
-  
 end
 

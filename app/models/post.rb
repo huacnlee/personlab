@@ -45,20 +45,6 @@ class Post < ActiveRecord::Base
     Rails.cache.read(cache_key).to_i || 0
   end
   
-  # custom method
-  public
-  # show
-  def self.find_slug(slug)
-    p = Rails.cache.read("models/posts/#{slug}")
-    if not p
-      p = find_by_slug_and_status(slug,1)
-      Rails.cache.write("models/posts/#{slug}",p)
-    end
-    return p
-  end
-  
-  
-  # static method
   def self.update_view_count(slug)
     delay = 10
     cache_key = "data/posts/view_count/#{slug}"
@@ -67,7 +53,7 @@ class Post < ActiveRecord::Base
       post = find_by_slug(slug)
       if post
         post.view_count += count + 1
-        post.save
+        Post.where(:id => post.id).update_all(:view_count => post.view_count)
       end
       count = 0
     else

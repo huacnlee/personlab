@@ -1,0 +1,8 @@
+<% cache("posts/#{post.id}:#{post.updated_at.to_i}/tags") do %>
+  <% if not post.tags.blank? %>
+    <label style="margin-left:20px;">Tags:</label>
+    <% for tag in post.tags %>
+      <a href="<%= blogs_path(:tag => tag.name) %>"><%= tag.name %></a>
+    <% end %>
+  <% end %>
+<% end %>
