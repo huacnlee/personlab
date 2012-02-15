@@ -1,6 +1,6 @@
 # coding: utf-8 
 class HomeController < ApplicationController
-  caches_action :show
+  caches_page :show
   caches_action :share, :cache_path =>  Proc.new { |c| "home/share" }, :expires_in => 1.days
   
   def index

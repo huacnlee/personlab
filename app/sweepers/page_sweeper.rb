@@ -10,6 +10,6 @@ class PageSweeper < ActionController::Caching::Sweeper
   end
   
   def clear_page_cache(page)
-    expire_action page_path(page.slug)
+    expire_page page_path(page.slug)
   end
 end
