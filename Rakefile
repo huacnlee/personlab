@@ -36,3 +36,32 @@ namespace :reader_share do
   end
 end
 
+# Google Reader 
+namespace :markdown do
+  desc "Google Reader reload shere items."
+  task :export => :environment do
+    Post.all(:include => [:category]).each do |post|
+      print "post: <#{post.slug}>"
+      categories = ""
+      if not post.tags.blank?
+        categories = "\n- #{post.tags.join("\n- ")}"
+      end
+      
+      file_name = "#{Rails.root}/_posts/#{post.created_at.strftime('%Y-%m-%d')}-#{post.slug}.markdown"
+      
+      summary = %(---
+layout: post
+title: "#{post.title}"
+date: #{post.created_at.strftime("%Y-%m-%d %H:%M")}
+comments: true
+categories: #{categories}
+---
+)
+      File.open(file_name,"w+") do |f|
+        f.puts summary
+        f.puts post.body
+      end
+      puts "[done]"
+    end
+  end
+end
