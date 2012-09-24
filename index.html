@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Personlab by huacnlee</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Personlab</h1>
+        <p>Simple person website for you, I can deploy on Heroku cloud server</p>
+
+        <p class="view"><a href="https://github.com/huacnlee/personlab">View the Project on GitHub <small>huacnlee/personlab</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/huacnlee/personlab/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/huacnlee/personlab/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/huacnlee/personlab">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>Simple person website for you, I can deploy on Heroku cloud server, base on Rails 3.0 + Ruby (1.8.7 or 1.9.2).</p>
+
+<h2>Demo</h2>
+
+<p><a href="http://personlab.heroku.com">http://personlab.heroku.com</a></p>
+
+<h2>Features</h2>
+
+<ul>
+<li>Weblog,Single page system.</li>
+<li>auto get Twitter message on Homepage.</li>
+<li>auto show recent Google Reader share entry on Share page.</li>
+<li>Textile with Signle page body format.</li>
+<li>"Heroku":<a href="http://heroku.com">http://heroku.com</a> support.</li>
+<li>Rails 3.0 powered, support beteen Ruby 1.8.7 and 1.9.2</li>
+</ul><h2>Install on Heroku</h2>
+
+<div class="highlight"><pre><span class="nv">$ </span>git clone git://github.com/huacnlee/personlab.git
+<span class="nv">$ </span><span class="nb">cd </span>personlab
+<span class="nv">$ </span>vi config/application.rb
+<span class="nv">$ </span>heroku create --stack bamboo-ree-1.8.7 youappname
+<span class="nv">$ </span>heroku config:add <span class="nv">HEROKU</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">$ </span>git push heroku master
+<span class="nv">$ </span>heroku rake db:create
+<span class="nv">$ </span>heroku rake db:migrate
+<span class="nv">$ </span>heroku rake db:seed
+</pre></div>
+
+<h3>Install on Ubuntu</h3>
+
+<div class="highlight"><pre><span class="nv">$ </span>git clone git://github.com/huacnlee/personlab.git
+<span class="nv">$ </span><span class="nb">cd </span>personlab
+<span class="nv">$ </span>cp config/database.yml.default config/database.yml
+<span class="nv">$ </span>vi config/database.yml 
+<span class="nv">$ </span>cp config/twitter.yml.default config/twitter.yml
+<span class="nv">$ </span>vi config/twitter.yml
+<span class="nv">$ </span>vi config/application.rb
+<span class="nv">$ </span>bundle install
+<span class="nv">$ RAILS_ENV</span><span class="o">=</span>production rake db:create
+<span class="nv">$ RAILS_ENV</span><span class="o">=</span>production rake db:migrate
+<span class="nv">$ RAILS_ENV</span><span class="o">=</span>production rake db:seed
+</pre></div>
+
+<h2>Update new version</h2>
+
+<div class="highlight"><pre><span class="nv">$ </span>git pull origin master
+<span class="nv">$ </span>git push heroku master
+<span class="nv">$ </span>heroku db:migrate
+<span class="nv">$ </span>heroku restart
+</pre></div>
+
+<h2>Config with your self</h2>
+
+<p>You can change some config in application.rb bottom, etc. Feed url, Google Analytics Id ...</p>
+
+<h2>Custom Theme</h2>
+
+<p>If you want custom theme, you shoud create theme files like <code>themes/friendfeed-bret</code>, view more theme documents in <a href="http://github.com/lucasefe/themes_for_rails">themes_for_rails</a> .
+Then theme created, you need change THEME_NAME value as you theme directory name in <code>config/application.rb file</code>.</p>
+
+<h2>Admin password</h2>
+
+<p>When you run you run <code>rake db:seed</code> it can create a default user login: <code>admin</code> password: <code>123123</code></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/huacnlee">huacnlee</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-9745660-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
